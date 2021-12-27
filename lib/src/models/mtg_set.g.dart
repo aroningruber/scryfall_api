@@ -30,7 +30,7 @@ MtgSet _$MtgSetFromJson(Map<String, dynamic> json) => $checkedCreate(
           printedSize: $checkedConvert('printed_size', (v) => v as int?),
           digital: $checkedConvert('digital', (v) => v as bool),
           foilOnly: $checkedConvert('foil_only', (v) => v as bool),
-          nonFoilOnly: $checkedConvert('non_foil_only', (v) => v as bool),
+          nonfoilOnly: $checkedConvert('nonfoil_only', (v) => v as bool),
           scryfallUri:
               $checkedConvert('scryfall_uri', (v) => Uri.parse(v as String)),
           uri: $checkedConvert('uri', (v) => Uri.parse(v as String)),
@@ -51,34 +51,12 @@ MtgSet _$MtgSetFromJson(Map<String, dynamic> json) => $checkedCreate(
         'cardCount': 'card_count',
         'printedSize': 'printed_size',
         'foilOnly': 'foil_only',
-        'nonFoilOnly': 'non_foil_only',
+        'nonfoilOnly': 'nonfoil_only',
         'scryfallUri': 'scryfall_uri',
         'iconSvgUri': 'icon_svg_uri',
         'searchUri': 'search_uri'
       },
     );
-
-Map<String, dynamic> _$MtgSetToJson(MtgSet instance) => <String, dynamic>{
-      'id': instance.id,
-      'code': instance.code,
-      'mtgo_code': instance.mtgoCode,
-      'tcgplayer_id': instance.tcgplayerId,
-      'name': instance.name,
-      'set_type': _$SetTypeEnumMap[instance.setType],
-      'released_at': instance.releasedAt?.toIso8601String(),
-      'block_code': instance.blockCode,
-      'block': instance.block,
-      'parent_set_code': instance.parentSetCode,
-      'card_count': instance.cardCount,
-      'printed_size': instance.printedSize,
-      'digital': instance.digital,
-      'foil_only': instance.foilOnly,
-      'non_foil_only': instance.nonFoilOnly,
-      'scryfall_uri': instance.scryfallUri.toString(),
-      'uri': instance.uri.toString(),
-      'icon_svg_uri': instance.iconSvgUri.toString(),
-      'search_uri': instance.searchUri.toString(),
-    };
 
 const _$SetTypeEnumMap = {
   SetType.core: 'core',

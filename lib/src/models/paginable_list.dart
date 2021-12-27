@@ -6,14 +6,10 @@ part 'paginable_list.g.dart';
 /// objects (Cards, Sets, etc). List objects may be paginated,
 /// and also include information about issues raised when
 /// generating the list.
-@JsonSerializable(
-  checked: true,
-  fieldRename: FieldRename.snake,
-  genericArgumentFactories: true,
-)
+@JsonSerializable(genericArgumentFactories: true)
 class PaginableList<T> {
   /// An array of the requested objects, in a specific order.
-  final PaginableList<T> data;
+  final List<T> data;
 
   /// True if this List is paginated and there is a page
   /// beyond the current page.
@@ -34,14 +30,14 @@ class PaginableList<T> {
   /// the API discovered with your input. In general, they indicate
   /// that the List will not contain all of the information you
   /// requested. You should fix the warnings and re-submit your request.
-  final PaginableList<String>? warnings;
+  final List<String>? warnings;
 
   PaginableList({
     required this.data,
     required this.hasMore,
-    required this.nextPage,
-    required this.totalCards,
-    required this.warnings,
+    this.nextPage,
+    this.totalCards,
+    this.warnings,
   });
 
   /// Construct a [PaginableList] from JSON.
@@ -56,8 +52,4 @@ class PaginableList<T> {
   T operator [](int index) {
     return data[index];
   }
-
-  /// Convert a [PaginableList] to JSON.
-  Map<String, dynamic> toJson(Object? Function(T value) toJsonT) =>
-      _$PaginableListToJson(this, toJsonT);
 }

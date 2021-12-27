@@ -82,10 +82,7 @@ enum SetType {
 /// that begins with `p` or `t`, such as `pcel` or `tori`.
 ///
 /// Official sets always have a three-letter set code, such as `zen`.
-@JsonSerializable(
-  checked: true,
-  fieldRename: FieldRename.snake,
-)
+@JsonSerializable()
 class MtgSet {
   /// A unique ID for this set on Scryfall that will not change.
   final String id;
@@ -135,7 +132,7 @@ class MtgSet {
   final bool foilOnly;
 
   /// True if this set contains only nonfoil cards.
-  final bool nonFoilOnly;
+  final bool nonfoilOnly;
 
   /// A link to this set’s permapage on Scryfall’s website.
   final Uri scryfallUri;
@@ -156,19 +153,19 @@ class MtgSet {
   const MtgSet({
     required this.id,
     required this.code,
-    required this.mtgoCode,
-    required this.tcgplayerId,
+    this.mtgoCode,
+    this.tcgplayerId,
     required this.name,
     required this.setType,
-    required this.releasedAt,
-    required this.blockCode,
-    required this.block,
-    required this.parentSetCode,
+    this.releasedAt,
+    this.blockCode,
+    this.block,
+    this.parentSetCode,
     required this.cardCount,
-    required this.printedSize,
+    this.printedSize,
     required this.digital,
     required this.foilOnly,
-    required this.nonFoilOnly,
+    required this.nonfoilOnly,
     required this.scryfallUri,
     required this.uri,
     required this.iconSvgUri,
@@ -177,7 +174,4 @@ class MtgSet {
 
   /// Construct a [MtgSet] from JSON.
   factory MtgSet.fromJson(Map<String, dynamic> json) => _$MtgSetFromJson(json);
-
-  /// Convert a [MtgSet] to JSON.
-  Map<String, dynamic> toJson() => _$MtgSetToJson(this);
 }

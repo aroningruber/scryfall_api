@@ -6,11 +6,7 @@ part 'scryfall_exception.g.dart';
 /// or understand the input you provided to the API.
 /// [ScryfallException] objects are always transmitted with the
 /// appropriate `4XX` or `5XX` HTTP status code.
-@JsonSerializable(
-  checked: true,
-  fieldRename: FieldRename.snake,
-  createToJson: false,
-)
+@JsonSerializable()
 class ScryfallException implements Exception {
   /// An integer HTTP status code for this error.
   final int status;
@@ -38,8 +34,8 @@ class ScryfallException implements Exception {
     required this.status,
     required this.code,
     required this.details,
-    required this.type,
-    required this.warnings,
+    this.type,
+    this.warnings,
   });
 
   /// Construct a [ScryfallException] from JSON.
