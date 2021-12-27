@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 import 'package:scryfall_api/scryfall_api.dart';
 
@@ -9,4 +11,21 @@ class ScryfallApiClient {
 
   ScryfallApiClient({http.Client? httpClient})
       : _httpClient = httpClient ?? http.Client();
+
+  /// Returns a [List object][PaginableList] of all [Sets][MtgSet] on Scryfall.
+  Future<PaginableList> getAllSets() async {
+    final request = Uri.https(_baseUrl, '/sets');
+    final response = await _httpClient.get(request);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return PaginableList<MtgSet>.fromJson(
+      json,
+      (set) => MtgSet.fromJson(set as Map<String, dynamic>),
+    );
+  }
 }
