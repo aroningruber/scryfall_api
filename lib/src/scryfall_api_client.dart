@@ -51,4 +51,22 @@ class ScryfallApiClient {
 
     return MtgSet.fromJson(json);
   }
+
+  /// **GET** /sets/tcgplayer/:id
+  ///
+  /// Returns a [Set][MtgSet] with the given [tcgplayer_id][id],
+  /// also known as the `group_id` on
+  /// [TCGPlayer's API](https://docs.tcgplayer.com/docs).
+  Future<MtgSet> getSetByTcgplayerId(int id) async {
+    final request = Uri.https(_baseUrl, '/sets/tcgplayer/$id');
+    final response = await _httpClient.get(request);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return MtgSet.fromJson(json);
+  }
 }
