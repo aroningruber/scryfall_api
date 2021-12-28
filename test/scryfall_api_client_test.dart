@@ -344,25 +344,26 @@ void main() {
 
       test('returns MtgSet on valid response', () async {
         final json = jsonEncode({
-          "id": id,
-          "code": code,
-          "mtgo_code": mtgo_code,
-          "arena_code": arena_code,
-          "tcgplayer_id": tcgplayer_id,
-          "name": name,
-          "uri": uri_str,
-          "scryfall_uri": scryfall_uri_str,
-          "search_uri": search_uri_str,
-          "released_at": released_at_str,
-          "set_type": set_type_str,
-          "card_count": card_count,
-          "parent_set_code": parent_set_code,
-          "digital": digital,
-          "nonfoil_only": nonfoil_only,
-          "foil_only": foil_only,
-          "block_code": block_code,
-          "block": block,
-          "icon_svg_uri": icon_svg_uri_str,
+          'object': 'set',
+          'id': id,
+          'code': code,
+          'mtgo_code': mtgo_code,
+          'arena_code': arena_code,
+          'tcgplayer_id': tcgplayer_id,
+          'name': name,
+          'uri': uri_str,
+          'scryfall_uri': scryfall_uri_str,
+          'search_uri': search_uri_str,
+          'released_at': released_at_str,
+          'set_type': set_type_str,
+          'card_count': card_count,
+          'parent_set_code': parent_set_code,
+          'digital': digital,
+          'nonfoil_only': nonfoil_only,
+          'foil_only': foil_only,
+          'block_code': block_code,
+          'block': block,
+          'icon_svg_uri': icon_svg_uri_str,
         });
 
         final uri = Uri.parse(uri_str);
@@ -392,7 +393,7 @@ void main() {
               .having((s) => s.scryfallUri, 'scryfallUri', scryfall_uri)
               .having((s) => s.searchUri, 'searchUri', search_uri)
               .having((s) => s.releasedAt, 'releasedAt', released_at)
-              .having((s) => s.setType, 'setType', SetType.masterpiece)
+              .having((s) => s.setType, 'setType', set_type)
               .having((s) => s.cardCount, 'cardCount', card_count)
               .having((s) => s.digital, 'digital', digital)
               .having((s) => s.nonfoilOnly, 'nonfoilOnly', nonfoil_only)
@@ -408,6 +409,125 @@ void main() {
         final actual = await scryfallApiClient.getSetByTcgplayerId(
           tcgplayer_id,
         );
+        expect(actual, isA<MtgSet>());
+      });
+    });
+
+    group('getSetById', () {
+      final id = '2ec77b94-6d47-4891-a480-5d0b4e5c9372';
+      final code = 'uma';
+      final mtgo_code = 'uma';
+      final arena_code = 'uma';
+      final tcgplayer_id = 2360;
+      final name = 'Ultimate Masters';
+      final uri_str =
+          'https://api.scryfall.com/sets/2ec77b94-6d47-4891-a480-5d0b4e5c9372';
+      final scryfall_uri_str = 'https://scryfall.com/sets/uma';
+      final search_uri_str =
+          'https://api.scryfall.com/cards/search?order=set&q=e%3Auma&unique=prints';
+      final released_at_str = '2018-12-07';
+      final set_type_str = 'masters';
+      final card_count = 254;
+      final printed_size = 254;
+      final digital = false;
+      final nonfoil_only = false;
+      final foil_only = false;
+      final icon_svg_uri_str =
+          'https://c2.scryfall.com/file/scryfall-symbols/sets/uma.svg?1640581200';
+
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn('{}');
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient.getSetById(id);
+        } catch (_) {}
+        verify(
+          () => httpClient.get(Uri.https(
+            'api.scryfall.com',
+            '/sets/$id',
+          )),
+        ).called(1);
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final json = jsonEncode({
+          'object': 'error',
+          'code': 'not_found',
+          'status': 404,
+          'details': 'No Magic set found for the given code or ID',
+        });
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getSetById(id),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns MtgSet on valid response', () async {
+        final json = jsonEncode({
+          'object': 'set',
+          'id': id,
+          'code': code,
+          'mtgo_code': mtgo_code,
+          'arena_code': arena_code,
+          'tcgplayer_id': tcgplayer_id,
+          'name': name,
+          'uri': uri_str,
+          'scryfall_uri': scryfall_uri_str,
+          'search_uri': search_uri_str,
+          'released_at': released_at_str,
+          'set_type': set_type_str,
+          'card_count': card_count,
+          'printed_size': printed_size,
+          'digital': digital,
+          'nonfoil_only': nonfoil_only,
+          'foil_only': foil_only,
+          'icon_svg_uri': icon_svg_uri_str,
+        });
+
+        final uri = Uri.parse(uri_str);
+        final scryfall_uri = Uri.parse(scryfall_uri_str);
+        final search_uri = Uri.parse(search_uri_str);
+        final released_at = DateTime.parse(released_at_str);
+        final set_type = SetType.masters;
+        final icon_svg_uri = Uri.parse(icon_svg_uri_str);
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual = await scryfallApiClient.getSetById(id);
+        expect(
+          actual,
+          isA<MtgSet>()
+              .having((s) => s.id, 'id', id)
+              .having((s) => s.code, 'code', code)
+              .having((s) => s.mtgoCode, 'mtgoCode', mtgo_code)
+              .having((s) => s.tcgplayerId, 'tcgplayerId', tcgplayer_id)
+              .having((s) => s.name, 'name', name)
+              .having((s) => s.uri, 'uri', uri)
+              .having((s) => s.scryfallUri, 'scryfallUri', scryfall_uri)
+              .having((s) => s.searchUri, 'searchUri', search_uri)
+              .having((s) => s.releasedAt, 'releasedAt', released_at)
+              .having((s) => s.setType, 'setType', set_type)
+              .having((s) => s.cardCount, 'cardCount', card_count)
+              .having((s) => s.printedSize, 'printedSize', printed_size)
+              .having((s) => s.digital, 'digital', digital)
+              .having((s) => s.nonfoilOnly, 'nonfoilOnly', nonfoil_only)
+              .having((s) => s.foilOnly, 'foilOnly', foil_only)
+              .having((s) => s.iconSvgUri, 'iconSvgUri', icon_svg_uri),
+        );
+      });
+
+      test('gets valid response from actual server', () async {
+        scryfallApiClient = ScryfallApiClient();
+        final actual = await scryfallApiClient.getSetById(id);
         expect(actual, isA<MtgSet>());
       });
     });

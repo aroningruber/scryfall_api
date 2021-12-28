@@ -40,7 +40,7 @@ class PaginableList<T> {
     this.warnings,
   });
 
-  /// Construct a [PaginableList] from JSON.
+  /// Constructs a [PaginableList] from JSON.
   factory PaginableList.fromJson(
           Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
       _$PaginableListFromJson(json, fromJsonT);
@@ -48,7 +48,7 @@ class PaginableList<T> {
   /// The number of objects in this list.
   int get length => data.length;
 
-  /// Return the [index] element
+  /// Returns the [index] element
   T operator [](int index) {
     return data[index];
   }
