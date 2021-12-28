@@ -284,7 +284,6 @@ void main() {
     });
 
     group('getSetByTcgplayerId', () {
-      final object = 'set';
       final id = 'c26402e7-838e-48db-a4b2-7abfc305998a';
       final code = 'mp2';
       final mtgo_code = 'ms3';
