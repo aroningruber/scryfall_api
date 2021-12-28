@@ -17,10 +17,10 @@ class ScryfallApiClient {
 
   /// **GET** /sets
   ///
-  /// Returns a [List object][PaginableList] of all [Sets][MtgSet] on Scryfall.
+  /// Returns a [PaginableList] of all [MtgSet]s on Scryfall.
   Future<PaginableList<MtgSet>> getAllSets() async {
-    final request = Uri.https(_baseUrl, '/sets');
-    final response = await _httpClient.get(request);
+    final url = Uri.https(_baseUrl, '/sets');
+    final response = await _httpClient.get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -36,12 +36,12 @@ class ScryfallApiClient {
 
   /// **Get** /sets/:code
   ///
-  /// Returns a [Set][MtgSet] with the given set code.
+  /// Returns a [MtgSet] with the given set code.
   /// The [code] can be either the `code` or the `mtgo_code`
   /// for the set.
   Future<MtgSet> getSetByCode(String code) async {
-    final request = Uri.https(_baseUrl, '/sets/$code');
-    final response = await _httpClient.get(request);
+    final url = Uri.https(_baseUrl, '/sets/$code');
+    final response = await _httpClient.get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -54,12 +54,28 @@ class ScryfallApiClient {
 
   /// **GET** /sets/tcgplayer/:id
   ///
-  /// Returns a [Set][MtgSet] with the given [tcgplayer_id][id],
+  /// Returns a [MtgSet] with the given [tcgplayerId],
   /// also known as the `group_id` on
   /// [TCGPlayer's API](https://docs.tcgplayer.com/docs).
-  Future<MtgSet> getSetByTcgplayerId(int id) async {
-    final request = Uri.https(_baseUrl, '/sets/tcgplayer/$id');
-    final response = await _httpClient.get(request);
+  Future<MtgSet> getSetByTcgplayerId(int tcgplayerId) async {
+    final url = Uri.https(_baseUrl, '/sets/tcgplayer/$tcgplayerId');
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return MtgSet.fromJson(json);
+  }
+
+  /// **GET** /sets/:id
+  ///
+  /// Returns a [MtgSet] with the given [id].
+  Future<MtgSet> getSetById(String id) async {
+    final url = Uri.https(_baseUrl, '/sets/$id');
+    final response = await _httpClient.get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 

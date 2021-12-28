@@ -38,7 +38,7 @@ class ScryfallException implements Exception {
     this.warnings,
   });
 
-  /// Construct a [ScryfallException] from JSON.
+  /// Constructs a [ScryfallException] from JSON.
   factory ScryfallException.fromJson(Map<String, dynamic> json) =>
       _$ScryfallExceptionFromJson(json);
 }

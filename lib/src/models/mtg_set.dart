@@ -177,6 +177,6 @@ class MtgSet {
     required this.searchUri,
   });
 
-  /// Construct a [MtgSet] from JSON.
+  /// Constructs a [MtgSet] from JSON.
   factory MtgSet.fromJson(Map<String, dynamic> json) => _$MtgSetFromJson(json);
 }
