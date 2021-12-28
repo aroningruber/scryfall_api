@@ -14,6 +14,7 @@ MtgSet _$MtgSetFromJson(Map<String, dynamic> json) => $checkedCreate(
           id: $checkedConvert('id', (v) => v as String),
           code: $checkedConvert('code', (v) => v as String),
           mtgoCode: $checkedConvert('mtgo_code', (v) => v as String?),
+          arenaCode: $checkedConvert('arena_code', (v) => v as String?),
           tcgplayerId: $checkedConvert('tcgplayer_id', (v) => v as int?),
           name: $checkedConvert('name', (v) => v as String),
           setType: $checkedConvert(
@@ -43,6 +44,7 @@ MtgSet _$MtgSetFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
       fieldKeyMap: const {
         'mtgoCode': 'mtgo_code',
+        'arenaCode': 'arena_code',
         'tcgplayerId': 'tcgplayer_id',
         'setType': 'set_type',
         'releasedAt': 'released_at',
