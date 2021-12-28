@@ -1,7 +1,7 @@
 name: scryfall_api
 description: A wrapper of the Scryfall API for the Dart programming language.
 version: 0.1.0
-homepage:
+homepage: https://github.com/aroningruber/scryfall_api
 
 environment:
   sdk: ">=2.15.1 <3.0.0"
