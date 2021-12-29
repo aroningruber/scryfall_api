@@ -5,19 +5,6 @@ void main() {
   group('CardFace', () {
     group('fromJson', () {
       test('returns correct CardFace', () {
-        final uri_small_str =
-            'https://c1.scryfall.com/file/scryfall-cards/small/front/a/a/aafe47a8-0223-4c0b-b6ce-e25446a07c96.jpg?1636756882';
-        final uri_normal_str =
-            'https://c1.scryfall.com/file/scryfall-cards/normal/front/a/a/aafe47a8-0223-4c0b-b6ce-e25446a07c96.jpg?1636756882';
-        final uri_large_str =
-            'https://c1.scryfall.com/file/scryfall-cards/large/front/a/a/aafe47a8-0223-4c0b-b6ce-e25446a07c96.jpg?1636756882';
-        final uri_png_str =
-            'https://c1.scryfall.com/file/scryfall-cards/png/front/a/a/aafe47a8-0223-4c0b-b6ce-e25446a07c96.png?1636756882';
-        final uri_art_crop_str =
-            'https://c1.scryfall.com/file/scryfall-cards/art_crop/front/a/a/aafe47a8-0223-4c0b-b6ce-e25446a07c96.jpg?1636756882';
-        final uri_border_crop_str =
-            'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/a/a/aafe47a8-0223-4c0b-b6ce-e25446a07c96.jpg?1636756882';
-
         final name = 'Henrika Domnathi';
         final flavor_name = 'The Three Weird Sisters';
         final printed_name = 'The Three Weird Sisters';
@@ -32,12 +19,18 @@ void main() {
         final artist_id = 'c540d1fc-1500-457f-93cf-d6069ee66546';
         final illustration_id = '7ea5f6c8-7bf9-4a90-97c8-34aa0db567c9';
         final image_uris_str = <String, dynamic>{
-          'small': uri_small_str,
-          'normal': uri_normal_str,
-          'large': uri_large_str,
-          'png': uri_png_str,
-          'art_crop': uri_art_crop_str,
-          'border_crop': uri_border_crop_str,
+          'small':
+              'https://c1.scryfall.com/file/scryfall-cards/small/front/a/a/aafe47a8-0223-4c0b-b6ce-e25446a07c96.jpg?1636756882',
+          'normal':
+              'https://c1.scryfall.com/file/scryfall-cards/normal/front/a/a/aafe47a8-0223-4c0b-b6ce-e25446a07c96.jpg?1636756882',
+          'large':
+              'https://c1.scryfall.com/file/scryfall-cards/large/front/a/a/aafe47a8-0223-4c0b-b6ce-e25446a07c96.jpg?1636756882',
+          'png':
+              'https://c1.scryfall.com/file/scryfall-cards/png/front/a/a/aafe47a8-0223-4c0b-b6ce-e25446a07c96.png?1636756882',
+          'art_crop':
+              'https://c1.scryfall.com/file/scryfall-cards/art_crop/front/a/a/aafe47a8-0223-4c0b-b6ce-e25446a07c96.jpg?1636756882',
+          'border_crop':
+              'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/a/a/aafe47a8-0223-4c0b-b6ce-e25446a07c96.jpg?1636756882',
         };
 
         final json = <String, dynamic>{
@@ -58,12 +51,6 @@ void main() {
         };
 
         final colors = [Color.black];
-        final uri_small = Uri.parse(uri_small_str);
-        final uri_normal = Uri.parse(uri_normal_str);
-        final uri_large = Uri.parse(uri_large_str);
-        final uri_png = Uri.parse(uri_png_str);
-        final uri_art_crop = Uri.parse(uri_art_crop_str);
-        final uri_border_crop = Uri.parse(uri_border_crop_str);
 
         expect(
           CardFace.fromJson(json),
@@ -83,17 +70,7 @@ void main() {
                 'illustrationId',
                 illustration_id,
               )
-              .having(
-                (c) => c.imageUris,
-                'imageUris',
-                isA<ImageUris>()
-                    .having((i) => i.small, 'small', uri_small)
-                    .having((i) => i.normal, 'normal', uri_normal)
-                    .having((i) => i.large, 'large', uri_large)
-                    .having((i) => i.png, 'png', uri_png)
-                    .having((i) => i.artCrop, 'artCrop', uri_art_crop)
-                    .having((i) => i.borderCrop, 'borderCrop', uri_border_crop),
-              ),
+              .having((c) => c.imageUris, 'imageUris', isA<ImageUris>()),
         );
       });
     });
