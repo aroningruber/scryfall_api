@@ -12,6 +12,7 @@ void main() {
         final type_line = 'Legendary Creature — Vampire';
         final oracle_text =
             'Flying\nAt the beginning of combat on your turn, choose one that hasn\'t been chosen —\n• Each player sacrifices a creature.\n• You draw a card and you lose 1 life.\n• Transform Henrika Domnathi.';
+        final color_indicator_str = ['G', 'U'];
         final colors_str = ['B'];
         final power = '1';
         final toughness = '3';
@@ -41,6 +42,7 @@ void main() {
           'mana_cost': mana_cost,
           'type_line': type_line,
           'oracle_text': oracle_text,
+          'color_indicator': color_indicator_str,
           'colors': colors_str,
           'power': power,
           'toughness': toughness,
@@ -50,6 +52,7 @@ void main() {
           'image_uris': image_uris_str,
         };
 
+        final color_indicator = [Color.green, Color.blue];
         final colors = [Color.black];
 
         expect(
@@ -60,6 +63,11 @@ void main() {
               .having((c) => c.printedName, 'printedName', printed_name)
               .having((c) => c.manaCost, 'manaCost', mana_cost)
               .having((c) => c.oracleText, 'oracleText', oracle_text)
+              .having(
+                (c) => c.colorIndicator,
+                'colorIndicator',
+                color_indicator,
+              )
               .having((c) => c.colors, 'colors', colors)
               .having((c) => c.power, 'power', power)
               .having((c) => c.toughness, 'toughness', toughness)
