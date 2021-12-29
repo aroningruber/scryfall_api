@@ -22,6 +22,10 @@ enum Color {
   @JsonValue('G')
   green,
 
+  /// ![Colorless Mana](https://c2.scryfall.com/file/scryfall-symbols/card-symbols/C.svg)
+  @JsonValue('C')
+  colorless,
+
   /// Unknown color
   unknown,
 }

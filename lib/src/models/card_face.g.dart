@@ -73,6 +73,7 @@ const _$ColorEnumMap = {
   Color.black: 'B',
   Color.red: 'R',
   Color.green: 'G',
+  Color.colorless: 'C',
   Color.unknown: 'unknown',
 };
 
