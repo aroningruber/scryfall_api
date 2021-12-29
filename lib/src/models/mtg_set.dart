@@ -94,6 +94,10 @@ class MtgSet {
   /// the regular code.
   final String? mtgoCode;
 
+  /// The unique code for this set on Arena, which may differ from
+  /// the regular code.
+  final String? arenaCode;
+
   /// This set’s ID on [TCGplayer’s API](https://docs.tcgplayer.com/docs),
   /// also known as the groupId.
   final int? tcgplayerId;
@@ -154,6 +158,7 @@ class MtgSet {
     required this.id,
     required this.code,
     this.mtgoCode,
+    this.arenaCode,
     this.tcgplayerId,
     required this.name,
     required this.setType,
@@ -172,6 +177,6 @@ class MtgSet {
     required this.searchUri,
   });
 
-  /// Construct a [MtgSet] from JSON.
+  /// Constructs a [MtgSet] from JSON.
   factory MtgSet.fromJson(Map<String, dynamic> json) => _$MtgSetFromJson(json);
 }

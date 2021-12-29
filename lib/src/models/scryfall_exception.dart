@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'scryfall_exception.g.dart';
 
-/// An [ScryfallException] object represents a failure to find information
+/// A [ScryfallException] object represents a failure to find information
 /// or understand the input you provided to the API.
 /// [ScryfallException] objects are always transmitted with the
 /// appropriate `4XX` or `5XX` HTTP status code.
@@ -38,7 +38,7 @@ class ScryfallException implements Exception {
     this.warnings,
   });
 
-  /// Construct a [ScryfallException] from JSON.
+  /// Constructs a [ScryfallException] from JSON.
   factory ScryfallException.fromJson(Map<String, dynamic> json) =>
       _$ScryfallExceptionFromJson(json);
 }
