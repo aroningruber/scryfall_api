@@ -5,44 +5,44 @@ void main() {
   group('Legalities', () {
     group('fromJson', () {
       test('returns correct Legalities', () {
-        final standard_str = 'legal';
-        final future_str = 'legal';
-        final historic_str = 'legal';
-        final gladiator_str = 'legal';
-        final pioneer_str = 'legal';
-        final modern_str = 'legal';
-        final legacy_str = 'legal';
-        final pauper_str = 'not_legal';
-        final vintage_str = 'legal';
-        final penny_str = 'not_legal';
-        final commander_str = 'legal';
-        final brawl_str = 'legal';
-        final historicbrawl_str = 'legal';
-        final alchemy_str = 'legal';
-        final paupercommander_str = 'not_legal';
-        final duel_str = 'legal';
-        final oldschool_str = 'not_legal';
-        final premodern_str = 'not_legal';
+        final standardStr = 'legal';
+        final futureStr = 'legal';
+        final historicStr = 'legal';
+        final gladiatorStr = 'legal';
+        final pioneerStr = 'legal';
+        final modernStr = 'legal';
+        final legacyStr = 'legal';
+        final pauperStr = 'not_legal';
+        final vintageStr = 'legal';
+        final pennyStr = 'not_legal';
+        final commanderStr = 'legal';
+        final brawlStr = 'legal';
+        final historicbrawlStr = 'legal';
+        final alchemyStr = 'legal';
+        final paupercommanderStr = 'not_legal';
+        final duelStr = 'legal';
+        final oldschoolStr = 'not_legal';
+        final premodernStr = 'not_legal';
 
         final json = <String, dynamic>{
-          'standard': standard_str,
-          'future': future_str,
-          'historic': historic_str,
-          'gladiator': gladiator_str,
-          'pioneer': pioneer_str,
-          'modern': modern_str,
-          'legacy': legacy_str,
-          'pauper': pauper_str,
-          'vintage': vintage_str,
-          'penny': penny_str,
-          'commander': commander_str,
-          'brawl': brawl_str,
-          'historicbrawl': historicbrawl_str,
-          'alchemy': alchemy_str,
-          'paupercommander': paupercommander_str,
-          'duel': duel_str,
-          'oldschool': oldschool_str,
-          'premodern': premodern_str,
+          'standard': standardStr,
+          'future': futureStr,
+          'historic': historicStr,
+          'gladiator': gladiatorStr,
+          'pioneer': pioneerStr,
+          'modern': modernStr,
+          'legacy': legacyStr,
+          'pauper': pauperStr,
+          'vintage': vintageStr,
+          'penny': pennyStr,
+          'commander': commanderStr,
+          'brawl': brawlStr,
+          'historicbrawl': historicbrawlStr,
+          'alchemy': alchemyStr,
+          'paupercommander': paupercommanderStr,
+          'duel': duelStr,
+          'oldschool': oldschoolStr,
+          'premodern': premodernStr,
         };
 
         final standard = Legality.legal;

@@ -5,7 +5,7 @@ import 'package:scryfall_api/scryfall_api.dart';
 
 /// {@template scryfall_api_client}
 /// Dart API Client that wraps the [Scryfall API](https://scryfall.com/).
-/// {@endtemplate scryfall_api_client}
+/// {@endtemplate}
 class ScryfallApiClient {
   static const _baseUrl = 'api.scryfall.com';
 

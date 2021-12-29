@@ -6,20 +6,20 @@ void main() {
     group('fromJson', () {
       test('returns correct MtgCard for single-faced card', () {
         final id = '1ebf9dea-b4f8-4955-9824-7da5bbba91e9';
-        final oracle_id = '7d6c4290-d46d-4b98-805c-3f537462c4c8';
-        final multiverse_ids = [];
-        final mtgo_id = 65801;
+        final oracleId = '7d6c4290-d46d-4b98-805c-3f537462c4c8';
+        final multiverseIds = [];
+        final mtgoId = 65801;
         final name = 'Huang Zhong, Shu General';
         final lang = 'en';
-        final released_at_str = '2016-11-16';
-        final uri_str =
+        final releasedAtStr = '2016-11-16';
+        final uriStr =
             'https://api.scryfall.com/cards/1ebf9dea-b4f8-4955-9824-7da5bbba91e9';
-        final scryfall_uri_str =
+        final scryfallUriStr =
             'https://scryfall.com/card/pz2/65801/huang-zhong-shu-general?utm_source=api';
-        final layout_str = 'normal';
-        final highres_image = false;
-        final image_status_str = 'lowres';
-        final image_uris = {
+        final layoutStr = 'normal';
+        final highresImage = false;
+        final imageStatusStr = 'lowres';
+        final imageUris = {
           'small':
               'https://c1.scryfall.com/file/scryfall-cards/small/front/1/e/1ebf9dea-b4f8-4955-9824-7da5bbba91e9.jpg?1562253415',
           'normal':
@@ -33,16 +33,16 @@ void main() {
           'border_crop':
               'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/1/e/1ebf9dea-b4f8-4955-9824-7da5bbba91e9.jpg?1562253415'
         };
-        final mana_cost = '{2}{W}{W}';
+        final manaCost = '{2}{W}{W}';
         final cmc = 4;
-        final type_line = 'Legendary Creature — Human Soldier';
-        final oracle_text =
+        final typeLine = 'Legendary Creature — Human Soldier';
+        final oracleText =
             'Huang Zhong, Shu General can\'t be blocked by more than one creature.';
         final power = '2';
         final toughness = '3';
-        final colors_str = ['W'];
-        final color_identity_str = ['W'];
-        final color_indicator_str = ['W'];
+        final colorsStr = ['W'];
+        final colorIdentityStr = ['W'];
+        final colorIndicatorStr = ['W'];
         final keywords = [];
         final legalities = {
           'standard': 'not_legal',
@@ -64,46 +64,46 @@ void main() {
           'oldschool': 'not_legal',
           'premodern': 'not_legal'
         };
-        final games_str = ['mtgo'];
+        final gamesStr = ['mtgo'];
         final reserved = false;
         final foil = true;
         final nonfoil = true;
-        final finishes_str = ['nonfoil', 'foil'];
+        final finishesStr = ['nonfoil', 'foil'];
         final oversized = false;
         final promo = false;
         final reprint = true;
         final variation = false;
-        final set_id = '2661b143-8eac-4c73-9d93-549fe928bd96';
+        final setId = '2661b143-8eac-4c73-9d93-549fe928bd96';
         final set = 'pz2';
-        final set_name = 'Treasure Chest';
-        final set_type_str = 'treasure_chest';
-        final set_uri_str =
+        final setName = 'Treasure Chest';
+        final setTypeStr = 'treasure_chest';
+        final setUriStr =
             'https://api.scryfall.com/sets/2661b143-8eac-4c73-9d93-549fe928bd96';
-        final set_search_uri_str =
+        final setSearchUriStr =
             'https://api.scryfall.com/cards/search?order=set&q=e%3Apz2&unique=prints';
-        final scryfall_set_uri_str =
+        final scryfallSetUriStr =
             'https://scryfall.com/sets/pz2?utm_source=api';
-        final rulings_uri_str =
+        final rulingsUriStr =
             'https://api.scryfall.com/cards/1ebf9dea-b4f8-4955-9824-7da5bbba91e9/rulings';
-        final prints_search_uri_str =
+        final printsSearchUriStr =
             'https://api.scryfall.com/cards/search?order=released&q=oracleid%3A7d6c4290-d46d-4b98-805c-3f537462c4c8&unique=prints';
-        final collector_number = '65801';
+        final collectorNumber = '65801';
         final digital = true;
-        final rarity_str = 'rare';
-        final flavor_text =
+        final rarityStr = 'rare';
+        final flavorText =
             '\'Virile in war, he kept the north in fear; His prodigies subdued the western sphere.\'';
-        final card_back_id = '0aeebaf5-8c7d-4636-9e82-8c27447861f7';
+        final cardBackId = '0aeebaf5-8c7d-4636-9e82-8c27447861f7';
         final artist = 'Quan Xuejun';
-        final artist_ids = ['0dee7feb-9e78-4d1b-9458-52c8cb7ad078'];
-        final illustration_id = '8e729a46-ab8b-411c-9cef-8f4a7b67beca';
-        final border_color_str = 'black';
-        final frame_str = '2015';
-        final security_stamp_str = 'oval';
-        final full_art = false;
+        final artistIds = ['0dee7feb-9e78-4d1b-9458-52c8cb7ad078'];
+        final illustrationId = '8e729a46-ab8b-411c-9cef-8f4a7b67beca';
+        final borderColorStr = 'black';
+        final frameStr = '2015';
+        final securityStampStr = 'oval';
+        final fullArt = false;
         final textless = false;
         final booster = false;
-        final story_spotlight = false;
-        final edhrec_rank = 21021;
+        final storySpotlight = false;
+        final edhrecRank = 21021;
         final prices = {
           'usd': null,
           'usd_foil': null,
@@ -112,7 +112,7 @@ void main() {
           'eur_foil': null,
           'tix': '1.10'
         };
-        final related_uris = {
+        final relatedUris = {
           'tcgplayer_infinite_articles':
               'https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Huang+Zhong%2C+Shu+General&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall',
           'tcgplayer_infinite_decks':
@@ -121,7 +121,7 @@ void main() {
           'mtgtop8':
               'https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Huang+Zhong%2C+Shu+General'
         };
-        final purchase_uris = {
+        final purchaseUris = {
           'tcgplayer':
               'https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Huang+Zhong%2C+Shu+General&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall',
           'cardmarket':
@@ -135,7 +135,7 @@ void main() {
               'https://twitter.com/LiquidSjow/status/1211727247247388672?s=19',
           'previewed_at': '2019-12-30',
         };
-        final all_parts = [
+        final allParts = [
           {
             "object": "related_card",
             "id": "1ce91e38-4601-4354-ad1b-2c5c1c70da17",
@@ -155,7 +155,7 @@ void main() {
                 "https://api.scryfall.com/cards/720f3e68-84c0-462e-a0d1-90236ccc494a"
           },
         ];
-        final card_faces = [
+        final cardFaces = [
           {
             "object": "card_face",
             "name": "Professor of Zoomancy",
@@ -208,128 +208,127 @@ void main() {
             },
           }
         ];
-        final produced_mana_str = ["C", "G"];
-        final frame_effects_str = ["legendary"];
+        final producedManaStr = ["C", "G"];
+        final frameEffectsStr = ["legendary"];
 
         final json = <String, dynamic>{
           'object': 'card',
           'id': id,
-          'oracle_id': oracle_id,
-          'multiverse_ids': multiverse_ids,
-          'mtgo_id': mtgo_id,
+          'oracle_id': oracleId,
+          'multiverse_ids': multiverseIds,
+          'mtgo_id': mtgoId,
           'name': name,
           'lang': lang,
-          'released_at': released_at_str,
-          'uri': uri_str,
-          'scryfall_uri': scryfall_uri_str,
-          'layout': layout_str,
-          'highres_image': highres_image,
-          'image_status': image_status_str,
-          'image_uris': image_uris,
-          'mana_cost': mana_cost,
+          'released_at': releasedAtStr,
+          'uri': uriStr,
+          'scryfall_uri': scryfallUriStr,
+          'layout': layoutStr,
+          'highres_image': highresImage,
+          'image_status': imageStatusStr,
+          'image_uris': imageUris,
+          'mana_cost': manaCost,
           'cmc': cmc,
-          'type_line': type_line,
-          'oracle_text': oracle_text,
+          'type_line': typeLine,
+          'oracle_text': oracleText,
           'power': power,
           'toughness': toughness,
-          'colors': colors_str,
-          'color_identity': color_identity_str,
-          'color_indicator': color_indicator_str,
+          'colors': colorsStr,
+          'color_identity': colorIdentityStr,
+          'color_indicator': colorIndicatorStr,
           'keywords': keywords,
           'legalities': legalities,
-          'games': games_str,
+          'games': gamesStr,
           'reserved': reserved,
           'foil': foil,
           'nonfoil': nonfoil,
-          'finishes': finishes_str,
+          'finishes': finishesStr,
           'oversized': oversized,
           'promo': promo,
           'reprint': reprint,
           'variation': variation,
-          'set_id': set_id,
+          'set_id': setId,
           'set': set,
-          'set_name': set_name,
-          'set_type': set_type_str,
-          'set_uri': set_uri_str,
-          'set_search_uri': set_search_uri_str,
-          'scryfall_set_uri': scryfall_set_uri_str,
-          'rulings_uri': rulings_uri_str,
-          'prints_search_uri': prints_search_uri_str,
-          'collector_number': collector_number,
+          'set_name': setName,
+          'set_type': setTypeStr,
+          'set_uri': setUriStr,
+          'set_search_uri': setSearchUriStr,
+          'scryfall_set_uri': scryfallSetUriStr,
+          'rulings_uri': rulingsUriStr,
+          'prints_search_uri': printsSearchUriStr,
+          'collector_number': collectorNumber,
           'digital': digital,
-          'rarity': rarity_str,
-          'flavor_text': flavor_text,
-          'card_back_id': card_back_id,
+          'rarity': rarityStr,
+          'flavor_text': flavorText,
+          'card_back_id': cardBackId,
           'artist': artist,
-          'artist_ids': artist_ids,
-          'illustration_id': illustration_id,
-          'border_color': border_color_str,
-          'frame': frame_str,
-          'security_stamp': security_stamp_str,
-          'full_art': full_art,
+          'artist_ids': artistIds,
+          'illustration_id': illustrationId,
+          'border_color': borderColorStr,
+          'frame': frameStr,
+          'security_stamp': securityStampStr,
+          'full_art': fullArt,
           'textless': textless,
           'booster': booster,
-          'story_spotlight': story_spotlight,
-          'edhrec_rank': edhrec_rank,
+          'story_spotlight': storySpotlight,
+          'edhrec_rank': edhrecRank,
           'prices': prices,
-          'related_uris': related_uris,
-          'purchase_uris': purchase_uris,
+          'related_uris': relatedUris,
+          'purchase_uris': purchaseUris,
           'preview': preview,
-          'all_parts': all_parts,
-          'card_faces': card_faces,
-          'produced_mana': produced_mana_str,
-          'frame_effects': frame_effects_str,
+          'all_parts': allParts,
+          'card_faces': cardFaces,
+          'produced_mana': producedManaStr,
+          'frame_effects': frameEffectsStr,
         };
 
-        final released_at = DateTime.parse(released_at_str);
-        final uri = Uri.parse(uri_str);
-        final scryfall_uri = Uri.parse(scryfall_uri_str);
+        final releasedAt = DateTime.parse(releasedAtStr);
+        final uri = Uri.parse(uriStr);
+        final scryfallUri = Uri.parse(scryfallUriStr);
         final layout = Layout.normal;
-        final image_status = ImageStatus.lowres;
+        final imageStatus = ImageStatus.lowres;
         final colors = [Color.white];
-        final color_identity = [Color.white];
-        final color_indicator = [Color.white];
+        final colorIdentity = [Color.white];
+        final colorIndicator = [Color.white];
         final games = [Game.mtgo];
         final finishes = [Finish.nonfoil, Finish.foil];
-        final set_type = SetType.treasureChest;
-        final set_uri = Uri.parse(set_uri_str);
-        final set_search_uri = Uri.parse(set_search_uri_str);
-        final scryfall_set_uri = Uri.parse(scryfall_set_uri_str);
-        final rulings_uri = Uri.parse(rulings_uri_str);
-        final prints_search_uri = Uri.parse(prints_search_uri_str);
+        final setType = SetType.treasureChest;
+        final setUri = Uri.parse(setUriStr);
+        final setSearchUri = Uri.parse(setSearchUriStr);
+        final scryfallSetUri = Uri.parse(scryfallSetUriStr);
+        final rulingsUri = Uri.parse(rulingsUriStr);
+        final printsSearchUri = Uri.parse(printsSearchUriStr);
         final rarity = Rarity.rare;
-        final border_color = BorderColor.black;
+        final borderColor = BorderColor.black;
         final frame = Frame.modernHoloFoilStamp_2015;
-        final security_stamp = SecurityStamp.oval;
-        final produced_mana = [Color.colorless, Color.green];
-        final frame_effects = [FrameEffect.legendary];
+        final securityStamp = SecurityStamp.oval;
+        final producedMana = [Color.colorless, Color.green];
+        final frameEffects = [FrameEffect.legendary];
 
         expect(
           MtgCard.fromJson(json),
           isA<MtgCard>()
               .having((c) => c.id, 'id', id)
-              .having((c) => c.oracleId, 'oracleId', oracle_id)
-              .having((c) => c.multiverseIds, 'multiverseIds', multiverse_ids)
-              .having((c) => c.mtgoId, 'mtgoId', mtgo_id)
+              .having((c) => c.oracleId, 'oracleId', oracleId)
+              .having((c) => c.multiverseIds, 'multiverseIds', multiverseIds)
+              .having((c) => c.mtgoId, 'mtgoId', mtgoId)
               .having((c) => c.name, 'name', name)
               .having((c) => c.lang, 'lang', lang)
-              .having((c) => c.releasedAt, 'releasedAt', released_at)
+              .having((c) => c.releasedAt, 'releasedAt', releasedAt)
               .having((c) => c.uri, 'uri', uri)
-              .having((c) => c.scryfallUri, 'scryfallUri', scryfall_uri)
+              .having((c) => c.scryfallUri, 'scryfallUri', scryfallUri)
               .having((c) => c.layout, 'layout', layout)
-              .having((c) => c.highresImage, 'highresImage', highres_image)
-              .having((c) => c.imageStatus, 'imageStatus', image_status)
+              .having((c) => c.highresImage, 'highresImage', highresImage)
+              .having((c) => c.imageStatus, 'imageStatus', imageStatus)
               .having((c) => c.imageUris, 'imageUris', isA<ImageUris>())
-              .having((c) => c.manaCost, 'manaCost', mana_cost)
+              .having((c) => c.manaCost, 'manaCost', manaCost)
               .having((c) => c.cmc, 'cmc', cmc)
-              .having((c) => c.typeLine, 'typeLine', type_line)
-              .having((c) => c.oracleText, 'oracleText', oracle_text)
+              .having((c) => c.typeLine, 'typeLine', typeLine)
+              .having((c) => c.oracleText, 'oracleText', oracleText)
               .having((c) => c.power, 'power', power)
               .having((c) => c.toughness, 'toughness', toughness)
               .having((c) => c.colors, 'colors', colors)
-              .having((c) => c.colorIdentity, 'colorIdentity', color_identity)
-              .having(
-                  (c) => c.colorIndicator, 'colorIndicator', color_indicator)
+              .having((c) => c.colorIdentity, 'colorIdentity', colorIdentity)
+              .having((c) => c.colorIndicator, 'colorIndicator', colorIndicator)
               .having((c) => c.keywords, 'keywords', keywords)
               .having((c) => c.legalities, 'legalities', isA<Legalities>())
               .having((c) => c.games, 'games', games)
@@ -341,55 +340,55 @@ void main() {
               .having((c) => c.promo, 'promo', promo)
               .having((c) => c.reprint, 'reprint', reprint)
               .having((c) => c.variation, 'variation', variation)
-              .having((c) => c.setId, 'setId', set_id)
+              .having((c) => c.setId, 'setId', setId)
               .having((c) => c.set, 'set', set)
-              .having((c) => c.setName, 'setName', set_name)
-              .having((c) => c.setType, 'setType', set_type)
-              .having((c) => c.setUri, 'setUri', set_uri)
-              .having((c) => c.setSearchUri, 'setSearchUri', set_search_uri)
+              .having((c) => c.setName, 'setName', setName)
+              .having((c) => c.setType, 'setType', setType)
+              .having((c) => c.setUri, 'setUri', setUri)
+              .having((c) => c.setSearchUri, 'setSearchUri', setSearchUri)
               .having(
                 (c) => c.scryfallSetUri,
                 'scryfallSetUri',
-                scryfall_set_uri,
+                scryfallSetUri,
               )
-              .having((c) => c.rulingsUri, 'rulingsUri', rulings_uri)
+              .having((c) => c.rulingsUri, 'rulingsUri', rulingsUri)
               .having(
                 (c) => c.printsSearchUri,
                 'printsSearchUri',
-                prints_search_uri,
+                printsSearchUri,
               )
               .having(
                 (c) => c.collectorNumber,
                 'collectorNumber',
-                collector_number,
+                collectorNumber,
               )
               .having((c) => c.digital, 'digital', digital)
               .having((c) => c.rarity, 'rarity', rarity)
-              .having((c) => c.flavorText, 'flavorText', flavor_text)
-              .having((c) => c.cardBackId, 'cardBackId', card_back_id)
+              .having((c) => c.flavorText, 'flavorText', flavorText)
+              .having((c) => c.cardBackId, 'cardBackId', cardBackId)
               .having((c) => c.artist, 'artist', artist)
-              .having((c) => c.artistIds, 'artistIds', artist_ids)
+              .having((c) => c.artistIds, 'artistIds', artistIds)
               .having(
                 (c) => c.illustrationId,
                 'illustrationId',
-                illustration_id,
+                illustrationId,
               )
-              .having((c) => c.borderColor, 'borderColor', border_color)
+              .having((c) => c.borderColor, 'borderColor', borderColor)
               .having((c) => c.frame, 'frame', frame)
               .having(
                 (c) => c.securityStamp,
                 'securityStamp',
-                security_stamp,
+                securityStamp,
               )
-              .having((c) => c.fullArt, 'fullArt', full_art)
+              .having((c) => c.fullArt, 'fullArt', fullArt)
               .having((c) => c.textless, 'textless', textless)
               .having((c) => c.booster, 'booster', booster)
               .having(
                 (c) => c.storySpotlight,
                 'storySpotlight',
-                story_spotlight,
+                storySpotlight,
               )
-              .having((c) => c.edhrecRank, 'edhrecRank', edhrec_rank)
+              .having((c) => c.edhrecRank, 'edhrecRank', edhrecRank)
               .having((c) => c.prices, 'prices', isA<Prices>())
               .having(
                 (c) => c.relatedUris,
@@ -404,8 +403,8 @@ void main() {
               .having((c) => c.preview, 'preview', isA<Preview>())
               .having((c) => c.allParts, 'allParts', isA<List<RelatedCard>>())
               .having((c) => c.cardFaces, 'cardFaces', isA<List<CardFace>>())
-              .having((c) => c.producedMana, 'producedMana', produced_mana)
-              .having((c) => c.frameEffects, 'frameEffects', frame_effects),
+              .having((c) => c.producedMana, 'producedMana', producedMana)
+              .having((c) => c.frameEffects, 'frameEffects', frameEffects),
         );
       });
     });

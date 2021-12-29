@@ -6,24 +6,24 @@ void main() {
     group('fromJson', () {
       test('returns correct Preview', () {
         final source = 'Wizards of the Coast';
-        final source_uri_str =
+        final sourceUriStr =
             'https://magic.wizards.com/en/articles/archive/card-preview/henrika-domnathi-2021-11-02';
-        final previewed_at_str = '2021-11-02';
+        final previewedAtStr = '2021-11-02';
 
         final json = <String, dynamic>{
           'source': source,
-          'source_uri': source_uri_str,
-          'previewed_at': previewed_at_str,
+          'source_uri': sourceUriStr,
+          'previewed_at': previewedAtStr,
         };
 
-        final source_uri = Uri.parse(source_uri_str);
-        final previewed_at = DateTime.parse(previewed_at_str);
+        final sourceUri = Uri.parse(sourceUriStr);
+        final previewedAt = DateTime.parse(previewedAtStr);
 
         expect(
           Preview.fromJson(json),
           isA<Preview>()
-              .having((p) => p.previewedAt, 'previewedAt', previewed_at)
-              .having((p) => p.sourceUri, 'sourceUri', source_uri)
+              .having((p) => p.previewedAt, 'previewedAt', previewedAt)
+              .having((p) => p.sourceUri, 'sourceUri', sourceUri)
               .having((p) => p.source, 'source', source),
         );
       });

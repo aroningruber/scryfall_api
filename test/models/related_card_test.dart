@@ -6,23 +6,23 @@ void main() {
     group('fromJson', () {
       test('returns correct RelatedCard', () {
         final id = 'b91e2431-500e-441a-881d-094ebef62283';
-        final component_str = 'combo_piece';
+        final componentStr = 'combo_piece';
         final name = 'Eye of Vecna';
-        final type_line = 'Legendary Artifact';
-        final uri_str =
+        final typeLine = 'Legendary Artifact';
+        final uriStr =
             'https://api.scryfall.com/cards/b91e2431-500e-441a-881d-094ebef62283';
 
         final json = <String, dynamic>{
           'object': 'related_card',
           'id': id,
-          'component': component_str,
+          'component': componentStr,
           'name': name,
-          'type_line': type_line,
-          'uri': uri_str,
+          'type_line': typeLine,
+          'uri': uriStr,
         };
 
         final component = Component.comboPiece;
-        final uri = Uri.parse(uri_str);
+        final uri = Uri.parse(uriStr);
 
         expect(
           RelatedCard.fromJson(json),
@@ -30,7 +30,7 @@ void main() {
               .having((c) => c.id, 'id', id)
               .having((c) => c.component, 'component', component)
               .having((c) => c.name, 'name', name)
-              .having((c) => c.typeLine, 'typeLine', type_line)
+              .having((c) => c.typeLine, 'typeLine', typeLine)
               .having((c) => c.uri, 'uri', uri),
         );
       });
