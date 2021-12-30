@@ -93,7 +93,7 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
               'border_color',
               (v) => $enumDecode(_$BorderColorEnumMap, v,
                   unknownValue: BorderColor.unknown)),
-          cardBackId: $checkedConvert('card_back_id', (v) => v as String),
+          cardBackId: $checkedConvert('card_back_id', (v) => v as String?),
           collectorNumber:
               $checkedConvert('collector_number', (v) => v as String),
           contentWarning: $checkedConvert('content_warning', (v) => v as bool?),

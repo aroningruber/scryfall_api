@@ -218,8 +218,8 @@ class MtgCard {
   @JsonKey(unknownEnumValue: BorderColor.unknown)
   final BorderColor borderColor;
 
-  /// The Scryfall ID for the card back design present on this card.
-  final String cardBackId;
+  /// The Scryfall ID for the card back design present on this card, if any.
+  final String? cardBackId;
 
   /// This card’s collector number.
   ///

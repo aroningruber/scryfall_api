@@ -47,7 +47,7 @@ class CardFace {
   ///
   /// If this card is not double-sided, then the `image_uris`
   /// property will be part of the parent object instead.
-  final ImageUris imageUris;
+  final ImageUris? imageUris;
 
   /// The layout of this card face, if the card is reversible.
   final Layout? layout;
