@@ -146,10 +146,10 @@ class ScryfallApiClient {
         'unique': rollupMode?.name,
         'order': sortingOrder?.name,
         'dir': sortingDirection?.name,
-        'include_extras': includeExtras,
-        'include_multilingual': includeMultilingual,
-        'include_variations': includeVariations,
-        'page': page,
+        'include_extras': includeExtras?.toString(),
+        'include_multilingual': includeMultilingual?.toString(),
+        'include_variations': includeVariations?.toString(),
+        'page': page?.toString(),
       }..removeWhere((_, value) => value == null),
     );
     final response = await _httpClient.get(url);

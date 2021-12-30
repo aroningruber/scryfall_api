@@ -40,9 +40,8 @@ void main() {
         try {
           await scryfallApiClient.getAllSets();
         } catch (_) {}
-        verify(
-          () => httpClient.get(Uri.https('api.scryfall.com', '/sets')),
-        ).called(1);
+        final uri = Uri.https('api.scryfall.com', '/sets');
+        verify(() => httpClient.get(uri)).called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
@@ -155,12 +154,8 @@ void main() {
         try {
           await scryfallApiClient.getSetByCode(code);
         } catch (_) {}
-        verify(
-          () => httpClient.get(Uri.https(
-            'api.scryfall.com',
-            '/sets/$code',
-          )),
-        ).called(1);
+        final uri = Uri.https('api.scryfall.com', '/sets/$code');
+        verify(() => httpClient.get(uri)).called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
@@ -281,12 +276,11 @@ void main() {
         try {
           await scryfallApiClient.getSetByTcgplayerId(tcgplayerId);
         } catch (_) {}
-        verify(
-          () => httpClient.get(Uri.https(
-            'api.scryfall.com',
-            '/sets/tcgplayer/$tcgplayerId',
-          )),
-        ).called(1);
+        final uri = Uri.https(
+          'api.scryfall.com',
+          '/sets/tcgplayer/$tcgplayerId',
+        );
+        verify(() => httpClient.get(uri)).called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
@@ -408,12 +402,8 @@ void main() {
         try {
           await scryfallApiClient.getSetById(id);
         } catch (_) {}
-        verify(
-          () => httpClient.get(Uri.https(
-            'api.scryfall.com',
-            '/sets/$id',
-          )),
-        ).called(1);
+        final uri = Uri.https('api.scryfall.com', '/sets/$id');
+        verify(() => httpClient.get(uri)).called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
@@ -502,6 +492,13 @@ void main() {
       final sortingOrder = SortingOrder.cmc;
 
       test('makes correct http request', () async {
+        final rollupMode = RollupMode.art;
+        final sortingDirection = SortingDirection.descending;
+        final includeExtras = false;
+        final includeMultilingual = true;
+        final includeVariations = true;
+        final page = 2;
+
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
@@ -509,19 +506,30 @@ void main() {
         try {
           await scryfallApiClient.searchCards(
             searchQuery,
+            rollupMode: rollupMode,
             sortingOrder: sortingOrder,
+            sortingDirection: sortingDirection,
+            includeExtras: includeExtras,
+            includeMultilingual: includeMultilingual,
+            includeVariations: includeVariations,
+            page: page,
           );
         } catch (_) {}
-        verify(
-          () => httpClient.get(Uri.https(
-            'api.scryfall.com',
-            '/cards/search',
-            {
-              'q': searchQuery,
-              'order': sortingOrder.name,
-            },
-          )),
-        ).called(1);
+        final uri = Uri.https(
+          'api.scryfall.com',
+          '/cards/search',
+          {
+            'q': searchQuery,
+            'unique': rollupMode.name,
+            'order': sortingOrder.name,
+            'dir': 'desc',
+            'include_extras': includeExtras.toString(),
+            'include_multilingual': includeMultilingual.toString(),
+            'include_variations': includeVariations.toString(),
+            'page': page.toString(),
+          },
+        );
+        verify(() => httpClient.get(uri)).called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
