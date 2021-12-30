@@ -65,94 +65,60 @@ void main() {
 
       test('returns PaginableList<MtgSet> on valid response', () async {
         final hasMore = false;
-        final id = 'b314f553-8f07-4ba9-96c8-16be7784eff3';
-        final code = 'unf';
-        final tcgplayerId = 2958;
-        final name = 'Unfinity';
-        final uriStr =
-            'https://api.scryfall.com/sets/b314f553-8f07-4ba9-96c8-16be7784eff3';
-        final scryfallUriStr = 'https://scryfall.com/sets/unf';
-        final searchUriStr =
-            'https://api.scryfall.com/cards/search?order=set&q=e%3Aunf&unique=prints';
-        final releasedAtStr = '2022-04-01';
-        final setTypeStr = 'funny';
-        final cardCount = 26;
-        final digital = false;
-        final nonfoilOnly = false;
-        final foilOnly = false;
-        final iconSvgUriStr =
-            'https://c2.scryfall.com/file/scryfall-symbols/sets/unf.svg?1640581200';
+        final data = [
+          {
+            'object': 'set',
+            'id': 'b314f553-8f07-4ba9-96c8-16be7784eff3',
+            'code': 'unf',
+            'tcgplayer_id': 2958,
+            'name': 'Unfinity',
+            'uri':
+                'https://api.scryfall.com/sets/b314f553-8f07-4ba9-96c8-16be7784eff3',
+            'scryfall_uri': 'https://scryfall.com/sets/unf',
+            'search_uri':
+                'https://api.scryfall.com/cards/search?order=set&q=e%3Aunf&unique=prints',
+            'released_at': '2022-04-01',
+            'set_type': 'funny',
+            'card_count': 26,
+            'digital': false,
+            'nonfoil_only': false,
+            'foil_only': false,
+            'icon_svg_uri':
+                'https://c2.scryfall.com/file/scryfall-symbols/sets/unf.svg?1640581200',
+          },
+        ];
 
         final json = jsonEncode({
           'object': 'list',
           'has_more': hasMore,
-          'data': [
-            {
-              'object': 'set',
-              'id': id,
-              'code': code,
-              'tcgplayer_id': tcgplayerId,
-              'name': name,
-              'uri': uriStr,
-              'scryfall_uri': scryfallUriStr,
-              'search_uri': searchUriStr,
-              'released_at': releasedAtStr,
-              'set_type': setTypeStr,
-              'card_count': cardCount,
-              'digital': digital,
-              'nonfoil_only': nonfoilOnly,
-              'foil_only': foilOnly,
-              'icon_svg_uri': iconSvgUriStr,
-            }
-          ],
+          'data': data,
         });
 
-        final uri = Uri.parse(uriStr);
-        final scryfallUri = Uri.parse(scryfallUriStr);
-        final searchUri = Uri.parse(searchUriStr);
-        final releasedAt = DateTime.parse(releasedAtStr);
-        final setType = SetType.funny;
-        final iconSvgUri = Uri.parse(iconSvgUriStr);
-
-        final reponse = MockResponse();
-        when(() => reponse.statusCode).thenReturn(200);
-        when(() => reponse.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => reponse);
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getAllSets();
         expect(
           actual,
           isA<PaginableList>()
-              .having((l) => l.hasMore, 'hasMore', false)
-              .having((l) => l.length, 'length', 1)
+              .having((l) => l.hasMore, 'hasMore', hasMore)
+              .having((l) => l.length, 'length', data.length)
               .having(
                 (l) => l.data,
                 'data',
                 isA<List<MtgSet>>().having(
                   (l) => l.first,
                   'first',
-                  isA<MtgSet>()
-                      .having((s) => s.id, 'id', id)
-                      .having((s) => s.code, 'code', code)
-                      .having((s) => s.tcgplayerId, 'tcgplayerId', tcgplayerId)
-                      .having((s) => s.name, 'name', name)
-                      .having((s) => s.uri, 'uri', uri)
-                      .having((s) => s.scryfallUri, 'scryfallUri', scryfallUri)
-                      .having((s) => s.searchUri, 'searchUri', searchUri)
-                      .having((s) => s.releasedAt, 'releasedAt', releasedAt)
-                      .having((s) => s.setType, 'setType', setType)
-                      .having((s) => s.cardCount, 'cardCount', cardCount)
-                      .having((s) => s.digital, 'digital', digital)
-                      .having((s) => s.nonfoilOnly, 'nonfoilOnly', nonfoilOnly)
-                      .having((s) => s.foilOnly, 'foilOnly', foilOnly)
-                      .having((s) => s.iconSvgUri, 'iconSvgUri', iconSvgUri),
+                  isA<MtgSet>(),
                 ),
               ),
         );
       });
 
       test('gets valid reponse from actual server', () async {
-        scryfallApiClient = ScryfallApiClient();
-        final actual = await scryfallApiClient.getAllSets();
+        final scryfallApiClientReal = ScryfallApiClient();
+        final actual = await scryfallApiClientReal.getAllSets();
         expect(actual, isA<PaginableList<MtgSet>>());
       });
     });
