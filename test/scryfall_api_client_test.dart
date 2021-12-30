@@ -243,8 +243,8 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        scryfallApiClient = ScryfallApiClient();
-        final actual = await scryfallApiClient.getSetByCode(code);
+        final scryfallApiClientReal = ScryfallApiClient();
+        final actual = await scryfallApiClientReal.getSetByCode(code);
         expect(actual, isA<MtgSet>());
       });
     });
@@ -370,8 +370,8 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        scryfallApiClient = ScryfallApiClient();
-        final actual = await scryfallApiClient.getSetByTcgplayerId(
+        final scryfallApiClientReal = ScryfallApiClient();
+        final actual = await scryfallApiClientReal.getSetByTcgplayerId(
           tcgplayerId,
         );
         expect(actual, isA<MtgSet>());
@@ -491,8 +491,8 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        scryfallApiClient = ScryfallApiClient();
-        final actual = await scryfallApiClient.getSetById(id);
+        final scryfallApiClientReal = ScryfallApiClient();
+        final actual = await scryfallApiClientReal.getSetById(id);
         expect(actual, isA<MtgSet>());
       });
     });
