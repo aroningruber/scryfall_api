@@ -30,8 +30,11 @@ CardFace _$CardFaceFromJson(Map<String, dynamic> json) => $checkedCreate(
           flavorText: $checkedConvert('flavor_text', (v) => v as String?),
           illustrationId:
               $checkedConvert('illustration_id', (v) => v as String?),
-          imageUris: $checkedConvert('image_uris',
-              (v) => ImageUris.fromJson(v as Map<String, dynamic>)),
+          imageUris: $checkedConvert(
+              'image_uris',
+              (v) => v == null
+                  ? null
+                  : ImageUris.fromJson(v as Map<String, dynamic>)),
           layout: $checkedConvert(
               'layout', (v) => $enumDecodeNullable(_$LayoutEnumMap, v)),
           loyalty: $checkedConvert('loyalty', (v) => v as String?),
