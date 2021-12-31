@@ -142,7 +142,7 @@ class ScryfallApiClient {
     final url = Uri.https(
       _baseUrl,
       '/cards/search',
-      {
+      <String, String?>{
         'q': searchQuery,
         'unique': rollupMode?.name,
         'order': sortingOrder?.name,
