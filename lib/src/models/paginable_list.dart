@@ -32,6 +32,7 @@ class PaginableList<T> {
   /// requested. You should fix the warnings and re-submit your request.
   final List<String>? warnings;
 
+  /// Constructs a [PaginableList] by setting its properties.
   PaginableList({
     required this.data,
     required this.hasMore,

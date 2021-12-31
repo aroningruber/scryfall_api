@@ -30,6 +30,7 @@ class ScryfallException implements Exception {
   /// in this array.
   final List<String>? warnings;
 
+  /// Constructs a [ScryfallException] by setting its properties.
   ScryfallException({
     required this.status,
     required this.code,

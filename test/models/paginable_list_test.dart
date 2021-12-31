@@ -5,43 +5,43 @@ void main() {
   group('PaginableList', () {
     group('fromJson', () {
       test('returns correct PaginableList<int>', () {
-        final has_more = false;
+        final hasMore = false;
         final data = [1, 2, 3];
 
         final json = <String, dynamic>{
           'object': 'list',
-          'has_more': has_more,
+          'has_more': hasMore,
           'data': data,
         };
 
         expect(
           PaginableList<int>.fromJson(json, (o) => o as int),
           isA<PaginableList<int>>()
-              .having((l) => l.hasMore, 'hasMore', has_more)
+              .having((l) => l.hasMore, 'hasMore', hasMore)
               .having((l) => l.data, 'data', data),
         );
       });
       test('returns correct PaginableList<String>', () {
-        final has_more = false;
+        final hasMore = false;
         final data = ['A String', 'Another string'];
 
         final json = <String, dynamic>{
           'object': 'list',
-          'has_more': has_more,
+          'has_more': hasMore,
           'data': data,
         };
 
         expect(
           PaginableList<String>.fromJson(json, (o) => o as String),
           isA<PaginableList<String>>()
-              .having((l) => l.hasMore, 'hasMore', has_more)
+              .having((l) => l.hasMore, 'hasMore', hasMore)
               .having((l) => l.data, 'data', data),
         );
       });
       test('returns correct PaginableList<Map<string, dynamic>>', () {
-        final total_cards = 497;
-        final has_more = true;
-        final next_page =
+        final totalCards = 497;
+        final hasMore = true;
+        final nextPage =
             'https://api.scryfall.com/cards/search?format=json&include_extras=false&include_multilingual=false&order=name&page=2&q=c%3Awhite+cmc%3D1&unique=cards';
         final data = <Map<String, dynamic>>[
           {
@@ -297,9 +297,9 @@ void main() {
 
         final json = <String, dynamic>{
           'object': 'list',
-          'total_cards': total_cards,
-          'has_more': has_more,
-          'next_page': next_page,
+          'total_cards': totalCards,
+          'has_more': hasMore,
+          'next_page': nextPage,
           'data': data,
         };
 
@@ -309,13 +309,13 @@ void main() {
             (o) => o as Map<String, dynamic>,
           ),
           isA<PaginableList<Map<String, dynamic>>>()
-              .having((l) => l.totalCards, 'totalCards', total_cards)
-              .having((l) => l.nextPage, 'nextPage', Uri.parse(next_page))
+              .having((l) => l.totalCards, 'totalCards', totalCards)
+              .having((l) => l.nextPage, 'nextPage', Uri.parse(nextPage))
               .having((l) => l.data, 'data', data),
         );
       });
       test('returns correct PaginableList<MtgSet>', () {
-        final has_more = false;
+        final hasMore = false;
         final data = <Map<String, dynamic>>[
           {
             'object': 'set',
@@ -380,7 +380,7 @@ void main() {
 
         final json = <String, dynamic>{
           'object': 'list',
-          'has_more': has_more,
+          'has_more': hasMore,
           'data': data,
         };
 
@@ -390,7 +390,7 @@ void main() {
             (o) => MtgSet.fromJson(o as Map<String, dynamic>),
           ),
           isA<PaginableList<MtgSet>>()
-              .having((l) => l.hasMore, 'hasMore', has_more)
+              .having((l) => l.hasMore, 'hasMore', hasMore)
               .having(
                 (l) => l.data,
                 'data',
