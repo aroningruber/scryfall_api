@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:http/http.dart' as http;
 import 'package:mocktail/mocktail.dart';
@@ -760,6 +762,138 @@ void main() {
           sortingOrder: sortingOrder,
         );
         expect(actual, isA<PaginableList<MtgCard>>());
+      });
+    });
+
+    group('getCardByName', () {
+      final nameExact = 'Austere Command';
+      final nameFuzzy = 'aust com';
+      final set = 'cmr';
+
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn('{}');
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient.getCardByName(nameExact, set: set);
+        } catch (_) {}
+        final uri = Uri.https('api.scryfall.com', '/cards/named', {
+          'exact': nameExact,
+          'set': set,
+        });
+        verify(() => httpClient.get(uri)).called(1);
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final json = jsonEncode({
+          'object': 'error',
+          'code': 'not_found',
+          'status': 404,
+          'details': 'No cards found matching “aust com”',
+        });
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getCardByName(nameExact),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns MtgCard on valid response', () async {
+        final file = File('test/mock_data/get_card_by_name.json');
+        final json = await file.readAsString();
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual = await scryfallApiClient.getCardByName(
+          nameFuzzy,
+          searchType: SearchType.fuzzy,
+        );
+        expect(actual, isA<MtgCard>());
+      });
+
+      test('gets valid response from actual server', () async {
+        final scryfallApiClientReal = ScryfallApiClient();
+        final actual = await scryfallApiClientReal.getCardByName(
+          nameExact,
+          set: set,
+        );
+        expect(actual, isA<MtgCard>());
+      });
+    });
+
+    group('getCardByNameAsImage', () {
+      final nameExact = 'Angelic Quartermaster';
+      final nameFuzzy = 'angel quart';
+      final set = 'vow';
+
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.bodyBytes).thenReturn(Uint8List(0));
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient.getCardByNameAsImage(
+            nameExact,
+            set: set,
+            backFace: false,
+            imageVersion: ImageVersion.borderCrop,
+          );
+        } catch (_) {}
+        final uri = Uri.https('api.scryfall.com', '/cards/named', {
+          'format': 'image',
+          'exact': nameExact,
+          'set': set,
+          'version': 'border_crop',
+        });
+        verify(() => httpClient.get(uri)).called(1);
+      });
+
+      test('throws ScryfallException on non-200 reponse', () async {
+        final json = jsonEncode({
+          'object': 'error',
+          'code': 'not_found',
+          'status': 404,
+          'details': 'No cards found matching “angel quart”',
+        });
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getCardByNameAsImage(nameExact),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns Uint8List on valid reponse', () async {
+        final bytes = Uint8List.fromList([1, 2, 3, 4, 5]);
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.bodyBytes).thenReturn(bytes);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual = await scryfallApiClient.getCardByNameAsImage(
+          nameFuzzy,
+          searchType: SearchType.fuzzy,
+        );
+        expect(actual, isA<Uint8List>().having((l) => l.length, 'length', 5));
+      });
+
+      test('gets valid response from actual server', () async {
+        final scryfallApiClientReal = ScryfallApiClient();
+        final actual = await scryfallApiClientReal.getCardByNameAsImage(
+          nameExact,
+          set: set,
+        );
+        expect(actual, isA<Uint8List>());
       });
     });
   });
