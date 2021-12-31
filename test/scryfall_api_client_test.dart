@@ -437,7 +437,7 @@ void main() {
         );
       });
 
-      test('returns Uint8List on valid reponse', () async {
+      test('returns Uint8List on valid response', () async {
         final bytes = Uint8List.fromList([1, 2, 3, 4, 5]);
 
         final response = MockResponse();
@@ -458,6 +458,64 @@ void main() {
           set: set,
         );
         expect(actual, isA<Uint8List>());
+      });
+    });
+
+    group('autocompleteCardName', () {
+      final query = 'thal';
+
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn('{}');
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient.autocompleteCardName(
+            query,
+            includeExtras: true,
+          );
+        } catch (_) {}
+        final uri = Uri.https('api.scryfall.com', '/cards/autocomplete', {
+          'q': query,
+          'include_extras': 'true',
+        });
+        verify(() => httpClient.get(uri)).called(1);
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final json = jsonEncode({
+          'object': 'error',
+          'code': 'bad_request',
+          'status': 400,
+          'details': 'Something went wrong',
+        });
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(400);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.autocompleteCardName(query),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns Catalog on valid response', () async {
+        final file = File('test/mock_data/autocomplete_card_name.json');
+        final json = await file.readAsString();
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual = await scryfallApiClient.autocompleteCardName(query);
+        expect(actual, isA<Catalog>());
+      });
+
+      test('gets valid response from actual server', () async {
+        final scryfallApiClientReal = ScryfallApiClient();
+        final actual = await scryfallApiClientReal.autocompleteCardName(query);
+        expect(actual, isA<Catalog>());
       });
     });
   });

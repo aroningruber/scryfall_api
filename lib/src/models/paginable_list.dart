@@ -49,8 +49,6 @@ class PaginableList<T> {
   /// The number of objects in this list.
   int get length => data.length;
 
-  /// Returns the [index] element
-  T operator [](int index) {
-    return data[index];
-  }
+  /// Returns the [index] element.
+  T operator [](int index) => data[index];
 }
