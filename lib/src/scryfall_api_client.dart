@@ -207,7 +207,7 @@ class ScryfallApiClient {
     return MtgCard.fromJson(json);
   }
 
-  /// **GET** /cards/named
+  /// **GET** /cards/named?format=image
   ///
   /// Returns an image of a Card based on a name search string.
   /// This method is designed for building chat bots, forum bots,
@@ -223,13 +223,17 @@ class ScryfallApiClient {
   ///
   /// [set]\: A set code to limit the search to one set.
   ///
+  /// {@template card_parameter_back_face}
   /// [backFace]\: If `true`, the back face of the card is returned.
   /// Will return a 422 if this card has no back face.
   /// Defaults to `false`.
+  /// {@endtemplate}
   ///
+  /// {@template card_parameter_image_version}
   /// [imageVersion]\: The version of the image that shall
   /// be returned.
   /// Defaults to [ImageVersion.large].
+  /// {@endtemplate}
   Future<Uint8List> getCardByNameAsImage(
     String name, {
     SearchType searchType = SearchType.exact,
@@ -331,6 +335,44 @@ class ScryfallApiClient {
     }
 
     return MtgCard.fromJson(json);
+  }
+
+  /// **GET** /cards/random?format=image
+  ///
+  /// Returns a single random [MtgCard] object.
+  ///
+  /// [query]\: Is used to filter the possible cards
+  /// and return a random card from the resulting pool
+  /// of cards. Supports the same
+  /// [fulltext search system](https://scryfall.com/docs/syntax)
+  /// as the [main site](https://scryfall.com/).
+  ///
+  /// {@macro card_parameter_back_face}
+  ///
+  /// {@macro card_parameter_image_version}
+  Future<Uint8List> getRandomCardAsImage({
+    String? query,
+    bool? backFace,
+    ImageVersion? imageVersion,
+  }) async {
+    final url = Uri.https(
+      _baseUrl,
+      '/cards/random',
+      <String, String?>{
+        'format': 'image',
+        'q': query,
+        'face': backFace == true ? 'back' : null,
+        'version': imageVersion?.name,
+      }..removeWhere((_, value) => value == null),
+    );
+    final response = await _httpClient.get(url);
+
+    if (response.statusCode != 200) {
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      throw ScryfallException.fromJson(json);
+    }
+
+    return response.bodyBytes;
   }
 }
 
