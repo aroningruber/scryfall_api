@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:http/http.dart' as http;
 import 'package:scryfall_api/scryfall_api.dart';
@@ -165,6 +166,179 @@ class ScryfallApiClient {
       (card) => MtgCard.fromJson(card as Map<String, dynamic>),
     );
   }
+
+  /// **GET** /cards/named
+  ///
+  /// Returns a Card based on a name search string. This method
+  /// is designed for building chat bots, forum bots, and other
+  /// services that need card details quickly.
+  ///
+  /// [name]\: The name to search for.
+  ///
+  /// [searchType]\: The type of search that shall be executed
+  /// by the server. [SearchType.exact] performs a search that
+  /// returns a card with the exact [name]. [SearchType.fuzzy]
+  /// performs a fuzzy search.
+  /// Defaults to [SearchType.exact].
+  ///
+  /// [set]\: A set code to limit the search to one set.
+  Future<MtgCard> getCardByName(
+    String name, {
+    SearchType searchType = SearchType.exact,
+    String? set,
+  }) async {
+    final url = Uri.https(
+      _baseUrl,
+      '/cards/named',
+      <String, String?>{
+        'exact': searchType == SearchType.exact ? name : null,
+        'fuzzy': searchType == SearchType.fuzzy ? name : null,
+        'set': set,
+      }..removeWhere((_, value) => value == null),
+    );
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return MtgCard.fromJson(json);
+  }
+
+  /// **GET** /cards/named
+  ///
+  /// Returns an image of a Card based on a name search string.
+  /// This method is designed for building chat bots, forum bots,
+  /// and other services that need card details quickly.
+  ///
+  /// [name]\: The name to search for.
+  ///
+  /// [searchType]\: The type of search that shall be executed
+  /// by the server. [SearchType.exact] performs a search that
+  /// returns a card with the exact [name]. [SearchType.fuzzy]
+  /// performs a fuzzy search.
+  /// Defaults to [SearchType.exact].
+  ///
+  /// [set]\: A set code to limit the search to one set.
+  ///
+  /// [backFace]\: If `true`, the back face of the card is returned.
+  /// Will return a 422 if this card has no back face.
+  /// Defaults to `false`.
+  ///
+  /// [imageVersion]\: The version of the image that shall
+  /// be returned.
+  /// Defaults to [ImageVersion.large].
+  Future<Uint8List> getCardByNameAsImage(
+    String name, {
+    SearchType searchType = SearchType.exact,
+    String? set,
+    bool? backFace,
+    ImageVersion? imageVersion,
+  }) async {
+    final url = Uri.https(
+      _baseUrl,
+      '/cards/named',
+      <String, String?>{
+        'format': 'image',
+        'exact': searchType == SearchType.exact ? name : null,
+        'fuzzy': searchType == SearchType.fuzzy ? name : null,
+        'set': set,
+        'face': backFace == true ? 'back' : null,
+        'version': imageVersion?.name,
+      }..removeWhere((_, value) => value == null),
+    );
+    final response = await _httpClient.get(url);
+
+    if (response.statusCode != 200) {
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      throw ScryfallException.fromJson(json);
+    }
+
+    return response.bodyBytes;
+  }
+}
+
+/// The [ImageVersion] specifies the different resolutions and
+/// versions of an image for a [MtgCard].
+enum ImageVersion {
+  /// A small full card image.
+  ///
+  /// Designed for use as thumbnail or list icon.
+  ///
+  /// - Format: JPG
+  /// - Size: 146 x 204
+  small,
+
+  /// A medium-sized full card image.
+  ///
+  /// - Format: JPG
+  /// - Size: 488 × 680
+  normal,
+
+  /// A large full card image.
+  ///
+  /// - Format: JPG
+  /// - Size: 672 × 936
+  large,
+
+  /// A transparent, rounded full card PNG.
+  ///
+  /// This is the best image to use for videos or
+  /// other high-quality content.
+  ///
+  /// - Format: PNG
+  /// - Size: 745 x 1040
+  png,
+
+  /// A rectangular crop of the card’s art only.
+  ///
+  /// Not guaranteed to be perfect for cards with
+  /// outlier designs or strange frame arrangements.
+  ///
+  /// - Format: JPG
+  /// - Size: Varies
+  artCrop,
+
+  /// A full card image with the rounded corners and
+  /// the majority of the border cropped off.
+  ///
+  /// Designed for dated contexts where rounded images
+  /// can’t be used.
+  ///
+  /// - Format: JPG
+  /// - Size: 480 x 680
+  borderCrop,
+}
+
+extension on ImageVersion {
+  String get name {
+    switch (this) {
+      case ImageVersion.small:
+        return 'small';
+      case ImageVersion.normal:
+        return 'normal';
+      case ImageVersion.large:
+        return 'large';
+      case ImageVersion.png:
+        return 'png';
+      case ImageVersion.artCrop:
+        return 'art_crop';
+      case ImageVersion.borderCrop:
+        return 'border_crop';
+    }
+  }
+}
+
+/// The [SearchType] specifies the type of search that
+/// shall be performed for searching by name.
+enum SearchType {
+  /// The exact card name to search for, case insenstive.
+  exact,
+
+  /// A fuzzy card name to search for.
+  fuzzy,
 }
 
 /// The [RollupMode] specifies if Scryfall should remove
