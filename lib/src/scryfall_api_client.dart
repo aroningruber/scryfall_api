@@ -258,6 +258,52 @@ class ScryfallApiClient {
 
     return response.bodyBytes;
   }
+
+  /// **GET** /cards/autocomplete
+  ///
+  /// Returns a [Catalog] object containing up to 20 full English
+  /// card names that could be autocompletions of the given
+  /// string parameter.
+  ///
+  /// This method is designed for creating assistive UI elements
+  /// that allow users to free-type card names.
+  ///
+  /// The names are sorted with the nearest match first, highly
+  /// favoring results that begin with your given string.
+  ///
+  /// Spaces, punctuation, and capitalization are ignored.
+  ///
+  /// If [query] is less than 2 characters long, or if no
+  /// names match, the Catalog will contain 0 items (instead
+  /// of returning any errors).
+  ///
+  /// [query]\: The query to autocomplete.
+  ///
+  /// [includeExtras]\: If true, extra cards (tokens, planes,
+  /// vanguards, etc) will be included.
+  /// Defaults to `false`.
+  Future<Catalog> autocompleteCardName(
+    String query, {
+    bool? includeExtras,
+  }) async {
+    final url = Uri.https(
+      _baseUrl,
+      '/cards/autocomplete',
+      <String, String?>{
+        'q': query,
+        'include_extras': includeExtras?.toString(),
+      }..removeWhere((_, value) => value == null),
+    );
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return Catalog.fromJson(json);
+  }
 }
 
 /// The [ImageVersion] specifies the different resolutions and
