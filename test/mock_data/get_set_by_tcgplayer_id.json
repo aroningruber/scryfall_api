@@ -1,0 +1,22 @@
+{
+	"object": "set",
+	"id": "c26402e7-838e-48db-a4b2-7abfc305998a",
+	"code": "mp2",
+	"mtgo_code": "ms3",
+	"arena_code": "ms3",
+	"tcgplayer_id": 1909,
+	"name": "Amonkhet Invocations",
+	"uri": "https://api.scryfall.com/sets/c26402e7-838e-48db-a4b2-7abfc305998a",
+	"scryfall_uri": "https://scryfall.com/sets/mp2",
+	"search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Amp2&unique=prints",
+	"released_at": "2017-04-28",
+	"set_type": "masterpiece",
+	"card_count": 54,
+	"parent_set_code": "akh",
+	"digital": false,
+	"nonfoil_only": false,
+	"foil_only": true,
+	"block_code": "akh",
+	"block": "Amonkhet",
+	"icon_svg_uri": "https://c2.scryfall.com/file/scryfall-symbols/sets/mp2.svg?1640581200"
+}
