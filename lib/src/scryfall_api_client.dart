@@ -304,6 +304,34 @@ class ScryfallApiClient {
 
     return Catalog.fromJson(json);
   }
+
+  /// **GET** /cards/random
+  ///
+  /// Returns a single random [MtgCard] object.
+  ///
+  /// [query]\: Is used to filter the possible cards
+  /// and return a random card from the resulting pool
+  /// of cards. Supports the same
+  /// [fulltext search system](https://scryfall.com/docs/syntax)
+  /// as the [main site](https://scryfall.com/).
+  Future<MtgCard> getRandomCard({String? query}) async {
+    final url = Uri.https(
+      _baseUrl,
+      '/cards/random',
+      <String, String?>{
+        'q': query,
+      }..removeWhere((_, value) => value == null),
+    );
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return MtgCard.fromJson(json);
+  }
 }
 
 /// The [ImageVersion] specifies the different resolutions and
