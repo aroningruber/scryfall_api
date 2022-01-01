@@ -587,6 +587,23 @@ class ScryfallApiClient {
 
     return response.bodyBytes;
   }
+
+  /// **GET** /cards/arena/:id
+  ///
+  /// Returns a single card with the given [arenaId]
+  /// (Magic: The Gathering Arena ID).
+  Future<MtgCard> getCardByArenaId(int arenaId) async {
+    final url = Uri.https(_baseUrl, '/cards/arena/$arenaId');
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return MtgCard.fromJson(json);
+  }
 }
 
 /// The [ImageVersion] specifies the different resolutions and
