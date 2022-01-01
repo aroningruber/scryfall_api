@@ -339,7 +339,7 @@ class ScryfallApiClient {
 
   /// **GET** /cards/random?format=image
   ///
-  /// Returns a single random [MtgCard] object.
+  /// Returns an image of a single random [MtgCard] object.
   ///
   /// [query]\: Is used to filter the possible cards
   /// and return a random card from the resulting pool
