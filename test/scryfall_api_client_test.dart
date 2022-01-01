@@ -966,5 +966,77 @@ void main() {
         expect(actual, isA<MtgCard>());
       });
     });
+
+    group('getCardByMultiverseIdAsImage', () {
+      final multiverseId = 39526;
+
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.bodyBytes).thenReturn(Uint8List(0));
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient.getCardByMultiverseIdAsImage(
+            multiverseId,
+            backFace: false,
+            imageVersion: ImageVersion.normal,
+          );
+        } catch (_) {}
+        final uri =
+            Uri.https('api.scryfall.com', '/cards/multiverse/$multiverseId', {
+          'format': 'image',
+          'version': 'normal',
+        });
+        verify(() => httpClient.get(uri)).called(1);
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final json = jsonEncode({
+          'object': 'error',
+          'code': 'not_found',
+          'status': 404,
+          'details': 'Card not found.',
+        });
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getCardByMultiverseIdAsImage(multiverseId),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns Uint8List on valid response', () async {
+        final bytes = Uint8List.fromList([1, 2, 3, 4, 5]);
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.bodyBytes).thenReturn(bytes);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual =
+            await scryfallApiClient.getCardByMultiverseIdAsImage(multiverseId);
+        expect(actual, isA<Uint8List>().having((l) => l.length, 'length', 5));
+      });
+
+      test('gets valid response from actual server', () async {
+        final scryfallApiClientReal = ScryfallApiClient();
+        final actual = await scryfallApiClientReal
+            .getCardByMultiverseIdAsImage(multiverseId);
+        expect(actual, isA<Uint8List>());
+      });
+
+      test('gets an image from actual server', () async {
+        when(() => httpClient.get(any())).thenAnswer((invocation) async {
+          final response = await http.Client().get(
+            invocation.positionalArguments[0],
+          );
+          expect(response.headers['content-type'], contains('image'));
+          return response;
+        });
+        await scryfallApiClient.getCardByMultiverseIdAsImage(multiverseId);
+      });
+    });
   });
 }

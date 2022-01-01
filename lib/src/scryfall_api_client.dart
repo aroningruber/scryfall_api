@@ -516,7 +516,23 @@ class ScryfallApiClient {
     bool? backFace,
     ImageVersion? imageVersion,
   }) async {
-    throw UnimplementedError();
+    final url = Uri.https(
+      _baseUrl,
+      '/cards/multiverse/$multiverseId',
+      <String, String?>{
+        'format': 'image',
+        'face': backFace == true ? 'back' : null,
+        'version': imageVersion?.name,
+      }..removeWhere((_, value) => value == null),
+    );
+    final response = await _httpClient.get(url);
+
+    if (response.statusCode != 200) {
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      throw ScryfallException.fromJson(json);
+    }
+
+    return response.bodyBytes;
   }
 }
 
