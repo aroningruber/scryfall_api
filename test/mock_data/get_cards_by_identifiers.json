@@ -1,0 +1,244 @@
+{
+  "object": "list",
+  "not_found": [
+    {
+      "name": "Ancient Tomb"
+    }
+  ],
+  "data": [
+    {
+      "object": "card",
+      "id": "683a5707-cddb-494d-9b41-51b4584ded69",
+      "oracle_id": "a698c9f5-325a-49f6-8902-eef09f4260c5",
+      "multiverse_ids": [
+        397736
+      ],
+      "mtgo_id": 57168,
+      "mtgo_foil_id": 57169,
+      "tcgplayer_id": 98895,
+      "cardmarket_id": 283034,
+      "name": "Lodestone Golem",
+      "lang": "en",
+      "released_at": "2015-05-22",
+      "uri": "https://api.scryfall.com/cards/683a5707-cddb-494d-9b41-51b4584ded69",
+      "scryfall_uri": "https://scryfall.com/card/mm2/219/lodestone-golem?utm_source=api",
+      "layout": "normal",
+      "highres_image": true,
+      "image_status": "highres_scan",
+      "image_uris": {
+        "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/6/8/683a5707-cddb-494d-9b41-51b4584ded69.jpg?1562263274",
+        "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/6/8/683a5707-cddb-494d-9b41-51b4584ded69.jpg?1562263274",
+        "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/6/8/683a5707-cddb-494d-9b41-51b4584ded69.jpg?1562263274",
+        "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/6/8/683a5707-cddb-494d-9b41-51b4584ded69.png?1562263274",
+        "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/6/8/683a5707-cddb-494d-9b41-51b4584ded69.jpg?1562263274",
+        "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/6/8/683a5707-cddb-494d-9b41-51b4584ded69.jpg?1562263274"
+      },
+      "mana_cost": "{4}",
+      "cmc": 4,
+      "type_line": "Artifact Creature — Golem",
+      "oracle_text": "Nonartifact spells cost {1} more to cast.",
+      "power": "5",
+      "toughness": "3",
+      "colors": [],
+      "color_identity": [],
+      "keywords": [],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "not_legal",
+        "gladiator": "not_legal",
+        "pioneer": "not_legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "restricted",
+        "penny": "legal",
+        "commander": "legal",
+        "brawl": "not_legal",
+        "historicbrawl": "not_legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal"
+      },
+      "games": [
+        "paper",
+        "mtgo"
+      ],
+      "reserved": false,
+      "foil": true,
+      "nonfoil": true,
+      "finishes": [
+        "nonfoil",
+        "foil"
+      ],
+      "oversized": false,
+      "promo": false,
+      "reprint": true,
+      "variation": false,
+      "set_id": "28cac015-43df-4e88-90d0-95dcdd894834",
+      "set": "mm2",
+      "set_name": "Modern Masters 2015",
+      "set_type": "masters",
+      "set_uri": "https://api.scryfall.com/sets/28cac015-43df-4e88-90d0-95dcdd894834",
+      "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Amm2&unique=prints",
+      "scryfall_set_uri": "https://scryfall.com/sets/mm2?utm_source=api",
+      "rulings_uri": "https://api.scryfall.com/cards/683a5707-cddb-494d-9b41-51b4584ded69/rulings",
+      "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Aa698c9f5-325a-49f6-8902-eef09f4260c5&unique=prints",
+      "collector_number": "219",
+      "digital": false,
+      "rarity": "rare",
+      "flavor_text": "\"Somehow it warps the Æther. It brings a strange weight, a blockade in the flow of spellcraft.\"\n—Noyan Dar, Tazeem lullmage",
+      "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+      "artist": "Chris Rahn",
+      "artist_ids": [
+        "7742047e-0f80-4c0f-a530-d07460165e86"
+      ],
+      "illustration_id": "1311e0dd-56ba-40af-b173-b06915182001",
+      "border_color": "black",
+      "frame": "2015",
+      "security_stamp": "oval",
+      "full_art": false,
+      "textless": false,
+      "booster": true,
+      "story_spotlight": false,
+      "edhrec_rank": 3855,
+      "prices": {
+        "usd": "1.48",
+        "usd_foil": "3.01",
+        "usd_etched": null,
+        "eur": "0.54",
+        "eur_foil": "4.00",
+        "tix": "0.02"
+      },
+      "related_uris": {
+        "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=397736",
+        "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Lodestone+Golem&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+        "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Lodestone+Golem&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+        "edhrec": "https://edhrec.com/route/?cc=Lodestone+Golem",
+        "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Lodestone+Golem"
+      },
+      "purchase_uris": {
+        "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=98895&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+        "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Lodestone+Golem&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+        "cardhoarder": "https://www.cardhoarder.com/cards/57168?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+      }
+    },
+    {
+      "object": "card",
+      "id": "1a02ca71-5e39-4a5f-aaba-a1e3e10a6a3e",
+      "oracle_id": "74027ba4-a6ba-4696-baf1-60ef0b27ee0a",
+      "multiverse_ids": [
+        48326
+      ],
+      "mtgo_id": 19995,
+      "mtgo_foil_id": 19996,
+      "tcgplayer_id": 11465,
+      "cardmarket_id": 150,
+      "name": "Chalice of the Void",
+      "lang": "en",
+      "released_at": "2003-10-02",
+      "uri": "https://api.scryfall.com/cards/1a02ca71-5e39-4a5f-aaba-a1e3e10a6a3e",
+      "scryfall_uri": "https://scryfall.com/card/mrd/150/chalice-of-the-void?utm_source=api",
+      "layout": "normal",
+      "highres_image": true,
+      "image_status": "highres_scan",
+      "image_uris": {
+        "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/1/a/1a02ca71-5e39-4a5f-aaba-a1e3e10a6a3e.jpg?1562137287",
+        "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/1/a/1a02ca71-5e39-4a5f-aaba-a1e3e10a6a3e.jpg?1562137287",
+        "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/1/a/1a02ca71-5e39-4a5f-aaba-a1e3e10a6a3e.jpg?1562137287",
+        "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/1/a/1a02ca71-5e39-4a5f-aaba-a1e3e10a6a3e.png?1562137287",
+        "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/1/a/1a02ca71-5e39-4a5f-aaba-a1e3e10a6a3e.jpg?1562137287",
+        "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/1/a/1a02ca71-5e39-4a5f-aaba-a1e3e10a6a3e.jpg?1562137287"
+      },
+      "mana_cost": "{X}{X}",
+      "cmc": 0,
+      "type_line": "Artifact",
+      "oracle_text": "Chalice of the Void enters the battlefield with X charge counters on it.\nWhenever a player casts a spell with mana value equal to the number of charge counters on Chalice of the Void, counter that spell.",
+      "colors": [],
+      "color_identity": [],
+      "keywords": [],
+      "legalities": {
+        "standard": "not_legal",
+        "future": "not_legal",
+        "historic": "not_legal",
+        "gladiator": "not_legal",
+        "pioneer": "not_legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "restricted",
+        "penny": "not_legal",
+        "commander": "legal",
+        "brawl": "not_legal",
+        "historicbrawl": "not_legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal"
+      },
+      "games": [
+        "paper",
+        "mtgo"
+      ],
+      "reserved": false,
+      "foil": true,
+      "nonfoil": true,
+      "finishes": [
+        "nonfoil",
+        "foil"
+      ],
+      "oversized": false,
+      "promo": false,
+      "reprint": false,
+      "variation": false,
+      "set_id": "1d4f90ba-8d4a-4ee5-bc2f-e2d6bffe4955",
+      "set": "mrd",
+      "set_name": "Mirrodin",
+      "set_type": "expansion",
+      "set_uri": "https://api.scryfall.com/sets/1d4f90ba-8d4a-4ee5-bc2f-e2d6bffe4955",
+      "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Amrd&unique=prints",
+      "scryfall_set_uri": "https://scryfall.com/sets/mrd?utm_source=api",
+      "rulings_uri": "https://api.scryfall.com/cards/1a02ca71-5e39-4a5f-aaba-a1e3e10a6a3e/rulings",
+      "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A74027ba4-a6ba-4696-baf1-60ef0b27ee0a&unique=prints",
+      "collector_number": "150",
+      "digital": false,
+      "rarity": "rare",
+      "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+      "artist": "Mark Zug",
+      "artist_ids": [
+        "48e2b98c-5467-4671-bd42-4c3746115117"
+      ],
+      "illustration_id": "b51bb61e-bad7-46ca-abd0-c5322c43ecdb",
+      "border_color": "black",
+      "frame": "2003",
+      "full_art": false,
+      "textless": false,
+      "booster": true,
+      "story_spotlight": false,
+      "edhrec_rank": 4721,
+      "prices": {
+        "usd": "71.74",
+        "usd_foil": "133.01",
+        "usd_etched": null,
+        "eur": "48.98",
+        "eur_foil": "58.16",
+        "tix": "16.20"
+      },
+      "related_uris": {
+        "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=48326",
+        "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Chalice+of+the+Void&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+        "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Chalice+of+the+Void&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+        "edhrec": "https://edhrec.com/route/?cc=Chalice+of+the+Void",
+        "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Chalice+of+the+Void"
+      },
+      "purchase_uris": {
+        "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=11465&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+        "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Chalice+of+the+Void&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+        "cardhoarder": "https://www.cardhoarder.com/cards/19995?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+      }
+    }
+  ]
+}

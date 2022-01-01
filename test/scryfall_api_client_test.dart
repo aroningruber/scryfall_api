@@ -634,5 +634,95 @@ void main() {
         expect(actual, isA<Uint8List>());
       });
     });
+
+    group('getCardsByIdentifiers', () {
+      final id = '683a5707-cddb-494d-9b41-51b4584ded69';
+      final name = 'Ancient Tomb';
+      final set = 'mrd';
+      final collectorNumber = '150';
+      final identifiers = [
+        CardIdentifierId(id),
+        CardIdentifierName(name),
+        CardIdentifierSetCollectorNumber(set, collectorNumber),
+      ];
+
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn('{}');
+        when(() => httpClient.post(any(), body: any(named: 'body')))
+            .thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient.getCardsByIdentifiers(identifiers);
+        } catch (_) {}
+        final uri = Uri.https('api.scryfall.com', '/cards/collection');
+        final body = jsonEncode({
+          'identifiers': [
+            {'id': id},
+            {'name': name},
+            {'set': set, 'collector_number': collectorNumber},
+          ],
+        });
+        final headers = {'Content-Type': 'application/json'};
+        verify(() => httpClient.post(uri, body: body, headers: headers))
+            .called(1);
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final json = jsonEncode({
+          'object': 'error',
+          'code': 'not_found',
+          'status': 404,
+          'details':
+              '0 cards matched this search, a random card could not be returned.',
+        });
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(json);
+        when(
+          () => httpClient.post(
+            any(),
+            body: any(named: 'body'),
+            headers: any(named: 'headers'),
+          ),
+        ).thenAnswer((_) async => response);
+        expectLater(
+          scryfallApiClient.getCardsByIdentifiers(identifiers),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns CardList on valid response', () async {
+        final file = File('test/mock_data/get_cards_by_identifiers.json');
+        final json = await file.readAsString();
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn(json);
+        when(
+          () => httpClient.post(
+            any(),
+            body: any(named: 'body'),
+            headers: any(named: 'headers'),
+          ),
+        ).thenAnswer((_) async => response);
+        final actual =
+            await scryfallApiClient.getCardsByIdentifiers(identifiers);
+        expect(
+          actual,
+          isA<CardList>()
+              .having((l) => l.data.length, 'data.length', 2)
+              .having((l) => l.notFound.length, 'notFound.length', 1),
+        );
+      });
+
+      test('gets valid response from actual server', () async {
+        final scryfallApiClientReal = ScryfallApiClient();
+        final actual =
+            await scryfallApiClientReal.getCardsByIdentifiers(identifiers);
+        expect(actual, isA<CardList>());
+      });
+    });
   });
 }
