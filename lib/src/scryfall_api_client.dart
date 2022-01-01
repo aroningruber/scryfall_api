@@ -442,7 +442,7 @@ class ScryfallApiClient {
     return MtgCard.fromJson(json);
   }
 
-  /// **GET** /cards/:code/:number(/:lang)
+  /// **GET** /cards/:code/:number(/:lang)?format=image
   ///
   /// Returns an image of a single card with the given
   /// [setCode] and [collectorNumber].
@@ -501,7 +501,7 @@ class ScryfallApiClient {
     return MtgCard.fromJson(json);
   }
 
-  /// **GET** /cards/multiverse/:id
+  /// **GET** /cards/multiverse/:id?format=image
   ///
   /// Returns an image of a single card with the given [multiverseId].
   ///
@@ -554,7 +554,7 @@ class ScryfallApiClient {
     return MtgCard.fromJson(json);
   }
 
-  /// **GET** /cards/mtgo/:id
+  /// **GET** /cards/mtgo/:id?format=image
   ///
   /// Returns a single card with the given [mtgoId]
   /// (also known as the Catalog ID).
@@ -605,7 +605,7 @@ class ScryfallApiClient {
     return MtgCard.fromJson(json);
   }
 
-  /// **GET** /cards/arena/:id
+  /// **GET** /cards/arena/:id?format=image
   ///
   /// Returns a single card with the given [arenaId]
   /// (Magic: The Gathering Arena ID).
@@ -621,6 +621,57 @@ class ScryfallApiClient {
     final url = Uri.https(
       _baseUrl,
       '/cards/arena/$arenaId',
+      <String, String?>{
+        'format': 'image',
+        'face': backFace == true ? 'back' : null,
+        'version': imageVersion?.name,
+      },
+    );
+    final response = await _httpClient.get(url);
+
+    if (response.statusCode != 200) {
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      throw ScryfallException.fromJson(json);
+    }
+
+    return response.bodyBytes;
+  }
+
+  /// **GET** /cards/tcgplayer/:id
+  ///
+  /// Returns a single card with the given [tcgplayerId]
+  /// or `tcgplayer_etched_id`, also known as the `productId`
+  /// on [TCGplayer’s API](https://docs.tcgplayer.com/docs).
+  Future<MtgCard> getCardByTcgplayerId(int tcgplayerId) async {
+    final url = Uri.https(_baseUrl, '/cards/tcgplayer/$tcgplayerId');
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return MtgCard.fromJson(json);
+  }
+
+  /// **GET** /cards/tcgplayer/:id?format=image
+  ///
+  /// Returns a single card with the given [tcgplayerId]
+  /// or `tcgplayer_etched_id`, also known as the `productId`
+  /// on [TCGplayer’s API](https://docs.tcgplayer.com/docs).
+  ///
+  /// {@macro card_parameter_back_face}
+  ///
+  /// {@macro card_parameter_image_version}
+  Future<Uint8List> getCardByTcgplayerIdAsImage(
+    int tcgplayerId, {
+    bool? backFace,
+    ImageVersion? imageVersion,
+  }) async {
+    final url = Uri.https(
+      _baseUrl,
+      '/cards/tcgplayer/$tcgplayerId',
       <String, String?>{
         'format': 'image',
         'face': backFace == true ? 'back' : null,
