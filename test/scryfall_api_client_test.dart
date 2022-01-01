@@ -17,6 +17,7 @@ void main() {
   group('ScryfallApiClient', () {
     late http.Client httpClient;
     late ScryfallApiClient scryfallApiClient;
+    late String jsonError;
 
     setUpAll(() {
       registerFallbackValue(FakeUri());
@@ -25,6 +26,12 @@ void main() {
     setUp(() {
       httpClient = MockHttpClient();
       scryfallApiClient = ScryfallApiClient(httpClient: httpClient);
+      jsonError = jsonEncode({
+        'object': 'error',
+        'code': 'not_found',
+        'status': 404,
+        'details': 'Card not found.',
+      });
     });
 
     group('constructor', () {
@@ -47,16 +54,9 @@ void main() {
       });
 
       test('throws ScryfallException on non-200 response', () async {
-        final json = jsonEncode({
-          'object': 'error',
-          'code': 'bad_request',
-          'status': 400,
-          'details': 'All of your terms were ignored.',
-        });
-
         final response = MockResponse();
-        when(() => response.statusCode).thenReturn(400);
-        when(() => response.body).thenReturn(json);
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(jsonError);
         when(() => httpClient.get(any())).thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getAllSets(),
@@ -99,16 +99,9 @@ void main() {
       });
 
       test('throws ScryfallException on non-200 response', () async {
-        final json = jsonEncode({
-          'object': 'error',
-          'code': 'not_found',
-          'status': 404,
-          'details': 'No Magic set found for the given code or ID',
-        });
-
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
-        when(() => response.body).thenReturn(json);
+        when(() => response.body).thenReturn(jsonError);
         when(() => httpClient.get(any())).thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getSetByCode(code),
@@ -154,16 +147,9 @@ void main() {
       });
 
       test('throws ScryfallException on non-200 response', () async {
-        final json = jsonEncode({
-          'object': 'error',
-          'code': 'not_found',
-          'status': 404,
-          'details': 'No Magic set found for the given code or ID',
-        });
-
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
-        when(() => response.body).thenReturn(json);
+        when(() => response.body).thenReturn(jsonError);
         when(() => httpClient.get(any())).thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getSetByTcgplayerId(id),
@@ -206,16 +192,9 @@ void main() {
       });
 
       test('throws ScryfallException on non-200 response', () async {
-        final json = jsonEncode({
-          'object': 'error',
-          'code': 'not_found',
-          'status': 404,
-          'details': 'No Magic set found for the given code or ID',
-        });
-
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
-        when(() => response.body).thenReturn(json);
+        when(() => response.body).thenReturn(jsonError);
         when(() => httpClient.get(any())).thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getSetById(id),
@@ -284,16 +263,9 @@ void main() {
       });
 
       test('throws ScryfallException on non-200 response', () async {
-        final json = jsonEncode({
-          'object': 'error',
-          'code': 'not_found',
-          'status': 404,
-          'details': 'The requested object or REST method was not found.',
-        });
-
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
-        when(() => response.body).thenReturn(json);
+        when(() => response.body).thenReturn(jsonError);
         when(() => httpClient.get(any())).thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.searchCards(
@@ -350,16 +322,9 @@ void main() {
       });
 
       test('throws ScryfallException on non-200 response', () async {
-        final json = jsonEncode({
-          'object': 'error',
-          'code': 'not_found',
-          'status': 404,
-          'details': 'No cards found matching “aust com”',
-        });
-
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
-        when(() => response.body).thenReturn(json);
+        when(() => response.body).thenReturn(jsonError);
         when(() => httpClient.get(any())).thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByName(nameExact),
@@ -420,16 +385,9 @@ void main() {
       });
 
       test('throws ScryfallException on non-200 reponse', () async {
-        final json = jsonEncode({
-          'object': 'error',
-          'code': 'not_found',
-          'status': 404,
-          'details': 'No cards found matching “angel quart”',
-        });
-
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
-        when(() => response.body).thenReturn(json);
+        when(() => response.body).thenReturn(jsonError);
         when(() => httpClient.get(any())).thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByNameAsImage(nameExact),
@@ -497,16 +455,9 @@ void main() {
       });
 
       test('throws ScryfallException on non-200 response', () async {
-        final json = jsonEncode({
-          'object': 'error',
-          'code': 'bad_request',
-          'status': 400,
-          'details': 'Something went wrong',
-        });
-
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(400);
-        when(() => response.body).thenReturn(json);
+        when(() => response.body).thenReturn(jsonError);
         when(() => httpClient.get(any())).thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.autocompleteCardName(query),
@@ -551,17 +502,9 @@ void main() {
       });
 
       test('throws ScryfallException on non-200 response', () async {
-        final json = jsonEncode({
-          'object': 'error',
-          'code': 'not_found',
-          'status': 404,
-          'details':
-              '0 cards matched this search, a random card could not be returned.',
-        });
-
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
-        when(() => response.body).thenReturn(json);
+        when(() => response.body).thenReturn(jsonError);
         when(() => httpClient.get(any())).thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getRandomCard(query: query),
@@ -613,17 +556,9 @@ void main() {
       });
 
       test('throws ScryfallException on non-200 response', () async {
-        final json = jsonEncode({
-          'object': 'error',
-          'code': 'not_found',
-          'status': 404,
-          'details':
-              '0 cards matched this search, a random card could not be returned.',
-        });
-
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
-        when(() => response.body).thenReturn(json);
+        when(() => response.body).thenReturn(jsonError);
         when(() => httpClient.get(any())).thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getRandomCardAsImage(),
@@ -694,17 +629,9 @@ void main() {
       });
 
       test('throws ScryfallException on non-200 response', () async {
-        final json = jsonEncode({
-          'object': 'error',
-          'code': 'not_found',
-          'status': 404,
-          'details':
-              '0 cards matched this search, a random card could not be returned.',
-        });
-
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
-        when(() => response.body).thenReturn(json);
+        when(() => response.body).thenReturn(jsonError);
         when(
           () => httpClient.post(
             any(),
@@ -774,16 +701,9 @@ void main() {
       });
 
       test('throws ScryfallException on non-200 response', () async {
-        final json = jsonEncode({
-          'object': 'error',
-          'code': 'not_found',
-          'status': 404,
-          'details': 'Card not found.',
-        });
-
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
-        when(() => response.body).thenReturn(json);
+        when(() => response.body).thenReturn(jsonError);
         when(() => httpClient.get(any())).thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardBySetCodeAndCollectorNumber(
@@ -850,16 +770,9 @@ void main() {
       });
 
       test('throws ScryfallException on non-200 response', () async {
-        final json = jsonEncode({
-          'object': 'error',
-          'code': 'not_found',
-          'status': 404,
-          'details': 'No card found.',
-        });
-
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
-        when(() => response.body).thenReturn(json);
+        when(() => response.body).thenReturn(jsonError);
         when(() => httpClient.get(any())).thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardBySetCodeAndCollectorNumberAsImage(
@@ -929,16 +842,9 @@ void main() {
       });
 
       test('throws ScryfallException on non-200 response', () async {
-        final json = jsonEncode({
-          'object': 'error',
-          'code': 'not_found',
-          'status': 404,
-          'details': 'Card not found.',
-        });
-
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
-        when(() => response.body).thenReturn(json);
+        when(() => response.body).thenReturn(jsonError);
         when(() => httpClient.get(any())).thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByMultiverseId(multiverseId),
@@ -991,16 +897,9 @@ void main() {
       });
 
       test('throws ScryfallException on non-200 response', () async {
-        final json = jsonEncode({
-          'object': 'error',
-          'code': 'not_found',
-          'status': 404,
-          'details': 'Card not found.',
-        });
-
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
-        when(() => response.body).thenReturn(json);
+        when(() => response.body).thenReturn(jsonError);
         when(() => httpClient.get(any())).thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByMultiverseIdAsImage(multiverseId),
@@ -1055,16 +954,9 @@ void main() {
       });
 
       test('throws ScryfallException on non-200 response', () async {
-        final json = jsonEncode({
-          'object': 'error',
-          'code': 'not_found',
-          'status': 404,
-          'details': 'No card found.',
-        });
-
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
-        when(() => response.body).thenReturn(json);
+        when(() => response.body).thenReturn(jsonError);
         when(() => httpClient.get(any())).thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByMtgoId(mtgoId),
