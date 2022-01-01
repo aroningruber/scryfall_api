@@ -738,6 +738,22 @@ class ScryfallApiClient {
 
     return response.bodyBytes;
   }
+
+  /// **GET** /cards/id/:id
+  ///
+  /// Returns a single card with the given [id] on Scryfall.
+  Future<MtgCard> getCardById(String id) async {
+    final url = Uri.https(_baseUrl, '/cards/$id');
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return MtgCard.fromJson(json);
+  }
 }
 
 /// The [ImageVersion] specifies the different resolutions and
