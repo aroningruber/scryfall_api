@@ -534,6 +534,25 @@ class ScryfallApiClient {
 
     return response.bodyBytes;
   }
+
+  /// **GET** /cards/mtgo/:id
+  ///
+  /// Returns a single card with the given [mtgoId]
+  /// (also known as the Catalog ID).
+  ///
+  /// The ID can either be the card’s `mtgo_id` or its `mtgo_foil_id`.
+  Future<MtgCard> getCardByMtgoId(int mtgoId) async {
+    final url = Uri.https(_baseUrl, '/cards/mtgo/$mtgoId');
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return MtgCard.fromJson(json);
+  }
 }
 
 /// The [ImageVersion] specifies the different resolutions and
