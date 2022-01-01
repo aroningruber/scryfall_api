@@ -13,7 +13,10 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
         final val = MtgCard(
           arenaId: $checkedConvert('arena_id', (v) => v as int?),
           id: $checkedConvert('id', (v) => v as String),
-          lang: $checkedConvert('lang', (v) => v as String),
+          lang: $checkedConvert(
+              'lang',
+              (v) => $enumDecode(_$LanguageEnumMap, v,
+                  unknownValue: Language.unknown)),
           mtgoId: $checkedConvert('mtgo_id', (v) => v as int?),
           mtgoFoilId: $checkedConvert('mtgo_foil_id', (v) => v as int?),
           multiverseIds: $checkedConvert('multiverse_ids',
@@ -246,6 +249,27 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
         'securityStamp': 'security_stamp'
       },
     );
+
+const _$LanguageEnumMap = {
+  Language.english: 'en',
+  Language.spanish: 'es',
+  Language.french: 'fr',
+  Language.german: 'de',
+  Language.italian: 'it',
+  Language.portuguese: 'pt',
+  Language.japanese: 'ja',
+  Language.korean: 'ko',
+  Language.russian: 'ru',
+  Language.chineseSimplified: 'zhs',
+  Language.chineseTraditional: 'zht',
+  Language.hebrew: 'he',
+  Language.latin: 'la',
+  Language.ancientGreek: 'grc',
+  Language.arabic: 'ar',
+  Language.sanskrit: 'sa',
+  Language.phyrexian: 'ph',
+  Language.unknown: 'unknown',
+};
 
 const _$ColorEnumMap = {
   Color.white: 'W',
