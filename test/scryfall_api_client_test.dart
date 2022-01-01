@@ -1269,5 +1269,53 @@ void main() {
         await scryfallApiClient.getCardByTcgplayerIdAsImage(tcgplayerId);
       });
     });
+
+    group('getCardByCardmarketId', () {
+      final cardmarketId = 379041;
+
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn('{}');
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient.getCardByCardmarketId(cardmarketId);
+        } catch (_) {}
+        final uri =
+            Uri.https('api.scryfall.com', '/cards/cardmarket/$cardmarketId');
+        verify(() => httpClient.get(uri)).called(1);
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(jsonError);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getCardByCardmarketId(cardmarketId),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns MtgCard on valid response', () async {
+        final file = File('test/mock_data/get_card_by_cardmarket_id.json');
+        final json = await file.readAsString();
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual =
+            await scryfallApiClient.getCardByCardmarketId(cardmarketId);
+        expect(actual, isA<MtgCard>());
+      });
+
+      test('gets valid response from actual server', () async {
+        final scryfallApiClientReal = ScryfallApiClient();
+        final actual =
+            await scryfallApiClientReal.getCardByCardmarketId(cardmarketId);
+        expect(actual, isA<MtgCard>());
+      });
+    });
   });
 }

@@ -687,6 +687,24 @@ class ScryfallApiClient {
 
     return response.bodyBytes;
   }
+
+  /// **GET** /cards/cardmarket/:id
+  ///
+  /// Returns a single card with the given [cardmarketId],
+  /// also known as the `idProduct` or the Product ID on
+  /// Cardmarket’s APIs.
+  Future<MtgCard> getCardByCardmarketId(int cardmarketId) async {
+    final url = Uri.https(_baseUrl, '/cards/cardmarket/$cardmarketId');
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return MtgCard.fromJson(json);
+  }
 }
 
 /// The [ImageVersion] specifies the different resolutions and
