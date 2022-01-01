@@ -396,7 +396,7 @@ class ScryfallApiClient {
       headers: {'Content-Type': 'application/json'},
     );
 
-    final json = jsonDecode(response.body);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
 
     if (response.statusCode != 200) {
       throw ScryfallException.fromJson(json);
