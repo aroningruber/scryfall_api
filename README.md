@@ -10,7 +10,7 @@ Query all information about [Magic: The Gathering](https://magic.wizards.com/)
 which is provided by the [Scryfall API](https://scryfall.com):
 
 - [Sets](https://scryfall.com/docs/api/sets)
-- [Cards](https://scryfall.com/docs/api/cards) (_planned for v0.2.0_)
+- [Cards](https://scryfall.com/docs/api/cards)
 - [Rulings](https://scryfall.com/docs/api/rulings) (_planned for v0.3.0_)
 - [Card Symbols](https://scryfall.com/docs/api/card-symbols) (_planned for v0.4.0_)
 - [Catalogs](https://scryfall.com/docs/api/catalogs) (_planned for v0.5.0_)
@@ -22,7 +22,7 @@ To install this package, just add the `scryfall_api` package to your `pubspec.ya
 
 ```yaml
 dependencies:
-    scryfall_api: ^0.1.0
+    scryfall_api: ^0.2.0
 ```
 
 Don't forget to install it by running `dart pub get` or `flutter pub get`.
@@ -45,13 +45,15 @@ final afrSet = await client.getSetByCode('afr'); // MtgSet
 afrSet.name // -> 'Adventures in the Forgotten Realms'
 ```
 
-Retrieve a list of all sets:
+Retrieve a card by its `id` on [Scryfall](https://scryfall.com/):
 
 ```dart
 final client = ScryfallApiClient();
 
-// [GET] https://api.scryfall.com/sets
-final allSets = await client.getAllSets(); // PaginableList<MtgSet>
+// [GET] https://api.scryfall.com/cards/bd8fa327-dd41-4737-8f19-2cf5eb1f7cdd
+final blackLotus = await client.getCardById('bd8fa327-dd41-4737-8f19-2cf5eb1f7cdd'); // MtgCard
+blackLotus.name // -> 'Black Lotus'
+blackLotus.oracleText // -> '{T}, Sacrifice Black Lotus: Add three mana of any one color.'
 ```
 
 ## Features and bugs
@@ -61,7 +63,7 @@ If you encounter a bug or want to file a feature request, feel free to
 - open a new [issue](https://github.com/aroningruber/scryfall_api/issues) or
 - create a [pull request](https://github.com/aroningruber/scryfall_api/pulls).
 
-## Disclaimer
+## Additional information
 
 [The Scryfall API package](https://pub.dev/packages/scryfall_api) is
 unofficial Fan Content permitted under the Fan Content Policy. Not
@@ -69,3 +71,5 @@ approved/endorsed by Wizards. Portions of the materials used are property
 of Wizards of the Coast. © Wizards of the Coast LLC.
 
 All the information, literal and graphical, obtained from the [Scryfall API](https://scryfall.com) which is not © Wizards of the Coast LLC is © Scryfall LLC.
+
+The remaining part of this package is subject to its associated license.

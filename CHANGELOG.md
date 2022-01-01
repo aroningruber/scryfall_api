@@ -1,3 +1,18 @@
+## 0.2.0
+
+- Search for cards (**GET** `/cards/search`)
+- Get card by name (**GET** `/cards/named`)
+- Autocomplete card name (**GET** `/cards/autocomplete`)
+- Get random card (**GET** `/cards/random`)
+- Get cards by identifiers (**GET** `/cards/collection`)
+- Get card by set code and collector number (**GET** `/cards/:code/:number(/:lang)`)
+- Get card by multiverse id (**GET** `/cards/multiverse/:id`)
+- Get card by mtgo id (**GET** `/cards/mtgo/:id`)
+- Get card by arena id (**GET** `/cards/arena/:id`)
+- Get card by tcgplayer id (**GET** `/cards/tcgplayer/:id`)
+- Get card by cardmarket id (**GET** `/cards/cardmarket/:id`)
+- Get card by id (**GET** `/cards/:id`)
+
 ## 0.1.0
 
 - Get all sets (**GET** `/sets`)
