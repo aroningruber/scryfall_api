@@ -587,6 +587,55 @@ class ScryfallApiClient {
 
     return response.bodyBytes;
   }
+
+  /// **GET** /cards/arena/:id
+  ///
+  /// Returns a single card with the given [arenaId]
+  /// (Magic: The Gathering Arena ID).
+  Future<MtgCard> getCardByArenaId(int arenaId) async {
+    final url = Uri.https(_baseUrl, '/cards/arena/$arenaId');
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return MtgCard.fromJson(json);
+  }
+
+  /// **GET** /cards/arena/:id
+  ///
+  /// Returns a single card with the given [arenaId]
+  /// (Magic: The Gathering Arena ID).
+  ///
+  /// {@macro card_parameter_back_face}
+  ///
+  /// {@macro card_parameter_image_version}
+  Future<Uint8List> getCardByArenaIdAsImage(
+    int arenaId, {
+    bool? backFace,
+    ImageVersion? imageVersion,
+  }) async {
+    final url = Uri.https(
+      _baseUrl,
+      '/cards/arena/$arenaId',
+      <String, String?>{
+        'format': 'image',
+        'face': backFace == true ? 'back' : null,
+        'version': imageVersion?.name,
+      },
+    );
+    final response = await _httpClient.get(url);
+
+    if (response.statusCode != 200) {
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      throw ScryfallException.fromJson(json);
+    }
+
+    return response.bodyBytes;
+  }
 }
 
 /// The [ImageVersion] specifies the different resolutions and

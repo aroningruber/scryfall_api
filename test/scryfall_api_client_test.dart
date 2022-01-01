@@ -1046,5 +1046,114 @@ void main() {
         await scryfallApiClient.getCardByMtgoIdAsImage(mtgoId);
       });
     });
+
+    group('getCardByArenaId', () {
+      final arenaId = 67330;
+
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn('{}');
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient.getCardByArenaId(arenaId);
+        } catch (_) {}
+        final uri = Uri.https('api.scryfall.com', '/cards/arena/$arenaId');
+        verify(() => httpClient.get(uri)).called(1);
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(jsonError);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getCardByArenaId(arenaId),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns MtgCard on valid response', () async {
+        final file = File('test/mock_data/get_card_by_arena_id.json');
+        final json = await file.readAsString();
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual = await scryfallApiClient.getCardByArenaId(arenaId);
+        expect(actual, isA<MtgCard>());
+      });
+
+      test('gets valid response from actual server', () async {
+        final scryfallApiClientReal = ScryfallApiClient();
+        final actual = await scryfallApiClientReal.getCardByArenaId(arenaId);
+        expect(actual, isA<MtgCard>());
+      });
+    });
+
+    group('getCardByArenaIdAsImage', () {
+      final arenaId = 70665;
+
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.bodyBytes).thenReturn(Uint8List(0));
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient.getCardByArenaIdAsImage(
+            arenaId,
+            backFace: true,
+            imageVersion: ImageVersion.large,
+          );
+        } catch (_) {}
+        final uri = Uri.https('api.scryfall.com', '/cards/arena/$arenaId', {
+          'format': 'image',
+          'face': 'back',
+          'version': 'large',
+        });
+        verify(() => httpClient.get(uri)).called(1);
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(jsonError);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getCardByArenaIdAsImage(arenaId),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns Uint8List on valid response', () async {
+        final bytes = Uint8List.fromList([1, 2, 3, 4, 5]);
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.bodyBytes).thenReturn(bytes);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual = await scryfallApiClient.getCardByArenaIdAsImage(arenaId);
+        expect(actual, isA<Uint8List>().having((l) => l.length, 'length', 5));
+      });
+
+      test('gets valid response from actual server', () async {
+        final scryfallApiClientReal = ScryfallApiClient();
+        final actual =
+            await scryfallApiClientReal.getCardByArenaIdAsImage(arenaId);
+        expect(actual, isA<Uint8List>());
+      });
+
+      test('gets an image from actual server', () async {
+        when(() => httpClient.get(any())).thenAnswer((invocation) async {
+          final response = await http.Client().get(
+            invocation.positionalArguments[0],
+          );
+          expect(response.headers['content-type'], contains('image'));
+          return response;
+        });
+        await scryfallApiClient.getCardByArenaIdAsImage(arenaId);
+      });
+    });
   });
 }
