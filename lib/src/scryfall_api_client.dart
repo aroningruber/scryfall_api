@@ -374,6 +374,36 @@ class ScryfallApiClient {
 
     return response.bodyBytes;
   }
+
+  /// **POST** /cards/collection
+  ///
+  /// Returns a [CardList] containing a [List] of [MtgCard]s
+  /// identified by [identifiers].
+  ///
+  /// A maximum of 75 card references may be submitted per request.
+  ///
+  /// [identifiers]\: A [List] of [CardIdentifier]s.
+  Future<CardList> getCardsByIdentifiers(
+    List<CardIdentifier> identifiers,
+  ) async {
+    final url = Uri.https(_baseUrl, '/cards/collection');
+    final body = jsonEncode({
+      'identifiers': identifiers.map((i) => i.toJson()).toList(),
+    });
+    final response = await _httpClient.post(
+      url,
+      body: body,
+      headers: {'Content-Type': 'application/json'},
+    );
+
+    final json = jsonDecode(response.body);
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return CardList.fromJson(json);
+  }
 }
 
 /// The [ImageVersion] specifies the different resolutions and
