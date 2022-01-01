@@ -459,6 +459,20 @@ void main() {
         );
         expect(actual, isA<Uint8List>());
       });
+
+      test('gets an image from actual server', () async {
+        when(() => httpClient.get(any())).thenAnswer((invocation) async {
+          final response = await http.Client().get(
+            invocation.positionalArguments[0],
+          );
+          expect(response.headers['content-type'], contains('image'));
+          return response;
+        });
+        scryfallApiClient.getCardByNameAsImage(
+          nameExact,
+          set: set,
+        );
+      });
     });
 
     group('autocompleteCardName', () {
@@ -632,6 +646,17 @@ void main() {
         final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.getRandomCardAsImage();
         expect(actual, isA<Uint8List>());
+      });
+
+      test('gets an image from actual server', () async {
+        when(() => httpClient.get(any())).thenAnswer((invocation) async {
+          final response = await http.Client().get(
+            invocation.positionalArguments[0],
+          );
+          expect(response.headers['content-type'], contains('image'));
+          return response;
+        });
+        scryfallApiClient.getRandomCardAsImage();
       });
     });
 
