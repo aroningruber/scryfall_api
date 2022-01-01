@@ -49,7 +49,8 @@ class MtgCard {
 
   /// A [language](https://scryfall.com/docs/api/languages)
   /// code for this printing.
-  final String lang;
+  @JsonKey(unknownEnumValue: Language.unknown)
+  final Language lang;
 
   /// This card’s Magic Online ID (also known as the Catalog ID),
   /// if any.

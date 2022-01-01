@@ -339,7 +339,7 @@ class ScryfallApiClient {
 
   /// **GET** /cards/random?format=image
   ///
-  /// Returns a single random [MtgCard] object.
+  /// Returns an image of a single random [MtgCard] object.
   ///
   /// [query]\: Is used to filter the possible cards
   /// and return a random card from the resulting pool
@@ -396,13 +396,90 @@ class ScryfallApiClient {
       headers: {'Content-Type': 'application/json'},
     );
 
-    final json = jsonDecode(response.body);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
 
     if (response.statusCode != 200) {
       throw ScryfallException.fromJson(json);
     }
 
     return CardList.fromJson(json);
+  }
+
+  /// **GET** /cards/:code/:number(/:lang)
+  ///
+  /// Returns a single card with the given
+  /// [setCode] and [collectorNumber].
+  ///
+  /// {@template card_parameter_set_code}
+  /// [setCode]\: The set code of the card.
+  /// {@endtemplate}
+  ///
+  /// {@template card_parameter_collector_number}
+  /// [collectorNumber]\: The collector number of the card.
+  /// {@endtemplate}
+  ///
+  /// {@template card_parameter_language}
+  /// [language]\: The language of the card.
+  /// Defaults to [Language.english] (`en`).
+  /// {@endtemplate}
+  Future<MtgCard> getCardBySetCodeAndCollectorNumber(
+    String setCode,
+    String collectorNumber, {
+    Language? language,
+  }) async {
+    final url = Uri.https(
+      _baseUrl,
+      '/cards/$setCode/$collectorNumber${language != null ? '/${language.name}' : ''}',
+    );
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return MtgCard.fromJson(json);
+  }
+
+  /// **GET** /cards/:code/:number(/:lang)
+  ///
+  /// Returns an image of a single card with the given
+  /// [setCode] and [collectorNumber].
+  ///
+  /// {@macro card_parameter_set_code}
+  ///
+  /// {@macro card_parameter_collector_number}
+  ///
+  /// {@macro card_parameter_language}
+  ///
+  /// {@macro card_parameter_back_face}
+  ///
+  /// {@macro card_parameter_image_version}
+  Future<Uint8List> getCardBySetCodeAndCollectorNumberAsImage(
+    String setCode,
+    String collectorNumber, {
+    Language? language,
+    bool? backFace,
+    ImageVersion? imageVersion,
+  }) async {
+    final url = Uri.https(
+      _baseUrl,
+      '/cards/$setCode/$collectorNumber${language != null ? '/${language.name}' : ''}',
+      <String, String?>{
+        'format': 'image',
+        'face': backFace == true ? 'back' : null,
+        'version': imageVersion?.name,
+      }..removeWhere((_, value) => value == null),
+    );
+    final response = await _httpClient.get(url);
+
+    if (response.statusCode != 200) {
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      throw ScryfallException.fromJson(json);
+    }
+
+    return response.bodyBytes;
   }
 }
 
