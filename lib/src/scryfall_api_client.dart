@@ -654,6 +654,39 @@ class ScryfallApiClient {
 
     return MtgCard.fromJson(json);
   }
+
+  /// **GET** /cards/tcgplayer/:id?format=image
+  ///
+  /// Returns a single card with the given [tcgplayerId]
+  /// or `tcgplayer_etched_id`, also known as the `productId`
+  /// on [TCGplayer’s API](https://docs.tcgplayer.com/docs).
+  ///
+  /// {@macro card_parameter_back_face}
+  ///
+  /// {@macro card_parameter_image_version}
+  Future<Uint8List> getCardByTcgplayerIdAsImage(
+    int tcgplayerId, {
+    bool? backFace,
+    ImageVersion? imageVersion,
+  }) async {
+    final url = Uri.https(
+      _baseUrl,
+      '/cards/tcgplayer/$tcgplayerId',
+      <String, String?>{
+        'format': 'image',
+        'face': backFace == true ? 'back' : null,
+        'version': imageVersion?.name,
+      },
+    );
+    final response = await _httpClient.get(url);
+
+    if (response.statusCode != 200) {
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      throw ScryfallException.fromJson(json);
+    }
+
+    return response.bodyBytes;
+  }
 }
 
 /// The [ImageVersion] specifies the different resolutions and
