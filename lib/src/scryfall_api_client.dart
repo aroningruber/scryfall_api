@@ -442,7 +442,7 @@ class ScryfallApiClient {
     return MtgCard.fromJson(json);
   }
 
-  /// **GET** /cards/:code/:number(/:lang)
+  /// **GET** /cards/:code/:number(/:lang)?format=image
   ///
   /// Returns an image of a single card with the given
   /// [setCode] and [collectorNumber].
@@ -501,7 +501,7 @@ class ScryfallApiClient {
     return MtgCard.fromJson(json);
   }
 
-  /// **GET** /cards/multiverse/:id
+  /// **GET** /cards/multiverse/:id?format=image
   ///
   /// Returns an image of a single card with the given [multiverseId].
   ///
@@ -554,7 +554,7 @@ class ScryfallApiClient {
     return MtgCard.fromJson(json);
   }
 
-  /// **GET** /cards/mtgo/:id
+  /// **GET** /cards/mtgo/:id?format=image
   ///
   /// Returns a single card with the given [mtgoId]
   /// (also known as the Catalog ID).
@@ -605,7 +605,7 @@ class ScryfallApiClient {
     return MtgCard.fromJson(json);
   }
 
-  /// **GET** /cards/arena/:id
+  /// **GET** /cards/arena/:id?format=image
   ///
   /// Returns a single card with the given [arenaId]
   /// (Magic: The Gathering Arena ID).
