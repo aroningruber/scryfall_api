@@ -749,5 +749,77 @@ void main() {
         expect(actual, isA<CardList>());
       });
     });
+
+    group('getCardBySetCodeAndCollectorNumber', () {
+      final setCode = 'xln';
+      final collectorNumber = '96';
+
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn('{}');
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient.getCardBySetCodeAndCollectorNumber(
+            setCode,
+            collectorNumber,
+            language: Language.japanese,
+          );
+        } catch (_) {}
+        final uri = Uri.https(
+          'api.scryfall.com',
+          '/cards/$setCode/$collectorNumber/ja',
+        );
+        verify(() => httpClient.get(uri)).called(1);
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final json = jsonEncode({
+          'object': 'error',
+          'code': 'not_found',
+          'status': 404,
+          'details': 'Card not found.',
+        });
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getCardBySetCodeAndCollectorNumber(
+            setCode,
+            collectorNumber,
+          ),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns MtgCard on valid response', () async {
+        final file = File(
+            'test/mock_data/get_card_by_set_code_and_collector_number.json');
+        final json = await file.readAsString();
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual =
+            await scryfallApiClient.getCardBySetCodeAndCollectorNumber(
+          setCode,
+          collectorNumber,
+        );
+        expect(actual, isA<MtgCard>());
+      });
+
+      test('gets valid response from actual server', () async {
+        final scryfallApiClientReal = ScryfallApiClient();
+        final actual =
+            await scryfallApiClientReal.getCardBySetCodeAndCollectorNumber(
+          setCode,
+          collectorNumber,
+        );
+        expect(actual, isA<MtgCard>());
+      });
+    });
   });
 }

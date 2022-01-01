@@ -404,6 +404,43 @@ class ScryfallApiClient {
 
     return CardList.fromJson(json);
   }
+
+  /// **GET** /cards/:code/:number(/:lang)
+  ///
+  /// Returns a single card with the given
+  /// [setCode] and [collectorNumber].
+  ///
+  /// {@template card_parameter_set_code}
+  /// [setCode]\: The set code of the card.
+  /// {@endtemplate}
+  ///
+  /// {@template card_parameter_collector_number}
+  /// [collectorNumber]\: The collector number of the card.
+  /// {@endtemplate}
+  ///
+  /// {@template card_parameter_language}
+  /// [language]\: The language of the card.
+  /// Defaults to [Language.english] (`en`).
+  /// {@endtemplate}
+  Future<MtgCard> getCardBySetCodeAndCollectorNumber(
+    String setCode,
+    String collectorNumber, {
+    Language? language,
+  }) async {
+    final url = Uri.https(
+      _baseUrl,
+      '/cards/$setCode/$collectorNumber${language != null ? '/${language.name}' : ''}',
+    );
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return MtgCard.fromJson(json);
+  }
 }
 
 /// The [ImageVersion] specifies the different resolutions and
