@@ -10,6 +10,7 @@ export 'frame.dart';
 export 'game.dart';
 export 'image_status.dart';
 export 'image_uris.dart';
+export 'language.dart';
 export 'layout.dart';
 export 'legalities.dart';
 export 'legality.dart';
