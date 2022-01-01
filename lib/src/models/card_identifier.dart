@@ -24,6 +24,8 @@ abstract class CardIdentifier {
       throw Exception('Unknown CardIdentifier');
     }
   }
+
+  Map<String, dynamic> toJson();
 }
 
 /// Finds a card with the specified Scryfall `id`.
@@ -40,6 +42,7 @@ class CardIdentifierId implements CardIdentifier {
       _$CardIdentifierIdFromJson(json);
 
   /// Converts a [CardIdentifierId] to JSON.
+  @override
   Map<String, dynamic> toJson() => _$CardIdentifierIdToJson(this);
 }
 
@@ -57,6 +60,7 @@ class CardIdentifierMtgoId implements CardIdentifier {
       _$CardIdentifierMtgoIdFromJson(json);
 
   /// Converts a [CardIdentifierMtgoId] to JSON.
+  @override
   Map<String, dynamic> toJson() => _$CardIdentifierMtgoIdToJson(this);
 }
 
@@ -74,6 +78,7 @@ class CardIdentifierMultiverseId implements CardIdentifier {
       _$CardIdentifierMultiverseIdFromJson(json);
 
   /// Converts a [CardIdentifierMultiverseId] to JSON.
+  @override
   Map<String, dynamic> toJson() => _$CardIdentifierMultiverseIdToJson(this);
 }
 
@@ -91,6 +96,7 @@ class CardIdentifierOracleId implements CardIdentifier {
       _$CardIdentifierOracleIdFromJson(json);
 
   /// Converts a [CardIdentifierOracleId] to JSON.
+  @override
   Map<String, dynamic> toJson() => _$CardIdentifierOracleIdToJson(this);
 }
 
@@ -108,6 +114,7 @@ class CardIdentifierIllustrationId implements CardIdentifier {
       _$CardIdentifierIllustrationIdFromJson(json);
 
   /// Converts a [CardIdentifierIllustrationId] to JSON.
+  @override
   Map<String, dynamic> toJson() => _$CardIdentifierIllustrationIdToJson(this);
 }
 
@@ -125,6 +132,7 @@ class CardIdentifierName implements CardIdentifier {
       _$CardIdentifierNameFromJson(json);
 
   /// Converts a [CardIdentifierName] to JSON.
+  @override
   Map<String, dynamic> toJson() => _$CardIdentifierNameToJson(this);
 }
 
@@ -145,6 +153,7 @@ class CardIdentifierSetName implements CardIdentifier {
       _$CardIdentifierSetNameFromJson(json);
 
   /// Converts a [CardIdentifierSetName] to JSON.
+  @override
   Map<String, dynamic> toJson() => _$CardIdentifierSetNameToJson(this);
 }
 
@@ -167,6 +176,7 @@ class CardIdentifierSetCollectorNumber implements CardIdentifier {
       _$CardIdentifierSetCollectorNumberFromJson(json);
 
   /// Converts a [CardIdentifierSetCollectorNumber] to JSON.
+  @override
   Map<String, dynamic> toJson() =>
       _$CardIdentifierSetCollectorNumberToJson(this);
 }
