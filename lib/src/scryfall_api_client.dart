@@ -832,6 +832,32 @@ class ScryfallApiClient {
       (ruling) => Ruling.fromJson(ruling as Map<String, dynamic>),
     );
   }
+
+  /// **GET** /cards/:code/:number/rulings
+  ///
+  /// Returns a [PaginableList] of [Ruling]s for a card with the
+  /// given [setCode] and [collectorNumber].
+  Future<PaginableList<Ruling>> getRulingsBySetCodeAndCollectorNumber(
+    String setCode,
+    String collectorNumber,
+  ) async {
+    final url = Uri.https(
+      _baseUrl,
+      '/cards/$setCode/$collectorNumber/rulings',
+    );
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return PaginableList.fromJson(
+      json,
+      (ruling) => Ruling.fromJson(ruling as Map<String, dynamic>),
+    );
+  }
 }
 
 /// The [ImageVersion] specifies the different resolutions and
