@@ -934,6 +934,32 @@ class ScryfallApiClient {
       (cardSymbol) => CardSymbol.fromJson(cardSymbol as Map<String, dynamic>),
     );
   }
+
+  /// **GET** /symbology/parse-mana
+  ///
+  /// Parses the given [manaCost] parameter
+  /// and returns Scryfall’s interpretation.
+  ///
+  /// The server understands most community shorthand for
+  /// mana costs (such as `2WW` for `{2}{W}{W}`). Symbols
+  /// can also be out of order, lowercase, or have multiple
+  /// colorless costs (such as `2{g}2` for `{4}{G}`).
+  Future<ManaCost> parseMana(String manaCost) async {
+    final url = Uri.https(
+      _baseUrl,
+      '/symbology/parse-mana',
+      <String, String>{'cost': manaCost},
+    );
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return ManaCost.fromJson(json);
+  }
 }
 
 /// The [ImageVersion] specifies the different resolutions and

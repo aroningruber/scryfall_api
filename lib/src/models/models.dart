@@ -15,6 +15,7 @@ export 'language.dart';
 export 'layout.dart';
 export 'legalities.dart';
 export 'legality.dart';
+export 'mana_cost.dart';
 export 'mtg_card.dart';
 export 'mtg_set.dart';
 export 'paginable_list.dart';
