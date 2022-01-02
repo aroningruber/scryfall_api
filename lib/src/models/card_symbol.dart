@@ -64,10 +64,10 @@ class CardSymbol {
   /// uses on old cards to describe original printed text.
   ///
   /// For example: `{W}` has ["oW", "ooW"] as alternates.
-  final List<String> gathererAlternates;
+  final List<String>? gathererAlternates;
 
   /// A URI to an SVG image of this symbol on Scryfall’s CDNs.
-  final Uri svgUri;
+  final Uri? svgUri;
 
   /// Constructs a [CardSymbol] by settings its properties.
   const CardSymbol({
@@ -80,8 +80,8 @@ class CardSymbol {
     required this.appearsInManaCosts,
     required this.funny,
     required this.colors,
-    required this.gathererAlternates,
-    required this.svgUri,
+    this.gathererAlternates,
+    this.svgUri,
   });
 
   /// Constructs a [CardSymbol] from JSON.
