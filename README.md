@@ -12,7 +12,7 @@ which is provided by the [Scryfall API](https://scryfall.com):
 - [Sets](https://scryfall.com/docs/api/sets)
 - [Cards](https://scryfall.com/docs/api/cards)
 - [Rulings](https://scryfall.com/docs/api/rulings)
-- [Card Symbols](https://scryfall.com/docs/api/card-symbols) (_planned for v0.4.0_)
+- [Card Symbols](https://scryfall.com/docs/api/card-symbols)
 - [Catalogs](https://scryfall.com/docs/api/catalogs) (_planned for v0.5.0_)
 - [Bulk data](https://scryfall.com/docs/api/bulk-data) (_planned for v0.6.0_)
 
@@ -22,7 +22,7 @@ To install this package, just add the `scryfall_api` package to your `pubspec.ya
 
 ```yaml
 dependencies:
-    scryfall_api: ^0.3.0
+    scryfall_api: ^0.4.0
 ```
 
 Don't forget to install it by running `dart pub get` or `flutter pub get`.

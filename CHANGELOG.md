@@ -1,3 +1,8 @@
+## 0.4.0
+
+- Get all card symbols (**GET** `/symbology`)
+- Parse mana cost (**GET** `/symbology/parse-mana`)
+
 ## 0.3.0
 
 - Get rulings by multiverse id (**GET** `/cards/multiverse/:id/rulings`)
