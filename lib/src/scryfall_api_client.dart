@@ -163,7 +163,7 @@ class ScryfallApiClient {
         'q': searchQuery,
         'unique': rollupMode?.name,
         'order': sortingOrder?.name,
-        'dir': sortingDirection?.name,
+        'dir': sortingDirection?.json,
         'include_extras': includeExtras?.toString(),
         'include_multilingual': includeMultilingual?.toString(),
         'include_variations': includeVariations?.toString(),
@@ -267,7 +267,7 @@ class ScryfallApiClient {
         'fuzzy': searchType == SearchType.fuzzy ? name : null,
         'set': set,
         'face': backFace == true ? 'back' : null,
-        'version': imageVersion?.name,
+        'version': imageVersion?.json,
       }..removeWhere((_, value) => value == null),
     );
     final response = await _httpClient.get(url);
@@ -379,7 +379,7 @@ class ScryfallApiClient {
         'format': 'image',
         'q': query,
         'face': backFace == true ? 'back' : null,
-        'version': imageVersion?.name,
+        'version': imageVersion?.json,
       }..removeWhere((_, value) => value == null),
     );
     final response = await _httpClient.get(url);
@@ -446,7 +446,7 @@ class ScryfallApiClient {
   }) async {
     final url = Uri.https(
       _baseUrl,
-      '/cards/$setCode/$collectorNumber${language != null ? '/${language.name}' : ''}',
+      '/cards/$setCode/$collectorNumber${language != null ? '/${language.json}' : ''}',
     );
     final response = await _httpClient.get(url);
 
@@ -482,11 +482,11 @@ class ScryfallApiClient {
   }) async {
     final url = Uri.https(
       _baseUrl,
-      '/cards/$setCode/$collectorNumber${language != null ? '/${language.name}' : ''}',
+      '/cards/$setCode/$collectorNumber${language != null ? '/${language.json}' : ''}',
       <String, String?>{
         'format': 'image',
         'face': backFace == true ? 'back' : null,
-        'version': imageVersion?.name,
+        'version': imageVersion?.json,
       }..removeWhere((_, value) => value == null),
     );
     final response = await _httpClient.get(url);
@@ -539,7 +539,7 @@ class ScryfallApiClient {
       <String, String?>{
         'format': 'image',
         'face': backFace == true ? 'back' : null,
-        'version': imageVersion?.name,
+        'version': imageVersion?.json,
       }..removeWhere((_, value) => value == null),
     );
     final response = await _httpClient.get(url);
@@ -592,7 +592,7 @@ class ScryfallApiClient {
       <String, String?>{
         'format': 'image',
         'face': backFace == true ? 'back' : null,
-        'version': imageVersion?.name,
+        'version': imageVersion?.json,
       },
     );
     final response = await _httpClient.get(url);
@@ -641,7 +641,7 @@ class ScryfallApiClient {
       <String, String?>{
         'format': 'image',
         'face': backFace == true ? 'back' : null,
-        'version': imageVersion?.name,
+        'version': imageVersion?.json,
       },
     );
     final response = await _httpClient.get(url);
@@ -692,7 +692,7 @@ class ScryfallApiClient {
       <String, String?>{
         'format': 'image',
         'face': backFace == true ? 'back' : null,
-        'version': imageVersion?.name,
+        'version': imageVersion?.json,
       },
     );
     final response = await _httpClient.get(url);
@@ -743,7 +743,7 @@ class ScryfallApiClient {
       <String, String?>{
         'format': 'image',
         'face': backFace == true ? 'back' : null,
-        'version': imageVersion?.name,
+        'version': imageVersion?.json,
       },
     );
     final response = await _httpClient.get(url);
@@ -790,7 +790,7 @@ class ScryfallApiClient {
       <String, String?>{
         'format': 'image',
         'face': backFace == true ? 'back' : null,
-        'version': imageVersion?.name,
+        'version': imageVersion?.json,
       },
     );
     final response = await _httpClient.get(url);
@@ -1015,7 +1015,7 @@ enum ImageVersion {
 }
 
 extension on ImageVersion {
-  String get name {
+  String get json {
     switch (this) {
       case ImageVersion.small:
         return 'small';
@@ -1144,7 +1144,7 @@ enum SortingDirection {
 }
 
 extension on SortingDirection {
-  String get name {
+  String get json {
     switch (this) {
       case SortingDirection.ascending:
         return 'asc';

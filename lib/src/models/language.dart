@@ -44,5 +44,5 @@ enum Language {
 
 extension LanguageCodeConversion on Language {
   /// The 2-3 letter language code of the language.
-  String get name => _$LanguageEnumMap[this] ?? 'unknown';
+  String get json => _$LanguageEnumMap[this] ?? 'unknown';
 }
