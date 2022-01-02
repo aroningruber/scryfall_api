@@ -29,5 +29,4 @@
 build/
 
 coverage/
-scripts/
-run.sh
+tool/
