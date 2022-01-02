@@ -915,6 +915,25 @@ class ScryfallApiClient {
       (ruling) => Ruling.fromJson(ruling as Map<String, dynamic>),
     );
   }
+
+  /// **GET** /symbology
+  ///
+  /// Returns a [PaginableList] of all [CardSymbol]s.
+  Future<PaginableList<CardSymbol>> getAllCardSymbols() async {
+    final url = Uri.https(_baseUrl, '/symbology');
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return PaginableList.fromJson(
+      json,
+      (cardSymbol) => CardSymbol.fromJson(cardSymbol as Map<String, dynamic>),
+    );
+  }
 }
 
 /// The [ImageVersion] specifies the different resolutions and
