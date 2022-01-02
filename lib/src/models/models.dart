@@ -21,6 +21,7 @@ export 'preview.dart';
 export 'prices.dart';
 export 'rarity.dart';
 export 'related_card.dart';
+export 'ruling.dart';
 export 'scryfall_exception.dart';
 export 'security_stamp.dart';
 export 'set_type.dart';
