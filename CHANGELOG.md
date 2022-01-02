@@ -1,3 +1,11 @@
+## 0.3.0
+
+- Get rulings by multiverse id (**GET** `/cards/multiverse/:id/rulings`)
+- Get rulings by mtgo id (**GET** `/cards/mtgo/:id/rulings`)
+- Get rulings by arena id (**GET** `/cards/arena/:id/rulings`)
+- Get rulings by set code and collector number (**GET** `/cards/:code/:number/rulings`)
+- Get rulings by id (**GET** `/cards/:id/rulings`)
+
 ## 0.2.0
 
 - Search for cards (**GET** `/cards/search`)
