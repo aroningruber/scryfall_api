@@ -1541,5 +1541,53 @@ void main() {
         expect(actual, isA<PaginableList<Ruling>>());
       });
     });
+
+    group('getRulingsByMtgoId', () {
+      final mtgoId = 57934;
+
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn('{}');
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient.getRulingsByMtgoId(mtgoId);
+        } catch (_) {}
+        final uri = Uri.https(
+          'api.scryfall.com',
+          '/cards/mtgo/$mtgoId/rulings',
+        );
+        verify(() => httpClient.get(uri)).called(1);
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(jsonError);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getRulingsByMtgoId(mtgoId),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns PaginableList<Ruling> on valid response', () async {
+        final file = File('test/mock_data/get_rulings_by_mtgo_id.json');
+        final json = await file.readAsString();
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual = await scryfallApiClient.getRulingsByMtgoId(mtgoId);
+        expect(actual, isA<PaginableList<Ruling>>());
+      });
+
+      test('gets valid response from actual server', () async {
+        final scryfallApiClientReal = ScryfallApiClient();
+        final actual = await scryfallApiClientReal.getRulingsByMtgoId(mtgoId);
+        expect(actual, isA<PaginableList<Ruling>>());
+      });
+    });
   });
 }
