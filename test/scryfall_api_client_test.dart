@@ -17,6 +17,7 @@ void main() {
   group('ScryfallApiClient', () {
     late http.Client httpClient;
     late ScryfallApiClient scryfallApiClient;
+    late ScryfallApiClient scryfallApiClientReal;
     late String jsonError;
 
     setUpAll(() {
@@ -26,6 +27,7 @@ void main() {
     setUp(() {
       httpClient = MockHttpClient();
       scryfallApiClient = ScryfallApiClient(httpClient: httpClient);
+      scryfallApiClientReal = ScryfallApiClient();
       jsonError = jsonEncode({
         'object': 'error',
         'code': 'not_found',
@@ -34,9 +36,25 @@ void main() {
       });
     });
 
+    tearDown(() {
+      scryfallApiClient.close();
+      scryfallApiClientReal.close();
+    });
+
     group('constructor', () {
       test('does not require an httpClient', () {
         expect(ScryfallApiClient(), isNotNull);
+      });
+    });
+
+    group('close', () {
+      test('invalidates client; subsequent use results in ClientException',
+          () async {
+        scryfallApiClientReal.close();
+        expect(
+          scryfallApiClientReal.getAllSets(),
+          throwsA(isA<http.ClientException>()),
+        );
       });
     });
 
@@ -77,7 +95,6 @@ void main() {
       });
 
       test('gets valid reponse from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.getAllSets();
         expect(actual, isA<PaginableList<MtgSet>>());
       });
@@ -122,7 +139,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.getSetByCode(code);
         expect(actual, isA<MtgSet>());
       });
@@ -170,7 +186,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.getSetByTcgplayerId(id);
         expect(actual, isA<MtgSet>());
       });
@@ -215,7 +230,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.getSetById(id);
         expect(actual, isA<MtgSet>());
       });
@@ -292,7 +306,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.searchCards(
           searchQuery,
           sortingOrder: sortingOrder,
@@ -348,7 +361,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.getCardByName(
           nameExact,
           set: set,
@@ -410,7 +422,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.getCardByNameAsImage(
           nameExact,
           set: set,
@@ -420,9 +431,7 @@ void main() {
 
       test('gets an image from actual server', () async {
         when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.Client().get(
-            invocation.positionalArguments[0],
-          );
+          final response = await http.get(invocation.positionalArguments[0]);
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -478,7 +487,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.autocompleteCardName(query);
         expect(actual, isA<Catalog>());
       });
@@ -525,7 +533,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.getRandomCard(query: query);
         expect(actual, isA<MtgCard>());
       });
@@ -578,16 +585,13 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.getRandomCardAsImage();
         expect(actual, isA<Uint8List>());
       });
 
       test('gets an image from actual server', () async {
         when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.Client().get(
-            invocation.positionalArguments[0],
-          );
+          final response = await http.get(invocation.positionalArguments[0]);
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -670,7 +674,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual =
             await scryfallApiClientReal.getCardsByIdentifiers(identifiers);
         expect(actual, isA<CardList>());
@@ -732,7 +735,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual =
             await scryfallApiClientReal.getCardBySetCodeAndCollectorNumber(
           setCode,
@@ -799,7 +801,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal
             .getCardBySetCodeAndCollectorNumberAsImage(
           setCode,
@@ -810,9 +811,7 @@ void main() {
 
       test('gets an image from actual server', () async {
         when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.Client().get(
-            invocation.positionalArguments[0],
-          );
+          final response = await http.get(invocation.positionalArguments[0]);
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -866,7 +865,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual =
             await scryfallApiClientReal.getCardByMultiverseId(multiverseId);
         expect(actual, isA<MtgCard>());
@@ -920,7 +918,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal
             .getCardByMultiverseIdAsImage(multiverseId);
         expect(actual, isA<Uint8List>());
@@ -928,9 +925,7 @@ void main() {
 
       test('gets an image from actual server', () async {
         when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.Client().get(
-            invocation.positionalArguments[0],
-          );
+          final response = await http.get(invocation.positionalArguments[0]);
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -977,7 +972,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.getCardByMtgoId(mtgoId);
         expect(actual, isA<MtgCard>());
       });
@@ -1029,7 +1023,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual =
             await scryfallApiClientReal.getCardByMtgoIdAsImage(mtgoId);
         expect(actual, isA<Uint8List>());
@@ -1037,9 +1030,7 @@ void main() {
 
       test('gets an image from actual server', () async {
         when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.Client().get(
-            invocation.positionalArguments[0],
-          );
+          final response = await http.get(invocation.positionalArguments[0]);
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -1086,7 +1077,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.getCardByArenaId(arenaId);
         expect(actual, isA<MtgCard>());
       });
@@ -1138,7 +1128,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual =
             await scryfallApiClientReal.getCardByArenaIdAsImage(arenaId);
         expect(actual, isA<Uint8List>());
@@ -1146,9 +1135,7 @@ void main() {
 
       test('gets an image from actual server', () async {
         when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.Client().get(
-            invocation.positionalArguments[0],
-          );
+          final response = await http.get(invocation.positionalArguments[0]);
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -1197,7 +1184,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual =
             await scryfallApiClientReal.getCardByTcgplayerId(tcgplayerId);
         expect(actual, isA<MtgCard>());
@@ -1252,7 +1238,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal
             .getCardByTcgplayerIdAsImage(tcgplayerId);
         expect(actual, isA<Uint8List>());
@@ -1260,9 +1245,7 @@ void main() {
 
       test('gets an image from actual server', () async {
         when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.Client().get(
-            invocation.positionalArguments[0],
-          );
+          final response = await http.get(invocation.positionalArguments[0]);
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -1311,7 +1294,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual =
             await scryfallApiClientReal.getCardByCardmarketId(cardmarketId);
         expect(actual, isA<MtgCard>());
@@ -1366,7 +1348,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal
             .getCardByCardmarketIdAsImage(cardmarketId);
         expect(actual, isA<Uint8List>());
@@ -1374,9 +1355,7 @@ void main() {
 
       test('gets an image from actual server', () async {
         when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.Client().get(
-            invocation.positionalArguments[0],
-          );
+          final response = await http.get(invocation.positionalArguments[0]);
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -1423,7 +1402,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.getCardById(id);
         expect(actual, isA<MtgCard>());
       });
@@ -1475,16 +1453,13 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.getCardByIdAsImage(id);
         expect(actual, isA<Uint8List>());
       });
 
       test('gets an image from actual server', () async {
         when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.Client().get(
-            invocation.positionalArguments[0],
-          );
+          final response = await http.get(invocation.positionalArguments[0]);
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -1535,7 +1510,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual =
             await scryfallApiClientReal.getRulingsByMultiverseId(multiverseId);
         expect(actual, isA<PaginableList<Ruling>>());
@@ -1584,7 +1558,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.getRulingsByMtgoId(mtgoId);
         expect(actual, isA<PaginableList<Ruling>>());
       });
@@ -1632,7 +1605,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.getRulingsByArenaId(arenaId);
         expect(actual, isA<PaginableList<Ruling>>());
       });
@@ -1692,7 +1664,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual =
             await scryfallApiClientReal.getRulingsBySetCodeAndCollectorNumber(
           setCode,
@@ -1741,7 +1712,6 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final scryfallApiClientReal = ScryfallApiClient();
         final actual = await scryfallApiClientReal.getRulingsById(id);
         expect(actual, isA<PaginableList<Ruling>>());
       });

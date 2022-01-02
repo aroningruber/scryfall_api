@@ -10,15 +10,18 @@ void main() async {
   final afrSet = await apiClient.getSetByCode('afr');
 
   // Print information about the set.
-  print(afrSet.name);
-  print(afrSet.iconSvgUri);
-  print(afrSet.printedSize);
+  print('Name of set: ${afrSet.name}');
+  print('URI of set icon: ${afrSet.iconSvgUri}');
+  print('Number of cards in set: ${afrSet.printedSize}');
 
   // Retrieve the 'Black Lotus' card by its name.
   final blackLotus = await apiClient.getCardByName('black lotus');
 
   // Print information about the card.
-  print(blackLotus.name);
-  print(blackLotus.manaCost);
-  print(blackLotus.oracleText);
+  print('Name of card: ${blackLotus.name}');
+  print('Mana cost of card: ${blackLotus.manaCost}');
+  print('Oracle text of card: ${blackLotus.oracleText}');
+
+  // Close API Client when it's not used anymore.
+  apiClient.close();
 }

@@ -38,22 +38,26 @@ import 'package:scryfall_api/scryfall_api.dart';
 Retrieve the [Adventures in the Forgotten Realms](https://scryfall.com/sets/afr) set by its unique code (`afr`):
 
 ```dart
-final client = ScryfallApiClient();
+final apiClient = ScryfallApiClient();
 
 // [GET] https://api.scryfall.com/sets/afr
-final afrSet = await client.getSetByCode('afr'); // MtgSet
+final afrSet = await apiClient.getSetByCode('afr'); // MtgSet
 afrSet.name // -> 'Adventures in the Forgotten Realms'
+
+apiClient.close(); // Close API Client when it's not used anymore.
 ```
 
 Retrieve the [Black Lotus](https://scryfall.com/card/vma/4/black-lotus) card by its `id` on [Scryfall](https://scryfall.com/):
 
 ```dart
-final client = ScryfallApiClient();
+final apiClient = ScryfallApiClient();
 
 // [GET] https://api.scryfall.com/cards/bd8fa327-dd41-4737-8f19-2cf5eb1f7cdd
-final blackLotus = await client.getCardById('bd8fa327-dd41-4737-8f19-2cf5eb1f7cdd'); // MtgCard
+final blackLotus = await apiClient.getCardById('bd8fa327-dd41-4737-8f19-2cf5eb1f7cdd'); // MtgCard
 blackLotus.name // -> 'Black Lotus'
 blackLotus.oracleText // -> '{T}, Sacrifice Black Lotus: Add three mana of any one color.'
+
+apiClient.close(); // Close API Client when it's not used anymore.
 ```
 
 ## Features and bugs

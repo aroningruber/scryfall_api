@@ -16,6 +16,23 @@ class ScryfallApiClient {
   ScryfallApiClient({http.Client? httpClient})
       : _httpClient = httpClient ?? http.Client();
 
+  /// Closes the connection to the Scryfall server.
+  ///
+  /// Any subsequent use of this instance is invalid
+  /// and results in a [http.ClientException].
+  ///
+  /// This method closes the underlying [http.Client].
+  /// Therefore, if a [http.Client] was provided when
+  /// creating the [ScryfallApiClient], closing that
+  /// [http.Client] is equivalent to calling this method.
+  ///
+  /// It's important to close each client when it's
+  /// done being used; failing to do so can cause
+  /// the Dart process to hang.
+  void close() {
+    _httpClient.close();
+  }
+
   /// **GET** /sets
   ///
   /// Returns a [PaginableList] of all [MtgSet]s on Scryfall.
