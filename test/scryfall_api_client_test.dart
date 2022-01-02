@@ -1589,7 +1589,7 @@ void main() {
         expect(actual, isA<PaginableList<Ruling>>());
       });
     });
-    
+
     group('getRulingsByArenaId', () {
       final arenaId = 67462;
 
@@ -1637,7 +1637,7 @@ void main() {
         expect(actual, isA<PaginableList<Ruling>>());
       });
     });
-    
+
     group('getRulingsBySetCodeAndCollectorNumberId', () {
       final setCode = 'ima';
       final collectorNumber = '65';
