@@ -1589,6 +1589,55 @@ void main() {
         expect(actual, isA<PaginableList<Ruling>>());
       });
     });
+    
+    group('getRulingsByArenaId', () {
+      final arenaId = 67462;
+
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn('{}');
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient.getRulingsByArenaId(arenaId);
+        } catch (_) {}
+        final uri = Uri.https(
+          'api.scryfall.com',
+          '/cards/arena/$arenaId/rulings',
+        );
+        verify(() => httpClient.get(uri)).called(1);
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(jsonError);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getRulingsByArenaId(arenaId),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns PaginableList<Ruling> on valid response', () async {
+        final file = File('test/mock_data/get_rulings_by_arena_id.json');
+        final json = await file.readAsString();
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual = await scryfallApiClient.getRulingsByArenaId(arenaId);
+        expect(actual, isA<PaginableList<Ruling>>());
+      });
+
+      test('gets valid response from actual server', () async {
+        final scryfallApiClientReal = ScryfallApiClient();
+        final actual = await scryfallApiClientReal.getRulingsByArenaId(arenaId);
+        expect(actual, isA<PaginableList<Ruling>>());
+      });
+    });
+    
     group('getRulingsBySetCodeAndCollectorNumberId', () {
       final setCode = 'ima';
       final collectorNumber = '65';

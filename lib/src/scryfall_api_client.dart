@@ -833,6 +833,26 @@ class ScryfallApiClient {
     );
   }
 
+  /// **GET** /cards/arena/:id/rulings
+  ///
+  /// Returns a [PaginableList] of [Ruling]s for a card with the
+  /// fiven [arenaId] (Magic: The Gathering Arena ID).
+  Future<PaginableList<Ruling>> getRulingsByArenaId(int arenaId) async {
+    final url = Uri.https(_baseUrl, '/cards/arena/$arenaId/rulings');
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return PaginableList.fromJson(
+      json,
+      (ruling) => Ruling.fromJson(ruling as Map<String, dynamic>),
+    );
+  }
+
   /// **GET** /cards/:code/:number/rulings
   ///
   /// Returns a [PaginableList] of [Ruling]s for a card with the
