@@ -26,8 +26,9 @@ CardSymbol _$CardSymbolFromJson(Map<String, dynamic> json) => $checkedCreate(
                   .map((e) => $enumDecode(_$ColorEnumMap, e))
                   .toList()),
           gathererAlternates: $checkedConvert('gatherer_alternates',
-              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
-          svgUri: $checkedConvert('svg_uri', (v) => Uri.parse(v as String)),
+              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          svgUri: $checkedConvert(
+              'svg_uri', (v) => v == null ? null : Uri.parse(v as String)),
         );
         return val;
       },
