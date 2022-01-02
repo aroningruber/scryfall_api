@@ -16,23 +16,6 @@ which is provided by the [Scryfall API](https://scryfall.com):
 - [Catalogs](https://scryfall.com/docs/api/catalogs) (_planned for v0.5.0_)
 - [Bulk data](https://scryfall.com/docs/api/bulk-data) (_planned for v0.6.0_)
 
-## Installation
-
-To install this package, just add the `scryfall_api` package to your `pubspec.yaml` file:
-
-```yaml
-dependencies:
-    scryfall_api: ^0.4.0
-```
-
-Don't forget to install it by running `dart pub get` or `flutter pub get`.
-
-After successfully installing the `scryfall_api` package, it can be imported with:
-
-```dart
-import 'package:scryfall_api/scryfall_api.dart';
-```
-
 ## Usage
 
 Retrieve the [Adventures in the Forgotten Realms](https://scryfall.com/sets/afr) set by its unique code (`afr`):
