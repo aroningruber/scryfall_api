@@ -22,6 +22,13 @@ void main() async {
   print('Mana cost of card: ${blackLotus.manaCost}');
   print('Oracle text of card: ${blackLotus.oracleText}');
 
+  // Get all spell types.
+  final spellTypes = await apiClient.getSpellTypes();
+
+  // Print the spell types.
+  print('Number of spell types: ${spellTypes.length}');
+  print('Spell types: ${spellTypes.data}');
+
   // Close API Client when it's not used anymore.
   apiClient.close();
 }

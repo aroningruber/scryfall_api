@@ -13,34 +13,50 @@ which is provided by the [Scryfall API](https://scryfall.com):
 - [Cards](https://scryfall.com/docs/api/cards)
 - [Rulings](https://scryfall.com/docs/api/rulings)
 - [Card Symbols](https://scryfall.com/docs/api/card-symbols)
-- [Catalogs](https://scryfall.com/docs/api/catalogs) (_planned for v0.5.0_)
-- [Bulk data](https://scryfall.com/docs/api/bulk-data) (_planned for v0.6.0_)
+- [Catalogs](https://scryfall.com/docs/api/catalogs)
+- [Bulk data](https://scryfall.com/docs/api/bulk-data)
 
 ## Usage
+
+Initialize the `ScryfallApiClient`:
+
+```dart
+final apiClient = ScryfallApiClient();
+```
 
 Retrieve the [Adventures in the Forgotten Realms](https://scryfall.com/sets/afr) set by its unique code (`afr`):
 
 ```dart
-final apiClient = ScryfallApiClient();
-
 // [GET] https://api.scryfall.com/sets/afr
-final afrSet = await apiClient.getSetByCode('afr'); // MtgSet
+final afrSet = await apiClient.getSetByCode('afr');
+
 afrSet.name // -> 'Adventures in the Forgotten Realms'
 
-apiClient.close(); // Close API Client when it's not used anymore.
+// Close API Client when it's not used anymore.
+apiClient.close();
 ```
 
 Retrieve the [Black Lotus](https://scryfall.com/card/vma/4/black-lotus) card by its `id` on [Scryfall](https://scryfall.com/):
 
 ```dart
-final apiClient = ScryfallApiClient();
-
 // [GET] https://api.scryfall.com/cards/bd8fa327-dd41-4737-8f19-2cf5eb1f7cdd
-final blackLotus = await apiClient.getCardById('bd8fa327-dd41-4737-8f19-2cf5eb1f7cdd'); // MtgCard
-blackLotus.name // -> 'Black Lotus'
+final blackLotus = await apiClient.getCardById('bd8fa327-dd41-4737-8f19-2cf5eb1f7cdd');
+
+blackLotus.name       // -> 'Black Lotus'
 blackLotus.oracleText // -> '{T}, Sacrifice Black Lotus: Add three mana of any one color.'
 
-apiClient.close(); // Close API Client when it's not used anymore.
+// Close API Client when it's not used anymore.
+apiClient.close();
+```
+
+Retrieve all spell types from [Scryfall](https://scryfall.com/):
+
+```dart
+// [GET] https://api.scryfall.com/catalog/spell-types
+final spellTypes = await apiClient.getSpellTypes();
+
+spellTypes.length // -> 4
+spellTypes.data   // -> [Adventure, Arcane, Lesson, Trap]
 ```
 
 ## Features and bugs

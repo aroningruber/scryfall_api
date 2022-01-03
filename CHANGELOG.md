@@ -1,3 +1,25 @@
+## 1.0.0
+
+- Get bulk data (**GET** `/bulk-data`)
+- Get bulk data by id (**GET** `/bulk-data/:id`)
+- Get bulk data by type (**GET** `/bulk-data/:type`)
+- Get card names (**GET** `/catalog/card-names`)
+- Get artist names (**GET** `/catalog/artist-names`)
+- Get word bank (**GET** `/catalog/word-bank`)
+- Get create types (**GET** `/catalog/creature-types`)
+- Get planeswalker types (**GET** `/catalog/planeswalker-types`)
+- Get land types (**GET** `/catalog/land-types`)
+- Get artifact types (**GET** `/catalog/artifact-types`)
+- Get enchantment types (**GET** `/catalog/enchantment-types`)
+- Get spell types (**GET** `/catalog/spell-types`)
+- Get powers (**GET** `/catalog/powers`)
+- Get toughnesses (**GET** `/catalog/toughnesses`)
+- Get loyalties (**GET** `/catalog/loyalties`)
+- Get watermarks (**GET** `/catalog/watermarks`)
+- Get keyword abilities (**GET** `/catalog/keyword-abilities`)
+- Get keyword actions (**GET** `/catalog/keyword-actions`)
+- Get ability words (**GET** `/catalog/ability-words`)
+
 ## 0.4.0
 
 - Get all card symbols (**GET** `/symbology`)
