@@ -967,7 +967,7 @@ class ScryfallApiClient {
   ///
   /// [catalogType]\: The type of catalog that shall be returned.
   Future<Catalog> getCatalog(CatalogType catalogType) async {
-    final url = Uri.https(_baseUrl, '/catalog/${catalogType.json}');
+    final url = Uri.https(_baseUrl, '/catalog/${catalogType.urlEncoding}');
     final response = await _httpClient.get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -1128,6 +1128,148 @@ class ScryfallApiClient {
 
     return response.bodyBytes;
   }
+
+  /// **GET** /bulk-data/:type
+  ///
+  /// Returns a single [BulkData] object with the given [type].
+  Future<BulkData> getBulkDataByType(BulkDataType type) async {
+    final url = Uri.https(_baseUrl, '/bulk-data/${type.urlEncoding}');
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return BulkData.fromJson(json);
+  }
+
+  /// **GET** /bulk-data/:type?format=file
+  ///
+  /// Returns the actual bulk data file with the given [type]
+  /// as a [Uint8List].
+  Future<Uint8List> getBulkDataByTypeAsFile(BulkDataType type) async {
+    final url = Uri.https(
+      _baseUrl,
+      '/bulk-data/${type.urlEncoding}',
+      {'format': 'file'},
+    );
+    final response = await _httpClient.get(url);
+
+    if (response.statusCode != 200) {
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      throw ScryfallException.fromJson(json);
+    }
+
+    return response.bodyBytes;
+  }
+
+  /// **GET** /bulk-data/oracle-cards?format=file
+  ///
+  /// Convenience method for calling [getBulkDataByTypeAsFile]
+  /// with [BulkDataType.oracleCards] and casting to correct type.
+  Future<List<MtgCard>> getBulkDataOracleCards() async {
+    final bytes = await getBulkDataByTypeAsFile(BulkDataType.oracleCards);
+
+    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+
+    return json
+        .map((card) => MtgCard.fromJson(card as Map<String, dynamic>))
+        .toList();
+  }
+
+  /// **GET** /bulk-data/unique-artwork?format=file
+  ///
+  /// Convenience method for calling [getBulkDataByTypeAsFile]
+  /// with [BulkDataType.uniqueArtwork] and casting to correct type.
+  Future<List<MtgCard>> getBulkDataUniqueArtwork() async {
+    final bytes = await getBulkDataByTypeAsFile(BulkDataType.uniqueArtwork);
+
+    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+
+    return json
+        .map((card) => MtgCard.fromJson(card as Map<String, dynamic>))
+        .toList();
+  }
+
+  /// **GET** /bulk-data/default-cards?format=file
+  ///
+  /// Convenience method for calling [getBulkDataByTypeAsFile]
+  /// with [BulkDataType.defaultCards] and casting to correct type.
+  Future<List<MtgCard>> getBulkDataDefaultCards() async {
+    final bytes = await getBulkDataByTypeAsFile(BulkDataType.defaultCards);
+
+    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+
+    return json
+        .map((card) => MtgCard.fromJson(card as Map<String, dynamic>))
+        .toList();
+  }
+
+  /// **GET** /bulk-data/all-cards?format=file
+  ///
+  /// Convenience method for calling [getBulkDataByTypeAsFile]
+  /// with [BulkDataType.allCards] and casting to correct type.
+  Future<List<MtgCard>> getBulkDataAllCards() async {
+    final bytes = await getBulkDataByTypeAsFile(BulkDataType.allCards);
+
+    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+
+    return json
+        .map((card) => MtgCard.fromJson(card as Map<String, dynamic>))
+        .toList();
+  }
+
+  /// **GET** /bulk-data/rulings?format=file
+  ///
+  /// Convenience method for calling [getBulkDataByTypeAsFile]
+  /// with [BulkDataType.rulings] and casting to correct type.
+  Future<List<Ruling>> getBulkDataRulings() async {
+    final bytes = await getBulkDataByTypeAsFile(BulkDataType.rulings);
+
+    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+
+    return json
+        .map((ruling) => Ruling.fromJson(ruling as Map<String, dynamic>))
+        .toList();
+  }
+}
+
+/// The types of [BulkData] which be retrieved.
+enum BulkDataType {
+  /// One Scryfall card object for each Oracle ID on Scryfall.
+  oracleCards,
+
+  /// Scryfall card objects that together contain all unique artworks.
+  uniqueArtwork,
+
+  /// Every card object on Scryfall in English or the printed language
+  /// if the card is only available in one language.
+  defaultCards,
+
+  /// Every card object on Scryfall in every language.
+  allCards,
+
+  /// All Rulings on Scryfall.
+  rulings,
+}
+
+extension on BulkDataType {
+  String get urlEncoding {
+    switch (this) {
+      case BulkDataType.oracleCards:
+        return 'oracle-cards';
+      case BulkDataType.uniqueArtwork:
+        return 'unique-artwork';
+      case BulkDataType.defaultCards:
+        return 'default-cards';
+      case BulkDataType.allCards:
+        return 'all-cards';
+      case BulkDataType.rulings:
+        return 'rulings';
+    }
+  }
 }
 
 /// The types of [Catalog] objects which can be retrieved
@@ -1184,7 +1326,7 @@ enum CatalogType {
 }
 
 extension on CatalogType {
-  String get json {
+  String get urlEncoding {
     switch (this) {
       case CatalogType.cardNames:
         return 'card-names';
