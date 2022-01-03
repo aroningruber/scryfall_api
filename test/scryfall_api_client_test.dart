@@ -2042,5 +2042,52 @@ void main() {
         expect(actual, isA<BulkData>());
       });
     });
+
+    group('getBulkdDataByIdAsFile', () {
+      const id = '06f54c0b-ab9c-452d-b35a-8297db5eb940';
+
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.bodyBytes).thenReturn(Uint8List(0));
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient.getBulkDataByIdAsFile(id);
+        } catch (_) {}
+        final uri = Uri.https(
+          'api.scryfall.com',
+          '/bulk-data/$id',
+          {'format': 'file'},
+        );
+        verify(() => httpClient.get(uri)).called(1);
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(jsonError);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getBulkDataByIdAsFile(id),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns Uint8List on valid response', () async {
+        final bytes = Uint8List.fromList([1, 2, 3, 4, 5]);
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.bodyBytes).thenReturn(bytes);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual = await scryfallApiClient.getBulkDataByIdAsFile(id);
+        expect(actual, isA<Uint8List>().having((l) => l.length, 'length', 5));
+      });
+
+      test('gets valid response from actual server', () async {
+        final actual = await scryfallApiClientReal.getBulkDataByIdAsFile(id);
+        expect(actual, isA<Uint8List>());
+      });
+    });
   });
 }

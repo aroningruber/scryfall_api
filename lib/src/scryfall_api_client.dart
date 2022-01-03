@@ -1112,6 +1112,22 @@ class ScryfallApiClient {
 
     return BulkData.fromJson(json);
   }
+
+  /// **GET** /bulk-data/:id?format=file
+  ///
+  /// Returns the actual bulk data file with the given [id]
+  /// as a [Uint8List].
+  Future<Uint8List> getBulkDataByIdAsFile(String id) async {
+    final url = Uri.https(_baseUrl, '/bulk-data/$id', {'format': 'file'});
+    final response = await _httpClient.get(url);
+
+    if (response.statusCode != 200) {
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      throw ScryfallException.fromJson(json);
+    }
+
+    return response.bodyBytes;
+  }
 }
 
 /// The types of [Catalog] objects which can be retrieved
