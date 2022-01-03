@@ -11,7 +11,7 @@ class MockHttpClient extends Mock implements http.Client {}
 
 class MockResponse extends Mock implements http.Response {}
 
-class FakeUri extends Mock implements Uri {}
+class FakeUri extends Fake implements Uri {}
 
 void main() {
   group('ScryfallApiClient', () {
@@ -1804,6 +1804,156 @@ void main() {
       test('gets valid response from actual server', () async {
         final actual = await scryfallApiClientReal.parseMana(manaCost);
         expect(actual, isA<ManaCost>());
+      });
+    });
+
+    group('getCatalog', () {
+      test('makes correct http requests', () async {
+        Future<void> _test(CatalogType catalogType, String expected) async {
+          final response = MockResponse();
+          when(() => response.statusCode).thenReturn(200);
+          when(() => response.body).thenReturn('{}');
+          when(() => httpClient.get(any())).thenAnswer((_) async => response);
+          try {
+            await scryfallApiClient.getCatalog(catalogType);
+          } catch (_) {}
+          final uri = Uri.https('api.scryfall.com', '/catalog/$expected');
+          verify(() => httpClient.get(uri)).called(1);
+        }
+
+        await _test(CatalogType.cardNames, 'card-names');
+        await _test(CatalogType.artistNames, 'artist-names');
+        await _test(CatalogType.wordBank, 'word-bank');
+        await _test(CatalogType.creatureTypes, 'creature-types');
+        await _test(CatalogType.planeswalkerTypes, 'planeswalker-types');
+        await _test(CatalogType.landTypes, 'land-types');
+        await _test(CatalogType.artifactTypes, 'artifact-types');
+        await _test(CatalogType.enchantmentTypes, 'enchantment-types');
+        await _test(CatalogType.spellTypes, 'spell-types');
+        await _test(CatalogType.powers, 'powers');
+        await _test(CatalogType.toughnesses, 'toughnesses');
+        await _test(CatalogType.loyalties, 'loyalties');
+        await _test(CatalogType.watermarks, 'watermarks');
+        await _test(CatalogType.keywordAbilities, 'keyword-abilities');
+        await _test(CatalogType.keywordActions, 'keyword-actions');
+        await _test(CatalogType.abilityWords, 'ability-words');
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(jsonError);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getCatalog(CatalogType.cardNames),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns Catalog on valid response', () async {
+        final file = File('test/mock_data/get_catalog.json');
+        final json = await file.readAsString();
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual =
+            await scryfallApiClient.getCatalog(CatalogType.landTypes);
+        expect(actual, isA<Catalog>());
+      });
+
+      test('gets valid response from actual server', () async {
+        final actual =
+            await scryfallApiClientReal.getCatalog(CatalogType.powers);
+        expect(actual, isA<Catalog>());
+      });
+    });
+
+    group('getCatalog convenience methods:', () {
+      setUp(() {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn('{}');
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+      });
+
+      Future<void> _test(Function method, String expected) async {
+        try {
+          await method();
+        } catch (_) {}
+        final uri = Uri.https('api.scryfall.com', '/catalog/$expected');
+        verify(() => httpClient.get(uri)).called(1);
+      }
+
+      test('getCardNames called getCatalog with correct argument', () async {
+        _test(scryfallApiClient.getCardNames, 'card-names');
+      });
+
+      test('getArtistNames called getCatalog with correct argument', () async {
+        _test(scryfallApiClient.getArtistNames, 'artist-names');
+      });
+
+      test('getWordBank called getCatalog with correct argument', () async {
+        _test(scryfallApiClient.getWordBank, 'word-bank');
+      });
+
+      test('getCreatureTypes called getCatalog with correct argument',
+          () async {
+        _test(scryfallApiClient.getCreatureTypes, 'creature-types');
+      });
+
+      test('getPlaneswalkerTypes called getCatalog with correct argument',
+          () async {
+        _test(scryfallApiClient.getPlaneswalkerTypes, 'planeswalker-types');
+      });
+
+      test('getLandTypes called getCatalog with correct argument', () async {
+        _test(scryfallApiClient.getLandTypes, 'land-types');
+      });
+
+      test('getArtifactTypes called getCatalog with correct argument',
+          () async {
+        _test(scryfallApiClient.getArtifactTypes, 'artifact-types');
+      });
+
+      test('getEnchantmentTypes called getCatalog with correct argument',
+          () async {
+        _test(scryfallApiClient.getEnchantmentTypes, 'enchantment-types');
+      });
+
+      test('getSpellTypes called getCatalog with correct argument', () async {
+        _test(scryfallApiClient.getSpellTypes, 'spell-types');
+      });
+
+      test('getPowers called getCatalog with correct argument', () async {
+        _test(scryfallApiClient.getPowers, 'powers');
+      });
+
+      test('getToughnesses called getCatalog with correct argument', () async {
+        _test(scryfallApiClient.getToughnesses, 'toughnesses');
+      });
+
+      test('getLoyalties called getCatalog with correct argument', () async {
+        _test(scryfallApiClient.getLoyalties, 'loyalties');
+      });
+
+      test('getWatermarks called getCatalog with correct argument', () async {
+        _test(scryfallApiClient.getWatermarks, 'watermarks');
+      });
+
+      test('getKeywordAbilities called getCatalog with correct argument',
+          () async {
+        _test(scryfallApiClient.getKeywordAbilities, 'keyword-abilities');
+      });
+
+      test('getKeywordActions called getCatalog with correct argument',
+          () async {
+        _test(scryfallApiClient.getKeywordActions, 'keyword-actions');
+      });
+
+      test('getAbilityWords called getCatalog with correct argument', () async {
+        _test(scryfallApiClient.getAbilityWords, 'ability-words');
       });
     });
   });
