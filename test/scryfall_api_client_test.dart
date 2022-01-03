@@ -2085,8 +2085,12 @@ void main() {
       });
 
       test('gets valid response from actual server', () async {
-        final actual = await scryfallApiClientReal.getBulkDataByIdAsFile(id);
-        expect(actual, isA<Uint8List>());
+        when(() => httpClient.get(any())).thenAnswer((invocation) async {
+          final response = await http.head(invocation.positionalArguments[0]);
+          expect(response.statusCode, 200);
+          return response;
+        });
+        await scryfallApiClient.getBulkDataByIdAsFile(id);
       });
     });
 
@@ -2139,6 +2143,57 @@ void main() {
         final actual = await scryfallApiClientReal
             .getBulkDataByType(BulkDataType.uniqueArtwork);
         expect(actual, isA<BulkData>());
+      });
+    });
+
+    group('getBulkDataByTypeAsFile', () {
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.bodyBytes).thenReturn(Uint8List(0));
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient
+              .getBulkDataByTypeAsFile(BulkDataType.allCards);
+        } catch (_) {}
+        final uri = Uri.https(
+          'api.scryfall.com',
+          '/bulk-data/all-cards',
+          {'format': 'file'},
+        );
+        verify(() => httpClient.get(uri)).called(1);
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(jsonError);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getBulkDataByTypeAsFile(BulkDataType.oracleCards),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns Uint8List on valid response', () async {
+        final bytes = Uint8List.fromList([1, 2, 3, 4, 5]);
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.bodyBytes).thenReturn(bytes);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual = await scryfallApiClient
+            .getBulkDataByTypeAsFile(BulkDataType.uniqueArtwork);
+        expect(actual, isA<Uint8List>().having((l) => l.length, 'length', 5));
+      });
+
+      test('gets valid response from actual server', () async {
+        when(() => httpClient.get(any())).thenAnswer((invocation) async {
+          final response = await http.head(invocation.positionalArguments[0]);
+          expect(response.statusCode, 200);
+          return response;
+        });
+        await scryfallApiClient.getBulkDataByTypeAsFile(BulkDataType.allCards);
       });
     });
   });

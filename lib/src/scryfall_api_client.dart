@@ -1144,6 +1144,26 @@ class ScryfallApiClient {
 
     return BulkData.fromJson(json);
   }
+
+  /// **GET** /bulk-data/:type?format=file
+  ///
+  /// Returns the actual bulk data file with the given [type]
+  /// as a [Uint8List].
+  Future<Uint8List> getBulkDataByTypeAsFile(BulkDataType type) async {
+    final url = Uri.https(
+      _baseUrl,
+      '/bulk-data/${type.urlEncoding}',
+      {'format': 'file'},
+    );
+    final response = await _httpClient.get(url);
+
+    if (response.statusCode != 200) {
+      final json = jsonDecode(response.body) as Map<String, dynamic>;
+      throw ScryfallException.fromJson(json);
+    }
+
+    return response.bodyBytes;
+  }
 }
 
 /// The types of [BulkData] which be retrieved.
