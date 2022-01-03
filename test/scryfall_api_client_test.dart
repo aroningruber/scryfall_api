@@ -2089,5 +2089,57 @@ void main() {
         expect(actual, isA<Uint8List>());
       });
     });
+
+    group('getBulkDataByType', () {
+      test('makes correct http requests', () async {
+        Future<void> _test(BulkDataType bulkDataType, String expected) async {
+          final response = MockResponse();
+          when(() => response.statusCode).thenReturn(200);
+          when(() => response.body).thenReturn('{}');
+          when(() => httpClient.get(any())).thenAnswer((_) async => response);
+          try {
+            await scryfallApiClient.getBulkDataByType(bulkDataType);
+          } catch (_) {}
+          final uri = Uri.https('api.scryfall.com', '/bulk-data/$expected');
+          verify(() => httpClient.get(uri)).called(1);
+        }
+
+        await _test(BulkDataType.oracleCards, 'oracle-cards');
+        await _test(BulkDataType.uniqueArtwork, 'unique-artwork');
+        await _test(BulkDataType.defaultCards, 'default-cards');
+        await _test(BulkDataType.allCards, 'all-cards');
+        await _test(BulkDataType.rulings, 'rulings');
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(jsonError);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getBulkDataByType(BulkDataType.allCards),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns BulkData on valid response', () async {
+        final file = File('test/mock_data/get_bulk_data_by_type.json');
+        final json = await file.readAsString();
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual =
+            await scryfallApiClient.getBulkDataByType(BulkDataType.oracleCards);
+        expect(actual, isA<BulkData>());
+      });
+
+      test('gets valid response from actual server', () async {
+        final actual = await scryfallApiClientReal
+            .getBulkDataByType(BulkDataType.uniqueArtwork);
+        expect(actual, isA<BulkData>());
+      });
+    });
   });
 }

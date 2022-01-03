@@ -967,7 +967,7 @@ class ScryfallApiClient {
   ///
   /// [catalogType]\: The type of catalog that shall be returned.
   Future<Catalog> getCatalog(CatalogType catalogType) async {
-    final url = Uri.https(_baseUrl, '/catalog/${catalogType.json}');
+    final url = Uri.https(_baseUrl, '/catalog/${catalogType.urlEncoding}');
     final response = await _httpClient.get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -1128,6 +1128,58 @@ class ScryfallApiClient {
 
     return response.bodyBytes;
   }
+
+  /// **GET** /bulk-data/:type
+  ///
+  /// Returns a single [BulkData] object with the given [type].
+  Future<BulkData> getBulkDataByType(BulkDataType type) async {
+    final url = Uri.https(_baseUrl, '/bulk-data/${type.urlEncoding}');
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return BulkData.fromJson(json);
+  }
+}
+
+/// The types of [BulkData] which be retrieved.
+enum BulkDataType {
+  /// One Scryfall card object for each Oracle ID on Scryfall.
+  oracleCards,
+
+  /// Scryfall card objects that together contain all unique artworks.
+  uniqueArtwork,
+
+  /// Every card object on Scryfall in English or the printed language
+  /// if the card is only available in one language.
+  defaultCards,
+
+  /// Every card object on Scryfall in every language.
+  allCards,
+
+  /// All Rulings on Scryfall.
+  rulings,
+}
+
+extension on BulkDataType {
+  String get urlEncoding {
+    switch (this) {
+      case BulkDataType.oracleCards:
+        return 'oracle-cards';
+      case BulkDataType.uniqueArtwork:
+        return 'unique-artwork';
+      case BulkDataType.defaultCards:
+        return 'default-cards';
+      case BulkDataType.allCards:
+        return 'all-cards';
+      case BulkDataType.rulings:
+        return 'rulings';
+    }
+  }
 }
 
 /// The types of [Catalog] objects which can be retrieved
@@ -1184,7 +1236,7 @@ enum CatalogType {
 }
 
 extension on CatalogType {
-  String get json {
+  String get urlEncoding {
     switch (this) {
       case CatalogType.cardNames:
         return 'card-names';
