@@ -979,72 +979,123 @@ class ScryfallApiClient {
     return Catalog.fromJson(json);
   }
 
+  /// **GET** /catalog/card-names
+  ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.cardNames].
   Future<Catalog> getCardNames() => getCatalog(CatalogType.cardNames);
 
+  /// **GET** /catalog/artist-names
+  ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.artistNames].
   Future<Catalog> getArtistNames() => getCatalog(CatalogType.artistNames);
 
+  /// **GET** /catalog/word-bank
+  ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.wordBank].
   Future<Catalog> getWordBank() => getCatalog(CatalogType.wordBank);
 
+  /// **GET** /catalog/creature-types
+  ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.creatureTypes].
   Future<Catalog> getCreatureTypes() => getCatalog(CatalogType.creatureTypes);
 
+  /// **GET** /catalog/planeswalker-types
+  ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.planeswalkerTypes].
   Future<Catalog> getPlaneswalkerTypes() =>
       getCatalog(CatalogType.planeswalkerTypes);
 
+  /// **GET** /catalog/land-types
+  ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.landTypes].
   Future<Catalog> getLandTypes() => getCatalog(CatalogType.landTypes);
 
+  /// **GET** /catalog/artifact-types
+  ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.artifactTypes].
   Future<Catalog> getArtifactTypes() => getCatalog(CatalogType.artifactTypes);
 
+  /// **GET** /catalog/enchantment-types
+  ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.enchantmentTypes].
   Future<Catalog> getEnchantmentTypes() =>
       getCatalog(CatalogType.enchantmentTypes);
 
+  /// **GET** /catalog/spell-types
+  ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.spellTypes].
   Future<Catalog> getSpellTypes() => getCatalog(CatalogType.spellTypes);
 
+  /// **GET** /catalog/powers
+  ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.powers].
   Future<Catalog> getPowers() => getCatalog(CatalogType.powers);
 
+  /// **GET** /catalog/toughnesses
+  ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.toughnesses].
   Future<Catalog> getToughnesses() => getCatalog(CatalogType.toughnesses);
 
+  /// **GET** /catalog/loyalties
+  ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.loyalties].
   Future<Catalog> getLoyalties() => getCatalog(CatalogType.loyalties);
 
+  /// **GET** /catalog/watermarks
+  ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.watermarks].
   Future<Catalog> getWatermarks() => getCatalog(CatalogType.watermarks);
 
+  /// **GET** /catalog/keyword-abilities
+  ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.keywordAbilities].
   Future<Catalog> getKeywordAbilities() =>
       getCatalog(CatalogType.keywordAbilities);
 
+  /// **GET** /catalog/keyword-actions
+  ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.keywordActions].
   Future<Catalog> getKeywordActions() => getCatalog(CatalogType.keywordActions);
 
+  /// **GET** /catalog/ability-words
+  ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.abilityWords].
   Future<Catalog> getAbilityWords() => getCatalog(CatalogType.abilityWords);
+
+  /// **GET** /bulk-data
+  ///
+  /// Returns a [PaginableList] of all [BulkData] on Scryfall.
+  Future<PaginableList<BulkData>> getBulkData() async {
+    final url = Uri.https(_baseUrl, '/bulk-data');
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return PaginableList.fromJson(
+      json,
+      (bulkData) => BulkData.fromJson(bulkData as Map<String, dynamic>),
+    );
+  }
 }
 
 /// The types of [Catalog] objects which can be retrieved

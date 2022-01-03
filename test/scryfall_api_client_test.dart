@@ -1956,5 +1956,47 @@ void main() {
         _test(scryfallApiClient.getAbilityWords, 'ability-words');
       });
     });
+
+    group('getBulkData', () {
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn('{}');
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient.getBulkData();
+        } catch (_) {}
+        final uri = Uri.https('api.scryfall.com', '/bulk-data');
+        verify(() => httpClient.get(uri)).called(1);
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(jsonError);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getBulkData(),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns PaginableList<BulkData> on valid response', () async {
+        final file = File('test/mock_data/get_bulk_data.json');
+        final json = await file.readAsString();
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual = await scryfallApiClient.getBulkData();
+        expect(actual, isA<PaginableList<BulkData>>());
+      });
+
+      test('gets valid response from actual server', () async {
+        final actual = await scryfallApiClientReal.getBulkData();
+        expect(actual, isA<PaginableList<BulkData>>());
+      });
+    });
   });
 }

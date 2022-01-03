@@ -1,4 +1,5 @@
 export 'border_color.dart';
+export 'bulk_data.dart';
 export 'card_face.dart';
 export 'card_identifier.dart';
 export 'card_list.dart';
