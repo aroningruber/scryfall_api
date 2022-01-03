@@ -960,6 +960,183 @@ class ScryfallApiClient {
 
     return ManaCost.fromJson(json);
   }
+
+  /// **GET** /catalog/:catalog-type
+  ///
+  /// Returns a [Catalog] with a [List] of Magic datapoints.
+  ///
+  /// [catalogType]\: The type of catalog that shall be returned.
+  Future<Catalog> getCatalog(CatalogType catalogType) async {
+    final url = Uri.https(_baseUrl, '/catalog/${catalogType.json}');
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return Catalog.fromJson(json);
+  }
+
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.cardNames].
+  Future<Catalog> getCardNames() => getCatalog(CatalogType.cardNames);
+
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.artistNames].
+  Future<Catalog> getArtistNames() => getCatalog(CatalogType.artistNames);
+
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.wordBank].
+  Future<Catalog> getWordBank() => getCatalog(CatalogType.wordBank);
+
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.creatureTypes].
+  Future<Catalog> getCreatureTypes() => getCatalog(CatalogType.creatureTypes);
+
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.planeswalkerTypes].
+  Future<Catalog> getPlaneswalkerTypes() =>
+      getCatalog(CatalogType.planeswalkerTypes);
+
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.landTypes].
+  Future<Catalog> getLandTypes() => getCatalog(CatalogType.landTypes);
+
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.artifactTypes].
+  Future<Catalog> getArtifactTypes() => getCatalog(CatalogType.artifactTypes);
+
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.enchantmentTypes].
+  Future<Catalog> getEnchantmentTypes() =>
+      getCatalog(CatalogType.enchantmentTypes);
+
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.spellTypes].
+  Future<Catalog> getSpellTypes() => getCatalog(CatalogType.spellTypes);
+
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.powers].
+  Future<Catalog> getPowers() => getCatalog(CatalogType.powers);
+
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.toughnesses].
+  Future<Catalog> getToughnesses() => getCatalog(CatalogType.toughnesses);
+
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.loyalties].
+  Future<Catalog> getLoyalties() => getCatalog(CatalogType.loyalties);
+
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.watermarks].
+  Future<Catalog> getWatermarks() => getCatalog(CatalogType.watermarks);
+
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.keywordAbilities].
+  Future<Catalog> getKeywordAbilities() =>
+      getCatalog(CatalogType.keywordAbilities);
+
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.keywordActions].
+  Future<Catalog> getKeywordActions() => getCatalog(CatalogType.keywordActions);
+
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.abilityWords].
+  Future<Catalog> getAbilityWords() => getCatalog(CatalogType.abilityWords);
+}
+
+/// The types of [Catalog] objects which can be retrieved
+/// from Scryfall.
+enum CatalogType {
+  /// All nontoken English card names.
+  cardNames,
+
+  /// All canonical artist names.
+  artistNames,
+
+  /// All English words, of length 2 or more, that could
+  /// appear in a card name.
+  wordBank,
+
+  /// All creature types.
+  creatureTypes,
+
+  /// All Planeswalker types.
+  planeswalkerTypes,
+
+  /// All Land types.
+  landTypes,
+
+  /// All artifact types.
+  artifactTypes,
+
+  /// All enchantment types.
+  enchantmentTypes,
+
+  /// All spell types.
+  spellTypes,
+
+  /// All possible values for a creature or vehicle’s power.
+  powers,
+
+  /// All possible values for a creature or vehicle’s toughness.
+  toughnesses,
+
+  /// All possible values for a Planeswalker’s loyalty.
+  loyalties,
+
+  /// All card watermarks.
+  watermarks,
+
+  /// All keyword abilities.
+  keywordAbilities,
+
+  /// All keyword actions.
+  keywordActions,
+
+  /// All ability words.
+  abilityWords,
+}
+
+extension on CatalogType {
+  String get json {
+    switch (this) {
+      case CatalogType.cardNames:
+        return 'card-names';
+      case CatalogType.artistNames:
+        return 'artist-names';
+      case CatalogType.wordBank:
+        return 'word-bank';
+      case CatalogType.creatureTypes:
+        return 'creature-types';
+      case CatalogType.planeswalkerTypes:
+        return 'planeswalker-types';
+      case CatalogType.landTypes:
+        return 'land-types';
+      case CatalogType.artifactTypes:
+        return 'artifact-types';
+      case CatalogType.enchantmentTypes:
+        return 'enchantment-types';
+      case CatalogType.spellTypes:
+        return 'spell-types';
+      case CatalogType.powers:
+        return 'powers';
+      case CatalogType.toughnesses:
+        return 'toughnesses';
+      case CatalogType.loyalties:
+        return 'loyalties';
+      case CatalogType.watermarks:
+        return 'watermarks';
+      case CatalogType.keywordAbilities:
+        return 'keyword-abilities';
+      case CatalogType.keywordActions:
+        return 'keyword-actions';
+      case CatalogType.abilityWords:
+        return 'ability-words';
+    }
+  }
 }
 
 /// The [ImageVersion] specifies the different resolutions and
