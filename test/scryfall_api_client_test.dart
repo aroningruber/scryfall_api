@@ -2196,5 +2196,45 @@ void main() {
         await scryfallApiClient.getBulkDataByTypeAsFile(BulkDataType.allCards);
       });
     });
+
+    group('getBulkDataByTypeAsFile convenience methods', () {
+      setUp(() {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.bodyBytes)
+            .thenReturn(Uint8List.fromList(utf8.encode('[]')));
+        when(() => httpClient.get(any())).thenAnswer((invocation) async {
+          final responseHead =
+              await http.head(invocation.positionalArguments[0]);
+          expect(responseHead.statusCode, 200);
+          return response;
+        });
+      });
+
+      test('getBulkDataOracleCards makes correct request', () async {
+        final actual = await scryfallApiClient.getBulkDataOracleCards();
+        expect(actual, isA<List<MtgCard>>());
+      });
+
+      test('getBulkDataUniqueArtwork', () async {
+        final actual = await scryfallApiClient.getBulkDataUniqueArtwork();
+        expect(actual, isA<List<MtgCard>>());
+      });
+
+      test('getBulkDataDefaultCards makes correct request', () async {
+        final actual = await scryfallApiClient.getBulkDataDefaultCards();
+        expect(actual, isA<List<MtgCard>>());
+      });
+
+      test('getBulkDataAllCards makes correct request', () async {
+        final actual = await scryfallApiClient.getBulkDataAllCards();
+        expect(actual, isA<List<MtgCard>>());
+      });
+
+      test('getBulkDataRulings', () async {
+        final actual = await scryfallApiClient.getBulkDataRulings();
+        expect(actual, isA<List<Ruling>>());
+      });
+    });
   });
 }

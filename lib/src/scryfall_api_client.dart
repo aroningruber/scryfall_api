@@ -1164,6 +1164,76 @@ class ScryfallApiClient {
 
     return response.bodyBytes;
   }
+
+  /// **GET** /bulk-data/oracle-cards?format=file
+  ///
+  /// Convenience method for calling [getBulkDataByTypeAsFile]
+  /// with [BulkDataType.oracleCards] and casting to correct type.
+  Future<List<MtgCard>> getBulkDataOracleCards() async {
+    final bytes = await getBulkDataByTypeAsFile(BulkDataType.oracleCards);
+
+    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+
+    return json
+        .map((card) => MtgCard.fromJson(card as Map<String, dynamic>))
+        .toList();
+  }
+
+  /// **GET** /bulk-data/unique-artwork?format=file
+  ///
+  /// Convenience method for calling [getBulkDataByTypeAsFile]
+  /// with [BulkDataType.uniqueArtwork] and casting to correct type.
+  Future<List<MtgCard>> getBulkDataUniqueArtwork() async {
+    final bytes = await getBulkDataByTypeAsFile(BulkDataType.uniqueArtwork);
+
+    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+
+    return json
+        .map((card) => MtgCard.fromJson(card as Map<String, dynamic>))
+        .toList();
+  }
+
+  /// **GET** /bulk-data/default-cards?format=file
+  ///
+  /// Convenience method for calling [getBulkDataByTypeAsFile]
+  /// with [BulkDataType.defaultCards] and casting to correct type.
+  Future<List<MtgCard>> getBulkDataDefaultCards() async {
+    final bytes = await getBulkDataByTypeAsFile(BulkDataType.defaultCards);
+
+    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+
+    return json
+        .map((card) => MtgCard.fromJson(card as Map<String, dynamic>))
+        .toList();
+  }
+
+  /// **GET** /bulk-data/all-cards?format=file
+  ///
+  /// Convenience method for calling [getBulkDataByTypeAsFile]
+  /// with [BulkDataType.allCards] and casting to correct type.
+  Future<List<MtgCard>> getBulkDataAllCards() async {
+    final bytes = await getBulkDataByTypeAsFile(BulkDataType.allCards);
+
+    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+
+    return json
+        .map((card) => MtgCard.fromJson(card as Map<String, dynamic>))
+        .toList();
+  }
+
+  /// **GET** /bulk-data/rulings?format=file
+  ///
+  /// Convenience method for calling [getBulkDataByTypeAsFile]
+  /// with [BulkDataType.rulings] and casting to correct type.
+  Future<List<Ruling>> getBulkDataRulings() async {
+    final bytes = await getBulkDataByTypeAsFile(BulkDataType.rulings);
+
+    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+
+    return json
+        .map((ruling) => Ruling.fromJson(ruling as Map<String, dynamic>))
+        .toList();
+  }
 }
 
 /// The types of [BulkData] which be retrieved.
