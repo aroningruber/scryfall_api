@@ -1096,6 +1096,22 @@ class ScryfallApiClient {
       (bulkData) => BulkData.fromJson(bulkData as Map<String, dynamic>),
     );
   }
+
+  /// **GET** /bulk-data/:id
+  ///
+  /// Returns a single [BulkData] object with the given [id].
+  Future<BulkData> getBulkDataById(String id) async {
+    final url = Uri.https(_baseUrl, '/bulk-data/$id');
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return BulkData.fromJson(json);
+  }
 }
 
 /// The types of [Catalog] objects which can be retrieved
