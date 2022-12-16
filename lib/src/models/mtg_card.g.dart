@@ -151,7 +151,7 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           purchaseUris: $checkedConvert(
               'purchase_uris',
-              (v) => (v as Map<String, dynamic>).map(
+              (v) => (v as Map<String, dynamic>?)?.map(
                     (k, e) => MapEntry(k, Uri.parse(e as String)),
                   )),
           rarity: $checkedConvert(

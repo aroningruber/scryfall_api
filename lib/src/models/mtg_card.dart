@@ -306,7 +306,7 @@ class MtgCard {
 
   /// An object providing URIs to this card’s listing on
   /// major marketplaces.
-  final Map<String, Uri> purchaseUris;
+  final Map<String, Uri>? purchaseUris;
 
   /// This card’s rarity.
   @JsonKey(unknownEnumValue: Rarity.unknown)
