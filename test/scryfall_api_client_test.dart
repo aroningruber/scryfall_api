@@ -1809,7 +1809,10 @@ void main() {
 
     group('getCatalog', () {
       test('makes correct http requests', () async {
-        Future<void> _test(CatalogType catalogType, String expected) async {
+        Future<void> testCategoryType(
+          CatalogType catalogType,
+          String expected,
+        ) async {
           final response = MockResponse();
           when(() => response.statusCode).thenReturn(200);
           when(() => response.body).thenReturn('{}');
@@ -1821,22 +1824,25 @@ void main() {
           verify(() => httpClient.get(uri)).called(1);
         }
 
-        await _test(CatalogType.cardNames, 'card-names');
-        await _test(CatalogType.artistNames, 'artist-names');
-        await _test(CatalogType.wordBank, 'word-bank');
-        await _test(CatalogType.creatureTypes, 'creature-types');
-        await _test(CatalogType.planeswalkerTypes, 'planeswalker-types');
-        await _test(CatalogType.landTypes, 'land-types');
-        await _test(CatalogType.artifactTypes, 'artifact-types');
-        await _test(CatalogType.enchantmentTypes, 'enchantment-types');
-        await _test(CatalogType.spellTypes, 'spell-types');
-        await _test(CatalogType.powers, 'powers');
-        await _test(CatalogType.toughnesses, 'toughnesses');
-        await _test(CatalogType.loyalties, 'loyalties');
-        await _test(CatalogType.watermarks, 'watermarks');
-        await _test(CatalogType.keywordAbilities, 'keyword-abilities');
-        await _test(CatalogType.keywordActions, 'keyword-actions');
-        await _test(CatalogType.abilityWords, 'ability-words');
+        await testCategoryType(CatalogType.cardNames, 'card-names');
+        await testCategoryType(CatalogType.artistNames, 'artist-names');
+        await testCategoryType(CatalogType.wordBank, 'word-bank');
+        await testCategoryType(CatalogType.creatureTypes, 'creature-types');
+        await testCategoryType(
+            CatalogType.planeswalkerTypes, 'planeswalker-types');
+        await testCategoryType(CatalogType.landTypes, 'land-types');
+        await testCategoryType(CatalogType.artifactTypes, 'artifact-types');
+        await testCategoryType(
+            CatalogType.enchantmentTypes, 'enchantment-types');
+        await testCategoryType(CatalogType.spellTypes, 'spell-types');
+        await testCategoryType(CatalogType.powers, 'powers');
+        await testCategoryType(CatalogType.toughnesses, 'toughnesses');
+        await testCategoryType(CatalogType.loyalties, 'loyalties');
+        await testCategoryType(CatalogType.watermarks, 'watermarks');
+        await testCategoryType(
+            CatalogType.keywordAbilities, 'keyword-abilities');
+        await testCategoryType(CatalogType.keywordActions, 'keyword-actions');
+        await testCategoryType(CatalogType.abilityWords, 'ability-words');
       });
 
       test('throws ScryfallException on non-200 response', () async {
@@ -1878,7 +1884,10 @@ void main() {
         when(() => httpClient.get(any())).thenAnswer((_) async => response);
       });
 
-      Future<void> _test(Function method, String expected) async {
+      Future<void> testCatalogConvenienceMethod(
+        Function method,
+        String expected,
+      ) async {
         try {
           await method();
         } catch (_) {}
@@ -1887,73 +1896,121 @@ void main() {
       }
 
       test('getCardNames called getCatalog with correct argument', () async {
-        _test(scryfallApiClient.getCardNames, 'card-names');
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getCardNames,
+          'card-names',
+        );
       });
 
       test('getArtistNames called getCatalog with correct argument', () async {
-        _test(scryfallApiClient.getArtistNames, 'artist-names');
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getArtistNames,
+          'artist-names',
+        );
       });
 
       test('getWordBank called getCatalog with correct argument', () async {
-        _test(scryfallApiClient.getWordBank, 'word-bank');
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getWordBank,
+          'word-bank',
+        );
       });
 
       test('getCreatureTypes called getCatalog with correct argument',
           () async {
-        _test(scryfallApiClient.getCreatureTypes, 'creature-types');
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getCreatureTypes,
+          'creature-types',
+        );
       });
 
       test('getPlaneswalkerTypes called getCatalog with correct argument',
           () async {
-        _test(scryfallApiClient.getPlaneswalkerTypes, 'planeswalker-types');
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getPlaneswalkerTypes,
+          'planeswalker-types',
+        );
       });
 
       test('getLandTypes called getCatalog with correct argument', () async {
-        _test(scryfallApiClient.getLandTypes, 'land-types');
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getLandTypes,
+          'land-types',
+        );
       });
 
       test('getArtifactTypes called getCatalog with correct argument',
           () async {
-        _test(scryfallApiClient.getArtifactTypes, 'artifact-types');
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getArtifactTypes,
+          'artifact-types',
+        );
       });
 
       test('getEnchantmentTypes called getCatalog with correct argument',
           () async {
-        _test(scryfallApiClient.getEnchantmentTypes, 'enchantment-types');
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getEnchantmentTypes,
+          'enchantment-types',
+        );
       });
 
       test('getSpellTypes called getCatalog with correct argument', () async {
-        _test(scryfallApiClient.getSpellTypes, 'spell-types');
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getSpellTypes,
+          'spell-types',
+        );
       });
 
       test('getPowers called getCatalog with correct argument', () async {
-        _test(scryfallApiClient.getPowers, 'powers');
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getPowers,
+          'powers',
+        );
       });
 
       test('getToughnesses called getCatalog with correct argument', () async {
-        _test(scryfallApiClient.getToughnesses, 'toughnesses');
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getToughnesses,
+          'toughnesses',
+        );
       });
 
       test('getLoyalties called getCatalog with correct argument', () async {
-        _test(scryfallApiClient.getLoyalties, 'loyalties');
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getLoyalties,
+          'loyalties',
+        );
       });
 
       test('getWatermarks called getCatalog with correct argument', () async {
-        _test(scryfallApiClient.getWatermarks, 'watermarks');
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getWatermarks,
+          'watermarks',
+        );
       });
 
       test('getKeywordAbilities called getCatalog with correct argument',
           () async {
-        _test(scryfallApiClient.getKeywordAbilities, 'keyword-abilities');
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getKeywordAbilities,
+          'keyword-abilities',
+        );
       });
 
       test('getKeywordActions called getCatalog with correct argument',
           () async {
-        _test(scryfallApiClient.getKeywordActions, 'keyword-actions');
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getKeywordActions,
+          'keyword-actions',
+        );
       });
 
       test('getAbilityWords called getCatalog with correct argument', () async {
-        _test(scryfallApiClient.getAbilityWords, 'ability-words');
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getAbilityWords,
+          'ability-words',
+        );
       });
     });
 
@@ -2096,7 +2153,10 @@ void main() {
 
     group('getBulkDataByType', () {
       test('makes correct http requests', () async {
-        Future<void> _test(BulkDataType bulkDataType, String expected) async {
+        Future<void> testBulkDataType(
+          BulkDataType bulkDataType,
+          String expected,
+        ) async {
           final response = MockResponse();
           when(() => response.statusCode).thenReturn(200);
           when(() => response.body).thenReturn('{}');
@@ -2108,11 +2168,11 @@ void main() {
           verify(() => httpClient.get(uri)).called(1);
         }
 
-        await _test(BulkDataType.oracleCards, 'oracle-cards');
-        await _test(BulkDataType.uniqueArtwork, 'unique-artwork');
-        await _test(BulkDataType.defaultCards, 'default-cards');
-        await _test(BulkDataType.allCards, 'all-cards');
-        await _test(BulkDataType.rulings, 'rulings');
+        await testBulkDataType(BulkDataType.oracleCards, 'oracle-cards');
+        await testBulkDataType(BulkDataType.uniqueArtwork, 'unique-artwork');
+        await testBulkDataType(BulkDataType.defaultCards, 'default-cards');
+        await testBulkDataType(BulkDataType.allCards, 'all-cards');
+        await testBulkDataType(BulkDataType.rulings, 'rulings');
       });
 
       test('throws ScryfallException on non-200 response', () async {
