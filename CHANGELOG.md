@@ -1,4 +1,16 @@
+## 1.1.0
+
+### Added
+
+- Tests to ensure that bulk data methods property decode response
+
+### Changed
+
+- `purchaseUris` of `MtgCard` is nullable (thanks to [kalebhermes](https://github.com/kalebhermes))
+
 ## 1.0.0
+
+### Added
 
 - Get bulk data (**GET** `/bulk-data`)
 - Get bulk data by id (**GET** `/bulk-data/:id`)
@@ -22,10 +34,14 @@
 
 ## 0.4.0
 
+### Added
+
 - Get all card symbols (**GET** `/symbology`)
 - Parse mana cost (**GET** `/symbology/parse-mana`)
 
 ## 0.3.0
+
+### Added
 
 - Get rulings by multiverse id (**GET** `/cards/multiverse/:id/rulings`)
 - Get rulings by mtgo id (**GET** `/cards/mtgo/:id/rulings`)
@@ -34,6 +50,8 @@
 - Get rulings by id (**GET** `/cards/:id/rulings`)
 
 ## 0.2.0
+
+### Added
 
 - Search for cards (**GET** `/cards/search`)
 - Get card by name (**GET** `/cards/named`)
@@ -49,6 +67,8 @@
 - Get card by id (**GET** `/cards/:id`)
 
 ## 0.1.0
+
+### Added
 
 - Get all sets (**GET** `/sets`)
 - Get a set by its unique code (**GET** `/sets/:code`)
