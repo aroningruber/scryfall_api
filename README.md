@@ -1,5 +1,5 @@
 [![Pub Version](https://img.shields.io/pub/v/scryfall_api?style=for-the-badge)](https://pub.dev/packages/scryfall_api)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/aroningruber/scryfall_api/CI?logo=github&style=for-the-badge)](https://github.com/aroningruber/scryfall_api/actions)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/aroningruber/scryfall_api/ci.yml?branch=main&logo=github&style=for-the-badge)](https://github.com/aroningruber/scryfall_api/actions)
 [![Codecov](https://img.shields.io/codecov/c/gh/aroningruber/scryfall_api?logo=codecov&style=for-the-badge&token=D7LOCLLZC0)](https://codecov.io/gh/aroningruber/scryfall_api)
 
 A wrapper of the [Scryfall API](https://scryfall.com) for the [Dart programming language](https://dart.dev/).
