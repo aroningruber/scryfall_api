@@ -2216,6 +2216,14 @@ void main() {
         expect(actual, isA<List<MtgCard>>());
       });
 
+      test(
+        'getBulkDataOracleCards properly decodes response from actual server',
+        () async {
+          final actual = await scryfallApiClientReal.getBulkDataOracleCards();
+          expect(actual, isA<List<MtgCard>>());
+        },
+      );
+
       test('getBulkDataUniqueArtwork', () async {
         final actual = await scryfallApiClient.getBulkDataUniqueArtwork();
         expect(actual, isA<List<MtgCard>>());
@@ -2235,6 +2243,14 @@ void main() {
         final actual = await scryfallApiClient.getBulkDataRulings();
         expect(actual, isA<List<Ruling>>());
       });
+
+      test(
+        'getBulkDataRulings properly decodes response from actual server',
+        () async {
+          final actual = await scryfallApiClientReal.getBulkDataRulings();
+          expect(actual, isA<List<Ruling>>());
+        },
+      );
     });
   });
 }
