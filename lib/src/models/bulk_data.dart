@@ -28,7 +28,7 @@ class BulkData {
   final DateTime updatedAt;
 
   /// The size of this file in integer bytes.
-  final int compressedSize;
+  final int? compressedSize;
 
   /// The MIME type of this file.
   final String contentType;
