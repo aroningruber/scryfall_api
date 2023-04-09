@@ -1,0 +1,3159 @@
+{
+  "object": "list",
+  "has_more": true,
+  "next_page": "https://api.scryfall.com/migrations?page=2",
+  "data": [
+    {
+      "object": "migration",
+      "id": "8a28f61a-16b8-47f9-8818-fd4e1f2d9b79",
+      "uri": "https://api.scryfall.com/migrations/8a28f61a-16b8-47f9-8818-fd4e1f2d9b79",
+      "performed_at": "2023-04-09",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "5218b66f-8e39-435b-bba5-b2cc6d876325",
+      "note": "This entry for the 1/1 Elemental token was accidentally created as a reprint of the 4/4 Elemental token."
+    },
+    {
+      "object": "migration",
+      "id": "a7d78fca-990e-471d-b965-7a757bc38250",
+      "uri": "https://api.scryfall.com/migrations/a7d78fca-990e-471d-b965-7a757bc38250",
+      "performed_at": "2023-03-14",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "ebb0bc4b-6e01-40ae-a9c8-af08b144141b",
+      "note": "Duplicate entry"
+    },
+    {
+      "object": "migration",
+      "id": "ac3ff524-0d51-44af-86e8-9e558d707e99",
+      "uri": "https://api.scryfall.com/migrations/ac3ff524-0d51-44af-86e8-9e558d707e99",
+      "performed_at": "2023-03-02",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "79db740b-96f1-4d74-a19d-0cb6853464e6",
+      "note": "PW stamped meld card didn't exist"
+    },
+    {
+      "object": "migration",
+      "id": "7744cd95-89bc-4125-81f5-90dd823f2131",
+      "uri": "https://api.scryfall.com/migrations/7744cd95-89bc-4125-81f5-90dd823f2131",
+      "performed_at": "2023-03-02",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "9704f0ae-febd-4c9e-81fd-d94d779219c7",
+      "note": "PW stamped meld card didn't exist"
+    },
+    {
+      "object": "migration",
+      "id": "84ef1044-0873-4219-843e-b79cd253bfca",
+      "uri": "https://api.scryfall.com/migrations/84ef1044-0873-4219-843e-b79cd253bfca",
+      "performed_at": "2023-03-02",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "467b3103-86d8-41c3-9654-111318b8ed13",
+      "note": "PW stamped meld card didn't exist"
+    },
+    {
+      "object": "migration",
+      "id": "6759be05-4f4d-4894-b9bf-709ee32f2670",
+      "uri": "https://api.scryfall.com/migrations/6759be05-4f4d-4894-b9bf-709ee32f2670",
+      "performed_at": "2023-03-02",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "1381fb99-570e-4339-9101-678a87b35174",
+      "note": "Promo version didn't materalize"
+    },
+    {
+      "object": "migration",
+      "id": "129510b8-e44d-490f-ae86-87d8ff36ec29",
+      "uri": "https://api.scryfall.com/migrations/129510b8-e44d-490f-ae86-87d8ff36ec29",
+      "performed_at": "2023-03-02",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "0e6d8455-1cf0-4979-9566-0bebf46a1f7c",
+      "note": "PW stamped meld card didn't exist"
+    },
+    {
+      "object": "migration",
+      "id": "694b56ce-dc27-49df-a7c0-68e782e11f7a",
+      "uri": "https://api.scryfall.com/migrations/694b56ce-dc27-49df-a7c0-68e782e11f7a",
+      "performed_at": "2023-03-02",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "9cba18b5-9042-431f-a013-46761529fb95",
+      "note": "PW stamped meld card didn't exist"
+    },
+    {
+      "object": "migration",
+      "id": "e3fa1ceb-38de-43f7-a9bb-13515217d494",
+      "uri": "https://api.scryfall.com/migrations/e3fa1ceb-38de-43f7-a9bb-13515217d494",
+      "performed_at": "2023-03-02",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "48cfb428-86ea-47a0-a8fc-4ab08211efd3",
+      "note": "PW stamped meld card didn't exist"
+    },
+    {
+      "object": "migration",
+      "id": "7919cc82-feb8-4d8f-9177-b252cf192cab",
+      "uri": "https://api.scryfall.com/migrations/7919cc82-feb8-4d8f-9177-b252cf192cab",
+      "performed_at": "2023-03-02",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "b6b27dc2-f8b5-40c6-803b-c7c51c2dabaa",
+      "note": "PW stamped meld card didn't exist"
+    },
+    {
+      "object": "migration",
+      "id": "c8d7130e-5866-47a6-a6cd-51fef843af7e",
+      "uri": "https://api.scryfall.com/migrations/c8d7130e-5866-47a6-a6cd-51fef843af7e",
+      "performed_at": "2023-03-02",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "6b5881ca-f6cd-4d24-b85f-d63275b7e368",
+      "note": "PW stamped meld card didn't exist"
+    },
+    {
+      "object": "migration",
+      "id": "cce8c1cd-a7c6-4165-a809-29403a06757c",
+      "uri": "https://api.scryfall.com/migrations/cce8c1cd-a7c6-4165-a809-29403a06757c",
+      "performed_at": "2023-03-02",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "b932a67a-e660-4cbd-af35-8c3952c4b677",
+      "note": "PW stamped meld card didn't exist"
+    },
+    {
+      "object": "migration",
+      "id": "87cf5840-cf9a-47ef-9407-c630edf6fe9d",
+      "uri": "https://api.scryfall.com/migrations/87cf5840-cf9a-47ef-9407-c630edf6fe9d",
+      "performed_at": "2023-02-27",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "f812e292-4e6e-4854-ba78-dabd22371a8f",
+      "note": "Not actually present in the set proper."
+    },
+    {
+      "object": "migration",
+      "id": "a14bc1c3-f79e-49f8-8824-ff34809ecaf6",
+      "uri": "https://api.scryfall.com/migrations/a14bc1c3-f79e-49f8-8824-ff34809ecaf6",
+      "performed_at": "2023-01-23",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "814a6b18-d679-462d-b784-80043d6ff2ca",
+      "note": "Unofficial render"
+    },
+    {
+      "object": "migration",
+      "id": "985d3ec2-bdab-4140-9411-a979685bc533",
+      "uri": "https://api.scryfall.com/migrations/985d3ec2-bdab-4140-9411-a979685bc533",
+      "performed_at": "2023-01-23",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "d8510f28-1db5-47d7-99be-eba81ed259de",
+      "note": "Unofficial render"
+    },
+    {
+      "object": "migration",
+      "id": "97804fdd-91f3-40ab-95ff-02417570cde6",
+      "uri": "https://api.scryfall.com/migrations/97804fdd-91f3-40ab-95ff-02417570cde6",
+      "performed_at": "2023-01-23",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "97a2c62c-7832-42df-b86b-1e82110a633c",
+      "note": "Unofficial render"
+    },
+    {
+      "object": "migration",
+      "id": "0b33ae1a-524e-4cd4-9765-e43bb65f55ed",
+      "uri": "https://api.scryfall.com/migrations/0b33ae1a-524e-4cd4-9765-e43bb65f55ed",
+      "performed_at": "2023-01-13",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "8dc5c066-47b5-4f7a-969a-cd009417500c",
+      "note": "Maybe an actual leak/stolen card"
+    },
+    {
+      "object": "migration",
+      "id": "991b4ec9-a3b1-4dd7-881f-f2759f5ac971",
+      "uri": "https://api.scryfall.com/migrations/991b4ec9-a3b1-4dd7-881f-f2759f5ac971",
+      "performed_at": "2023-01-13",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "75d7005c-9021-422a-9e7b-a84c509d985a",
+      "note": "Maybe an actual leak/stolen card"
+    },
+    {
+      "object": "migration",
+      "id": "1ba5d12c-9a51-43ca-b3f0-fff02443bba6",
+      "uri": "https://api.scryfall.com/migrations/1ba5d12c-9a51-43ca-b3f0-fff02443bba6",
+      "performed_at": "2023-01-13",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "18567f6f-a372-43c1-bba4-744b4c8c5b7b",
+      "note": "Maybe an actual leak/stolen card"
+    },
+    {
+      "object": "migration",
+      "id": "f23b9e12-2aef-4665-a4e1-dc9570deaeb7",
+      "uri": "https://api.scryfall.com/migrations/f23b9e12-2aef-4665-a4e1-dc9570deaeb7",
+      "performed_at": "2023-01-13",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "87e47e2d-cab7-4df4-9fb9-9c1358673b83",
+      "note": "Maybe an actual leak/stolen card"
+    },
+    {
+      "object": "migration",
+      "id": "e6dea4c3-0005-4a22-a316-10051ea4c9fb",
+      "uri": "https://api.scryfall.com/migrations/e6dea4c3-0005-4a22-a316-10051ea4c9fb",
+      "performed_at": "2023-01-13",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "bab8a119-a617-4e72-a83e-4c8795c2b9c0",
+      "note": "Maybe an actual leak/stolen card"
+    },
+    {
+      "object": "migration",
+      "id": "25d2fb4b-e54f-4de9-bd2a-b234aaf4ff3d",
+      "uri": "https://api.scryfall.com/migrations/25d2fb4b-e54f-4de9-bd2a-b234aaf4ff3d",
+      "performed_at": "2023-01-13",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "5b034cb8-d7dc-4056-84f5-7f8952e5923f",
+      "note": "Maybe an actual leak/stolen card"
+    },
+    {
+      "object": "migration",
+      "id": "f8e9f85b-eb64-4e2d-8453-73a88e4f8968",
+      "uri": "https://api.scryfall.com/migrations/f8e9f85b-eb64-4e2d-8453-73a88e4f8968",
+      "performed_at": "2023-01-13",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "9da090cf-afb3-4920-82c3-b021d15ae3fa",
+      "note": "Maybe an actual leak/stolen card"
+    },
+    {
+      "object": "migration",
+      "id": "a7224ad7-42c4-48a8-9c00-5b5ea59100e0",
+      "uri": "https://api.scryfall.com/migrations/a7224ad7-42c4-48a8-9c00-5b5ea59100e0",
+      "performed_at": "2023-01-13",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "0d5d9645-20af-4810-aaa1-85f13aa3b0d6",
+      "note": "Maybe an actual leak/stolen card"
+    },
+    {
+      "object": "migration",
+      "id": "d83c8c7d-2a69-47b5-8c75-12e38d825770",
+      "uri": "https://api.scryfall.com/migrations/d83c8c7d-2a69-47b5-8c75-12e38d825770",
+      "performed_at": "2023-01-13",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "41021370-af3f-4af1-a9ce-6eb650760173",
+      "note": "Maybe an actual leak/stolen card"
+    },
+    {
+      "object": "migration",
+      "id": "3eb4ddd5-fc93-44f0-b94a-423356d2d458",
+      "uri": "https://api.scryfall.com/migrations/3eb4ddd5-fc93-44f0-b94a-423356d2d458",
+      "performed_at": "2023-01-13",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "d7bc52d3-d493-4916-9391-a46d6f8e3573",
+      "note": "Maybe an actual leak/stolen card"
+    },
+    {
+      "object": "migration",
+      "id": "9d6bac08-1af2-4575-9563-0bd18cd9685b",
+      "uri": "https://api.scryfall.com/migrations/9d6bac08-1af2-4575-9563-0bd18cd9685b",
+      "performed_at": "2023-01-13",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "1ccc5585-129b-482f-9f55-de5f02865c85",
+      "note": "Maybe an actual leak/stolen card"
+    },
+    {
+      "object": "migration",
+      "id": "fff5176f-5de8-4113-a7b9-93a57c91d99d",
+      "uri": "https://api.scryfall.com/migrations/fff5176f-5de8-4113-a7b9-93a57c91d99d",
+      "performed_at": "2023-01-13",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "67948891-0b9a-4b25-b13d-54a5057d4c95",
+      "note": "Maybe an actual leak/stolen card"
+    },
+    {
+      "object": "migration",
+      "id": "a5f19f34-53a7-420b-874c-ee39addcebdf",
+      "uri": "https://api.scryfall.com/migrations/a5f19f34-53a7-420b-874c-ee39addcebdf",
+      "performed_at": "2023-01-13",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "1a43c0df-b41d-4319-9d2d-5bd4d2ecc182",
+      "note": "Maybe an actual leak/stolen card"
+    },
+    {
+      "object": "migration",
+      "id": "3cc2e62a-1690-40a4-b618-7d55984f913c",
+      "uri": "https://api.scryfall.com/migrations/3cc2e62a-1690-40a4-b618-7d55984f913c",
+      "performed_at": "2023-01-13",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "55186cdd-9497-4588-9341-f57b9b848a6e",
+      "note": "Maybe an actual leak/stolen card"
+    },
+    {
+      "object": "migration",
+      "id": "2c970867-aec5-4d55-91ac-3a117b0da4c4",
+      "uri": "https://api.scryfall.com/migrations/2c970867-aec5-4d55-91ac-3a117b0da4c4",
+      "performed_at": "2023-01-06",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "d5bab733-6f20-4def-af19-534b3f9f54c4",
+      "note": "Didn't actually exist"
+    },
+    {
+      "object": "migration",
+      "id": "01666b16-5dbc-4d31-913d-7f5f2f67ea39",
+      "uri": "https://api.scryfall.com/migrations/01666b16-5dbc-4d31-913d-7f5f2f67ea39",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "3fe360e8-37de-42cc-9700-86c66175e591",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "02b40d4c-6ccd-4dc1-87a8-4aeec46a1f8f",
+      "uri": "https://api.scryfall.com/migrations/02b40d4c-6ccd-4dc1-87a8-4aeec46a1f8f",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "01a2e483-029a-40a1-92e9-d65ba5db89aa",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "03545a78-cc79-4552-b3b3-1f53f4f7f599",
+      "uri": "https://api.scryfall.com/migrations/03545a78-cc79-4552-b3b3-1f53f4f7f599",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "917e1974-9634-48b0-9c35-0f1086514238",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "04bc30cb-8be9-461e-9af6-8bedd394ce5f",
+      "uri": "https://api.scryfall.com/migrations/04bc30cb-8be9-461e-9af6-8bedd394ce5f",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "67a27991-b6e1-4143-8757-ce6f9d2f8f4e",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "04f34099-11b8-439e-91ff-871d892abb9e",
+      "uri": "https://api.scryfall.com/migrations/04f34099-11b8-439e-91ff-871d892abb9e",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "140ea4e3-2085-447b-ba28-8d6be85da49e",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "04fe1fd9-939a-420f-a976-6636c43c35b0",
+      "uri": "https://api.scryfall.com/migrations/04fe1fd9-939a-420f-a976-6636c43c35b0",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "d4896301-2b99-4110-88de-aad61bb9441c",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "07c34242-4bce-44a2-a9dc-439bd03a8c1e",
+      "uri": "https://api.scryfall.com/migrations/07c34242-4bce-44a2-a9dc-439bd03a8c1e",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "ffc97f4c-05cd-4710-a560-8f23ec9b4735",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "0f7bb05b-21c8-46ff-9752-d09d5f3adeb9",
+      "uri": "https://api.scryfall.com/migrations/0f7bb05b-21c8-46ff-9752-d09d5f3adeb9",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "27e562d5-12ce-45ff-a5ea-a7a24f7bd001",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "150316d5-826c-48e4-857f-45aeb02bae6c",
+      "uri": "https://api.scryfall.com/migrations/150316d5-826c-48e4-857f-45aeb02bae6c",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "83888f3e-5878-4a4b-89db-a6589ad16940",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "17c1fc12-ddeb-45ee-b517-e4048a566396",
+      "uri": "https://api.scryfall.com/migrations/17c1fc12-ddeb-45ee-b517-e4048a566396",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "c28d5c81-cf7e-422e-8c13-604c4a135ce3",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "1a8e3f0e-b1eb-4419-9ff8-c242c9cd40a9",
+      "uri": "https://api.scryfall.com/migrations/1a8e3f0e-b1eb-4419-9ff8-c242c9cd40a9",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "fef72a3e-7bf7-4dd5-b2f7-5cc68dd30938",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "221d5487-c0d6-43e9-9b14-3a9633f3329a",
+      "uri": "https://api.scryfall.com/migrations/221d5487-c0d6-43e9-9b14-3a9633f3329a",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "86979e59-c828-43f5-a569-a2b22d147229",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "24909ad8-fcfe-484b-b447-db8853f05e95",
+      "uri": "https://api.scryfall.com/migrations/24909ad8-fcfe-484b-b447-db8853f05e95",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "5d90d241-b6a5-4c99-b252-764f8aebfd0a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2505af1b-918c-488e-a2a3-a05d4c4a46f4",
+      "uri": "https://api.scryfall.com/migrations/2505af1b-918c-488e-a2a3-a05d4c4a46f4",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "127b43c7-1aa2-40c0-91cb-7862ea278a3a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2c354d05-be7c-47bc-8e20-f85ae964b8d4",
+      "uri": "https://api.scryfall.com/migrations/2c354d05-be7c-47bc-8e20-f85ae964b8d4",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "a1fd0b8c-0bf6-43ab-900f-bdc089b5e345",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2d0a172e-c38b-4cc0-a794-ce7476a33830",
+      "uri": "https://api.scryfall.com/migrations/2d0a172e-c38b-4cc0-a794-ce7476a33830",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "1fa0cd03-b540-4a94-b4fe-77da4e248af7",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "3143f363-1ba9-4279-9f89-5dbaf8b65420",
+      "uri": "https://api.scryfall.com/migrations/3143f363-1ba9-4279-9f89-5dbaf8b65420",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "35af65e6-3470-4ba1-89ac-11f6ea806056",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "3150a37d-5c4e-444c-b631-c685833b2ee4",
+      "uri": "https://api.scryfall.com/migrations/3150a37d-5c4e-444c-b631-c685833b2ee4",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "20001c15-2218-428e-bb6a-b2799e9244bb",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "3eb600b9-9a1d-4a7d-ad6f-e41cd502d560",
+      "uri": "https://api.scryfall.com/migrations/3eb600b9-9a1d-4a7d-ad6f-e41cd502d560",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "9ae62718-b4c3-4629-b485-8e21527691f5",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "4368fb99-9087-451e-8c8a-ffd8348a3b1b",
+      "uri": "https://api.scryfall.com/migrations/4368fb99-9087-451e-8c8a-ffd8348a3b1b",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "4ed3976e-1122-4535-aa9c-af9ac0d2d29e",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "447b747d-8ae0-4146-bc25-d718e8c1597e",
+      "uri": "https://api.scryfall.com/migrations/447b747d-8ae0-4146-bc25-d718e8c1597e",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "9c6bb58b-3bae-4064-b887-42e71932b210",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "47be0ea7-dc99-4573-a417-4c8a0fe39fb8",
+      "uri": "https://api.scryfall.com/migrations/47be0ea7-dc99-4573-a417-4c8a0fe39fb8",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "2591ab19-cf14-4038-b558-a3278f5faf13",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "47e56a63-2a10-474f-829c-ebd1dc428d7e",
+      "uri": "https://api.scryfall.com/migrations/47e56a63-2a10-474f-829c-ebd1dc428d7e",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "de67202b-e703-4661-bec3-7ff9328af2a4",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "4a145ae6-c4a7-4c89-9506-1eaa9c258ccb",
+      "uri": "https://api.scryfall.com/migrations/4a145ae6-c4a7-4c89-9506-1eaa9c258ccb",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "052028ac-d16d-443c-bdec-40f0e880fb81",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "4b263900-555d-495e-a7f2-5b0b55bdbc2b",
+      "uri": "https://api.scryfall.com/migrations/4b263900-555d-495e-a7f2-5b0b55bdbc2b",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "89729242-9328-424a-964a-170b9eb97546",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "4b5c39f6-61ff-4f4e-bd88-79999b4b35e7",
+      "uri": "https://api.scryfall.com/migrations/4b5c39f6-61ff-4f4e-bd88-79999b4b35e7",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "5085502f-9db4-4a16-8d5c-8ee30add2a91",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "4c5756b9-7158-40c6-bae5-b1c848b48db9",
+      "uri": "https://api.scryfall.com/migrations/4c5756b9-7158-40c6-bae5-b1c848b48db9",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "5a87fa29-cfc2-4a8b-bfe1-a8d6882a303b",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "4d2ddca6-379a-4b08-a4f5-07b2479eed8d",
+      "uri": "https://api.scryfall.com/migrations/4d2ddca6-379a-4b08-a4f5-07b2479eed8d",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "9620964f-50f4-41a3-9d14-60c8940dfa9a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "53b83c42-9ce2-4b34-ba53-10861cadc88d",
+      "uri": "https://api.scryfall.com/migrations/53b83c42-9ce2-4b34-ba53-10861cadc88d",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "b7beee3b-ae85-4c3a-8654-52a6632d3641",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "5597baf5-55b4-4f72-b268-866ee3aed10f",
+      "uri": "https://api.scryfall.com/migrations/5597baf5-55b4-4f72-b268-866ee3aed10f",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "7a802051-ee2e-4d59-8773-e878cec2cef1",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "5b0de225-06dd-4daa-a121-2f043f007ed2",
+      "uri": "https://api.scryfall.com/migrations/5b0de225-06dd-4daa-a121-2f043f007ed2",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "bcdd2f73-ba70-430a-9c42-bc0b33632d97",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6014cca0-9ea8-4ec4-8df7-2efe1ee8bf75",
+      "uri": "https://api.scryfall.com/migrations/6014cca0-9ea8-4ec4-8df7-2efe1ee8bf75",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "834a7b19-c14e-40df-bc66-ca20ed156c74",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "60a7df9e-f2d7-4042-abd9-82208743fc1b",
+      "uri": "https://api.scryfall.com/migrations/60a7df9e-f2d7-4042-abd9-82208743fc1b",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "005d7c8a-369b-45a6-b4a7-d17bc79ecb43",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6ad44dc1-14ea-4819-b1f1-a855f1d8122d",
+      "uri": "https://api.scryfall.com/migrations/6ad44dc1-14ea-4819-b1f1-a855f1d8122d",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "8ff88c69-9a00-49c7-9bd3-26041d8611b7",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6baee8d0-5243-48ae-9ff3-ac38d28b41e9",
+      "uri": "https://api.scryfall.com/migrations/6baee8d0-5243-48ae-9ff3-ac38d28b41e9",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "700346a2-bfb8-485c-83c5-2f6bbb3f2654",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6dc28345-de98-4d6d-a075-efefc795004a",
+      "uri": "https://api.scryfall.com/migrations/6dc28345-de98-4d6d-a075-efefc795004a",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "0ea6c88d-4219-4a7a-a8c6-afa16213f341",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6f397064-3c7e-4d9a-b36c-4cbce813ebdf",
+      "uri": "https://api.scryfall.com/migrations/6f397064-3c7e-4d9a-b36c-4cbce813ebdf",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "d0adde30-dfa3-43f8-859b-f9b95f3ab26e",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "709392a4-3176-41a1-9170-da04682d6d5f",
+      "uri": "https://api.scryfall.com/migrations/709392a4-3176-41a1-9170-da04682d6d5f",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "36bf5a4e-9c9e-4b38-9477-43a75721514e",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "72a53941-367f-46e1-b8bb-9a4318f9dfc8",
+      "uri": "https://api.scryfall.com/migrations/72a53941-367f-46e1-b8bb-9a4318f9dfc8",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "c192b8df-d3f0-472d-b1ec-dbc9337df35a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "73820ad0-ea1d-4628-91a0-70f4bbcd24be",
+      "uri": "https://api.scryfall.com/migrations/73820ad0-ea1d-4628-91a0-70f4bbcd24be",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "45d0b7c6-c199-4fa8-a836-d93d60e61cb6",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "758ed0f3-346f-4fb6-b1ec-f5b363559f07",
+      "uri": "https://api.scryfall.com/migrations/758ed0f3-346f-4fb6-b1ec-f5b363559f07",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "8b4f528b-86c6-4e36-99c4-341e09475285",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "7676f2ea-26df-4118-aa27-6e02937466c8",
+      "uri": "https://api.scryfall.com/migrations/7676f2ea-26df-4118-aa27-6e02937466c8",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "6e4125e4-4896-4dae-afb0-ef3a8630a5ce",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "76d214c9-4752-42a6-b275-ef3d97d35ed9",
+      "uri": "https://api.scryfall.com/migrations/76d214c9-4752-42a6-b275-ef3d97d35ed9",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "b810b66e-d047-484d-830d-8d32854d094e",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "827afaf0-38be-4711-87b9-bc245b59e137",
+      "uri": "https://api.scryfall.com/migrations/827afaf0-38be-4711-87b9-bc245b59e137",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "548f6039-ac57-4f44-9da1-2faf41c47f8c",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8457d367-ee98-4033-bef9-70a86b9c8826",
+      "uri": "https://api.scryfall.com/migrations/8457d367-ee98-4033-bef9-70a86b9c8826",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "c267d6dc-12ad-4689-ac7f-85be0b5d62f8",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8513493a-6002-4bda-b7f0-03f056dace6a",
+      "uri": "https://api.scryfall.com/migrations/8513493a-6002-4bda-b7f0-03f056dace6a",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "28fa6704-2526-4cb0-bea6-4a863a46e151",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "87681e0c-0a21-430d-8958-c055df1a9c16",
+      "uri": "https://api.scryfall.com/migrations/87681e0c-0a21-430d-8958-c055df1a9c16",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "ceafc70e-b660-4515-bc7a-31d20c6fd5ad",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "88b94e52-bb82-4ea0-a247-e0b059e4d50f",
+      "uri": "https://api.scryfall.com/migrations/88b94e52-bb82-4ea0-a247-e0b059e4d50f",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "6aad03ad-71fb-4152-953a-227794602468",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "89551708-3b8d-4fcb-b169-76369bc7545f",
+      "uri": "https://api.scryfall.com/migrations/89551708-3b8d-4fcb-b169-76369bc7545f",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "edb905e2-0d77-4692-b584-7cd9ca5eceab",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8aecbd6d-fabe-4776-8537-c5129d137baf",
+      "uri": "https://api.scryfall.com/migrations/8aecbd6d-fabe-4776-8537-c5129d137baf",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "3d65378f-ad85-4916-9901-f9045cb6d13f",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8b062e97-b28f-4ffe-b02f-652bfee22615",
+      "uri": "https://api.scryfall.com/migrations/8b062e97-b28f-4ffe-b02f-652bfee22615",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "8c2a889a-9914-4740-a39e-4c864456fb12",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8d267453-5cfc-4aa5-9d09-db72b5344497",
+      "uri": "https://api.scryfall.com/migrations/8d267453-5cfc-4aa5-9d09-db72b5344497",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "54a71b7b-12e5-451c-b65c-d6b86d41bd83",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8e6263f3-4fcc-4f44-8f3b-209b9f8fa644",
+      "uri": "https://api.scryfall.com/migrations/8e6263f3-4fcc-4f44-8f3b-209b9f8fa644",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "d35010a4-2a66-47c7-a2d2-673c64cccd1c",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8f18305a-1cb8-49d7-9a66-6ec6cf56bb78",
+      "uri": "https://api.scryfall.com/migrations/8f18305a-1cb8-49d7-9a66-6ec6cf56bb78",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "65cafb33-e5fe-4514-a42b-0258164f9970",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "9654cf5b-dee8-4f07-866b-fc361d451e50",
+      "uri": "https://api.scryfall.com/migrations/9654cf5b-dee8-4f07-866b-fc361d451e50",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "ea89a979-f3ee-488e-aa1e-148234775487",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "973b2afe-4967-4791-9d8e-97594d7e1420",
+      "uri": "https://api.scryfall.com/migrations/973b2afe-4967-4791-9d8e-97594d7e1420",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "9463dcde-dae6-45b9-9f33-1fa185d7b578",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "97c7b5bd-859a-413c-9e45-9888a74f6635",
+      "uri": "https://api.scryfall.com/migrations/97c7b5bd-859a-413c-9e45-9888a74f6635",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "cf99173e-0e8d-4d12-a7b3-5875624d2771",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "9b52e1f1-b3f5-465e-b9d5-cae90bbf68ee",
+      "uri": "https://api.scryfall.com/migrations/9b52e1f1-b3f5-465e-b9d5-cae90bbf68ee",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "fdc6b99e-4d17-47ed-8d35-b73428317ae8",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "9b9eef2f-91c4-4a8e-8f14-230d6f2dcba0",
+      "uri": "https://api.scryfall.com/migrations/9b9eef2f-91c4-4a8e-8f14-230d6f2dcba0",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "7191708a-c956-492c-ac8a-67f614bf2a60",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "a06ba62e-f5db-4798-a9c7-f42db21f30b6",
+      "uri": "https://api.scryfall.com/migrations/a06ba62e-f5db-4798-a9c7-f42db21f30b6",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "fac926db-e801-487a-aaef-f3d9d2d950e3",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "a6eacc0b-37ad-4b4d-a104-3c3392077c9e",
+      "uri": "https://api.scryfall.com/migrations/a6eacc0b-37ad-4b4d-a104-3c3392077c9e",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "fea9e3a0-9326-4c2a-b2ab-cd72b66e802c",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "ac033da8-307d-4771-b19c-1888e5aa50af",
+      "uri": "https://api.scryfall.com/migrations/ac033da8-307d-4771-b19c-1888e5aa50af",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "1e8fe548-75ed-4f33-bb47-0cc986d5a10c",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "ad2fa8e6-fd5f-44a6-8bd6-ebf3c8721631",
+      "uri": "https://api.scryfall.com/migrations/ad2fa8e6-fd5f-44a6-8bd6-ebf3c8721631",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "050c0d28-32f9-4d3c-a683-2475b5a89716",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "ad348ce3-509c-476b-8092-c46813244170",
+      "uri": "https://api.scryfall.com/migrations/ad348ce3-509c-476b-8092-c46813244170",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "102f02d8-7b95-4182-ab7e-73705170ebc2",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "b17bae07-3b5d-4b04-996d-5e5bd2381391",
+      "uri": "https://api.scryfall.com/migrations/b17bae07-3b5d-4b04-996d-5e5bd2381391",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "00096c4d-f43b-4496-9c3b-82a644a357ef",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "b1fa2491-8c69-4bc9-8dfb-c25e3d002b40",
+      "uri": "https://api.scryfall.com/migrations/b1fa2491-8c69-4bc9-8dfb-c25e3d002b40",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "1ad47d8e-8915-47e2-9bd5-af7a486f93d7",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "b44d3996-1714-4bf5-a7f0-ccb627b561aa",
+      "uri": "https://api.scryfall.com/migrations/b44d3996-1714-4bf5-a7f0-ccb627b561aa",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "c3bab425-11bc-4086-bb77-5be24b524ce4",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "b52308c7-58ec-4961-b8fb-1006b46b96f1",
+      "uri": "https://api.scryfall.com/migrations/b52308c7-58ec-4961-b8fb-1006b46b96f1",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "87a01c9d-768c-4553-b077-335a5a072295",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "b6060849-fa92-477c-8ac6-b075c29135be",
+      "uri": "https://api.scryfall.com/migrations/b6060849-fa92-477c-8ac6-b075c29135be",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "7a546aa7-c3a3-45c4-8d5b-2884d897af52",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "b8715243-e6fc-457e-946c-82b60936c49e",
+      "uri": "https://api.scryfall.com/migrations/b8715243-e6fc-457e-946c-82b60936c49e",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "67438b36-2c4d-4e3f-ad1e-68140983dea7",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "b9cc7f1f-d5ed-49b6-b679-3d53b825ced9",
+      "uri": "https://api.scryfall.com/migrations/b9cc7f1f-d5ed-49b6-b679-3d53b825ced9",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "57024642-abbb-461e-845a-4f82a73d8786",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "bdf9ee09-f1ea-407a-a4a4-406dbaf354bc",
+      "uri": "https://api.scryfall.com/migrations/bdf9ee09-f1ea-407a-a4a4-406dbaf354bc",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "906ca6e3-2e7b-4854-b9c5-51ffe77944e9",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "c2c3ec9d-51a2-4d8b-8828-f2984d814e8d",
+      "uri": "https://api.scryfall.com/migrations/c2c3ec9d-51a2-4d8b-8828-f2984d814e8d",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "803d7692-ee11-4ebd-b077-db9e3d8332f7",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "c492d5b7-956d-42ce-a8ed-fe84fb04eef7",
+      "uri": "https://api.scryfall.com/migrations/c492d5b7-956d-42ce-a8ed-fe84fb04eef7",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "51751079-644b-4830-8d02-4820ffb000bd",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "c9988b9a-bbe4-4376-9528-f21677199096",
+      "uri": "https://api.scryfall.com/migrations/c9988b9a-bbe4-4376-9528-f21677199096",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "caf6e7a3-fb7a-4999-af4d-54ffacbf265f",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "cbdaa8af-1528-4a66-83e4-018f026ab772",
+      "uri": "https://api.scryfall.com/migrations/cbdaa8af-1528-4a66-83e4-018f026ab772",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "58a3f521-4a9a-4861-9484-a18e0bc7d182",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "cefe3a85-0f53-4b21-8bba-8a491b8bad92",
+      "uri": "https://api.scryfall.com/migrations/cefe3a85-0f53-4b21-8bba-8a491b8bad92",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "3408f0cb-4ef9-4a89-9f0b-f79bb6d226f1",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "cf62325a-b3c0-4782-8174-4dc57eda8f53",
+      "uri": "https://api.scryfall.com/migrations/cf62325a-b3c0-4782-8174-4dc57eda8f53",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "17e2159a-b3b3-476e-ae04-3041474adff0",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "d7f7769e-94cb-4f24-92a7-8671b075534e",
+      "uri": "https://api.scryfall.com/migrations/d7f7769e-94cb-4f24-92a7-8671b075534e",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "a4c3605b-ee26-4544-84bd-b4a7b5dc11f8",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "daec9a02-c394-4933-a90b-b86190260287",
+      "uri": "https://api.scryfall.com/migrations/daec9a02-c394-4933-a90b-b86190260287",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "d7d7b8b0-a8ef-48bc-8b2b-fdfa7559324d",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "dd306737-d34c-4a0c-9e87-cd67bfa0d356",
+      "uri": "https://api.scryfall.com/migrations/dd306737-d34c-4a0c-9e87-cd67bfa0d356",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "a718428a-d0d6-495b-9229-c581f3f762ba",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "ddc21ce0-814d-4bb4-a0a8-f0160a38b6f2",
+      "uri": "https://api.scryfall.com/migrations/ddc21ce0-814d-4bb4-a0a8-f0160a38b6f2",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "b34f0db0-da77-49a2-8725-b14ee59aee2f",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "e2ccc7f8-25f6-4dfd-acb0-819d1078c418",
+      "uri": "https://api.scryfall.com/migrations/e2ccc7f8-25f6-4dfd-acb0-819d1078c418",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "e340e4ee-2722-4874-bc3f-e9dce938ab4a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "e364ff03-7128-4e6b-bcf7-5b1b7c7c58a8",
+      "uri": "https://api.scryfall.com/migrations/e364ff03-7128-4e6b-bcf7-5b1b7c7c58a8",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "e4654d88-178c-45bd-81f4-566d50016e88",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "e3d92c96-f69b-46d7-bdeb-3d8a20d3b940",
+      "uri": "https://api.scryfall.com/migrations/e3d92c96-f69b-46d7-bdeb-3d8a20d3b940",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "bd4dcb60-a302-4143-8637-b32f3bb0ae21",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "f3d27a3b-6a90-4812-baa7-69d6afb8266f",
+      "uri": "https://api.scryfall.com/migrations/f3d27a3b-6a90-4812-baa7-69d6afb8266f",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "672df916-18b2-4f31-8aa1-6a6cf2671984",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "fb0554a3-0683-40b1-92e4-34b8f22897a9",
+      "uri": "https://api.scryfall.com/migrations/fb0554a3-0683-40b1-92e4-34b8f22897a9",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "11e88f80-be88-4e2a-a077-c155df60e4bd",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "fce9c20e-9633-455b-8e8d-f143f7c5072f",
+      "uri": "https://api.scryfall.com/migrations/fce9c20e-9633-455b-8e8d-f143f7c5072f",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "5b60a000-5e45-49da-80a4-1945f1c52807",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "ff914cf7-04ef-4a71-89d6-afaef476bf1a",
+      "uri": "https://api.scryfall.com/migrations/ff914cf7-04ef-4a71-89d6-afaef476bf1a",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "04592e6c-2c09-4dd4-996b-f3b3f488edea",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "3f5b89fc-1b33-40a0-87d4-ea6f2e9515bb",
+      "uri": "https://api.scryfall.com/migrations/3f5b89fc-1b33-40a0-87d4-ea6f2e9515bb",
+      "performed_at": "2022-12-03",
+      "migration_strategy": "merge",
+      "old_scryfall_id": "585fa2cc-4f77-47ab-8d2c-c68258ced283",
+      "new_scryfall_id": "9052f5c7-ee3b-457d-97ca-ac6b4518997c",
+      "note": "Actually a reverisble card"
+    },
+    {
+      "object": "migration",
+      "id": "5c2e7c73-5f6f-4db1-a6ba-4fcec57068b8",
+      "uri": "https://api.scryfall.com/migrations/5c2e7c73-5f6f-4db1-a6ba-4fcec57068b8",
+      "performed_at": "2022-12-03",
+      "migration_strategy": "merge",
+      "old_scryfall_id": "d361aded-4aa6-415b-bdd4-7f19b1102de4",
+      "new_scryfall_id": "9052f5c7-ee3b-457d-97ca-ac6b4518997c",
+      "note": "Actually a reverisble card"
+    },
+    {
+      "object": "migration",
+      "id": "020e8725-6277-4745-9f09-cf1fb4e2bb82",
+      "uri": "https://api.scryfall.com/migrations/020e8725-6277-4745-9f09-cf1fb4e2bb82",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "d049d4bd-42dc-492a-a181-5fbc1320513b",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "03e6cc05-667b-496d-83f1-2a83b5edb123",
+      "uri": "https://api.scryfall.com/migrations/03e6cc05-667b-496d-83f1-2a83b5edb123",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "8fbaad4d-d63a-4b89-92a1-60d4ffcd7b42",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "040fd138-cf56-476e-8e17-c1006766053f",
+      "uri": "https://api.scryfall.com/migrations/040fd138-cf56-476e-8e17-c1006766053f",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "daf731ba-a0d6-45c8-ad8c-6cbfd00afa59",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "054b23fa-0187-4b71-9617-0866587fb951",
+      "uri": "https://api.scryfall.com/migrations/054b23fa-0187-4b71-9617-0866587fb951",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "06bcc702-4ead-4281-a28a-bc6e43e9909a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "0592929a-60a0-4155-9a80-ed290915ca8a",
+      "uri": "https://api.scryfall.com/migrations/0592929a-60a0-4155-9a80-ed290915ca8a",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "2dfaa76c-5fb9-4db5-917b-2d1d610b2953",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "06152900-85d3-42fc-a3fb-cadda77ab567",
+      "uri": "https://api.scryfall.com/migrations/06152900-85d3-42fc-a3fb-cadda77ab567",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "2ae594a3-f297-498b-80a7-0839b9b1fdc7",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "06c45cfe-4779-42f6-89a2-a8b2a673a6f4",
+      "uri": "https://api.scryfall.com/migrations/06c45cfe-4779-42f6-89a2-a8b2a673a6f4",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "a4a754d7-47aa-484d-85e4-04772ba77822",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "070f92c4-b153-41f2-a9e6-3499b6685838",
+      "uri": "https://api.scryfall.com/migrations/070f92c4-b153-41f2-a9e6-3499b6685838",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "fa8e0486-da39-4d66-b6b1-07dbc2850efc",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "07b2e7a6-0b08-44b4-8b89-011f2dd881b8",
+      "uri": "https://api.scryfall.com/migrations/07b2e7a6-0b08-44b4-8b89-011f2dd881b8",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "581dddad-6aae-480c-b7bc-46340b1f604d",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "07e72a33-df00-49e4-8843-3450fcad9a4c",
+      "uri": "https://api.scryfall.com/migrations/07e72a33-df00-49e4-8843-3450fcad9a4c",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "55533266-f0a1-4e23-9641-66cf723e8008",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "08d38e78-33ce-4946-8e7b-72f316caaf3b",
+      "uri": "https://api.scryfall.com/migrations/08d38e78-33ce-4946-8e7b-72f316caaf3b",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "a816b767-6bf3-4555-a368-c75abc63608d",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "08e18e14-9f78-4df8-80fe-49cb8bda9a7b",
+      "uri": "https://api.scryfall.com/migrations/08e18e14-9f78-4df8-80fe-49cb8bda9a7b",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "220b5027-32ff-4c81-833b-87e00f7e568f",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "090f8229-5183-4104-9401-9e41d06983f2",
+      "uri": "https://api.scryfall.com/migrations/090f8229-5183-4104-9401-9e41d06983f2",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "771fdb42-d916-41c3-b1e8-090a4132a27f",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "0940e370-2220-44f9-8e57-6a4a0d49ef1c",
+      "uri": "https://api.scryfall.com/migrations/0940e370-2220-44f9-8e57-6a4a0d49ef1c",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "3212428c-9d36-45c2-a998-b42873431164",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "09d76ce1-ab19-417d-af57-4beed6e19608",
+      "uri": "https://api.scryfall.com/migrations/09d76ce1-ab19-417d-af57-4beed6e19608",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "9fa1f1ad-26d4-47c8-bd3d-2bc11c591ab5",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "0ac46ba8-4ed4-42c3-8dbc-05244c492c92",
+      "uri": "https://api.scryfall.com/migrations/0ac46ba8-4ed4-42c3-8dbc-05244c492c92",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "442f5b2c-9705-487a-9389-43f45bf79ec7",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "0afb29da-07a5-4dd9-a336-6f80adc7b65b",
+      "uri": "https://api.scryfall.com/migrations/0afb29da-07a5-4dd9-a336-6f80adc7b65b",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "2d6862cb-2d9a-469b-ab99-9f6781a1e16a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "0b1f2d82-a769-42d0-b209-38161697454b",
+      "uri": "https://api.scryfall.com/migrations/0b1f2d82-a769-42d0-b209-38161697454b",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "0a97ac81-aa4c-419a-8a56-c46239849bf0",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "0b4162ff-d79d-41bd-b002-a86828ec6b40",
+      "uri": "https://api.scryfall.com/migrations/0b4162ff-d79d-41bd-b002-a86828ec6b40",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "88055e85-c4b0-483f-8afa-d4dc9b491d25",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "0b531e15-726a-4d9b-bf06-dd8f657d2685",
+      "uri": "https://api.scryfall.com/migrations/0b531e15-726a-4d9b-bf06-dd8f657d2685",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "53004f63-d89e-43bb-b353-4f82f2fa7ad5",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "0c474a98-1fbe-4080-a57b-83bb348272dc",
+      "uri": "https://api.scryfall.com/migrations/0c474a98-1fbe-4080-a57b-83bb348272dc",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "75777c00-3af0-4012-8115-c4f92548a4b6",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "0d37dd24-912c-418a-8423-928c9d932a71",
+      "uri": "https://api.scryfall.com/migrations/0d37dd24-912c-418a-8423-928c9d932a71",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "c1b0a209-5280-437e-93d7-83485cd0db38",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "0de6b5f4-8619-4d53-840a-1026c5a4d4f4",
+      "uri": "https://api.scryfall.com/migrations/0de6b5f4-8619-4d53-840a-1026c5a4d4f4",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "ac4d8b5e-1eb0-4620-9404-a7ef040d007e",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "110c775c-6735-4127-97a0-3652f1cdc1dc",
+      "uri": "https://api.scryfall.com/migrations/110c775c-6735-4127-97a0-3652f1cdc1dc",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "652c2433-8936-49f9-88d0-13ee1813051d",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "11848526-4e2b-4797-9d06-684a3fcb68e7",
+      "uri": "https://api.scryfall.com/migrations/11848526-4e2b-4797-9d06-684a3fcb68e7",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "118b4ba4-67c8-4e78-b200-ec81c695ee6d",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "1189b610-d64a-41a3-86a9-d6ae1b14de92",
+      "uri": "https://api.scryfall.com/migrations/1189b610-d64a-41a3-86a9-d6ae1b14de92",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "75b735ae-d2ed-4a26-a96e-97289ba7a446",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "129bf9f7-bcc4-487f-9f02-f43bbc08f3ff",
+      "uri": "https://api.scryfall.com/migrations/129bf9f7-bcc4-487f-9f02-f43bbc08f3ff",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "627f531b-d2de-4db8-9980-ee1574af8862",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "1321a89d-dced-425b-95b1-1a39f90c398c",
+      "uri": "https://api.scryfall.com/migrations/1321a89d-dced-425b-95b1-1a39f90c398c",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "8717a8a9-e423-47fe-afef-0b12e50dc822",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "1322fe9f-6172-4df0-8306-45808b95789a",
+      "uri": "https://api.scryfall.com/migrations/1322fe9f-6172-4df0-8306-45808b95789a",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "ba3cb633-a2af-4550-be79-ce089e46b754",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "14013211-1028-475c-b103-b199a09513a7",
+      "uri": "https://api.scryfall.com/migrations/14013211-1028-475c-b103-b199a09513a7",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "98d95ed1-8c44-452e-9e82-d72a70b948cc",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "148e69ba-4cb0-4f1a-9532-1986401b93d4",
+      "uri": "https://api.scryfall.com/migrations/148e69ba-4cb0-4f1a-9532-1986401b93d4",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "b0a3d251-b8f4-4d32-bfcb-887e4edb6c27",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "1728fe8f-72b6-4431-b8f2-60b918d4afbd",
+      "uri": "https://api.scryfall.com/migrations/1728fe8f-72b6-4431-b8f2-60b918d4afbd",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "f6645c5d-5a1e-4e8e-ab76-8236c97722d7",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "17c837b4-59c4-4f24-8361-08392f2b94a2",
+      "uri": "https://api.scryfall.com/migrations/17c837b4-59c4-4f24-8361-08392f2b94a2",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "e3463577-ea05-4289-8d14-d1e87f1d918c",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "17df7105-7dce-4e40-9163-ad47848c9778",
+      "uri": "https://api.scryfall.com/migrations/17df7105-7dce-4e40-9163-ad47848c9778",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "b4d94075-d43f-4073-a51e-574338e87ed4",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "18f4a2fb-c0ca-4fa9-a433-572fe251eba1",
+      "uri": "https://api.scryfall.com/migrations/18f4a2fb-c0ca-4fa9-a433-572fe251eba1",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "15d7cc1e-8db5-4af8-bfe8-00bd0661caed",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "19fb6885-65c4-4d15-a149-38e65acaa8b2",
+      "uri": "https://api.scryfall.com/migrations/19fb6885-65c4-4d15-a149-38e65acaa8b2",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "4d134895-6798-4ead-9340-fc7f24751862",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "1bab58e0-547b-4de7-925b-a2967188ea7f",
+      "uri": "https://api.scryfall.com/migrations/1bab58e0-547b-4de7-925b-a2967188ea7f",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "b2f19f55-645d-43af-be1c-1c7678115fa9",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "1bb1387a-963b-4946-80b7-9f7d64a23695",
+      "uri": "https://api.scryfall.com/migrations/1bb1387a-963b-4946-80b7-9f7d64a23695",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "ba10663b-1601-4446-a528-839e4ab0360e",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "1c01b492-af81-422a-949d-41b5a489898f",
+      "uri": "https://api.scryfall.com/migrations/1c01b492-af81-422a-949d-41b5a489898f",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "61886c53-ec13-4518-981a-662659562a80",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "1cef02b4-eae3-4fea-abbc-f44860de9b36",
+      "uri": "https://api.scryfall.com/migrations/1cef02b4-eae3-4fea-abbc-f44860de9b36",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "e2b2457a-8a7f-467b-b810-2d615ea4b410",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "1d521549-8411-4a58-a87d-f8f659ef474f",
+      "uri": "https://api.scryfall.com/migrations/1d521549-8411-4a58-a87d-f8f659ef474f",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "981664aa-8c73-43be-ad34-e196e0478e31",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "1db9cf87-2723-4dee-9a41-f6d24c6e47b2",
+      "uri": "https://api.scryfall.com/migrations/1db9cf87-2723-4dee-9a41-f6d24c6e47b2",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "1dd1e237-269c-4115-bddc-b1c7b44b0038",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "20b1c3f5-3341-419c-810e-b875ad168fb7",
+      "uri": "https://api.scryfall.com/migrations/20b1c3f5-3341-419c-810e-b875ad168fb7",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "ebcd32d5-5fb6-4fc0-b620-38b1f3418753",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "220e6b85-95f7-40ca-9ab6-6d0d3ed79d70",
+      "uri": "https://api.scryfall.com/migrations/220e6b85-95f7-40ca-9ab6-6d0d3ed79d70",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "7d70f8df-c7fe-412c-a3a6-8831890977c1",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "227e5b4c-7e49-4635-a8b8-baf6d8b9de41",
+      "uri": "https://api.scryfall.com/migrations/227e5b4c-7e49-4635-a8b8-baf6d8b9de41",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "86a84f9b-c456-498a-ac3b-2ea3cc7549a3",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "22b9f0cf-61a5-4c7f-8ece-48cf63ea2a54",
+      "uri": "https://api.scryfall.com/migrations/22b9f0cf-61a5-4c7f-8ece-48cf63ea2a54",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "fac51dcb-63ed-438c-ae80-6660593eb541",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2317a11e-135e-49a4-b72c-da6d6232ca76",
+      "uri": "https://api.scryfall.com/migrations/2317a11e-135e-49a4-b72c-da6d6232ca76",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "067e3d99-e8b1-4565-a084-7c68a608a6ad",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "23fde62e-3a02-4369-bf31-d85718dfcafe",
+      "uri": "https://api.scryfall.com/migrations/23fde62e-3a02-4369-bf31-d85718dfcafe",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "e43655a8-f81b-4560-a048-eab697775e60",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "240c3973-c510-422d-bd92-f20db9b257b6",
+      "uri": "https://api.scryfall.com/migrations/240c3973-c510-422d-bd92-f20db9b257b6",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "aa6f3f89-5932-4e15-b542-d58496c49f96",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "24235000-3440-4b42-b498-1ab73a5d8373",
+      "uri": "https://api.scryfall.com/migrations/24235000-3440-4b42-b498-1ab73a5d8373",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "0234708b-10dd-49a0-a2c2-e15c0f46c337",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "246528d7-129e-464b-b969-9e32b5746718",
+      "uri": "https://api.scryfall.com/migrations/246528d7-129e-464b-b969-9e32b5746718",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "94dc7a24-e761-4cea-8bde-aeb70349ebb5",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "248c8c99-6137-445b-9058-c11909b5bc44",
+      "uri": "https://api.scryfall.com/migrations/248c8c99-6137-445b-9058-c11909b5bc44",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "52916d93-9c92-485f-b6af-07a235e1d87d",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "25141b9a-d437-422b-b518-fb8a879d3d14",
+      "uri": "https://api.scryfall.com/migrations/25141b9a-d437-422b-b518-fb8a879d3d14",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "2bd548ae-423a-4c4c-aaed-1b13c8d76de9",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "25439297-3d88-4189-9dd5-f7eca664521b",
+      "uri": "https://api.scryfall.com/migrations/25439297-3d88-4189-9dd5-f7eca664521b",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "f100f80e-2206-4522-b599-46fd8ba15385",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2599bbb5-60f8-4ca3-982a-1c00ee3769c6",
+      "uri": "https://api.scryfall.com/migrations/2599bbb5-60f8-4ca3-982a-1c00ee3769c6",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "2bb5102f-718f-4940-bbf1-aba703bbac13",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "25fe4284-e6ee-45af-af0b-3d159533ecd3",
+      "uri": "https://api.scryfall.com/migrations/25fe4284-e6ee-45af-af0b-3d159533ecd3",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "0840ba47-6ee4-4d06-ac0b-905ab947586a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2694eca6-d426-425d-b442-ff86c72b29ed",
+      "uri": "https://api.scryfall.com/migrations/2694eca6-d426-425d-b442-ff86c72b29ed",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "bfcdbd2f-db93-4129-90b2-0ccdfb2badfc",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "26c46ae6-0f39-40c8-a06d-b848f1ffcbc5",
+      "uri": "https://api.scryfall.com/migrations/26c46ae6-0f39-40c8-a06d-b848f1ffcbc5",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "716d4ed4-b2e3-4877-840e-544360502ee3",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "27a8451d-8a97-4f7f-8a02-d73cef89decc",
+      "uri": "https://api.scryfall.com/migrations/27a8451d-8a97-4f7f-8a02-d73cef89decc",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "41bc6197-b4d6-4627-b33b-ac3387b137b1",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "27b6cfd1-4d6f-4366-8025-ef24801c97ce",
+      "uri": "https://api.scryfall.com/migrations/27b6cfd1-4d6f-4366-8025-ef24801c97ce",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "7dc38074-9b65-4495-b45d-80e3cde39ce8",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2910737d-555e-48ce-9b1c-88dfb08b11fb",
+      "uri": "https://api.scryfall.com/migrations/2910737d-555e-48ce-9b1c-88dfb08b11fb",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "960435fe-ef6e-4f2a-bf32-a2ee31f95ffe",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "29ad12c4-e903-4c08-8a08-5260577224ad",
+      "uri": "https://api.scryfall.com/migrations/29ad12c4-e903-4c08-8a08-5260577224ad",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "1f13d96a-3df3-4fd5-a2cd-c7316dc8b1ea",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2a2294cb-a3aa-4fd5-82ed-fd1ede373dfd",
+      "uri": "https://api.scryfall.com/migrations/2a2294cb-a3aa-4fd5-82ed-fd1ede373dfd",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "0e978c0e-4fb6-4283-a90f-0a1e29a178f1",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2b35d897-787a-47cc-bb3b-3016edbc6064",
+      "uri": "https://api.scryfall.com/migrations/2b35d897-787a-47cc-bb3b-3016edbc6064",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "315df5ad-c854-49b2-806a-68b5d537d22d",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2b479394-02bc-4990-b0d8-005bc51e021e",
+      "uri": "https://api.scryfall.com/migrations/2b479394-02bc-4990-b0d8-005bc51e021e",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "233ed677-40fb-4784-8799-e682550c5fc6",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2baa678b-9adc-4295-9e3b-3d4cc5bd0126",
+      "uri": "https://api.scryfall.com/migrations/2baa678b-9adc-4295-9e3b-3d4cc5bd0126",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "d5759b96-f570-4c5e-beab-bbc7bd3b9782",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2c507114-da41-4efa-9339-582e2cb187d8",
+      "uri": "https://api.scryfall.com/migrations/2c507114-da41-4efa-9339-582e2cb187d8",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "89f5a655-daf4-4cee-8ac7-bafe8d8a2474",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2cd4cb43-b5e5-4d68-bfd3-45380feb8493",
+      "uri": "https://api.scryfall.com/migrations/2cd4cb43-b5e5-4d68-bfd3-45380feb8493",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "394a7341-0045-4aa2-b8e3-37033bdcc76f",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2d133504-dd93-4b7c-8194-e9cffe838b80",
+      "uri": "https://api.scryfall.com/migrations/2d133504-dd93-4b7c-8194-e9cffe838b80",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "7aa7bd98-1e94-4a34-8a90-ab766cc95abe",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2d8e4513-3d9e-4c71-821e-fe78c98a29cf",
+      "uri": "https://api.scryfall.com/migrations/2d8e4513-3d9e-4c71-821e-fe78c98a29cf",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "115d783f-09f0-48e3-8089-6c0028afd312",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2db58504-4ca5-4ff6-b995-b62a45db5131",
+      "uri": "https://api.scryfall.com/migrations/2db58504-4ca5-4ff6-b995-b62a45db5131",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "842b6073-e818-4933-9659-ef682518de23",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "2f2de088-ab62-409d-b459-f7b09110e7c8",
+      "uri": "https://api.scryfall.com/migrations/2f2de088-ab62-409d-b459-f7b09110e7c8",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "e01c28cb-99e9-4e91-aeb2-1b9ef35c289c",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "305f80f7-de37-45d8-a0af-b1ade8c313b9",
+      "uri": "https://api.scryfall.com/migrations/305f80f7-de37-45d8-a0af-b1ade8c313b9",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "c4efdd4c-d96f-4768-bab3-7fd39ea0ce46",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "3126cf47-4c8c-43c7-bc89-2b9edf98a1e3",
+      "uri": "https://api.scryfall.com/migrations/3126cf47-4c8c-43c7-bc89-2b9edf98a1e3",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "3325e566-8d70-4d70-9a82-739d898efdf5",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "340b3c17-fa6f-44aa-8536-fb9d4890f7f0",
+      "uri": "https://api.scryfall.com/migrations/340b3c17-fa6f-44aa-8536-fb9d4890f7f0",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "70e8d0c8-154f-47bd-a746-32aae39a0c59",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "34ad9bc9-8769-4ee4-a9bb-36322fbac038",
+      "uri": "https://api.scryfall.com/migrations/34ad9bc9-8769-4ee4-a9bb-36322fbac038",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "46b78f92-3226-4151-9146-f6590aafd37f",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "34e72df9-085a-4d82-84e4-66b20eaee82c",
+      "uri": "https://api.scryfall.com/migrations/34e72df9-085a-4d82-84e4-66b20eaee82c",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "9ff061d6-9047-45f6-b841-eb2c24124298",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "373390df-a253-4f78-a4b2-994bfbfd3d8b",
+      "uri": "https://api.scryfall.com/migrations/373390df-a253-4f78-a4b2-994bfbfd3d8b",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "b22a391a-2442-4d5d-9c91-2bb2831b4565",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "382ecfec-e47e-480e-a0e6-738cdd0da663",
+      "uri": "https://api.scryfall.com/migrations/382ecfec-e47e-480e-a0e6-738cdd0da663",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "5d6b680f-1b56-46c8-a2c2-2a1f344b962a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "38446d2a-4f6f-4db0-8dc2-1fe1158b2301",
+      "uri": "https://api.scryfall.com/migrations/38446d2a-4f6f-4db0-8dc2-1fe1158b2301",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "ad51c3c8-3733-483e-a7dc-a21c6584e7d8",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "39ac9f40-72e3-4d74-b325-61b1b9710c70",
+      "uri": "https://api.scryfall.com/migrations/39ac9f40-72e3-4d74-b325-61b1b9710c70",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "aa6dbfae-f721-425d-bb4d-a47366205746",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "3ab393a0-172e-4a02-a419-280b8e60aa56",
+      "uri": "https://api.scryfall.com/migrations/3ab393a0-172e-4a02-a419-280b8e60aa56",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "bf8d077c-c058-4be6-8583-75960334f9c3",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "3bc1391d-b6bb-4c02-8ece-94dd9d3b4ed6",
+      "uri": "https://api.scryfall.com/migrations/3bc1391d-b6bb-4c02-8ece-94dd9d3b4ed6",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "fb0de2b9-7b15-4bd6-b042-9590b2db7dcd",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "3c2a2c0a-48c9-49b2-a2ae-7957de571be5",
+      "uri": "https://api.scryfall.com/migrations/3c2a2c0a-48c9-49b2-a2ae-7957de571be5",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "a6286153-2e13-4f7d-8611-73f13ccf644a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "400d8386-ba65-4a17-953b-a932ad017e89",
+      "uri": "https://api.scryfall.com/migrations/400d8386-ba65-4a17-953b-a932ad017e89",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "d8773255-416a-4aca-8d48-c0ca6381d428",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "4082975c-e84c-4560-99ad-249bb52e9291",
+      "uri": "https://api.scryfall.com/migrations/4082975c-e84c-4560-99ad-249bb52e9291",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "3eadab27-08a6-463a-b815-63ae38df36bb",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "40937755-51d9-4e9f-972c-7fa745d2b174",
+      "uri": "https://api.scryfall.com/migrations/40937755-51d9-4e9f-972c-7fa745d2b174",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "23106dc6-9800-4be0-b1da-9498e904f6ff",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "413b524d-86de-40eb-94c2-d04736cd97a6",
+      "uri": "https://api.scryfall.com/migrations/413b524d-86de-40eb-94c2-d04736cd97a6",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "f85a9851-8f16-4ad9-a30a-8917f6265952",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "4146114c-13eb-4526-bb82-5490aa125ed4",
+      "uri": "https://api.scryfall.com/migrations/4146114c-13eb-4526-bb82-5490aa125ed4",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "6c26a7ad-dbf3-431b-95cb-6f2de29764de",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "42fd07d0-be3c-46e8-bc2f-ae852ce9eff7",
+      "uri": "https://api.scryfall.com/migrations/42fd07d0-be3c-46e8-bc2f-ae852ce9eff7",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "ab3c9dd1-1cd6-4ccc-8e7e-b5decc65f317",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "43cef0ad-b6f0-4eff-a114-67664bf22e26",
+      "uri": "https://api.scryfall.com/migrations/43cef0ad-b6f0-4eff-a114-67664bf22e26",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "1087103c-3fa5-4fcc-aecd-c48adb953977",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "43d0acdb-421e-47fa-8f07-d7cfcab70e0c",
+      "uri": "https://api.scryfall.com/migrations/43d0acdb-421e-47fa-8f07-d7cfcab70e0c",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "e2fdb368-d1db-48ff-8998-bad09d0e0a7c",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "44a5aaad-5388-4192-ab54-f76be6482e77",
+      "uri": "https://api.scryfall.com/migrations/44a5aaad-5388-4192-ab54-f76be6482e77",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "8b07396d-59ba-4d15-9b4e-51d855f721cb",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "454c5fd6-cb47-401d-a590-5b43dae2abd3",
+      "uri": "https://api.scryfall.com/migrations/454c5fd6-cb47-401d-a590-5b43dae2abd3",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "be8d916b-7a89-4267-81b7-cd7339998a6a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "458075a0-0a9d-476b-bc2f-3cc0acaeca45",
+      "uri": "https://api.scryfall.com/migrations/458075a0-0a9d-476b-bc2f-3cc0acaeca45",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "e8ffaa3f-e08d-48f3-9e0f-8adf38964d01",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "4584a4bc-aeed-495e-aa23-b56a82254752",
+      "uri": "https://api.scryfall.com/migrations/4584a4bc-aeed-495e-aa23-b56a82254752",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "d210955b-4988-468c-8626-4e4e00dbdbd3",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "45beec28-e2d6-41ba-a041-ef9ac79840bd",
+      "uri": "https://api.scryfall.com/migrations/45beec28-e2d6-41ba-a041-ef9ac79840bd",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "11066212-21b7-4796-8e20-bb91185927ab",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "45c4c1e6-498e-493f-b9a0-a477e4a0d232",
+      "uri": "https://api.scryfall.com/migrations/45c4c1e6-498e-493f-b9a0-a477e4a0d232",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "8a8eb5b0-56ba-467f-882d-37595e188774",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "4610090d-0dac-42cd-a91f-50c801cd4595",
+      "uri": "https://api.scryfall.com/migrations/4610090d-0dac-42cd-a91f-50c801cd4595",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "04028eca-df0d-4de3-a551-9e9a8f76604e",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "46702677-3d57-4622-9d69-eab3710829db",
+      "uri": "https://api.scryfall.com/migrations/46702677-3d57-4622-9d69-eab3710829db",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "49cb9ad4-7fc7-4e88-a976-3f3d04835af5",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "4686a631-3e81-4ab7-8ad2-911ebc3f5810",
+      "uri": "https://api.scryfall.com/migrations/4686a631-3e81-4ab7-8ad2-911ebc3f5810",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "0f7bc76c-7a61-4c49-8a00-ee8c2d4b2797",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "477c99f5-168f-4106-a9db-03bfe96b8a59",
+      "uri": "https://api.scryfall.com/migrations/477c99f5-168f-4106-a9db-03bfe96b8a59",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "5fd70473-a4b0-4a7e-a33a-848dc1cf1091",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "483f19dd-eea9-4406-a020-0e2c7b7243bf",
+      "uri": "https://api.scryfall.com/migrations/483f19dd-eea9-4406-a020-0e2c7b7243bf",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "919b162d-b51c-4948-b068-4908f9331695",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "48840d0a-09ca-42ef-9ef9-e9d2adb2ccc5",
+      "uri": "https://api.scryfall.com/migrations/48840d0a-09ca-42ef-9ef9-e9d2adb2ccc5",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "6c3e0278-f7fa-450d-a724-f6680c71dc85",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "48b4fd6a-8bc0-41e5-9b32-1c40ae5df7c6",
+      "uri": "https://api.scryfall.com/migrations/48b4fd6a-8bc0-41e5-9b32-1c40ae5df7c6",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "8994a00a-f509-44fb-8145-c06c5454b77e",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "49684bfa-85df-4350-b2d7-c72c1b417018",
+      "uri": "https://api.scryfall.com/migrations/49684bfa-85df-4350-b2d7-c72c1b417018",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "435ba295-5329-4240-bdee-320737be2d56",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "4ab62fff-d764-41ba-8c27-9874efcb21ae",
+      "uri": "https://api.scryfall.com/migrations/4ab62fff-d764-41ba-8c27-9874efcb21ae",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "9d2518f8-0781-489a-9a91-c9e6ca955f6a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "4ad007ff-2a44-403a-9098-8c1d14f924cb",
+      "uri": "https://api.scryfall.com/migrations/4ad007ff-2a44-403a-9098-8c1d14f924cb",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "11640111-5430-4a45-8ac2-7a643f3a16e9",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "4e8d433c-dcb6-42a2-b034-c51c886cb7d9",
+      "uri": "https://api.scryfall.com/migrations/4e8d433c-dcb6-42a2-b034-c51c886cb7d9",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "79adabd5-34f9-4be7-a20c-fe2b55e1fa46",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "4f70de28-6b57-404f-93e3-00569c34b5d8",
+      "uri": "https://api.scryfall.com/migrations/4f70de28-6b57-404f-93e3-00569c34b5d8",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "2e93609d-cd7b-4050-8561-fd1bc2f52a6d",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "50b44a2c-0099-4252-90c7-bdb584cb4570",
+      "uri": "https://api.scryfall.com/migrations/50b44a2c-0099-4252-90c7-bdb584cb4570",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "f2f5d73b-3cef-4b87-a9b4-abfe299b226e",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "549981c8-0e32-4f2e-894b-89da7f9a14e1",
+      "uri": "https://api.scryfall.com/migrations/549981c8-0e32-4f2e-894b-89da7f9a14e1",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "21e6c61a-40ce-4702-9fd8-3d6f36b9d54d",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "55339926-a37d-40c0-b235-fb8bd45e5075",
+      "uri": "https://api.scryfall.com/migrations/55339926-a37d-40c0-b235-fb8bd45e5075",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "bccc681c-ee4d-42f8-b60b-a84a59ad869f",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "555123c5-aad5-41de-8821-b62352e4cc36",
+      "uri": "https://api.scryfall.com/migrations/555123c5-aad5-41de-8821-b62352e4cc36",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "fe5ac928-7944-4616-9d89-123a1ba422dc",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "574b9fc0-5bad-4979-94fa-0fe2c7e8aedb",
+      "uri": "https://api.scryfall.com/migrations/574b9fc0-5bad-4979-94fa-0fe2c7e8aedb",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "4b43f562-5844-463d-8ed8-32e17bb3a807",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "576ce63b-aae5-46fb-a6ec-496984c1d62d",
+      "uri": "https://api.scryfall.com/migrations/576ce63b-aae5-46fb-a6ec-496984c1d62d",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "63a966d6-3265-4ca3-871f-e2e9acdc1008",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "57e7309c-9eba-4c30-b16c-6193e25b09e9",
+      "uri": "https://api.scryfall.com/migrations/57e7309c-9eba-4c30-b16c-6193e25b09e9",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "ab71a082-315e-4d1e-beb1-22023e78e7c6",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "593e745c-13a9-4127-b676-33bdba19d1d0",
+      "uri": "https://api.scryfall.com/migrations/593e745c-13a9-4127-b676-33bdba19d1d0",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "d124b338-0e53-4524-9ba8-8eec20233aca",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "5a1b34e1-b44b-461e-bf8f-b0483a77181e",
+      "uri": "https://api.scryfall.com/migrations/5a1b34e1-b44b-461e-bf8f-b0483a77181e",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "c2582bdf-7d8a-4031-9558-9f6eb34f7f03",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "5bbb62e3-c4b4-452f-b50e-446b3e65edc4",
+      "uri": "https://api.scryfall.com/migrations/5bbb62e3-c4b4-452f-b50e-446b3e65edc4",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "95592932-0c17-4e79-8a60-b54f80edb61c",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "5bc88928-d06b-4635-a6a5-493d8a055201",
+      "uri": "https://api.scryfall.com/migrations/5bc88928-d06b-4635-a6a5-493d8a055201",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "bcdb1abb-4018-4d8c-89f5-ab1e5baa7fe8",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "5c304715-c946-457a-8872-2bb95cb44f0e",
+      "uri": "https://api.scryfall.com/migrations/5c304715-c946-457a-8872-2bb95cb44f0e",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "6f827cfd-a5e2-4a40-aad8-c82091cd73ed",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "5ea15928-0a58-4f88-8456-5e8a3e4d24f5",
+      "uri": "https://api.scryfall.com/migrations/5ea15928-0a58-4f88-8456-5e8a3e4d24f5",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "02f6f3a1-a682-4e58-a255-2e57fae077df",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "5fb04464-6561-432f-8212-9db1645f3810",
+      "uri": "https://api.scryfall.com/migrations/5fb04464-6561-432f-8212-9db1645f3810",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "c61c9582-5cc0-47ed-8226-9806f2acafde",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "605a7245-2c53-4380-a37e-41149fc1d73c",
+      "uri": "https://api.scryfall.com/migrations/605a7245-2c53-4380-a37e-41149fc1d73c",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "76174d45-d719-4be6-9c82-be579b3ee05a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "60fa4269-ab64-435e-b630-6d096cbdf170",
+      "uri": "https://api.scryfall.com/migrations/60fa4269-ab64-435e-b630-6d096cbdf170",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "7435870c-3421-4bc6-b867-81e1797d0a49",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "618e9f93-377b-43c0-9de9-5400820aa70f",
+      "uri": "https://api.scryfall.com/migrations/618e9f93-377b-43c0-9de9-5400820aa70f",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "d8fc07c9-82ed-4745-976f-8099c5379944",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6249268a-46cf-48e1-8403-39b511e4dd2f",
+      "uri": "https://api.scryfall.com/migrations/6249268a-46cf-48e1-8403-39b511e4dd2f",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "20b59d60-38a7-4c1d-8c86-549505f5357a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6269126c-c473-4ded-9049-49d5d7012d86",
+      "uri": "https://api.scryfall.com/migrations/6269126c-c473-4ded-9049-49d5d7012d86",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "7700b150-8025-42d9-a51d-98182dbbfbeb",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "627eba0b-9037-4435-bcba-2ec9d760116e",
+      "uri": "https://api.scryfall.com/migrations/627eba0b-9037-4435-bcba-2ec9d760116e",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "5dbbb9b3-3219-4d5d-bef9-8869fadf2a1e",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "62a8d7d9-b3f3-4e04-8f36-abcbc2bc390f",
+      "uri": "https://api.scryfall.com/migrations/62a8d7d9-b3f3-4e04-8f36-abcbc2bc390f",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "cf60c84c-6530-46b4-bf5e-0db478e1ac47",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "63792649-4b30-4986-8c54-8b4b2080438f",
+      "uri": "https://api.scryfall.com/migrations/63792649-4b30-4986-8c54-8b4b2080438f",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "1536d9d9-3d79-4c9f-9fe4-143ca4a48aa3",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "641e072d-e164-4d95-a68d-2f6217a3799c",
+      "uri": "https://api.scryfall.com/migrations/641e072d-e164-4d95-a68d-2f6217a3799c",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "b2bbc46e-70be-4638-b514-1e1081dcb60b",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6540b302-547f-4d16-a27a-7ee9330f32de",
+      "uri": "https://api.scryfall.com/migrations/6540b302-547f-4d16-a27a-7ee9330f32de",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "1b68f3c4-2285-4d7e-a10f-fbd4e86d32fe",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6630de9a-e7fa-4180-9a89-aaa337c7effa",
+      "uri": "https://api.scryfall.com/migrations/6630de9a-e7fa-4180-9a89-aaa337c7effa",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "9abc2587-b89b-4d87-911d-16e47d7e5af5",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "672ac127-e769-43e6-b019-c1218ced0f34",
+      "uri": "https://api.scryfall.com/migrations/672ac127-e769-43e6-b019-c1218ced0f34",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "63e0ea5f-4261-4208-b193-fd239c5b2709",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "674c870b-8f18-4780-bb02-9bd8dcc67430",
+      "uri": "https://api.scryfall.com/migrations/674c870b-8f18-4780-bb02-9bd8dcc67430",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "f3e72690-c640-4c1e-a1ce-e08f54b10efa",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "67c6257a-2cc6-4fd4-b7ed-32c72360f70c",
+      "uri": "https://api.scryfall.com/migrations/67c6257a-2cc6-4fd4-b7ed-32c72360f70c",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "c6e8e6ba-b1f5-4753-8431-5e29a6694443",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "682894b2-3027-41cf-8137-d30f3fdf51bd",
+      "uri": "https://api.scryfall.com/migrations/682894b2-3027-41cf-8137-d30f3fdf51bd",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "01880213-ab53-416c-be27-27d3bc890cf5",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6a8c855b-df70-4920-b317-2829ac283caf",
+      "uri": "https://api.scryfall.com/migrations/6a8c855b-df70-4920-b317-2829ac283caf",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "aa9ccd9a-d9c6-4057-a444-dbcfabfa56dc",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6aa2b53f-92b1-4876-b5e0-f75535a541c5",
+      "uri": "https://api.scryfall.com/migrations/6aa2b53f-92b1-4876-b5e0-f75535a541c5",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "c76001c7-f1c3-4921-ab94-e6fe35bc3e19",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6ac5f064-a20d-411c-b8ec-09dd452c4c64",
+      "uri": "https://api.scryfall.com/migrations/6ac5f064-a20d-411c-b8ec-09dd452c4c64",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "81770d00-ded3-4dba-a968-565c1731a28f",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6c35f4a4-6013-4e44-bc70-bf60fa219e08",
+      "uri": "https://api.scryfall.com/migrations/6c35f4a4-6013-4e44-bc70-bf60fa219e08",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "eb25bec9-fc28-495a-873e-109008b8c7ff",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6cd7043c-bba2-4ed4-8b50-954490200dec",
+      "uri": "https://api.scryfall.com/migrations/6cd7043c-bba2-4ed4-8b50-954490200dec",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "c774bb6e-aedd-42e5-8ae2-3eb97b0aaded",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6e506b65-8714-4e0b-843d-b0ec6be8a31d",
+      "uri": "https://api.scryfall.com/migrations/6e506b65-8714-4e0b-843d-b0ec6be8a31d",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "2565fc93-1c73-47e7-bb82-9eca7f022e56",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6e8fffd4-c215-4cb7-9bac-a0abb0678d74",
+      "uri": "https://api.scryfall.com/migrations/6e8fffd4-c215-4cb7-9bac-a0abb0678d74",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "137d7e14-6f0b-4718-aab3-3a26b89ee228",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "6ef3c2d5-d981-4b1e-99f9-e7a66cbf1d0f",
+      "uri": "https://api.scryfall.com/migrations/6ef3c2d5-d981-4b1e-99f9-e7a66cbf1d0f",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "00a117f2-2155-4795-8bc6-3f23c4989924",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "70473ab2-dda7-46f5-8070-bca1f3cadc35",
+      "uri": "https://api.scryfall.com/migrations/70473ab2-dda7-46f5-8070-bca1f3cadc35",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "34712c8e-2f97-42ba-bffa-26b6459cf549",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "70aa05cd-8d42-493a-8073-015efa89d675",
+      "uri": "https://api.scryfall.com/migrations/70aa05cd-8d42-493a-8073-015efa89d675",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "666523e0-99b6-4758-84ad-0effa23b6c69",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "716ef18b-531d-4efc-a0ce-7bcf69f27524",
+      "uri": "https://api.scryfall.com/migrations/716ef18b-531d-4efc-a0ce-7bcf69f27524",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "060ed375-d6ec-4751-bd8f-b9eed9465794",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "71898006-44d1-4a44-9e14-30d9210d347e",
+      "uri": "https://api.scryfall.com/migrations/71898006-44d1-4a44-9e14-30d9210d347e",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "1562af70-0d07-4459-be3c-5efa31e67227",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "72468cb3-c2e7-4d44-b360-32bbb407793b",
+      "uri": "https://api.scryfall.com/migrations/72468cb3-c2e7-4d44-b360-32bbb407793b",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "2aa17feb-c65e-43fb-ba88-f5ac0dabac18",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "72c76429-8ebd-439a-933e-da2e895389b7",
+      "uri": "https://api.scryfall.com/migrations/72c76429-8ebd-439a-933e-da2e895389b7",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "68bce841-7994-436b-9620-8451cf9474bb",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "7494af34-2983-4034-b748-abf63bd5cda6",
+      "uri": "https://api.scryfall.com/migrations/7494af34-2983-4034-b748-abf63bd5cda6",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "bda832b2-97e3-4050-b621-20dc518c3c37",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "754da3c1-0b8b-486a-a75c-1f9e51ea0dd6",
+      "uri": "https://api.scryfall.com/migrations/754da3c1-0b8b-486a-a75c-1f9e51ea0dd6",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "273f08a9-1478-4c34-aab7-f3ccb2117151",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "769dfcae-a36c-4d6e-b262-4f3f70899d00",
+      "uri": "https://api.scryfall.com/migrations/769dfcae-a36c-4d6e-b262-4f3f70899d00",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "0922ad80-70d7-45c6-a6e6-bff764612f98",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "76c7f176-64a2-4b1a-a647-f652d5a3f60a",
+      "uri": "https://api.scryfall.com/migrations/76c7f176-64a2-4b1a-a647-f652d5a3f60a",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "fbd6758e-1b65-4bad-b19f-e185560bd056",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "76d418dc-dd14-4fd1-aae8-ee3c8c539516",
+      "uri": "https://api.scryfall.com/migrations/76d418dc-dd14-4fd1-aae8-ee3c8c539516",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "6fbdcf35-6d40-43a6-8985-91a667be6a0a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "784f4a1a-28e7-451c-b998-759e9e549158",
+      "uri": "https://api.scryfall.com/migrations/784f4a1a-28e7-451c-b998-759e9e549158",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "5209eabd-4651-44b8-ac9b-747b2e05da00",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "790f19b7-67fb-4721-aefd-d931d37a9a29",
+      "uri": "https://api.scryfall.com/migrations/790f19b7-67fb-4721-aefd-d931d37a9a29",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "05bc50e6-b6f3-4974-a567-05213406df28",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "7a09a9d5-dd5c-4a02-8928-6a8d581ed4b7",
+      "uri": "https://api.scryfall.com/migrations/7a09a9d5-dd5c-4a02-8928-6a8d581ed4b7",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "5f8da0fe-bea0-4de9-88c8-d6ef5b0f4fa4",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "7c8d0883-e52c-446b-a802-dbb81b16b067",
+      "uri": "https://api.scryfall.com/migrations/7c8d0883-e52c-446b-a802-dbb81b16b067",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "ab75dfa1-66c2-4d04-9315-4d5607c4be0f",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "7cade7bf-7045-40fa-a5c5-8550d920debc",
+      "uri": "https://api.scryfall.com/migrations/7cade7bf-7045-40fa-a5c5-8550d920debc",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "efd3a83b-a849-44bc-b235-fc1cbb30fd6a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "7d398cfd-3915-4f24-8027-bf13d485044e",
+      "uri": "https://api.scryfall.com/migrations/7d398cfd-3915-4f24-8027-bf13d485044e",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "0e07ead7-a3dd-45fd-88a8-d46bf5b96bcd",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "7d504852-2f60-4d00-be89-ea87cf06d721",
+      "uri": "https://api.scryfall.com/migrations/7d504852-2f60-4d00-be89-ea87cf06d721",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "734db718-e947-4217-a464-59c44fe9ed77",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "7d90fa74-48a1-4b59-b5f9-5f92cf401c05",
+      "uri": "https://api.scryfall.com/migrations/7d90fa74-48a1-4b59-b5f9-5f92cf401c05",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "d2de9a95-9309-4c87-81d8-fcf0afa12d0e",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "7e81613f-4af6-4963-82b3-3bbf540ca5df",
+      "uri": "https://api.scryfall.com/migrations/7e81613f-4af6-4963-82b3-3bbf540ca5df",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "7a6760d0-352e-4c76-9f8b-214f6cbea8df",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "7e8b4591-5f0b-4aae-9b08-f13da976e450",
+      "uri": "https://api.scryfall.com/migrations/7e8b4591-5f0b-4aae-9b08-f13da976e450",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "aeff2ac4-1b18-4ff5-9fe6-e527c164b3d5",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "7eb8b6e8-3df9-41b1-a4a8-9a1e0df1f3c9",
+      "uri": "https://api.scryfall.com/migrations/7eb8b6e8-3df9-41b1-a4a8-9a1e0df1f3c9",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "c6458df4-70b8-4bcf-8b78-9c88bf0b1240",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "7eca80bf-8314-44b1-a6a5-931d8e55cc48",
+      "uri": "https://api.scryfall.com/migrations/7eca80bf-8314-44b1-a6a5-931d8e55cc48",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "b832cbeb-4803-4c87-88b9-496da2b176e8",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "7f39ca4f-5c6d-400e-b957-ff3dd08f3c4e",
+      "uri": "https://api.scryfall.com/migrations/7f39ca4f-5c6d-400e-b957-ff3dd08f3c4e",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "b2375323-c3e4-4b38-aec7-efba7c3106e7",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "7fc8af70-976c-45d8-a775-5112ead50460",
+      "uri": "https://api.scryfall.com/migrations/7fc8af70-976c-45d8-a775-5112ead50460",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "87741e3c-bc05-49e6-8ea4-84d38b71170f",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "81321fbb-4e7b-424a-a434-f7242287784b",
+      "uri": "https://api.scryfall.com/migrations/81321fbb-4e7b-424a-a434-f7242287784b",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "6f3cb365-1c33-4669-866a-828612cf64e5",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "81f6556a-9124-460d-ad2c-7bcbf1469a9a",
+      "uri": "https://api.scryfall.com/migrations/81f6556a-9124-460d-ad2c-7bcbf1469a9a",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "1fc30d0e-b7fb-49d6-b10f-cf8db860a25e",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8336d806-1eeb-457f-be96-b99ff9935748",
+      "uri": "https://api.scryfall.com/migrations/8336d806-1eeb-457f-be96-b99ff9935748",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "13631aba-f418-4e8d-a707-a13aed1999e3",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8406f7af-04de-46a2-b643-8102340c5620",
+      "uri": "https://api.scryfall.com/migrations/8406f7af-04de-46a2-b643-8102340c5620",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "ac1d599e-4250-4fd4-b468-0f0d053a4c5d",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "857fcd6b-b3f6-46b8-b0fc-786ddf5200e1",
+      "uri": "https://api.scryfall.com/migrations/857fcd6b-b3f6-46b8-b0fc-786ddf5200e1",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "19157e15-bbf2-4f72-971f-0085b85fd9ec",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8646d5a6-a2ef-425e-be1b-749642b8ee13",
+      "uri": "https://api.scryfall.com/migrations/8646d5a6-a2ef-425e-be1b-749642b8ee13",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "15f03c27-4afd-4660-9a1d-3eb63b65a46c",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "864a70ae-efd8-4ab9-8c89-e1f5debf7f82",
+      "uri": "https://api.scryfall.com/migrations/864a70ae-efd8-4ab9-8c89-e1f5debf7f82",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "0f98ffae-03f8-43e2-851e-5fe1d72d37c6",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "870c2e07-fd50-4fa4-82a4-ae3d50e5a137",
+      "uri": "https://api.scryfall.com/migrations/870c2e07-fd50-4fa4-82a4-ae3d50e5a137",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "d97d044b-0139-4dd6-912a-1c6fa6518de0",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8737d8fb-e179-4569-8098-c7621dabfe9a",
+      "uri": "https://api.scryfall.com/migrations/8737d8fb-e179-4569-8098-c7621dabfe9a",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "80a8e59f-ddcf-400e-8e73-0adb31f21b1a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8831dec5-27aa-44b1-aa7d-36c2da32e6c4",
+      "uri": "https://api.scryfall.com/migrations/8831dec5-27aa-44b1-aa7d-36c2da32e6c4",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "ef11351e-3fd9-4dc9-a371-0983f4858fcc",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "886f9c57-2bfa-4057-8092-7c3e449d3ce8",
+      "uri": "https://api.scryfall.com/migrations/886f9c57-2bfa-4057-8092-7c3e449d3ce8",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "0723aeab-4ee6-4423-ba11-f8b749f10614",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "88b279cd-2dba-4452-ad2e-0b10f78ed687",
+      "uri": "https://api.scryfall.com/migrations/88b279cd-2dba-4452-ad2e-0b10f78ed687",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "524754a8-7c3b-4217-810e-9a2a4e69ed1c",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "88e8df8e-a228-45ff-8fb6-8d921f581d4e",
+      "uri": "https://api.scryfall.com/migrations/88e8df8e-a228-45ff-8fb6-8d921f581d4e",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "0e5ef101-987d-406a-8afd-546f7cc82be3",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8920ba1b-a71b-4073-a698-a86124d39b4a",
+      "uri": "https://api.scryfall.com/migrations/8920ba1b-a71b-4073-a698-a86124d39b4a",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "3581f7c0-0feb-46e2-88fc-ac3879a65a2f",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8b0bf2c1-adf9-4b29-86d5-79db257f42a1",
+      "uri": "https://api.scryfall.com/migrations/8b0bf2c1-adf9-4b29-86d5-79db257f42a1",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "fcaf42ca-3821-4743-9788-c87ef90e649a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8ba257c3-e35c-442b-a300-5a1041781c47",
+      "uri": "https://api.scryfall.com/migrations/8ba257c3-e35c-442b-a300-5a1041781c47",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "4ccc1ea9-c168-4274-b6ee-caa4a8c2ec13",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8c216697-93ea-4589-9ed6-f28a16a0d0b6",
+      "uri": "https://api.scryfall.com/migrations/8c216697-93ea-4589-9ed6-f28a16a0d0b6",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "05d03c70-84b9-45ab-bf9d-d55bb490508d",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8ce78664-1a29-4571-9d3d-23a592cc340c",
+      "uri": "https://api.scryfall.com/migrations/8ce78664-1a29-4571-9d3d-23a592cc340c",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "e25dc3fa-b7db-4bc9-8bcf-8294e7cd44fd",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8d1535f5-55e8-4775-929e-c6697147ae7e",
+      "uri": "https://api.scryfall.com/migrations/8d1535f5-55e8-4775-929e-c6697147ae7e",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "a391362b-c073-4325-ad66-2d258d426d1e",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8d29857d-743a-4fae-8131-83571643f5a3",
+      "uri": "https://api.scryfall.com/migrations/8d29857d-743a-4fae-8131-83571643f5a3",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "7d6a891b-e38c-41eb-8ca1-1073005a7663",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8ddf9624-fd5f-4e2a-8b42-52a430da5517",
+      "uri": "https://api.scryfall.com/migrations/8ddf9624-fd5f-4e2a-8b42-52a430da5517",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "05afc974-5115-47c1-959a-33866d50f34f",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "8ffb9b8f-219e-4e7b-a179-ea20411597a0",
+      "uri": "https://api.scryfall.com/migrations/8ffb9b8f-219e-4e7b-a179-ea20411597a0",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "0fba0f5d-f551-414b-8091-ff774230cd8f",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "90d7574e-a190-4a02-9c85-ff0f63c49458",
+      "uri": "https://api.scryfall.com/migrations/90d7574e-a190-4a02-9c85-ff0f63c49458",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "0c2d14a2-c36e-4ccb-bc92-8b1ca56047aa",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "91d9025b-dcfc-4b00-aedb-f448521fa61e",
+      "uri": "https://api.scryfall.com/migrations/91d9025b-dcfc-4b00-aedb-f448521fa61e",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "e57c9d8e-a05f-473f-922c-1d5bf20db018",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "923ac455-5195-4667-ba29-052a388b64bd",
+      "uri": "https://api.scryfall.com/migrations/923ac455-5195-4667-ba29-052a388b64bd",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "aa6fd83e-db35-4aa4-a917-b3ff95296f99",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "9250a6b9-c66d-446d-8bcb-fac75114a97a",
+      "uri": "https://api.scryfall.com/migrations/9250a6b9-c66d-446d-8bcb-fac75114a97a",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "fd7220cc-9e39-4be5-affc-ebf5c1bf27a6",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "92aa4b81-7227-4dfa-b8a0-010fee121737",
+      "uri": "https://api.scryfall.com/migrations/92aa4b81-7227-4dfa-b8a0-010fee121737",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "7b665d6f-c453-4fac-bbfc-d81ed2e50961",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "94123458-f01e-442e-be76-e7b8df846b63",
+      "uri": "https://api.scryfall.com/migrations/94123458-f01e-442e-be76-e7b8df846b63",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "03421669-fb41-425f-9a8f-30bca5d8dbee",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "949b624f-a84e-437b-a18c-cc06561ef8d4",
+      "uri": "https://api.scryfall.com/migrations/949b624f-a84e-437b-a18c-cc06561ef8d4",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "320880c7-6008-4704-9c89-292d6305f70a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "96bd5f08-174b-464a-995e-e73ecb80b2e1",
+      "uri": "https://api.scryfall.com/migrations/96bd5f08-174b-464a-995e-e73ecb80b2e1",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "f8b694ec-8636-4315-a769-5620db6e508e",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "9915b30c-e443-4ec5-98c6-17d728f23375",
+      "uri": "https://api.scryfall.com/migrations/9915b30c-e443-4ec5-98c6-17d728f23375",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "94d70c6e-ba86-4963-9540-37cc5d249820",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "9949d467-d49c-4776-8a8c-5f1013103b8e",
+      "uri": "https://api.scryfall.com/migrations/9949d467-d49c-4776-8a8c-5f1013103b8e",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "9ac7b77d-d8e7-4c9d-83bb-d5c3f683c310",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "9bbaa5fb-d179-4c5d-a143-8a0a006eb290",
+      "uri": "https://api.scryfall.com/migrations/9bbaa5fb-d179-4c5d-a143-8a0a006eb290",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "5d88dbcc-2949-466d-8779-c8b89971daa4",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "9fe2a7e3-5e12-4cf6-a881-9dfcf184a855",
+      "uri": "https://api.scryfall.com/migrations/9fe2a7e3-5e12-4cf6-a881-9dfcf184a855",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "3dc45521-ea67-41ab-a0ef-9aa3923cb546",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "a02b7b75-731a-4fd9-8dcc-5d0c24d70aec",
+      "uri": "https://api.scryfall.com/migrations/a02b7b75-731a-4fd9-8dcc-5d0c24d70aec",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "410f7fe8-544a-4407-806b-c46148c5218d",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "a19eb5df-c6e3-4e0f-9895-51caa4dbaf3b",
+      "uri": "https://api.scryfall.com/migrations/a19eb5df-c6e3-4e0f-9895-51caa4dbaf3b",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "3da9f9a6-0ca3-40ad-be0d-4f380a024b5d",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "a4a3b129-e5d4-40d3-8ec8-789a66e0e725",
+      "uri": "https://api.scryfall.com/migrations/a4a3b129-e5d4-40d3-8ec8-789a66e0e725",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "f8c0ab20-fa3d-40e1-8614-3e2e9fd4afab",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "a634385b-fe7d-4811-915a-ee1c851b9a13",
+      "uri": "https://api.scryfall.com/migrations/a634385b-fe7d-4811-915a-ee1c851b9a13",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "333cadec-bc25-475e-9786-87fc12317faa",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "a7d68961-7dd0-4ff3-8b0f-094db35d0364",
+      "uri": "https://api.scryfall.com/migrations/a7d68961-7dd0-4ff3-8b0f-094db35d0364",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "7bc2bc28-8442-4db1-933c-239e39fab5a9",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "a9893c7f-93b7-4434-91be-b3ae420d0d33",
+      "uri": "https://api.scryfall.com/migrations/a9893c7f-93b7-4434-91be-b3ae420d0d33",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "791a4b37-4532-4800-8487-e70a27a05a31",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "a9c2a577-fb8c-41ad-9075-d42f4a2ce2ea",
+      "uri": "https://api.scryfall.com/migrations/a9c2a577-fb8c-41ad-9075-d42f4a2ce2ea",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "e0d30105-da8c-4eaa-9dc6-7e97ed8f73a5",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "aa8d9eff-2b9e-404a-bad0-37a6fa925055",
+      "uri": "https://api.scryfall.com/migrations/aa8d9eff-2b9e-404a-bad0-37a6fa925055",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "7982cea7-2be4-448c-b39c-a43549c0b5f8",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "ab256fe6-60e7-49b5-a815-336082db0877",
+      "uri": "https://api.scryfall.com/migrations/ab256fe6-60e7-49b5-a815-336082db0877",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "0fe634ff-bb1c-4146-8186-c120f9bc4a13",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "abf510c6-6384-4b6e-98b6-4944d6147f15",
+      "uri": "https://api.scryfall.com/migrations/abf510c6-6384-4b6e-98b6-4944d6147f15",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "66c39254-9375-4d24-a204-6e806453e80a",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "aca3303c-f845-4bfa-9ecf-143fd223a8ab",
+      "uri": "https://api.scryfall.com/migrations/aca3303c-f845-4bfa-9ecf-143fd223a8ab",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "68710591-472b-4724-9395-6a4f8aef72a2",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "ae10bce9-82d8-4372-9d8c-6333761d5a53",
+      "uri": "https://api.scryfall.com/migrations/ae10bce9-82d8-4372-9d8c-6333761d5a53",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "25029834-2076-42ca-95e2-a79d9557f7f5",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "aef07963-f3c6-4903-8d10-81130dfa52af",
+      "uri": "https://api.scryfall.com/migrations/aef07963-f3c6-4903-8d10-81130dfa52af",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "7f263cd2-f916-4750-8896-ca91d3739acd",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "b113eb8a-213d-4dbc-a2b8-f6419751ed01",
+      "uri": "https://api.scryfall.com/migrations/b113eb8a-213d-4dbc-a2b8-f6419751ed01",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "faf8ed06-9f1a-41d0-8163-4950c3cfd439",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "b2acae37-306b-48f6-bbcb-5bee74a4d230",
+      "uri": "https://api.scryfall.com/migrations/b2acae37-306b-48f6-bbcb-5bee74a4d230",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "fda61f4a-b967-4419-a769-50b5f957e175",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "b35565b9-507c-413f-a934-a4639739eef2",
+      "uri": "https://api.scryfall.com/migrations/b35565b9-507c-413f-a934-a4639739eef2",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "9e300296-c6d8-4dc1-9d74-7c5d60cf8cd6",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "b4af0d32-3561-4eda-9f33-5dc6c08a7f57",
+      "uri": "https://api.scryfall.com/migrations/b4af0d32-3561-4eda-9f33-5dc6c08a7f57",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "1f359344-b1ef-4614-89ea-c1e000d7a0fa",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "b56f9848-2ec4-4409-8e29-67547f72a9aa",
+      "uri": "https://api.scryfall.com/migrations/b56f9848-2ec4-4409-8e29-67547f72a9aa",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "51aa693f-4d9e-4124-b0e9-f3ea9cbf96d8",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "b97192dc-65f2-4a6f-8788-1a21a6f8d199",
+      "uri": "https://api.scryfall.com/migrations/b97192dc-65f2-4a6f-8788-1a21a6f8d199",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "5bd8d021-42e2-4326-97bd-74d25213d826",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "b9b2b0b2-d51d-41f8-a9ce-6fe840dbb526",
+      "uri": "https://api.scryfall.com/migrations/b9b2b0b2-d51d-41f8-a9ce-6fe840dbb526",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "a2c595b2-1bf7-408d-a965-d4c3be7f2dcb",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "ba56f72b-ae8e-4930-8583-7dd1706ab9c8",
+      "uri": "https://api.scryfall.com/migrations/ba56f72b-ae8e-4930-8583-7dd1706ab9c8",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "e27d6114-63de-4328-8e3c-ffc8a6ce738d",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "bad97d20-6902-4fb6-b6c1-de258c794660",
+      "uri": "https://api.scryfall.com/migrations/bad97d20-6902-4fb6-b6c1-de258c794660",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "481644a8-b8dc-4ae5-b461-76bcb63afb6f",
+      "note": "Mistakenly imported, doesn't really exist"
+    }
+  ]
+}

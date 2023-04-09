@@ -3,6 +3,7 @@ import 'dart:typed_data';
 
 import 'package:http/http.dart' as http;
 import 'package:scryfall_api/scryfall_api.dart';
+import 'package:scryfall_api/src/models/migration.dart';
 
 /// {@template scryfall_api_client}
 /// Dart API Client that wraps the [Scryfall API](https://scryfall.com/).
@@ -1233,6 +1234,41 @@ class ScryfallApiClient {
     return json
         .map((ruling) => Ruling.fromJson(ruling as Map<String, dynamic>))
         .toList();
+  }
+
+  /// **GET** /migrations
+  ///
+  /// Returns a [PaginableList] of all [Migration]s on Scryfall.
+  Future<PaginableList<Migration>> getMigrations() async {
+    final url = Uri.https(_baseUrl, '/migrations');
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return PaginableList<Migration>.fromJson(
+      json,
+      (migration) => Migration.fromJson(migration as Map<String, dynamic>),
+    );
+  }
+
+  /// **GET** /migrations/:id
+  ///
+  /// Returns a [Migration] with the given id.
+  Future<Migration> getMigration(String id) async {
+    final url = Uri.https(_baseUrl, '/migrations/$id');
+    final response = await _httpClient.get(url);
+
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+
+    if (response.statusCode != 200) {
+      throw ScryfallException.fromJson(json);
+    }
+
+    return Migration.fromJson(json);
   }
 }
 
