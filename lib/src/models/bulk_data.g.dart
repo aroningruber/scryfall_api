@@ -29,7 +29,6 @@ BulkData _$BulkDataFromJson(Map<String, dynamic> json) => $checkedCreate(
       fieldKeyMap: const {
         'downloadUri': 'download_uri',
         'updatedAt': 'updated_at',
-        'compressedSize': 'compressed_size',
         'contentType': 'content_type',
         'contentEncoding': 'content_encoding'
       },
