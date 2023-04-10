@@ -28,7 +28,7 @@ class BulkData {
   final DateTime updatedAt;
 
   /// The size of this file in integer bytes.
-  final int compressedSize;
+  final int? size;
 
   /// The MIME type of this file.
   final String contentType;
@@ -46,7 +46,7 @@ class BulkData {
     required this.description,
     required this.downloadUri,
     required this.updatedAt,
-    required this.compressedSize,
+    required this.size,
     required this.contentType,
     required this.contentEncoding,
   });

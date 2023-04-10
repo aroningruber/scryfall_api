@@ -46,7 +46,7 @@ void main() {
               .having((b) => b.uri, 'uri', uri)
               .having((b) => b.name, 'name', name)
               .having((b) => b.description, 'description', description)
-              .having((b) => b.compressedSize, 'compressedSize', compressedSize)
+              .having((b) => b.size, 'compressedSize', compressedSize)
               .having((b) => b.downloadUri, 'downloadUri', downloadUri)
               .having((b) => b.contentType, 'contentType', contentType)
               .having(

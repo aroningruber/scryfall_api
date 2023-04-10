@@ -20,7 +20,7 @@ BulkData _$BulkDataFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('download_uri', (v) => Uri.parse(v as String)),
           updatedAt:
               $checkedConvert('updated_at', (v) => DateTime.parse(v as String)),
-          compressedSize: $checkedConvert('compressed_size', (v) => v as int),
+          size: $checkedConvert('size', (v) => v as int?),
           contentType: $checkedConvert('content_type', (v) => v as String),
           contentEncoding:
               $checkedConvert('content_encoding', (v) => v as String),
@@ -30,7 +30,6 @@ BulkData _$BulkDataFromJson(Map<String, dynamic> json) => $checkedCreate(
       fieldKeyMap: const {
         'downloadUri': 'download_uri',
         'updatedAt': 'updated_at',
-        'compressedSize': 'compressed_size',
         'contentType': 'content_type',
         'contentEncoding': 'content_encoding'
       },
