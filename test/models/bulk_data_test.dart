@@ -13,7 +13,7 @@ void main() {
         final name = 'Unique Artwork';
         final description =
             'A JSON file of Scryfall card objects that together contain all unique artworks. The chosen cards promote the best image scans.';
-        final compressedSize = 16298744;
+        final size = 16298744;
         final downloadUriStr =
             'https://c2.scryfall.com/file/scryfall-bulk/unique-artwork/unique-artwork-20220102221354.json';
         final contentType = 'application/json';
@@ -27,7 +27,7 @@ void main() {
           'uri': uriStr,
           'name': name,
           'description': description,
-          'compressed_size': compressedSize,
+          'size': size,
           'download_uri': downloadUriStr,
           'content_type': contentType,
           'content_encoding': contentEncoding,
@@ -46,7 +46,7 @@ void main() {
               .having((b) => b.uri, 'uri', uri)
               .having((b) => b.name, 'name', name)
               .having((b) => b.description, 'description', description)
-              .having((b) => b.compressedSize, 'compressedSize', compressedSize)
+              .having((b) => b.size, 'compressedSize', size)
               .having((b) => b.downloadUri, 'downloadUri', downloadUri)
               .having((b) => b.contentType, 'contentType', contentType)
               .having(
