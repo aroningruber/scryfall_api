@@ -1,0 +1,9 @@
+{
+  "object": "migration",
+  "id": "8a28f61a-16b8-47f9-8818-fd4e1f2d9b79",
+  "uri": "https://api.scryfall.com/migrations/8a28f61a-16b8-47f9-8818-fd4e1f2d9b79",
+  "performed_at": "2023-04-09",
+  "migration_strategy": "delete",
+  "old_scryfall_id": "5218b66f-8e39-435b-bba5-b2cc6d876325",
+  "note": "This entry for the 1/1 Elemental token was accidentally created as a reprint of the 4/4 Elemental token."
+}

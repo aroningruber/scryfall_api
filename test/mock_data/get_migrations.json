@@ -1,0 +1,44 @@
+{
+  "object": "list",
+  "has_more": true,
+  "next_page": "https://api.scryfall.com/migrations?page=2",
+  "data": [
+    {
+      "object": "migration",
+      "id": "ff914cf7-04ef-4a71-89d6-afaef476bf1a",
+      "uri": "https://api.scryfall.com/migrations/ff914cf7-04ef-4a71-89d6-afaef476bf1a",
+      "performed_at": "2022-12-10",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "04592e6c-2c09-4dd4-996b-f3b3f488edea",
+      "note": "Mistakenly imported, doesn't really exist"
+    },
+    {
+      "object": "migration",
+      "id": "3f5b89fc-1b33-40a0-87d4-ea6f2e9515bb",
+      "uri": "https://api.scryfall.com/migrations/3f5b89fc-1b33-40a0-87d4-ea6f2e9515bb",
+      "performed_at": "2022-12-03",
+      "migration_strategy": "merge",
+      "old_scryfall_id": "585fa2cc-4f77-47ab-8d2c-c68258ced283",
+      "new_scryfall_id": "9052f5c7-ee3b-457d-97ca-ac6b4518997c",
+      "note": "Actually a reverisble card"
+    },
+    {
+      "object": "migration",
+      "id": "5c2e7c73-5f6f-4db1-a6ba-4fcec57068b8",
+      "uri": "https://api.scryfall.com/migrations/5c2e7c73-5f6f-4db1-a6ba-4fcec57068b8",
+      "performed_at": "2022-12-03",
+      "migration_strategy": "merge",
+      "old_scryfall_id": "d361aded-4aa6-415b-bdd4-7f19b1102de4",
+      "new_scryfall_id": "9052f5c7-ee3b-457d-97ca-ac6b4518997c",
+      "note": "Actually a reverisble card"
+    },
+    {
+      "object": "migration",
+      "id": "020e8725-6277-4745-9f09-cf1fb4e2bb82",
+      "uri": "https://api.scryfall.com/migrations/020e8725-6277-4745-9f09-cf1fb4e2bb82",
+      "performed_at": "2022-11-22",
+      "migration_strategy": "delete",
+      "old_scryfall_id": "d049d4bd-42dc-492a-a181-5fbc1320513b"
+    }
+  ]
+}
