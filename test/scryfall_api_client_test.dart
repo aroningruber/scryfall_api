@@ -5,6 +5,7 @@ import 'dart:typed_data';
 import 'package:http/http.dart' as http;
 import 'package:mocktail/mocktail.dart';
 import 'package:scryfall_api/scryfall_api.dart';
+import 'package:scryfall_api/src/models/migration.dart';
 import 'package:test/test.dart';
 
 class MockHttpClient extends Mock implements http.Client {}
@@ -2311,6 +2312,92 @@ void main() {
           expect(actual, isA<List<Ruling>>());
         },
       );
+    });
+
+    group('getMigrations', () {
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn('{}');
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient.getMigrations();
+        } catch (_) {}
+        final uri = Uri.https('api.scryfall.com', '/migrations');
+        verify(() => httpClient.get(uri)).called(1);
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(jsonError);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getMigrations(),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns Migrations on valid response', () async {
+        final file = File('test/mock_data/get_migrations.json');
+        final json = await file.readAsString();
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual = await scryfallApiClient.getMigrations();
+        expect(actual, isA<PaginableList<Migration>>());
+      });
+
+      test('gets valid response from actual server', () async {
+        final actual = await scryfallApiClientReal.getMigrations();
+        expect(actual, isA<PaginableList<Migration>>());
+      });
+    });
+
+    group('getMigration', () {
+      final id = '8a28f61a-16b8-47f9-8818-fd4e1f2d9b79';
+
+      test('makes correct http request', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn('{}');
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        try {
+          await scryfallApiClient.getMigration(id);
+        } catch (_) {}
+        final uri = Uri.https('api.scryfall.com', '/migrations/$id');
+        verify(() => httpClient.get(uri)).called(1);
+      });
+
+      test('throws ScryfallException on non-200 response', () async {
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(404);
+        when(() => response.body).thenReturn(jsonError);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        await expectLater(
+          scryfallApiClient.getMigration(id),
+          throwsA(isA<ScryfallException>()),
+        );
+      });
+
+      test('returns Migrations on valid response', () async {
+        final file = File('test/mock_data/get_migration.json');
+        final json = await file.readAsString();
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn(json);
+        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        final actual = await scryfallApiClient.getMigration(id);
+        expect(actual, isA<Migration>());
+      });
+
+      test('gets valid response from actual server', () async {
+        final actual = await scryfallApiClientReal.getMigration(id);
+        expect(actual, isA<Migration>());
+      });
     });
   });
 }
