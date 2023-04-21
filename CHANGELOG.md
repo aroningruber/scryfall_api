@@ -1,3 +1,9 @@
+## 1.1.1
+
+### Changed
+
+- Renamed `compressedSize` of `BulkDate` to `size` (thanks to [PatrickWulfe](https://github.com/PatrickWulfe)). *A deprecated getter with the name `compressedSize` is kept for backward compatibility*.
+
 ## 1.1.0
 
 ### Added
