@@ -54,4 +54,7 @@ class BulkData {
   /// Constructs a [BulkData] object from JSON.
   factory BulkData.fromJson(Map<String, dynamic> json) =>
       _$BulkDataFromJson(json);
+
+  @Deprecated('The compressedSize attribute is deprecated. Use size instead.')
+  int get compressedSize => size;
 }
