@@ -14,7 +14,8 @@ which is provided by the [Scryfall API](https://scryfall.com):
 - [Rulings](https://scryfall.com/docs/api/rulings)
 - [Card Symbols](https://scryfall.com/docs/api/card-symbols)
 - [Catalogs](https://scryfall.com/docs/api/catalogs)
-- [Bulk data](https://scryfall.com/docs/api/bulk-data)
+- [Bulk Data](https://scryfall.com/docs/api/bulk-data)
+- [Card Migrations](https://scryfall.com/docs/api/migrations)
 
 ## Usage
 
