@@ -1,3 +1,10 @@
+## 1.2.0
+
+### Added
+
+- Get card migrations (**GET** `/migrations`) (thanks to [PatrickWulfe](https://github.com/PatrickWulfe))
+- Get card migration by id (**GET** `/migrations/:id`) (thanks to [PatrickWulfe](https://github.com/PatrickWulfe))
+
 ## 1.1.1
 
 ### Changed
@@ -8,7 +15,7 @@
 
 ### Added
 
-- Tests to ensure that bulk data methods property decode response
+- Tests to ensure that bulk data methods properly decode response
 
 ### Changed
 
