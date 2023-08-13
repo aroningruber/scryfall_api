@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  flutter_version: '3.3.10'
+  flutter_version: '3.7.0'
   java_version: '11'
 
 jobs:
