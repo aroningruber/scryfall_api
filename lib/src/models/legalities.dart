@@ -19,6 +19,10 @@ class Legalities {
   @JsonKey(unknownEnumValue: Legality.unknown)
   final Legality historic;
 
+  /// Timeless playing format.
+  @JsonKey(unknownEnumValue: Legality.unknown)
+  final Legality timeless;
+
   /// Gladiator playing format.
   @JsonKey(unknownEnumValue: Legality.unknown)
   final Legality gladiator;
@@ -26,6 +30,10 @@ class Legalities {
   /// Pioneer playing format.
   @JsonKey(unknownEnumValue: Legality.unknown)
   final Legality pioneer;
+
+  /// Explorer playing format.
+  @JsonKey(unknownEnumValue: Legality.unknown)
+  final Legality explorer;
 
   /// Modern playing format.
   @JsonKey(unknownEnumValue: Legality.unknown)
@@ -50,6 +58,10 @@ class Legalities {
   /// Commander playing format.
   @JsonKey(unknownEnumValue: Legality.unknown)
   final Legality commander;
+
+  /// Oathbreaker playing format.
+  @JsonKey(unknownEnumValue: Legality.unknown)
+  final Legality oathbreaker;
 
   /// Brawl playing format.
   @JsonKey(unknownEnumValue: Legality.unknown)
@@ -79,19 +91,26 @@ class Legalities {
   @JsonKey(unknownEnumValue: Legality.unknown)
   final Legality premodern;
 
+  /// PreDH playing format.
+  @JsonKey(unknownEnumValue: Legality.unknown)
+  final Legality predh;
+
   /// Constructs a [Legalities] object by setting its properties.
   const Legalities({
     required this.standard,
     required this.future,
     required this.historic,
+    required this.timeless,
     required this.gladiator,
     required this.pioneer,
+    required this.explorer,
     required this.modern,
     required this.legacy,
     required this.pauper,
     required this.vintage,
     required this.penny,
     required this.commander,
+    required this.oathbreaker,
     required this.brawl,
     required this.standardbrawl,
     required this.alchemy,
@@ -99,6 +118,7 @@ class Legalities {
     required this.duel,
     required this.oldschool,
     required this.premodern,
+    required this.predh,
   });
 
   /// Constructs a [Legalities] object from JSON.
