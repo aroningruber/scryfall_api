@@ -23,12 +23,20 @@ Legalities _$LegalitiesFromJson(Map<String, dynamic> json) => $checkedCreate(
               'historic',
               (v) => $enumDecode(_$LegalityEnumMap, v,
                   unknownValue: Legality.unknown)),
+          timeless: $checkedConvert(
+              'timeless',
+              (v) => $enumDecode(_$LegalityEnumMap, v,
+                  unknownValue: Legality.unknown)),
           gladiator: $checkedConvert(
               'gladiator',
               (v) => $enumDecode(_$LegalityEnumMap, v,
                   unknownValue: Legality.unknown)),
           pioneer: $checkedConvert(
               'pioneer',
+              (v) => $enumDecode(_$LegalityEnumMap, v,
+                  unknownValue: Legality.unknown)),
+          explorer: $checkedConvert(
+              'explorer',
               (v) => $enumDecode(_$LegalityEnumMap, v,
                   unknownValue: Legality.unknown)),
           modern: $checkedConvert(
@@ -53,6 +61,10 @@ Legalities _$LegalitiesFromJson(Map<String, dynamic> json) => $checkedCreate(
                   unknownValue: Legality.unknown)),
           commander: $checkedConvert(
               'commander',
+              (v) => $enumDecode(_$LegalityEnumMap, v,
+                  unknownValue: Legality.unknown)),
+          oathbreaker: $checkedConvert(
+              'oathbreaker',
               (v) => $enumDecode(_$LegalityEnumMap, v,
                   unknownValue: Legality.unknown)),
           brawl: $checkedConvert(
@@ -81,6 +93,10 @@ Legalities _$LegalitiesFromJson(Map<String, dynamic> json) => $checkedCreate(
                   unknownValue: Legality.unknown)),
           premodern: $checkedConvert(
               'premodern',
+              (v) => $enumDecode(_$LegalityEnumMap, v,
+                  unknownValue: Legality.unknown)),
+          predh: $checkedConvert(
+              'predh',
               (v) => $enumDecode(_$LegalityEnumMap, v,
                   unknownValue: Legality.unknown)),
         );

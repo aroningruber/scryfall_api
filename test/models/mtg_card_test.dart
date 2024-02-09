@@ -48,21 +48,25 @@ void main() {
           'standard': 'not_legal',
           'future': 'not_legal',
           'historic': 'not_legal',
+          'timeless': 'not_legal',
           'gladiator': 'not_legal',
           'pioneer': 'not_legal',
+          'explorer': 'not_legal',
           'modern': 'not_legal',
           'legacy': 'legal',
           'pauper': 'not_legal',
           'vintage': 'legal',
           'penny': 'not_legal',
           'commander': 'legal',
-          'brawl': 'not_legal',
+          'oathbreaker': 'legal',
           'standardbrawl': 'not_legal',
+          'brawl': 'not_legal',
           'alchemy': 'not_legal',
           'paupercommander': 'not_legal',
           'duel': 'legal',
           'oldschool': 'not_legal',
-          'premodern': 'not_legal'
+          'premodern': 'not_legal',
+          'predh': 'legal'
         };
         final gamesStr = ['mtgo'];
         final reserved = false;
