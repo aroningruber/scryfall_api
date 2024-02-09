@@ -57,7 +57,7 @@ void main() {
           'penny': 'not_legal',
           'commander': 'legal',
           'brawl': 'not_legal',
-          'historicbrawl': 'not_legal',
+          'standardbrawl': 'not_legal',
           'alchemy': 'not_legal',
           'paupercommander': 'not_legal',
           'duel': 'legal',

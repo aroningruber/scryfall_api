@@ -59,8 +59,8 @@ Legalities _$LegalitiesFromJson(Map<String, dynamic> json) => $checkedCreate(
               'brawl',
               (v) => $enumDecode(_$LegalityEnumMap, v,
                   unknownValue: Legality.unknown)),
-          historicbrawl: $checkedConvert(
-              'historicbrawl',
+          standardbrawl: $checkedConvert(
+              'standardbrawl',
               (v) => $enumDecode(_$LegalityEnumMap, v,
                   unknownValue: Legality.unknown)),
           alchemy: $checkedConvert(

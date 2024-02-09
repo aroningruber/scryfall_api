@@ -17,7 +17,7 @@ void main() {
         final pennyStr = 'not_legal';
         final commanderStr = 'legal';
         final brawlStr = 'legal';
-        final historicbrawlStr = 'legal';
+        final standardbrawlStr = 'legal';
         final alchemyStr = 'legal';
         final paupercommanderStr = 'not_legal';
         final duelStr = 'legal';
@@ -37,7 +37,7 @@ void main() {
           'penny': pennyStr,
           'commander': commanderStr,
           'brawl': brawlStr,
-          'historicbrawl': historicbrawlStr,
+          'standardbrawl': standardbrawlStr,
           'alchemy': alchemyStr,
           'paupercommander': paupercommanderStr,
           'duel': duelStr,
@@ -57,7 +57,7 @@ void main() {
         final penny = Legality.notLegal;
         final commander = Legality.legal;
         final brawl = Legality.legal;
-        final historicbrawl = Legality.legal;
+        final standardbrawl = Legality.legal;
         final alchemy = Legality.legal;
         final paupercommander = Legality.notLegal;
         final duel = Legality.legal;
@@ -79,7 +79,7 @@ void main() {
               .having((l) => l.penny, 'penny', penny)
               .having((l) => l.commander, 'commander', commander)
               .having((l) => l.brawl, 'brawl', brawl)
-              .having((l) => l.historicbrawl, 'historicbrawl', historicbrawl)
+              .having((l) => l.standardbrawl, 'standardbrawl', standardbrawl)
               .having((l) => l.alchemy, 'alchemy', alchemy)
               .having(
                 (l) => l.paupercommander,

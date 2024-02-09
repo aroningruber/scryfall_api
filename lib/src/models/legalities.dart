@@ -57,7 +57,7 @@ class Legalities {
 
   /// Historic brawl playing format.
   @JsonKey(unknownEnumValue: Legality.unknown)
-  final Legality historicbrawl;
+  final Legality standardbrawl;
 
   /// Alchemy playing format.
   @JsonKey(unknownEnumValue: Legality.unknown)
@@ -93,7 +93,7 @@ class Legalities {
     required this.penny,
     required this.commander,
     required this.brawl,
-    required this.historicbrawl,
+    required this.standardbrawl,
     required this.alchemy,
     required this.paupercommander,
     required this.duel,
