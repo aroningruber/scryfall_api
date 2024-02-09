@@ -67,7 +67,7 @@ class Legalities {
   @JsonKey(unknownEnumValue: Legality.unknown)
   final Legality brawl;
 
-  /// Historic brawl playing format.
+  /// Standard brawl playing format.
   @JsonKey(unknownEnumValue: Legality.unknown)
   final Legality standardbrawl;
 
