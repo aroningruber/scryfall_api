@@ -1,3 +1,20 @@
+## 2.0.0
+
+### Changed
+
+- Renamed `brawl` of `Legalities` to `standardbrawl` and `historicbrawl` of `Legalities` to `standardbrawl` (thanks to [Bassiuz](https://github.com/Bassiuz)).
+- Added new formats `timeless`, `explorer`, `oathbreaker` and `predh` to `Legalities`.
+
+### Removed
+
+- Removed deprecated `compressedSize` getter from `BulkData`.
+
+### Migration from 1.x
+
+- The naming of Brawl formats has been changed in a backwards-incompatible way:
+  - The `standardbrawl` format in `Legalities` was previously called `brawl`.
+  - The `brawl` format in `Legalities` was previously called `historicbrawl`.
+
 ## 1.3.0
 
 - Update SDK version to >=3.0
@@ -13,7 +30,7 @@
 
 ### Changed
 
-- Renamed `compressedSize` of `BulkDate` to `size` (thanks to [PatrickWulfe](https://github.com/PatrickWulfe)). *A deprecated getter with the name `compressedSize` is kept for backward compatibility*.
+- Renamed `compressedSize` of `BulkData` to `size` (thanks to [PatrickWulfe](https://github.com/PatrickWulfe)). *A deprecated getter with the name `compressedSize` is kept for backward compatibility*.
 
 ## 1.1.0
 
