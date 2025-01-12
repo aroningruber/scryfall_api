@@ -1292,18 +1292,13 @@ enum BulkDataType {
 
 extension on BulkDataType {
   String get urlEncoding {
-    switch (this) {
-      case BulkDataType.oracleCards:
-        return 'oracle-cards';
-      case BulkDataType.uniqueArtwork:
-        return 'unique-artwork';
-      case BulkDataType.defaultCards:
-        return 'default-cards';
-      case BulkDataType.allCards:
-        return 'all-cards';
-      case BulkDataType.rulings:
-        return 'rulings';
-    }
+    return switch (this) {
+      BulkDataType.oracleCards => 'oracle-cards',
+      BulkDataType.uniqueArtwork => 'unique-artwork',
+      BulkDataType.defaultCards => 'default-cards',
+      BulkDataType.allCards => 'all-cards',
+      BulkDataType.rulings => 'rulings',
+    };
   }
 }
 
@@ -1320,20 +1315,29 @@ enum CatalogType {
   /// appear in a card name.
   wordBank,
 
-  /// All creature types.
-  creatureTypes,
+  /// All supertypes.
+  supertypes,
 
-  /// All Planeswalker types.
-  planeswalkerTypes,
-
-  /// All Land types.
-  landTypes,
+  /// All card types.
+  cardTypes,
 
   /// All artifact types.
   artifactTypes,
 
+  /// All battle types.
+  battleTypes,
+
+  /// All creature types.
+  creatureTypes,
+
   /// All enchantment types.
   enchantmentTypes,
+
+  /// All Land types.
+  landTypes,
+
+  /// All Planeswalker types.
+  planeswalkerTypes,
 
   /// All spell types.
   spellTypes,
@@ -1347,9 +1351,6 @@ enum CatalogType {
   /// All possible values for a Planeswalker’s loyalty.
   loyalties,
 
-  /// All card watermarks.
-  watermarks,
-
   /// All keyword abilities.
   keywordAbilities,
 
@@ -1358,44 +1359,38 @@ enum CatalogType {
 
   /// All ability words.
   abilityWords,
+
+  /// All flavor words.
+  flavorWords,
+
+  /// All card watermarks.
+  watermarks,
 }
 
 extension on CatalogType {
   String get urlEncoding {
-    switch (this) {
-      case CatalogType.cardNames:
-        return 'card-names';
-      case CatalogType.artistNames:
-        return 'artist-names';
-      case CatalogType.wordBank:
-        return 'word-bank';
-      case CatalogType.creatureTypes:
-        return 'creature-types';
-      case CatalogType.planeswalkerTypes:
-        return 'planeswalker-types';
-      case CatalogType.landTypes:
-        return 'land-types';
-      case CatalogType.artifactTypes:
-        return 'artifact-types';
-      case CatalogType.enchantmentTypes:
-        return 'enchantment-types';
-      case CatalogType.spellTypes:
-        return 'spell-types';
-      case CatalogType.powers:
-        return 'powers';
-      case CatalogType.toughnesses:
-        return 'toughnesses';
-      case CatalogType.loyalties:
-        return 'loyalties';
-      case CatalogType.watermarks:
-        return 'watermarks';
-      case CatalogType.keywordAbilities:
-        return 'keyword-abilities';
-      case CatalogType.keywordActions:
-        return 'keyword-actions';
-      case CatalogType.abilityWords:
-        return 'ability-words';
-    }
+    return switch (this) {
+      CatalogType.cardNames => 'card-names',
+      CatalogType.artistNames => 'artist-names',
+      CatalogType.wordBank => 'word-bank',
+      CatalogType.supertypes => 'supertypes',
+      CatalogType.cardTypes => 'card-types',
+      CatalogType.artifactTypes => 'artifact-types',
+      CatalogType.battleTypes => 'battle-types',
+      CatalogType.creatureTypes => 'creature-types',
+      CatalogType.enchantmentTypes => 'enchantment-types',
+      CatalogType.landTypes => 'land-types',
+      CatalogType.planeswalkerTypes => 'planeswalker-types',
+      CatalogType.spellTypes => 'spell-types',
+      CatalogType.powers => 'powers',
+      CatalogType.toughnesses => 'toughnesses',
+      CatalogType.loyalties => 'loyalties',
+      CatalogType.keywordAbilities => 'keyword-abilities',
+      CatalogType.keywordActions => 'keyword-actions',
+      CatalogType.abilityWords => 'ability-words',
+      CatalogType.flavorWords => 'flavor-words',
+      CatalogType.watermarks => 'watermarks',
+    };
   }
 }
 
@@ -1453,20 +1448,14 @@ enum ImageVersion {
 
 extension on ImageVersion {
   String get json {
-    switch (this) {
-      case ImageVersion.small:
-        return 'small';
-      case ImageVersion.normal:
-        return 'normal';
-      case ImageVersion.large:
-        return 'large';
-      case ImageVersion.png:
-        return 'png';
-      case ImageVersion.artCrop:
-        return 'art_crop';
-      case ImageVersion.borderCrop:
-        return 'border_crop';
-    }
+    return switch (this) {
+      ImageVersion.small => 'small',
+      ImageVersion.normal => 'normal',
+      ImageVersion.large => 'large',
+      ImageVersion.png => 'png',
+      ImageVersion.artCrop => 'art_crop',
+      ImageVersion.borderCrop => 'border_crop',
+    };
   }
 }
 
@@ -1582,13 +1571,10 @@ enum SortingDirection {
 
 extension on SortingDirection {
   String get json {
-    switch (this) {
-      case SortingDirection.ascending:
-        return 'asc';
-      case SortingDirection.descending:
-        return 'desc';
-      default:
-        return 'auto';
-    }
+    return switch (this) {
+      SortingDirection.ascending => 'asc',
+      SortingDirection.descending => 'desc',
+      _ => 'auto',
+    };
   }
 }
