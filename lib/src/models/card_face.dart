@@ -29,6 +29,9 @@ class CardFace {
   @JsonKey(unknownEnumValue: Color.unknown)
   final List<Color>? colors;
 
+  /// This face’s defense, if any.
+  final String? defense;
+
   /// The just-for-fun name printed on the card
   /// (such as for Godzilla series cards).
   final String? flavorName;
@@ -105,6 +108,7 @@ class CardFace {
     this.cmc,
     this.colorIndicator,
     this.colors,
+    this.defense,
     this.flavorName,
     this.flavorText,
     this.illustrationId,
