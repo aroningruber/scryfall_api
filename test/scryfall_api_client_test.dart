@@ -1827,22 +1827,26 @@ void main() {
         await testCategoryType(CatalogType.cardNames, 'card-names');
         await testCategoryType(CatalogType.artistNames, 'artist-names');
         await testCategoryType(CatalogType.wordBank, 'word-bank');
+        await testCategoryType(CatalogType.supertypes, 'supertypes');
+        await testCategoryType(CatalogType.cardTypes, 'card-types');
+        await testCategoryType(CatalogType.artifactTypes, 'artifact-types');
+        await testCategoryType(CatalogType.battleTypes, 'battle-types');
         await testCategoryType(CatalogType.creatureTypes, 'creature-types');
         await testCategoryType(
-            CatalogType.planeswalkerTypes, 'planeswalker-types');
-        await testCategoryType(CatalogType.landTypes, 'land-types');
-        await testCategoryType(CatalogType.artifactTypes, 'artifact-types');
-        await testCategoryType(
             CatalogType.enchantmentTypes, 'enchantment-types');
+        await testCategoryType(CatalogType.landTypes, 'land-types');
+        await testCategoryType(
+            CatalogType.planeswalkerTypes, 'planeswalker-types');
         await testCategoryType(CatalogType.spellTypes, 'spell-types');
         await testCategoryType(CatalogType.powers, 'powers');
         await testCategoryType(CatalogType.toughnesses, 'toughnesses');
         await testCategoryType(CatalogType.loyalties, 'loyalties');
-        await testCategoryType(CatalogType.watermarks, 'watermarks');
         await testCategoryType(
             CatalogType.keywordAbilities, 'keyword-abilities');
         await testCategoryType(CatalogType.keywordActions, 'keyword-actions');
         await testCategoryType(CatalogType.abilityWords, 'ability-words');
+        await testCategoryType(CatalogType.flavorWords, 'flavor-words');
+        await testCategoryType(CatalogType.watermarks, 'watermarks');
       });
 
       test('throws ScryfallException on non-200 response', () async {
