@@ -12,8 +12,14 @@ enum SecurityStamp {
   /// Acorn security stamp.
   acorn,
 
+  /// Circle security stamp.
+  circle,
+
   /// Arena security stamp.
   arena,
+
+  /// Heart security stamp.
+  heart,
 
   /// Unknown security stamp.
   unknown,
