@@ -36,15 +36,28 @@ enum Layout {
   /// Cards with Level Up.
   leveler,
 
-  /// Class-type enchantment cards
+  /// Class-type enchantment cards.
   @JsonValue('class')
   clazz,
+
+  /// Case-type enchantment cards.
+  @JsonValue('case')
+  caze,
 
   /// Saga-type cards.
   saga,
 
   /// Cards with an Adventure spell part.
   adventure,
+
+  /// Cards with Mutate.
+  mutate,
+
+  /// Cards with Prototype.
+  prototype,
+
+  /// Battle-type cards.
+  battle,
 
   /// Plane and Phenomenon-type cards.
   planar,
