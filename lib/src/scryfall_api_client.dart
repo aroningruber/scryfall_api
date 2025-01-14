@@ -997,24 +997,17 @@ class ScryfallApiClient {
   /// with [CatalogType.wordBank].
   Future<Catalog> getWordBank() => getCatalog(CatalogType.wordBank);
 
-  /// **GET** /catalog/creature-types
+  /// **GET** /catalog/supertypes
   ///
   /// Convenience method for calling [getCatalog]
-  /// with [CatalogType.creatureTypes].
-  Future<Catalog> getCreatureTypes() => getCatalog(CatalogType.creatureTypes);
+  /// with [CatalogType.supertypes].
+  Future<Catalog> getSupertypes() => getCatalog(CatalogType.supertypes);
 
-  /// **GET** /catalog/planeswalker-types
+  /// **GET** /catalog/card-types
   ///
   /// Convenience method for calling [getCatalog]
-  /// with [CatalogType.planeswalkerTypes].
-  Future<Catalog> getPlaneswalkerTypes() =>
-      getCatalog(CatalogType.planeswalkerTypes);
-
-  /// **GET** /catalog/land-types
-  ///
-  /// Convenience method for calling [getCatalog]
-  /// with [CatalogType.landTypes].
-  Future<Catalog> getLandTypes() => getCatalog(CatalogType.landTypes);
+  /// with [CatalogType.cardTypes].
+  Future<Catalog> getCardTypes() => getCatalog(CatalogType.cardTypes);
 
   /// **GET** /catalog/artifact-types
   ///
@@ -1022,12 +1015,37 @@ class ScryfallApiClient {
   /// with [CatalogType.artifactTypes].
   Future<Catalog> getArtifactTypes() => getCatalog(CatalogType.artifactTypes);
 
+  /// **GET** /catalog/battle-types
+  ///
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.battleTypes].
+  Future<Catalog> getBattleTypes() => getCatalog(CatalogType.battleTypes);
+
+  /// **GET** /catalog/creature-types
+  ///
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.creatureTypes].
+  Future<Catalog> getCreatureTypes() => getCatalog(CatalogType.creatureTypes);
+
   /// **GET** /catalog/enchantment-types
   ///
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.enchantmentTypes].
   Future<Catalog> getEnchantmentTypes() =>
       getCatalog(CatalogType.enchantmentTypes);
+
+  /// **GET** /catalog/land-types
+  ///
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.landTypes].
+  Future<Catalog> getLandTypes() => getCatalog(CatalogType.landTypes);
+
+  /// **GET** /catalog/planeswalker-types
+  ///
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.planeswalkerTypes].
+  Future<Catalog> getPlaneswalkerTypes() =>
+      getCatalog(CatalogType.planeswalkerTypes);
 
   /// **GET** /catalog/spell-types
   ///
@@ -1053,12 +1071,6 @@ class ScryfallApiClient {
   /// with [CatalogType.loyalties].
   Future<Catalog> getLoyalties() => getCatalog(CatalogType.loyalties);
 
-  /// **GET** /catalog/watermarks
-  ///
-  /// Convenience method for calling [getCatalog]
-  /// with [CatalogType.watermarks].
-  Future<Catalog> getWatermarks() => getCatalog(CatalogType.watermarks);
-
   /// **GET** /catalog/keyword-abilities
   ///
   /// Convenience method for calling [getCatalog]
@@ -1077,6 +1089,18 @@ class ScryfallApiClient {
   /// Convenience method for calling [getCatalog]
   /// with [CatalogType.abilityWords].
   Future<Catalog> getAbilityWords() => getCatalog(CatalogType.abilityWords);
+
+  /// **GET** /catalog/flavor-words
+  ///
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.flavorWords].
+  Future<Catalog> getFlavorWords() => getCatalog(CatalogType.flavorWords);
+
+  /// **GET** /catalog/watermarks
+  ///
+  /// Convenience method for calling [getCatalog]
+  /// with [CatalogType.watermarks].
+  Future<Catalog> getWatermarks() => getCatalog(CatalogType.watermarks);
 
   /// **GET** /bulk-data
   ///
