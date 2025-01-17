@@ -26,6 +26,7 @@ CardFace _$CardFaceFromJson(Map<String, dynamic> json) => $checkedCreate(
                   ?.map((e) => $enumDecode(_$ColorEnumMap, e,
                       unknownValue: Color.unknown))
                   .toList()),
+          defense: $checkedConvert('defense', (v) => v as String?),
           flavorName: $checkedConvert('flavor_name', (v) => v as String?),
           flavorText: $checkedConvert('flavor_text', (v) => v as String?),
           illustrationId:
@@ -89,8 +90,12 @@ const _$LayoutEnumMap = {
   Layout.meld: 'meld',
   Layout.leveler: 'leveler',
   Layout.clazz: 'class',
+  Layout.caze: 'case',
   Layout.saga: 'saga',
   Layout.adventure: 'adventure',
+  Layout.mutate: 'mutate',
+  Layout.prototype: 'prototype',
+  Layout.battle: 'battle',
   Layout.planar: 'planar',
   Layout.scheme: 'scheme',
   Layout.vanguard: 'vanguard',

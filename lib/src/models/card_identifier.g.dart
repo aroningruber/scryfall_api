@@ -30,7 +30,7 @@ CardIdentifierMtgoId _$CardIdentifierMtgoIdFromJson(
       json,
       ($checkedConvert) {
         final val = CardIdentifierMtgoId(
-          $checkedConvert('mtgo_id', (v) => v as int),
+          $checkedConvert('mtgo_id', (v) => (v as num).toInt()),
         );
         return val;
       },
@@ -50,7 +50,7 @@ CardIdentifierMultiverseId _$CardIdentifierMultiverseIdFromJson(
       json,
       ($checkedConvert) {
         final val = CardIdentifierMultiverseId(
-          $checkedConvert('multiverse_id', (v) => v as int),
+          $checkedConvert('multiverse_id', (v) => (v as num).toInt()),
         );
         return val;
       },

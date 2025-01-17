@@ -12,7 +12,7 @@ ScryfallException _$ScryfallExceptionFromJson(Map<String, dynamic> json) =>
       json,
       ($checkedConvert) {
         final val = ScryfallException(
-          status: $checkedConvert('status', (v) => v as int),
+          status: $checkedConvert('status', (v) => (v as num).toInt()),
           code: $checkedConvert('code', (v) => v as String),
           details: $checkedConvert('details', (v) => v as String),
           type: $checkedConvert('type', (v) => v as String?),

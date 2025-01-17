@@ -15,7 +15,8 @@ MtgSet _$MtgSetFromJson(Map<String, dynamic> json) => $checkedCreate(
           code: $checkedConvert('code', (v) => v as String),
           mtgoCode: $checkedConvert('mtgo_code', (v) => v as String?),
           arenaCode: $checkedConvert('arena_code', (v) => v as String?),
-          tcgplayerId: $checkedConvert('tcgplayer_id', (v) => v as int?),
+          tcgplayerId:
+              $checkedConvert('tcgplayer_id', (v) => (v as num?)?.toInt()),
           name: $checkedConvert('name', (v) => v as String),
           setType: $checkedConvert(
               'set_type',
@@ -27,8 +28,9 @@ MtgSet _$MtgSetFromJson(Map<String, dynamic> json) => $checkedCreate(
           block: $checkedConvert('block', (v) => v as String?),
           parentSetCode:
               $checkedConvert('parent_set_code', (v) => v as String?),
-          cardCount: $checkedConvert('card_count', (v) => v as int),
-          printedSize: $checkedConvert('printed_size', (v) => v as int?),
+          cardCount: $checkedConvert('card_count', (v) => (v as num).toInt()),
+          printedSize:
+              $checkedConvert('printed_size', (v) => (v as num?)?.toInt()),
           digital: $checkedConvert('digital', (v) => v as bool),
           foilOnly: $checkedConvert('foil_only', (v) => v as bool),
           nonfoilOnly: $checkedConvert('nonfoil_only', (v) => v as bool),

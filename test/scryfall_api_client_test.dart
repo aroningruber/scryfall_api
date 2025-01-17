@@ -1827,22 +1827,26 @@ void main() {
         await testCategoryType(CatalogType.cardNames, 'card-names');
         await testCategoryType(CatalogType.artistNames, 'artist-names');
         await testCategoryType(CatalogType.wordBank, 'word-bank');
+        await testCategoryType(CatalogType.supertypes, 'supertypes');
+        await testCategoryType(CatalogType.cardTypes, 'card-types');
+        await testCategoryType(CatalogType.artifactTypes, 'artifact-types');
+        await testCategoryType(CatalogType.battleTypes, 'battle-types');
         await testCategoryType(CatalogType.creatureTypes, 'creature-types');
         await testCategoryType(
-            CatalogType.planeswalkerTypes, 'planeswalker-types');
-        await testCategoryType(CatalogType.landTypes, 'land-types');
-        await testCategoryType(CatalogType.artifactTypes, 'artifact-types');
-        await testCategoryType(
             CatalogType.enchantmentTypes, 'enchantment-types');
+        await testCategoryType(CatalogType.landTypes, 'land-types');
+        await testCategoryType(
+            CatalogType.planeswalkerTypes, 'planeswalker-types');
         await testCategoryType(CatalogType.spellTypes, 'spell-types');
         await testCategoryType(CatalogType.powers, 'powers');
         await testCategoryType(CatalogType.toughnesses, 'toughnesses');
         await testCategoryType(CatalogType.loyalties, 'loyalties');
-        await testCategoryType(CatalogType.watermarks, 'watermarks');
         await testCategoryType(
             CatalogType.keywordAbilities, 'keyword-abilities');
         await testCategoryType(CatalogType.keywordActions, 'keyword-actions');
         await testCategoryType(CatalogType.abilityWords, 'ability-words');
+        await testCategoryType(CatalogType.flavorWords, 'flavor-words');
+        await testCategoryType(CatalogType.watermarks, 'watermarks');
       });
 
       test('throws ScryfallException on non-200 response', () async {
@@ -1916,26 +1920,17 @@ void main() {
         );
       });
 
-      test('getCreatureTypes called getCatalog with correct argument',
-          () async {
+      test('getSupertypes called getCatalog with correct argument', () async {
         testCatalogConvenienceMethod(
-          scryfallApiClient.getCreatureTypes,
-          'creature-types',
+          scryfallApiClient.getSupertypes,
+          'supertypes',
         );
       });
 
-      test('getPlaneswalkerTypes called getCatalog with correct argument',
-          () async {
+      test('getCardTypes called getCatalog with correct argument', () async {
         testCatalogConvenienceMethod(
-          scryfallApiClient.getPlaneswalkerTypes,
-          'planeswalker-types',
-        );
-      });
-
-      test('getLandTypes called getCatalog with correct argument', () async {
-        testCatalogConvenienceMethod(
-          scryfallApiClient.getLandTypes,
-          'land-types',
+          scryfallApiClient.getCardTypes,
+          'card-types',
         );
       });
 
@@ -1947,11 +1942,41 @@ void main() {
         );
       });
 
+      test('getBattleTypes called getCatalog with correct argument', () async {
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getBattleTypes,
+          'battle-types',
+        );
+      });
+
+      test('getCreatureTypes called getCatalog with correct argument',
+          () async {
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getCreatureTypes,
+          'creature-types',
+        );
+      });
+
       test('getEnchantmentTypes called getCatalog with correct argument',
           () async {
         testCatalogConvenienceMethod(
           scryfallApiClient.getEnchantmentTypes,
           'enchantment-types',
+        );
+      });
+
+      test('getLandTypes called getCatalog with correct argument', () async {
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getLandTypes,
+          'land-types',
+        );
+      });
+
+      test('getPlaneswalkerTypes called getCatalog with correct argument',
+          () async {
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getPlaneswalkerTypes,
+          'planeswalker-types',
         );
       });
 
@@ -1983,13 +2008,6 @@ void main() {
         );
       });
 
-      test('getWatermarks called getCatalog with correct argument', () async {
-        testCatalogConvenienceMethod(
-          scryfallApiClient.getWatermarks,
-          'watermarks',
-        );
-      });
-
       test('getKeywordAbilities called getCatalog with correct argument',
           () async {
         testCatalogConvenienceMethod(
@@ -2010,6 +2028,20 @@ void main() {
         testCatalogConvenienceMethod(
           scryfallApiClient.getAbilityWords,
           'ability-words',
+        );
+      });
+
+      test('getFlavorWords called getCatalog with correct argument', () async {
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getFlavorWords,
+          'flavor-words',
+        );
+      });
+
+      test('getWatermarks called getCatalog with correct argument', () async {
+        testCatalogConvenienceMethod(
+          scryfallApiClient.getWatermarks,
+          'watermarks',
         );
       });
     });

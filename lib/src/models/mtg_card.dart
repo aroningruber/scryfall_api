@@ -212,6 +212,11 @@ class MtgCard {
   /// The unique identifiers of the illustrators of this card.
   final List<String>? artistIds;
 
+  /// The lit
+  /// [Unfinity attractions](https://scryfall.com/search?q=t%3Aattraction+unique%3Aprints)
+  /// lights on this card, if any.
+  final List<int>? attractionLights;
+
   /// Whether this card is found in boosters.
   final bool booster;
 
@@ -408,6 +413,7 @@ class MtgCard {
     required this.typeLine,
     this.artist,
     this.artistIds,
+    this.attractionLights,
     required this.booster,
     required this.borderColor,
     required this.cardBackId,

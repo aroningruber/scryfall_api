@@ -20,7 +20,8 @@ PaginableList<T> _$PaginableListFromJson<T>(
           hasMore: $checkedConvert('has_more', (v) => v as bool),
           nextPage: $checkedConvert(
               'next_page', (v) => v == null ? null : Uri.parse(v as String)),
-          totalCards: $checkedConvert('total_cards', (v) => v as int?),
+          totalCards:
+              $checkedConvert('total_cards', (v) => (v as num?)?.toInt()),
           warnings: $checkedConvert('warnings',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
         );

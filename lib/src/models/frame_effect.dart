@@ -63,6 +63,21 @@ enum FrameEffect {
   /// The cards have the Lesson frame effect.
   lesson,
 
+  /// The cards have the Shattered Glass frame effect.
+  shatteredglass,
+
+  /// The cards have More Than Meets the Eye™ marks.
+  convertdfc,
+
+  /// The cards have fan transforming marks.
+  fandfc,
+
+  /// The cards have the Upside Down transforming marks.
+  upsidedowndfc,
+
+  /// The cards have Spree asterisks.
+  spree,
+
   /// Unknown frame effect.
   unknown,
 }

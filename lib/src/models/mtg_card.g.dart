@@ -11,20 +11,26 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
       json,
       ($checkedConvert) {
         final val = MtgCard(
-          arenaId: $checkedConvert('arena_id', (v) => v as int?),
+          arenaId: $checkedConvert('arena_id', (v) => (v as num?)?.toInt()),
           id: $checkedConvert('id', (v) => v as String),
           lang: $checkedConvert(
               'lang',
               (v) => $enumDecode(_$LanguageEnumMap, v,
                   unknownValue: Language.unknown)),
-          mtgoId: $checkedConvert('mtgo_id', (v) => v as int?),
-          mtgoFoilId: $checkedConvert('mtgo_foil_id', (v) => v as int?),
-          multiverseIds: $checkedConvert('multiverse_ids',
-              (v) => (v as List<dynamic>?)?.map((e) => e as int).toList()),
-          tcgplayerId: $checkedConvert('tcgplayer_id', (v) => v as int?),
-          tcgplyerEtchedId:
-              $checkedConvert('tcgplyer_etched_id', (v) => v as int?),
-          cardmarketId: $checkedConvert('cardmarket_id', (v) => v as int?),
+          mtgoId: $checkedConvert('mtgo_id', (v) => (v as num?)?.toInt()),
+          mtgoFoilId:
+              $checkedConvert('mtgo_foil_id', (v) => (v as num?)?.toInt()),
+          multiverseIds: $checkedConvert(
+              'multiverse_ids',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => (e as num).toInt())
+                  .toList()),
+          tcgplayerId:
+              $checkedConvert('tcgplayer_id', (v) => (v as num?)?.toInt()),
+          tcgplyerEtchedId: $checkedConvert(
+              'tcgplyer_etched_id', (v) => (v as num?)?.toInt()),
+          cardmarketId:
+              $checkedConvert('cardmarket_id', (v) => (v as num?)?.toInt()),
           oracleId: $checkedConvert('oracle_id', (v) => v as String),
           printsSearchUri: $checkedConvert(
               'prints_search_uri', (v) => Uri.parse(v as String)),
@@ -62,7 +68,8 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
                   ?.map((e) => $enumDecode(_$ColorEnumMap, e,
                       unknownValue: Color.unknown))
                   .toList()),
-          edhrecRank: $checkedConvert('edhrec_rank', (v) => v as int?),
+          edhrecRank:
+              $checkedConvert('edhrec_rank', (v) => (v as num?)?.toInt()),
           handModifier: $checkedConvert('hand_modifier', (v) => v as String?),
           keywords: $checkedConvert('keywords',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
@@ -91,6 +98,11 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
           artist: $checkedConvert('artist', (v) => v as String?),
           artistIds: $checkedConvert('artist_ids',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
+          attractionLights: $checkedConvert(
+              'attraction_lights',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => (e as num).toInt())
+                  .toList()),
           booster: $checkedConvert('booster', (v) => v as bool),
           borderColor: $checkedConvert(
               'border_color',
@@ -219,6 +231,7 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
         'producedMana': 'produced_mana',
         'typeLine': 'type_line',
         'artistIds': 'artist_ids',
+        'attractionLights': 'attraction_lights',
         'borderColor': 'border_color',
         'cardBackId': 'card_back_id',
         'collectorNumber': 'collector_number',
@@ -290,8 +303,12 @@ const _$LayoutEnumMap = {
   Layout.meld: 'meld',
   Layout.leveler: 'leveler',
   Layout.clazz: 'class',
+  Layout.caze: 'case',
   Layout.saga: 'saga',
   Layout.adventure: 'adventure',
+  Layout.mutate: 'mutate',
+  Layout.prototype: 'prototype',
+  Layout.battle: 'battle',
   Layout.planar: 'planar',
   Layout.scheme: 'scheme',
   Layout.vanguard: 'vanguard',
@@ -342,6 +359,11 @@ const _$FrameEffectEnumMap = {
   FrameEffect.etched: 'etched',
   FrameEffect.snow: 'snow',
   FrameEffect.lesson: 'lesson',
+  FrameEffect.shatteredglass: 'shatteredglass',
+  FrameEffect.convertdfc: 'convertdfc',
+  FrameEffect.fandfc: 'fandfc',
+  FrameEffect.upsidedowndfc: 'upsidedowndfc',
+  FrameEffect.spree: 'spree',
   FrameEffect.unknown: 'unknown',
 };
 
@@ -408,6 +430,8 @@ const _$SecurityStampEnumMap = {
   SecurityStamp.oval: 'oval',
   SecurityStamp.triangle: 'triangle',
   SecurityStamp.acorn: 'acorn',
+  SecurityStamp.circle: 'circle',
   SecurityStamp.arena: 'arena',
+  SecurityStamp.heart: 'heart',
   SecurityStamp.unknown: 'unknown',
 };
