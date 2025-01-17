@@ -1,3 +1,17 @@
+## 2.1.0
+
+### Added
+
+- Added `defense` attribute to `CardFace`(thanks to [zmuranaka](https://github.com/zmuranaka)).
+- Added `shatteredglass`, `convertdfc`,`fandfc`, `upsidedowndfc` and `spree` to `FrameEffect` (thanks to [zmuranaka](https://github.com/zmuranaka)).
+- Added `case`, `mutate`, `prototype`, `battle` to `Layout` (thanks to [zmuranaka](https://github.com/zmuranaka)).
+- Added `attractionLights` attribute to `MtgCard` (thanks to [zmuranaka](https://github.com/zmuranaka)).
+- Added `circle` and `heart` to `SecurityStamp` (thanks to [zmuranaka](https://github.com/zmuranaka)).
+- Get super types (**GET** `/catalog/supertypes`) (thanks to [zmuranaka](https://github.com/zmuranaka))
+- Get card types (**GET** `/catalog/card-types`) (thanks to [zmuranaka](https://github.com/zmuranaka))
+- Get battle types (**GET** `/catalog/battle-types`) (thanks to [zmuranaka](https://github.com/zmuranaka))
+- Get flavor words (**GET** `/catalog/flavor-words`) (thanks to [zmuranaka](https://github.com/zmuranaka))
+
 ## 2.0.0
 
 ### Changed
