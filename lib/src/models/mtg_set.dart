@@ -111,4 +111,7 @@ class MtgSet {
 
   /// Constructs a [MtgSet] from JSON.
   factory MtgSet.fromJson(Map<String, dynamic> json) => _$MtgSetFromJson(json);
+
+  /// Converts this [MtgSet] to JSON.
+  Map<String, dynamic> toJson() => _$MtgSetToJson(this);
 }
