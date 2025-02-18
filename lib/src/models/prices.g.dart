@@ -26,3 +26,12 @@ Prices _$PricesFromJson(Map<String, dynamic> json) => $checkedCreate(
         'eurFoil': 'eur_foil'
       },
     );
+
+Map<String, dynamic> _$PricesToJson(Prices instance) => <String, dynamic>{
+      'usd': instance.usd,
+      'usd_foil': instance.usdFoil,
+      'usd_etched': instance.usdEtched,
+      'eur': instance.eur,
+      'eur_foil': instance.eurFoil,
+      'tix': instance.tix,
+    };

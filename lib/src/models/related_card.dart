@@ -52,4 +52,7 @@ class RelatedCard {
   /// Constructs a [RelatedCard] from JSON.
   factory RelatedCard.fromJson(Map<String, dynamic> json) =>
       _$RelatedCardFromJson(json);
+
+  /// Converts this [RelatedCard] to JSON.
+  Map<String, dynamic> toJson() => _$RelatedCardToJson(this);
 }

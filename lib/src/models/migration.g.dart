@@ -34,6 +34,17 @@ Migration _$MigrationFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
+Map<String, dynamic> _$MigrationToJson(Migration instance) => <String, dynamic>{
+      'id': instance.id,
+      'uri': instance.uri,
+      'performed_at': instance.performedAt.toIso8601String(),
+      'migration_strategy':
+          _$MigrationStrategyEnumMap[instance.migrationStrategy]!,
+      'old_scryfall_id': instance.oldScryfallId,
+      'new_scryfall_id': instance.newScryfallId,
+      'note': instance.note,
+    };
+
 const _$MigrationStrategyEnumMap = {
   MigrationStrategy.merge: 'merge',
   MigrationStrategy.delete: 'delete',

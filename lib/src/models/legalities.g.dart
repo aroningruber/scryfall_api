@@ -104,6 +104,32 @@ Legalities _$LegalitiesFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
+Map<String, dynamic> _$LegalitiesToJson(Legalities instance) =>
+    <String, dynamic>{
+      'standard': _$LegalityEnumMap[instance.standard]!,
+      'future': _$LegalityEnumMap[instance.future]!,
+      'historic': _$LegalityEnumMap[instance.historic]!,
+      'timeless': _$LegalityEnumMap[instance.timeless]!,
+      'gladiator': _$LegalityEnumMap[instance.gladiator]!,
+      'pioneer': _$LegalityEnumMap[instance.pioneer]!,
+      'explorer': _$LegalityEnumMap[instance.explorer]!,
+      'modern': _$LegalityEnumMap[instance.modern]!,
+      'legacy': _$LegalityEnumMap[instance.legacy]!,
+      'pauper': _$LegalityEnumMap[instance.pauper]!,
+      'vintage': _$LegalityEnumMap[instance.vintage]!,
+      'penny': _$LegalityEnumMap[instance.penny]!,
+      'commander': _$LegalityEnumMap[instance.commander]!,
+      'oathbreaker': _$LegalityEnumMap[instance.oathbreaker]!,
+      'brawl': _$LegalityEnumMap[instance.brawl]!,
+      'standardbrawl': _$LegalityEnumMap[instance.standardbrawl]!,
+      'alchemy': _$LegalityEnumMap[instance.alchemy]!,
+      'paupercommander': _$LegalityEnumMap[instance.paupercommander]!,
+      'duel': _$LegalityEnumMap[instance.duel]!,
+      'oldschool': _$LegalityEnumMap[instance.oldschool]!,
+      'premodern': _$LegalityEnumMap[instance.premodern]!,
+      'predh': _$LegalityEnumMap[instance.predh]!,
+    };
+
 const _$LegalityEnumMap = {
   Legality.legal: 'legal',
   Legality.notLegal: 'not_legal',

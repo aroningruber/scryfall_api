@@ -463,4 +463,7 @@ class MtgCard {
   /// Constructs a [MtgCard] from JSON.
   factory MtgCard.fromJson(Map<String, dynamic> json) =>
       _$MtgCardFromJson(json);
+
+  /// Converts a [MtgCard] to JSON.
+  Map<String, dynamic> toJson() => _$MtgCardToJson(this);
 }

@@ -19,3 +19,8 @@ Catalog _$CatalogFromJson(Map<String, dynamic> json) => $checkedCreate(
         return val;
       },
     );
+
+Map<String, dynamic> _$CatalogToJson(Catalog instance) => <String, dynamic>{
+      'uri': instance.uri?.toString(),
+      'data': instance.data,
+    };

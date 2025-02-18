@@ -62,6 +62,29 @@ MtgSet _$MtgSetFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
+Map<String, dynamic> _$MtgSetToJson(MtgSet instance) => <String, dynamic>{
+      'id': instance.id,
+      'code': instance.code,
+      'mtgo_code': instance.mtgoCode,
+      'arena_code': instance.arenaCode,
+      'tcgplayer_id': instance.tcgplayerId,
+      'name': instance.name,
+      'set_type': _$SetTypeEnumMap[instance.setType]!,
+      'released_at': instance.releasedAt?.toIso8601String(),
+      'block_code': instance.blockCode,
+      'block': instance.block,
+      'parent_set_code': instance.parentSetCode,
+      'card_count': instance.cardCount,
+      'printed_size': instance.printedSize,
+      'digital': instance.digital,
+      'foil_only': instance.foilOnly,
+      'nonfoil_only': instance.nonfoilOnly,
+      'scryfall_uri': instance.scryfallUri.toString(),
+      'uri': instance.uri.toString(),
+      'icon_svg_uri': instance.iconSvgUri.toString(),
+      'search_uri': instance.searchUri.toString(),
+    };
+
 const _$SetTypeEnumMap = {
   SetType.core: 'core',
   SetType.expansion: 'expansion',

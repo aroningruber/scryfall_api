@@ -28,6 +28,13 @@ Ruling _$RulingFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
+Map<String, dynamic> _$RulingToJson(Ruling instance) => <String, dynamic>{
+      'oracle_id': instance.oracleId,
+      'source': _$RulingSourceEnumMap[instance.source]!,
+      'published_at': instance.publishedAt.toIso8601String(),
+      'comment': instance.comment,
+    };
+
 const _$RulingSourceEnumMap = {
   RulingSource.scryfall: 'scryfall',
   RulingSource.wizardsOfTheCoast: 'wotc',
