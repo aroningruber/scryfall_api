@@ -33,3 +33,15 @@ PaginableList<T> _$PaginableListFromJson<T>(
         'totalCards': 'total_cards'
       },
     );
+
+Map<String, dynamic> _$PaginableListToJson<T>(
+  PaginableList<T> instance,
+  Object? Function(T value) toJsonT,
+) =>
+    <String, dynamic>{
+      'data': instance.data.map(toJsonT).toList(),
+      'has_more': instance.hasMore,
+      'next_page': instance.nextPage?.toString(),
+      'total_cards': instance.totalCards,
+      'warnings': instance.warnings,
+    };

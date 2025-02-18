@@ -24,4 +24,7 @@ class Preview {
   /// Constructs a [Preview] from JSON.
   factory Preview.fromJson(Map<String, dynamic> json) =>
       _$PreviewFromJson(json);
+
+  /// Converts this [Preview] to JSON.
+  Map<String, dynamic> toJson() => _$PreviewToJson(this);
 }

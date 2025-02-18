@@ -35,4 +35,7 @@ class Prices {
 
   /// Constructs a [Prices] object from JSON.
   factory Prices.fromJson(Map<String, dynamic> json) => _$PricesFromJson(json);
+
+  /// Converts this [Prices] object to JSON.
+  Map<String, dynamic> toJson() => _$PricesToJson(this);
 }

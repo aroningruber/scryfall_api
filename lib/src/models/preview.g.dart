@@ -24,3 +24,9 @@ Preview _$PreviewFromJson(Map<String, dynamic> json) => $checkedCreate(
         'sourceUri': 'source_uri'
       },
     );
+
+Map<String, dynamic> _$PreviewToJson(Preview instance) => <String, dynamic>{
+      'previewed_at': instance.previewedAt?.toIso8601String(),
+      'source_uri': instance.sourceUri?.toString(),
+      'source': instance.source,
+    };

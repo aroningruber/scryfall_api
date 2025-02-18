@@ -23,3 +23,12 @@ ImageUris _$ImageUrisFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
       fieldKeyMap: const {'artCrop': 'art_crop', 'borderCrop': 'border_crop'},
     );
+
+Map<String, dynamic> _$ImageUrisToJson(ImageUris instance) => <String, dynamic>{
+      'small': instance.small.toString(),
+      'normal': instance.normal.toString(),
+      'large': instance.large.toString(),
+      'png': instance.png.toString(),
+      'art_crop': instance.artCrop.toString(),
+      'border_crop': instance.borderCrop.toString(),
+    };

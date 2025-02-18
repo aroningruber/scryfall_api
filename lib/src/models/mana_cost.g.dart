@@ -26,6 +26,15 @@ ManaCost _$ManaCostFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
+Map<String, dynamic> _$ManaCostToJson(ManaCost instance) => <String, dynamic>{
+      'cost': instance.cost,
+      'cmc': instance.cmc,
+      'colors': instance.colors.map((e) => _$ColorEnumMap[e]!).toList(),
+      'colorless': instance.colorless,
+      'monocolored': instance.monocolored,
+      'multicolored': instance.multicolored,
+    };
+
 const _$ColorEnumMap = {
   Color.white: 'W',
   Color.blue: 'U',

@@ -71,6 +71,33 @@ CardFace _$CardFaceFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
+Map<String, dynamic> _$CardFaceToJson(CardFace instance) => <String, dynamic>{
+      'artist': instance.artist,
+      'artist_id': instance.artistId,
+      'cmc': instance.cmc,
+      'color_indicator':
+          instance.colorIndicator?.map((e) => _$ColorEnumMap[e]!).toList(),
+      'colors': instance.colors?.map((e) => _$ColorEnumMap[e]!).toList(),
+      'defense': instance.defense,
+      'flavor_name': instance.flavorName,
+      'flavor_text': instance.flavorText,
+      'illustration_id': instance.illustrationId,
+      'image_uris': instance.imageUris,
+      'layout': _$LayoutEnumMap[instance.layout],
+      'loyalty': instance.loyalty,
+      'mana_cost': instance.manaCost,
+      'name': instance.name,
+      'oracle_id': instance.oracleId,
+      'oracle_text': instance.oracleText,
+      'power': instance.power,
+      'printed_name': instance.printedName,
+      'printed_text': instance.printedText,
+      'printed_type_line': instance.printedTypeLine,
+      'toughness': instance.toughness,
+      'type_line': instance.typeLine,
+      'watermark': instance.watermark,
+    };
+
 const _$ColorEnumMap = {
   Color.white: 'W',
   Color.blue: 'U',

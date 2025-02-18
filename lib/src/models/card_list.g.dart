@@ -27,3 +27,8 @@ CardList _$CardListFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
       fieldKeyMap: const {'notFound': 'not_found'},
     );
+
+Map<String, dynamic> _$CardListToJson(CardList instance) => <String, dynamic>{
+      'not_found': instance.notFound,
+      'data': instance.data,
+    };

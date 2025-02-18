@@ -66,4 +66,6 @@ class ImageUris {
   /// Constructs an [ImageUris] object from JSON.
   factory ImageUris.fromJson(Map<String, dynamic> json) =>
       _$ImageUrisFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ImageUrisToJson(this);
 }
