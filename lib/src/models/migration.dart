@@ -47,4 +47,7 @@ class Migration {
   /// Constructs a [Migration] object from JSON.
   factory Migration.fromJson(Map<String, dynamic> json) =>
       _$MigrationFromJson(json);
+
+  /// Converts this [Migration] object to JSON.
+  Map<String, dynamic> toJson() => _$MigrationToJson(this);
 }

@@ -38,6 +38,9 @@ class Ruling {
 
   /// Constructs a [Ruling] from JSON.
   factory Ruling.fromJson(Map<String, dynamic> json) => _$RulingFromJson(json);
+
+  /// Converts this [Ruling] to JSON.
+  Map<String, dynamic> toJson() => _$RulingToJson(this);
 }
 
 /// The company which produced this ruling.

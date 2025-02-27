@@ -46,6 +46,10 @@ class PaginableList<T> {
           Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
       _$PaginableListFromJson(json, fromJsonT);
 
+  /// Converts this [PaginableList] to JSON.
+  Map<String, dynamic> toJson(Object? Function(T) toJsonT) =>
+      _$PaginableListToJson(this, toJsonT);
+
   /// The number of objects in this list.
   int get length => data.length;
 

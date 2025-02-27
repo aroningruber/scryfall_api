@@ -24,6 +24,9 @@ class CardList {
   factory CardList.fromJson(Map<String, dynamic> json) =>
       _$CardListFromJson(json);
 
+  /// Converts this [CardList] to JSON.
+  Map<String, dynamic> toJson() => _$CardListToJson(this);
+
   /// The number of objects in this list.
   int get length => data.length;
 

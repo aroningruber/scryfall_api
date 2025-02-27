@@ -42,4 +42,7 @@ class ManaCost {
   /// Constructs a [ManaCost] from JSON.
   factory ManaCost.fromJson(Map<String, dynamic> json) =>
       _$ManaCostFromJson(json);
+
+  /// Converts this [ManaCost] to JSON.
+  Map<String, dynamic> toJson() => _$ManaCostToJson(this);
 }

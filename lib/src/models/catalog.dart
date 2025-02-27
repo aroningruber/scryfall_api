@@ -26,6 +26,9 @@ class Catalog {
   factory Catalog.fromJson(Map<String, dynamic> json) =>
       _$CatalogFromJson(json);
 
+  /// Converts this [Catalog] to JSON.
+  Map<String, dynamic> toJson() => _$CatalogToJson(this);
+
   /// The number of elements in this [Catalog].
   int get length => data.length;
 

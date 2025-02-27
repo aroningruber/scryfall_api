@@ -131,4 +131,7 @@ class CardFace {
   /// Constructs a [CardFace] from JSON.
   factory CardFace.fromJson(Map<String, dynamic> json) =>
       _$CardFaceFromJson(json);
+
+  /// Converts this [CardFace] to JSON.
+  Map<String, dynamic> toJson() => _$CardFaceToJson(this);
 }

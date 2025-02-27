@@ -87,4 +87,7 @@ class CardSymbol {
   /// Constructs a [CardSymbol] from JSON.
   factory CardSymbol.fromJson(Map<String, dynamic> json) =>
       _$CardSymbolFromJson(json);
+
+  /// Converts this [CardSymbol] to JSON.
+  Map<String, dynamic> toJson() => _$CardSymbolToJson(this);
 }
