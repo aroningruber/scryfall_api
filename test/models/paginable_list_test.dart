@@ -3,17 +3,18 @@ import 'package:test/test.dart';
 
 void main() {
   group('PaginableList', () {
+    final hasMore = false;
+    final data = [1, 2, 3];
+
+    final json = <String, dynamic>{
+      'data': data,
+      'has_more': hasMore,
+      'next_page': null,
+      'total_cards': null,
+      'warnings': null
+    };
     group('fromJson', () {
       test('returns correct PaginableList<int>', () {
-        final hasMore = false;
-        final data = [1, 2, 3];
-
-        final json = <String, dynamic>{
-          'object': 'list',
-          'has_more': hasMore,
-          'data': data,
-        };
-
         expect(
           PaginableList<int>.fromJson(json, (o) => o as int),
           isA<PaginableList<int>>()
@@ -443,6 +444,15 @@ void main() {
       test('throws RangeError for invalid index', () {
         expect(() => list[-1], throwsA(isA<RangeError>()));
         expect(() => list[5], throwsA(isA<RangeError>()));
+      });
+    });
+
+    group('toJson', () {
+      test('returns correct JSON', () {
+        expect(
+          PaginableList<int>.fromJson(json, (o) => o as int).toJson((o) => o),
+          json,
+        );
       });
     });
   });

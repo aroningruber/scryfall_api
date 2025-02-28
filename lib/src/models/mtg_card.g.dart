@@ -278,8 +278,8 @@ Map<String, dynamic> _$MtgCardToJson(MtgCard instance) => <String, dynamic>{
       'rulings_uri': instance.rulingsUri.toString(),
       'scryfall_uri': instance.scryfallUri.toString(),
       'uri': instance.uri.toString(),
-      'all_parts': instance.allParts,
-      'card_faces': instance.cardFaces,
+      'all_parts': instance.allParts?.map((e) => e.toJson()).toList(),
+      'card_faces': instance.cardFaces?.map((e) => e.toJson()).toList(),
       'cmc': instance.cmc,
       'color_identity':
           instance.colorIdentity.map((e) => _$ColorEnumMap[e]!).toList(),
@@ -290,7 +290,7 @@ Map<String, dynamic> _$MtgCardToJson(MtgCard instance) => <String, dynamic>{
       'hand_modifier': instance.handModifier,
       'keywords': instance.keywords,
       'layout': _$LayoutEnumMap[instance.layout]!,
-      'legalities': instance.legalities,
+      'legalities': instance.legalities.toJson(),
       'life_modifier': instance.lifeModifier,
       'loyalty': instance.loyalty,
       'mana_cost': instance.manaCost,
@@ -325,8 +325,8 @@ Map<String, dynamic> _$MtgCardToJson(MtgCard instance) => <String, dynamic>{
       'highres_image': instance.highresImage,
       'illustration_id': instance.illustrationId,
       'image_status': _$ImageStatusEnumMap[instance.imageStatus]!,
-      'image_uris': instance.imageUris,
-      'prices': instance.prices,
+      'image_uris': instance.imageUris?.toJson(),
+      'prices': instance.prices.toJson(),
       'printed_name': instance.printedName,
       'printed_text': instance.printedText,
       'printed_type_line': instance.printedTypeLine,
@@ -352,7 +352,7 @@ Map<String, dynamic> _$MtgCardToJson(MtgCard instance) => <String, dynamic>{
       'variation_of': instance.variationOf,
       'security_stamp': _$SecurityStampEnumMap[instance.securityStamp],
       'watermark': instance.watermark,
-      'preview': instance.preview,
+      'preview': instance.preview?.toJson(),
     };
 
 const _$LanguageEnumMap = {

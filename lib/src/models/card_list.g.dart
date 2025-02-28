@@ -29,6 +29,6 @@ CardList _$CardListFromJson(Map<String, dynamic> json) => $checkedCreate(
     );
 
 Map<String, dynamic> _$CardListToJson(CardList instance) => <String, dynamic>{
-      'not_found': instance.notFound,
-      'data': instance.data,
+      'not_found': instance.notFound.map((e) => e.toJson()).toList(),
+      'data': instance.data.map((e) => e.toJson()).toList(),
     };

@@ -5,4 +5,5 @@ targets:
         options:
           checked: true
           create_to_json: true
+          explicit_to_json: true
           field_rename: snake

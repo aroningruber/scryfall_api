@@ -82,7 +82,7 @@ Map<String, dynamic> _$CardFaceToJson(CardFace instance) => <String, dynamic>{
       'flavor_name': instance.flavorName,
       'flavor_text': instance.flavorText,
       'illustration_id': instance.illustrationId,
-      'image_uris': instance.imageUris,
+      'image_uris': instance.imageUris?.toJson(),
       'layout': _$LayoutEnumMap[instance.layout],
       'loyalty': instance.loyalty,
       'mana_cost': instance.manaCost,

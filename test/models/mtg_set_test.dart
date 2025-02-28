@@ -3,49 +3,54 @@ import 'package:test/test.dart';
 
 void main() {
   group('MtgSet', () {
+    final id = 'b314f553-8f07-4ba9-96c8-16be7784eff3';
+    final code = 'unf';
+    final tcgplayerId = 2958;
+    final name = 'Unfinity';
+    final uri =
+        'https://api.scryfall.com/sets/b314f553-8f07-4ba9-96c8-16be7784eff3';
+    final scryfallUri = 'https://scryfall.com/sets/unf';
+    final searchUri =
+        'https://api.scryfall.com/cards/search?order=set&q=e%3Aunf&unique=prints';
+    final releasedAt = '2022-04-01T00:00:00.000';
+    final setType = 'funny';
+    final cardCount = 26;
+    final digital = false;
+    final nonfoilOnly = false;
+    final foilOnly = false;
+    final iconSvgUri =
+        'https://c2.scryfall.com/file/scryfall-symbols/sets/unf.svg?1640581200';
+
+    late Map<String, dynamic> json;
+
+    setUp(
+      () => {
+        json = <String, dynamic>{
+          'id': id,
+          'code': code,
+          'tcgplayer_id': tcgplayerId,
+          'name': name,
+          'uri': uri,
+          'scryfall_uri': scryfallUri,
+          'search_uri': searchUri,
+          'released_at': releasedAt,
+          'set_type': setType,
+          'card_count': cardCount,
+          'digital': digital,
+          'nonfoil_only': nonfoilOnly,
+          'foil_only': foilOnly,
+          'icon_svg_uri': iconSvgUri,
+          'mtgo_code': null,
+          'arena_code': null,
+          'block_code': null,
+          'block': null,
+          'parent_set_code': null,
+          'printed_size': null,
+        }
+      },
+    );
+
     group('fromJson', () {
-      final id = 'b314f553-8f07-4ba9-96c8-16be7784eff3';
-      final code = 'unf';
-      final tcgplayerId = 2958;
-      final name = 'Unfinity';
-      final uri =
-          'https://api.scryfall.com/sets/b314f553-8f07-4ba9-96c8-16be7784eff3';
-      final scryfallUri = 'https://scryfall.com/sets/unf';
-      final searchUri =
-          'https://api.scryfall.com/cards/search?order=set&q=e%3Aunf&unique=prints';
-      final releasedAt = '2022-04-01';
-      final setType = 'funny';
-      final cardCount = 26;
-      final digital = false;
-      final nonfoilOnly = false;
-      final foilOnly = false;
-      final iconSvgUri =
-          'https://c2.scryfall.com/file/scryfall-symbols/sets/unf.svg?1640581200';
-
-      late Map<String, dynamic> json;
-
-      setUp(
-        () => {
-          json = <String, dynamic>{
-            'object': 'set',
-            'id': id,
-            'code': code,
-            'tcgplayer_id': tcgplayerId,
-            'name': name,
-            'uri': uri,
-            'scryfall_uri': scryfallUri,
-            'search_uri': searchUri,
-            'released_at': releasedAt,
-            'set_type': setType,
-            'card_count': cardCount,
-            'digital': digital,
-            'nonfoil_only': nonfoilOnly,
-            'foil_only': foilOnly,
-            'icon_svg_uri': iconSvgUri,
-          }
-        },
-      );
-
       test('returns SetType.unknown for unsupported set_type', () {
         json.update('set_type', (_) => 'UNKNOWN');
 
@@ -93,6 +98,15 @@ void main() {
                 'iconSvgUri',
                 Uri.parse(iconSvgUri),
               ),
+        );
+      });
+    });
+
+    group("toJson", () {
+      test("returns correct JSON", () {
+        expect(
+          MtgSet.fromJson(json).toJson(),
+          json,
         );
       });
     });
