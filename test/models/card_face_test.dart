@@ -7,18 +7,22 @@ void main() {
     final flavorName = 'The Three Weird Sisters';
     final flavorText = 'The Three Weird Sisters';
     final printedName = 'The Three Weird Sisters';
+    final printedText =
+        'Flying\nAt the beginning of combat on your turn, choose one that hasn\'t been chosen —\n• Each player sacrifices a creature.\n• You draw a card and you lose 1 life.\n• Transform Henrika Domnathi.';
     final manaCost = '{2}{B}{B}';
     final typeLine = 'Legendary Creature — Vampire';
     final oracleText =
         'Flying\nAt the beginning of combat on your turn, choose one that hasn\'t been chosen —\n• Each player sacrifices a creature.\n• You draw a card and you lose 1 life.\n• Transform Henrika Domnathi.';
+    final oracleId = '7ea5f6c8-7bf9-4a90-97c8-34aa0db567c9';
     final colorIndicatorStr = ['G', 'U'];
     final colorsStr = ['B'];
     final power = '1';
     final toughness = '3';
-    final double cmc = 4;
+    final cmc = 4.0;
     final defense = '3';
     final loyalty = '0';
-    final layout = Layout.transform;
+    final layout = Layout.transform.name;
+    final watermark = "Innistrad";
     final artist = 'Nils Hamm';
     final artistId = 'c540d1fc-1500-457f-93cf-d6069ee66546';
     final illustrationId = '7ea5f6c8-7bf9-4a90-97c8-34aa0db567c9';
@@ -41,6 +45,7 @@ void main() {
       'name': name,
       'flavor_name': flavorName,
       'printed_name': printedName,
+      'printed_text': printedText,
       'flavor_text': flavorText,
       'mana_cost': manaCost,
       'type_line': typeLine,
@@ -53,14 +58,12 @@ void main() {
       'artist_id': artistId,
       'illustration_id': illustrationId,
       'image_uris': imageUrisStr,
-      'cmc': 4,
-      'layout': 'transform',
-      'loyalty': '0',
-      'defense': '3',
-      'watermark': 'Innistrad',
-      'oracle_id': '7ea5f6c8-7bf9-4a90-97c8-34aa0db567c9',
-      'printed_text':
-          'Flying\nAt the beginning of combat on your turn, choose one that hasn\'t been chosen —\n• Each player sacrifices a creature.\n• You draw a card and you lose 1 life.\n• Transform Henrika Domnathi.',
+      'cmc': cmc,
+      'layout': layout,
+      'loyalty': loyalty,
+      'defense': defense,
+      'watermark': watermark,
+      'oracle_id': oracleId,
       'printed_type_line': 'Legendary Creature — Vampire',
     };
 
@@ -76,6 +79,13 @@ void main() {
               .having((c) => c.printedName, 'printedName', printedName)
               .having((c) => c.manaCost, 'manaCost', manaCost)
               .having((c) => c.oracleText, 'oracleText', oracleText)
+              .having((c) => c.cmc, 'cmc', cmc)
+              .having((c) => c.layout, 'layout', Layout.transform)
+              .having((c) => c.loyalty, 'loyalty', loyalty)
+              .having((c) => c.defense, 'defense', defense)
+              .having((c) => c.watermark, 'watermark', watermark)
+              .having((c) => c.oracleId, 'oracleId', oracleId)
+              .having((c) => c.printedText, 'printedText', printedText)
               .having(
                 (c) => c.colorIndicator,
                 'colorIndicator',
