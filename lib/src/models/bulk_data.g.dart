@@ -46,4 +46,5 @@ Map<String, dynamic> _$BulkDataToJson(BulkData instance) => <String, dynamic>{
       'size': instance.size,
       'content_type': instance.contentType,
       'content_encoding': instance.contentEncoding,
+      'object': instance.object,
     };

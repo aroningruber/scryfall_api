@@ -30,6 +30,7 @@ Map<String, dynamic> _$RelatedCardToJson(RelatedCard instance) =>
       'name': instance.name,
       'type_line': instance.typeLine,
       'uri': instance.uri.toString(),
+      'object': instance.object,
     };
 
 const _$ComponentEnumMap = {

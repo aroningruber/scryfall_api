@@ -48,6 +48,10 @@ class Migration {
   factory Migration.fromJson(Map<String, dynamic> json) =>
       _$MigrationFromJson(json);
 
+  /// Constant discriminator for object type.
+  @JsonKey(includeFromJson: false, includeToJson: true)
+  String get object => 'migration';
+
   /// Converts this [Migration] object to JSON.
   Map<String, dynamic> toJson() => _$MigrationToJson(this);
 }

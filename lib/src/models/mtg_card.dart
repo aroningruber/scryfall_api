@@ -464,6 +464,10 @@ class MtgCard {
   factory MtgCard.fromJson(Map<String, dynamic> json) =>
       _$MtgCardFromJson(json);
 
+  /// Constant discriminator for object type.
+  @JsonKey(includeFromJson: false, includeToJson: true)
+  String get object => 'card';
+
   /// Converts a [MtgCard] to JSON.
   Map<String, dynamic> toJson() => _$MtgCardToJson(this);
 }

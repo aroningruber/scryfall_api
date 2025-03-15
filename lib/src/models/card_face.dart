@@ -132,6 +132,10 @@ class CardFace {
   factory CardFace.fromJson(Map<String, dynamic> json) =>
       _$CardFaceFromJson(json);
 
+  /// Constant discriminator for object type.
+  @JsonKey(includeFromJson: false, includeToJson: true)
+  String get object => 'card_face';
+
   /// Converts this [CardFace] to JSON.
   Map<String, dynamic> toJson() => _$CardFaceToJson(this);
 }

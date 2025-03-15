@@ -33,6 +33,7 @@ Map<String, dynamic> _$ManaCostToJson(ManaCost instance) => <String, dynamic>{
       'colorless': instance.colorless,
       'monocolored': instance.monocolored,
       'multicolored': instance.multicolored,
+      'object': instance.object,
     };
 
 const _$ColorEnumMap = {

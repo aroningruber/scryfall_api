@@ -43,6 +43,7 @@ Map<String, dynamic> _$MigrationToJson(Migration instance) => <String, dynamic>{
       'old_scryfall_id': instance.oldScryfallId,
       'new_scryfall_id': instance.newScryfallId,
       'note': instance.note,
+      'object': instance.object,
     };
 
 const _$MigrationStrategyEnumMap = {

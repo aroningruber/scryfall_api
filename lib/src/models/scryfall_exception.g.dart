@@ -30,4 +30,5 @@ Map<String, dynamic> _$ScryfallExceptionToJson(ScryfallException instance) =>
       'details': instance.details,
       'type': instance.type,
       'warnings': instance.warnings,
+      'object': instance.object,
     };

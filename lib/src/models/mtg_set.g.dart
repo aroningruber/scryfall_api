@@ -83,6 +83,7 @@ Map<String, dynamic> _$MtgSetToJson(MtgSet instance) => <String, dynamic>{
       'uri': instance.uri.toString(),
       'icon_svg_uri': instance.iconSvgUri.toString(),
       'search_uri': instance.searchUri.toString(),
+      'object': instance.object,
     };
 
 const _$SetTypeEnumMap = {

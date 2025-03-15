@@ -44,4 +44,5 @@ Map<String, dynamic> _$PaginableListToJson<T>(
       'next_page': instance.nextPage?.toString(),
       'total_cards': instance.totalCards,
       'warnings': instance.warnings,
+      'object': instance.object,
     };

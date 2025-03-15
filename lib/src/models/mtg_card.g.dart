@@ -353,6 +353,7 @@ Map<String, dynamic> _$MtgCardToJson(MtgCard instance) => <String, dynamic>{
       'security_stamp': _$SecurityStampEnumMap[instance.securityStamp],
       'watermark': instance.watermark,
       'preview': instance.preview?.toJson(),
+      'object': instance.object,
     };
 
 const _$LanguageEnumMap = {

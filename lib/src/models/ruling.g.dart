@@ -33,6 +33,7 @@ Map<String, dynamic> _$RulingToJson(Ruling instance) => <String, dynamic>{
       'source': _$RulingSourceEnumMap[instance.source]!,
       'published_at': instance.publishedAt.toIso8601String(),
       'comment': instance.comment,
+      'object': instance.object,
     };
 
 const _$RulingSourceEnumMap = {

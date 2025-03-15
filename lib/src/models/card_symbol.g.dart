@@ -54,6 +54,7 @@ Map<String, dynamic> _$CardSymbolToJson(CardSymbol instance) =>
       'colors': instance.colors.map((e) => _$ColorEnumMap[e]!).toList(),
       'gatherer_alternates': instance.gathererAlternates,
       'svg_uri': instance.svgUri?.toString(),
+      'object': instance.object,
     };
 
 const _$ColorEnumMap = {

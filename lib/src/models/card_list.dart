@@ -30,6 +30,10 @@ class CardList {
   /// The number of objects in this list.
   int get length => data.length;
 
+  /// Constant discriminator for object type.
+  @JsonKey(includeFromJson: false, includeToJson: true)
+  String get object => 'list';
+
   /// Returns the [index] element.
   MtgCard operator [](int index) => data[index];
 }

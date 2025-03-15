@@ -96,6 +96,7 @@ Map<String, dynamic> _$CardFaceToJson(CardFace instance) => <String, dynamic>{
       'toughness': instance.toughness,
       'type_line': instance.typeLine,
       'watermark': instance.watermark,
+      'object': instance.object,
     };
 
 const _$ColorEnumMap = {

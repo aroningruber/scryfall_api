@@ -39,6 +39,10 @@ class Ruling {
   /// Constructs a [Ruling] from JSON.
   factory Ruling.fromJson(Map<String, dynamic> json) => _$RulingFromJson(json);
 
+  /// Constant discriminator for object type.
+  @JsonKey(includeFromJson: false, includeToJson: true)
+  String get object => 'ruling';
+
   /// Converts this [Ruling] to JSON.
   Map<String, dynamic> toJson() => _$RulingToJson(this);
 }
