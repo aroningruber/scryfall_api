@@ -1,3 +1,13 @@
+## 2.2.0
+
+### Added
+
+- Added `toJson` methods to all model classes for JSON serialization (thanks to [Ichicoro](https://github.com/Ichicoro))
+
+### Changed
+
+- Fixed typo of `tcgplayerEtchedId` (previously `tcgplyerEtchedId`) of `MtgCard` class. *A deprecated getter with the name `tcgplyerEtchedId` is kept for backward compatibility*.
+
 ## 2.1.0
 
 ### Added
