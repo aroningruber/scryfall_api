@@ -41,8 +41,8 @@ Map<String, dynamic> _$MigrationToJson(Migration instance) => <String, dynamic>{
       'migration_strategy':
           _$MigrationStrategyEnumMap[instance.migrationStrategy]!,
       'old_scryfall_id': instance.oldScryfallId,
-      'new_scryfall_id': instance.newScryfallId,
-      'note': instance.note,
+      if (instance.newScryfallId case final value?) 'new_scryfall_id': value,
+      if (instance.note case final value?) 'note': value,
       'object': instance.object,
     };
 

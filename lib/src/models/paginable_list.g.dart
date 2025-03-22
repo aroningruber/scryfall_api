@@ -41,8 +41,8 @@ Map<String, dynamic> _$PaginableListToJson<T>(
     <String, dynamic>{
       'data': instance.data.map(toJsonT).toList(),
       'has_more': instance.hasMore,
-      'next_page': instance.nextPage?.toString(),
-      'total_cards': instance.totalCards,
-      'warnings': instance.warnings,
+      if (instance.nextPage?.toString() case final value?) 'next_page': value,
+      if (instance.totalCards case final value?) 'total_cards': value,
+      if (instance.warnings case final value?) 'warnings': value,
       'object': instance.object,
     };

@@ -17,7 +17,6 @@ void main() {
       'status': status,
       'warnings': warnings,
       'details': details,
-      'type': null,
     };
     group('fromJson', () {
       test('returns correct ScryfallException', () {

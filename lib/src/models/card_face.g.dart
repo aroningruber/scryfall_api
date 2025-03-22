@@ -72,30 +72,34 @@ CardFace _$CardFaceFromJson(Map<String, dynamic> json) => $checkedCreate(
     );
 
 Map<String, dynamic> _$CardFaceToJson(CardFace instance) => <String, dynamic>{
-      'artist': instance.artist,
-      'artist_id': instance.artistId,
-      'cmc': instance.cmc,
-      'color_indicator':
-          instance.colorIndicator?.map((e) => _$ColorEnumMap[e]!).toList(),
-      'colors': instance.colors?.map((e) => _$ColorEnumMap[e]!).toList(),
-      'defense': instance.defense,
-      'flavor_name': instance.flavorName,
-      'flavor_text': instance.flavorText,
-      'illustration_id': instance.illustrationId,
-      'image_uris': instance.imageUris?.toJson(),
-      'layout': _$LayoutEnumMap[instance.layout],
-      'loyalty': instance.loyalty,
+      if (instance.artist case final value?) 'artist': value,
+      if (instance.artistId case final value?) 'artist_id': value,
+      if (instance.cmc case final value?) 'cmc': value,
+      if (instance.colorIndicator?.map((e) => _$ColorEnumMap[e]!).toList()
+          case final value?)
+        'color_indicator': value,
+      if (instance.colors?.map((e) => _$ColorEnumMap[e]!).toList()
+          case final value?)
+        'colors': value,
+      if (instance.defense case final value?) 'defense': value,
+      if (instance.flavorName case final value?) 'flavor_name': value,
+      if (instance.flavorText case final value?) 'flavor_text': value,
+      if (instance.illustrationId case final value?) 'illustration_id': value,
+      if (instance.imageUris?.toJson() case final value?) 'image_uris': value,
+      if (_$LayoutEnumMap[instance.layout] case final value?) 'layout': value,
+      if (instance.loyalty case final value?) 'loyalty': value,
       'mana_cost': instance.manaCost,
       'name': instance.name,
-      'oracle_id': instance.oracleId,
-      'oracle_text': instance.oracleText,
-      'power': instance.power,
-      'printed_name': instance.printedName,
-      'printed_text': instance.printedText,
-      'printed_type_line': instance.printedTypeLine,
-      'toughness': instance.toughness,
-      'type_line': instance.typeLine,
-      'watermark': instance.watermark,
+      if (instance.oracleId case final value?) 'oracle_id': value,
+      if (instance.oracleText case final value?) 'oracle_text': value,
+      if (instance.power case final value?) 'power': value,
+      if (instance.printedName case final value?) 'printed_name': value,
+      if (instance.printedText case final value?) 'printed_text': value,
+      if (instance.printedTypeLine case final value?)
+        'printed_type_line': value,
+      if (instance.toughness case final value?) 'toughness': value,
+      if (instance.typeLine case final value?) 'type_line': value,
+      if (instance.watermark case final value?) 'watermark': value,
       'object': instance.object,
     };
 

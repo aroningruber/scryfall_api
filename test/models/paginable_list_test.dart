@@ -10,9 +10,6 @@ void main() {
       'object': 'list',
       'data': data,
       'has_more': hasMore,
-      'next_page': null,
-      'total_cards': null,
-      'warnings': null
     };
     group('fromJson', () {
       test('returns correct PaginableList<int>', () {

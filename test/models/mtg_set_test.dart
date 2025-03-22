@@ -41,12 +41,6 @@ void main() {
           'nonfoil_only': nonfoilOnly,
           'foil_only': foilOnly,
           'icon_svg_uri': iconSvgUri,
-          'mtgo_code': null,
-          'arena_code': null,
-          'block_code': null,
-          'block': null,
-          'parent_set_code': null,
-          'printed_size': null,
         }
       },
     );
