@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import 'json_convert.dart';
 import 'models.dart';
 
 part 'mtg_set.g.dart';
@@ -42,6 +43,7 @@ class MtgSet {
 
   /// The date the set was released or the first card was printed
   /// in the set (in GMT-8 Pacific time).
+  @JsonKey(toJson: toDateString)
   final DateTime? releasedAt;
 
   /// The block code for this set, if any.
@@ -111,4 +113,11 @@ class MtgSet {
 
   /// Constructs a [MtgSet] from JSON.
   factory MtgSet.fromJson(Map<String, dynamic> json) => _$MtgSetFromJson(json);
+
+  /// Constant discriminator for object type.
+  @JsonKey(includeFromJson: false, includeToJson: true)
+  String get object => 'set';
+
+  /// Converts this [MtgSet] to JSON.
+  Map<String, dynamic> toJson() => _$MtgSetToJson(this);
 }

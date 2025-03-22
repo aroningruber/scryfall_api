@@ -263,6 +263,112 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
+Map<String, dynamic> _$MtgCardToJson(MtgCard instance) => <String, dynamic>{
+      if (instance.arenaId case final value?) 'arena_id': value,
+      'id': instance.id,
+      'lang': _$LanguageEnumMap[instance.lang]!,
+      if (instance.mtgoId case final value?) 'mtgo_id': value,
+      if (instance.mtgoFoilId case final value?) 'mtgo_foil_id': value,
+      if (instance.multiverseIds case final value?) 'multiverse_ids': value,
+      if (instance.tcgplayerId case final value?) 'tcgplayer_id': value,
+      if (instance.tcgplyerEtchedId case final value?)
+        'tcgplyer_etched_id': value,
+      if (instance.cardmarketId case final value?) 'cardmarket_id': value,
+      'oracle_id': instance.oracleId,
+      'prints_search_uri': instance.printsSearchUri.toString(),
+      'rulings_uri': instance.rulingsUri.toString(),
+      'scryfall_uri': instance.scryfallUri.toString(),
+      'uri': instance.uri.toString(),
+      if (instance.allParts?.map((e) => e.toJson()).toList() case final value?)
+        'all_parts': value,
+      if (instance.cardFaces?.map((e) => e.toJson()).toList() case final value?)
+        'card_faces': value,
+      'cmc': instance.cmc,
+      'color_identity':
+          instance.colorIdentity.map((e) => _$ColorEnumMap[e]!).toList(),
+      if (instance.colorIndicator?.map((e) => _$ColorEnumMap[e]!).toList()
+          case final value?)
+        'color_indicator': value,
+      if (instance.colors?.map((e) => _$ColorEnumMap[e]!).toList()
+          case final value?)
+        'colors': value,
+      if (instance.edhrecRank case final value?) 'edhrec_rank': value,
+      if (instance.handModifier case final value?) 'hand_modifier': value,
+      'keywords': instance.keywords,
+      'layout': _$LayoutEnumMap[instance.layout]!,
+      'legalities': instance.legalities.toJson(),
+      if (instance.lifeModifier case final value?) 'life_modifier': value,
+      if (instance.loyalty case final value?) 'loyalty': value,
+      if (instance.manaCost case final value?) 'mana_cost': value,
+      'name': instance.name,
+      if (instance.oracleText case final value?) 'oracle_text': value,
+      'oversized': instance.oversized,
+      if (instance.power case final value?) 'power': value,
+      if (instance.producedMana?.map((e) => _$ColorEnumMap[e]!).toList()
+          case final value?)
+        'produced_mana': value,
+      'reserved': instance.reserved,
+      if (instance.toughness case final value?) 'toughness': value,
+      'type_line': instance.typeLine,
+      if (instance.artist case final value?) 'artist': value,
+      if (instance.artistIds case final value?) 'artist_ids': value,
+      if (instance.attractionLights case final value?)
+        'attraction_lights': value,
+      'booster': instance.booster,
+      'border_color': _$BorderColorEnumMap[instance.borderColor]!,
+      if (instance.cardBackId case final value?) 'card_back_id': value,
+      'collector_number': instance.collectorNumber,
+      if (instance.contentWarning case final value?) 'content_warning': value,
+      'digital': instance.digital,
+      'foil': instance.foil,
+      'nonfoil': instance.nonfoil,
+      'finishes': instance.finishes.map((e) => _$FinishEnumMap[e]!).toList(),
+      if (instance.flavorName case final value?) 'flavor_name': value,
+      if (instance.flavorText case final value?) 'flavor_text': value,
+      if (instance.frameEffects?.map((e) => _$FrameEffectEnumMap[e]!).toList()
+          case final value?)
+        'frame_effects': value,
+      'frame': _$FrameEnumMap[instance.frame]!,
+      'full_art': instance.fullArt,
+      'games': instance.games.map((e) => _$GameEnumMap[e]!).toList(),
+      'highres_image': instance.highresImage,
+      if (instance.illustrationId case final value?) 'illustration_id': value,
+      'image_status': _$ImageStatusEnumMap[instance.imageStatus]!,
+      if (instance.imageUris?.toJson() case final value?) 'image_uris': value,
+      'prices': instance.prices.toJson(),
+      if (instance.printedName case final value?) 'printed_name': value,
+      if (instance.printedText case final value?) 'printed_text': value,
+      if (instance.printedTypeLine case final value?)
+        'printed_type_line': value,
+      'promo': instance.promo,
+      if (instance.promoType case final value?) 'promo_type': value,
+      if (instance.purchaseUris?.map((k, e) => MapEntry(k, e.toString()))
+          case final value?)
+        'purchase_uris': value,
+      'rarity': _$RarityEnumMap[instance.rarity]!,
+      'related_uris':
+          instance.relatedUris.map((k, e) => MapEntry(k, e.toString())),
+      if (toDateString(instance.releasedAt) case final value?)
+        'released_at': value,
+      'reprint': instance.reprint,
+      'scryfall_set_uri': instance.scryfallSetUri.toString(),
+      'set_name': instance.setName,
+      'set_search_uri': instance.setSearchUri.toString(),
+      'set_type': _$SetTypeEnumMap[instance.setType]!,
+      'set_uri': instance.setUri.toString(),
+      'set': instance.set,
+      'set_id': instance.setId,
+      'story_spotlight': instance.storySpotlight,
+      'textless': instance.textless,
+      'variation': instance.variation,
+      if (instance.variationOf case final value?) 'variation_of': value,
+      if (_$SecurityStampEnumMap[instance.securityStamp] case final value?)
+        'security_stamp': value,
+      if (instance.watermark case final value?) 'watermark': value,
+      if (instance.preview?.toJson() case final value?) 'preview': value,
+      'object': instance.object,
+    };
+
 const _$LanguageEnumMap = {
   Language.english: 'en',
   Language.spanish: 'es',

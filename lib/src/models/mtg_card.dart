@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import 'json_convert.dart';
 import 'models.dart';
 
 part 'mtg_card.g.dart';
@@ -322,6 +323,7 @@ class MtgCard {
   final Map<String, Uri> relatedUris;
 
   /// The date this card was first released.
+  @JsonKey(toJson: toDateString)
   final DateTime releasedAt;
 
   /// True if this card is a reprint.
@@ -463,4 +465,11 @@ class MtgCard {
   /// Constructs a [MtgCard] from JSON.
   factory MtgCard.fromJson(Map<String, dynamic> json) =>
       _$MtgCardFromJson(json);
+
+  /// Constant discriminator for object type.
+  @JsonKey(includeFromJson: false, includeToJson: true)
+  String get object => 'card';
+
+  /// Converts a [MtgCard] to JSON.
+  Map<String, dynamic> toJson() => _$MtgCardToJson(this);
 }

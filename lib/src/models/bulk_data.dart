@@ -54,4 +54,11 @@ class BulkData {
   /// Constructs a [BulkData] object from JSON.
   factory BulkData.fromJson(Map<String, dynamic> json) =>
       _$BulkDataFromJson(json);
+
+  /// Constant discriminator for object type.
+  @JsonKey(includeFromJson: false, includeToJson: true)
+  String get object => 'bulk_data';
+
+  /// Converts this [BulkData] object to JSON.
+  Map<String, dynamic> toJson() => _$BulkDataToJson(this);
 }

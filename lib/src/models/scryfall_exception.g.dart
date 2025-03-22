@@ -22,3 +22,13 @@ ScryfallException _$ScryfallExceptionFromJson(Map<String, dynamic> json) =>
         return val;
       },
     );
+
+Map<String, dynamic> _$ScryfallExceptionToJson(ScryfallException instance) =>
+    <String, dynamic>{
+      'status': instance.status,
+      'code': instance.code,
+      'details': instance.details,
+      if (instance.type case final value?) 'type': value,
+      if (instance.warnings case final value?) 'warnings': value,
+      'object': instance.object,
+    };

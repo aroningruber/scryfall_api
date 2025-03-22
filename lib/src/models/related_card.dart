@@ -52,4 +52,11 @@ class RelatedCard {
   /// Constructs a [RelatedCard] from JSON.
   factory RelatedCard.fromJson(Map<String, dynamic> json) =>
       _$RelatedCardFromJson(json);
+
+  /// Constant discriminator for object type.
+  @JsonKey(includeFromJson: false, includeToJson: true)
+  String get object => 'related_card';
+
+  /// Converts this [RelatedCard] to JSON.
+  Map<String, dynamic> toJson() => _$RelatedCardToJson(this);
 }

@@ -42,4 +42,11 @@ class ScryfallException implements Exception {
   /// Constructs a [ScryfallException] from JSON.
   factory ScryfallException.fromJson(Map<String, dynamic> json) =>
       _$ScryfallExceptionFromJson(json);
+
+  /// Constant discriminator for object type.
+  @JsonKey(includeFromJson: false, includeToJson: true)
+  String get object => 'error';
+
+  /// Converts this [ScryfallException] to JSON.
+  Map<String, dynamic> toJson() => _$ScryfallExceptionToJson(this);
 }

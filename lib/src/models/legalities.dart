@@ -124,4 +124,7 @@ class Legalities {
   /// Constructs a [Legalities] object from JSON.
   factory Legalities.fromJson(Map<String, dynamic> json) =>
       _$LegalitiesFromJson(json);
+
+  /// Converts this [Legalities] to JSON.
+  Map<String, dynamic> toJson() => _$LegalitiesToJson(this);
 }

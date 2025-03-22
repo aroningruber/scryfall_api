@@ -1,11 +1,14 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import 'json_convert.dart';
+
 part 'preview.g.dart';
 
 /// Information about the preview of a card.
 @JsonSerializable()
 class Preview {
   /// The date this card was previewed.
+  @JsonKey(toJson: toDateString)
   final DateTime? previewedAt;
 
   /// A link to the preview of this card.
@@ -24,4 +27,7 @@ class Preview {
   /// Constructs a [Preview] from JSON.
   factory Preview.fromJson(Map<String, dynamic> json) =>
       _$PreviewFromJson(json);
+
+  /// Converts this [Preview] to JSON.
+  Map<String, dynamic> toJson() => _$PreviewToJson(this);
 }

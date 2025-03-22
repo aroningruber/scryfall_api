@@ -41,6 +41,23 @@ CardSymbol _$CardSymbolFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
+Map<String, dynamic> _$CardSymbolToJson(CardSymbol instance) =>
+    <String, dynamic>{
+      'symbol': instance.symbol,
+      if (instance.looseVariant case final value?) 'loose_variant': value,
+      'english': instance.english,
+      'transposable': instance.transposable,
+      'represents_mana': instance.representsMana,
+      if (instance.cmc case final value?) 'cmc': value,
+      'appears_in_mana_costs': instance.appearsInManaCosts,
+      'funny': instance.funny,
+      'colors': instance.colors.map((e) => _$ColorEnumMap[e]!).toList(),
+      if (instance.gathererAlternates case final value?)
+        'gatherer_alternates': value,
+      if (instance.svgUri?.toString() case final value?) 'svg_uri': value,
+      'object': instance.object,
+    };
+
 const _$ColorEnumMap = {
   Color.white: 'W',
   Color.blue: 'U',

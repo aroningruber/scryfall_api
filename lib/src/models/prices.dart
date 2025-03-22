@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'prices.g.dart';
 
 /// The prices of a card in different currencies.
-@JsonSerializable()
+@JsonSerializable(includeIfNull: true)
 class Prices {
   /// The price of the non-foil card in dollar.
   final String? usd;
@@ -35,4 +35,7 @@ class Prices {
 
   /// Constructs a [Prices] object from JSON.
   factory Prices.fromJson(Map<String, dynamic> json) => _$PricesFromJson(json);
+
+  /// Converts this [Prices] object to JSON.
+  Map<String, dynamic> toJson() => _$PricesToJson(this);
 }

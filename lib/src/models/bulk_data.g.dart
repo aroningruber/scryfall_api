@@ -34,3 +34,17 @@ BulkData _$BulkDataFromJson(Map<String, dynamic> json) => $checkedCreate(
         'contentEncoding': 'content_encoding'
       },
     );
+
+Map<String, dynamic> _$BulkDataToJson(BulkData instance) => <String, dynamic>{
+      'id': instance.id,
+      'uri': instance.uri.toString(),
+      'type': instance.type,
+      'name': instance.name,
+      'description': instance.description,
+      'download_uri': instance.downloadUri.toString(),
+      'updated_at': instance.updatedAt.toIso8601String(),
+      'size': instance.size,
+      'content_type': instance.contentType,
+      'content_encoding': instance.contentEncoding,
+      'object': instance.object,
+    };

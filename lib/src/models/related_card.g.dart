@@ -23,6 +23,16 @@ RelatedCard _$RelatedCardFromJson(Map<String, dynamic> json) => $checkedCreate(
       fieldKeyMap: const {'typeLine': 'type_line'},
     );
 
+Map<String, dynamic> _$RelatedCardToJson(RelatedCard instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'component': _$ComponentEnumMap[instance.component]!,
+      'name': instance.name,
+      'type_line': instance.typeLine,
+      'uri': instance.uri.toString(),
+      'object': instance.object,
+    };
+
 const _$ComponentEnumMap = {
   Component.token: 'token',
   Component.meldPart: 'meld_part',

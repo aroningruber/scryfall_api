@@ -29,6 +29,13 @@ class Catalog {
   /// The number of elements in this [Catalog].
   int get length => data.length;
 
+  /// Constant discriminator for object type.
+  @JsonKey(includeFromJson: false, includeToJson: true)
+  String get object => 'catalog';
+
   /// Returns the [index] element.
   String operator [](int index) => data[index];
+
+  /// Converts this [Catalog] to JSON.
+  Map<String, dynamic> toJson() => _$CatalogToJson(this);
 }
