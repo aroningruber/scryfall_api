@@ -218,6 +218,8 @@ void main() {
     ];
     final producedManaStr = ['C', 'G'];
     final frameEffectsStr = ['legendary'];
+    final tgcPlayerEtchedId = 1;
+    final attractionLights = [1, 2];
 
     final json = <String, dynamic>{
       'object': 'card',
@@ -291,6 +293,8 @@ void main() {
       'printed_name': name,
       'printed_text': oracleText,
       'printed_type_line': typeLine,
+      'tcgplyer_etched_id': tgcPlayerEtchedId,
+      'attraction_lights': attractionLights,
     };
 
     group('fromJson', () {
@@ -419,7 +423,17 @@ void main() {
               .having((c) => c.allParts, 'allParts', isA<List<RelatedCard>>())
               .having((c) => c.cardFaces, 'cardFaces', isA<List<CardFace>>())
               .having((c) => c.producedMana, 'producedMana', producedMana)
-              .having((c) => c.frameEffects, 'frameEffects', frameEffects),
+              .having((c) => c.frameEffects, 'frameEffects', frameEffects)
+              .having(
+                (c) => c.tcgplyerEtchedId,
+                'tgcplayerEtchedId',
+                tgcPlayerEtchedId,
+              )
+              .having(
+                (c) => c.attractionLights,
+                'attractionLights',
+                attractionLights,
+              ),
         );
       });
     });
