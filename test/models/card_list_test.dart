@@ -5,20 +5,28 @@ import 'package:scryfall_api/scryfall_api.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('CardList', () async {
-    final file = File('test/mock_data/card_list_card.json');
-    final cardStr = jsonDecode(await file.readAsString());
-    final notFound = [
-      {'id': '42'},
-      {'set': 'afr', 'name': '42'},
-    ];
-    final data = [cardStr];
+  group('CardList', () {
+    late File file;
+    late dynamic cardStr;
+    late List<Map<String, String>> notFound;
+    late List<dynamic> data;
+    late Map<String, dynamic> json;
 
-    final json = <String, dynamic>{
-      'object': 'list',
-      'not_found': notFound,
-      'data': data,
-    };
+    setUp(() async {
+      file = File('test/mock_data/card_list_card.json');
+      cardStr = jsonDecode(await file.readAsString());
+      notFound = [
+        {'id': '42'},
+        {'set': 'afr', 'name': '42'},
+      ];
+      data = [cardStr];
+
+      json = <String, dynamic>{
+        'object': 'list',
+        'not_found': notFound,
+        'data': data,
+      };
+    });
     group('fromJson', () {
       test('returns correct CardList', () {
         expect(
