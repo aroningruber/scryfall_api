@@ -12,7 +12,7 @@ void main() {
     final scryfallUri = 'https://scryfall.com/sets/unf';
     final searchUri =
         'https://api.scryfall.com/cards/search?order=set&q=e%3Aunf&unique=prints';
-    final releasedAt = '2022-04-01T00:00:00.000';
+    final releasedAt = '2022-04-01';
     final setType = 'funny';
     final cardCount = 26;
     final digital = false;

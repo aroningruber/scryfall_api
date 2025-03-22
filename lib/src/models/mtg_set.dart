@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import 'json_convert.dart';
 import 'models.dart';
 
 part 'mtg_set.g.dart';
@@ -42,6 +43,7 @@ class MtgSet {
 
   /// The date the set was released or the first card was printed
   /// in the set (in GMT-8 Pacific time).
+  @JsonKey(toJson: toDateString)
   final DateTime? releasedAt;
 
   /// The block code for this set, if any.

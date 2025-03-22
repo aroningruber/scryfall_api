@@ -9,7 +9,7 @@ void main() {
     final mtgoId = 65801;
     final name = 'Huang Zhong, Shu General';
     final langStr = 'en';
-    final releasedAtStr = '2016-11-16T00:00:00.000';
+    final releasedAtStr = '2016-11-16';
     final uriStr =
         'https://api.scryfall.com/cards/1ebf9dea-b4f8-4955-9824-7da5bbba91e9';
     final scryfallUriStr =
@@ -134,7 +134,7 @@ void main() {
       'source': 'Sjow',
       'source_uri':
           'https://twitter.com/LiquidSjow/status/1211727247247388672?s=19',
-      'previewed_at': '2019-12-30T00:00:00.000',
+      'previewed_at': '2019-12-30',
     };
     final allParts = [
       {

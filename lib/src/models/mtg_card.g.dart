@@ -348,7 +348,8 @@ Map<String, dynamic> _$MtgCardToJson(MtgCard instance) => <String, dynamic>{
       'rarity': _$RarityEnumMap[instance.rarity]!,
       'related_uris':
           instance.relatedUris.map((k, e) => MapEntry(k, e.toString())),
-      'released_at': instance.releasedAt.toIso8601String(),
+      if (toDateString(instance.releasedAt) case final value?)
+        'released_at': value,
       'reprint': instance.reprint,
       'scryfall_set_uri': instance.scryfallSetUri.toString(),
       'set_name': instance.setName,

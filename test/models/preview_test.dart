@@ -6,7 +6,7 @@ void main() {
     final source = 'Wizards of the Coast';
     final sourceUriStr =
         'https://magic.wizards.com/en/articles/archive/card-preview/henrika-domnathi-2021-11-02';
-    final previewedAtStr = '2021-11-02T00:00:00.000';
+    final previewedAtStr = '2021-11-02';
 
     final json = <String, dynamic>{
       'source': source,

@@ -70,7 +70,7 @@ Map<String, dynamic> _$MtgSetToJson(MtgSet instance) => <String, dynamic>{
       if (instance.tcgplayerId case final value?) 'tcgplayer_id': value,
       'name': instance.name,
       'set_type': _$SetTypeEnumMap[instance.setType]!,
-      if (instance.releasedAt?.toIso8601String() case final value?)
+      if (toDateString(instance.releasedAt) case final value?)
         'released_at': value,
       if (instance.blockCode case final value?) 'block_code': value,
       if (instance.block case final value?) 'block': value,

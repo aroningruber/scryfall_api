@@ -26,7 +26,7 @@ Preview _$PreviewFromJson(Map<String, dynamic> json) => $checkedCreate(
     );
 
 Map<String, dynamic> _$PreviewToJson(Preview instance) => <String, dynamic>{
-      if (instance.previewedAt?.toIso8601String() case final value?)
+      if (toDateString(instance.previewedAt) case final value?)
         'previewed_at': value,
       if (instance.sourceUri?.toString() case final value?) 'source_uri': value,
       if (instance.source case final value?) 'source': value,
