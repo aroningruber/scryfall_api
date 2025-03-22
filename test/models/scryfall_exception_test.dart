@@ -12,6 +12,7 @@ void main() {
     final details = 'All of your terms were ignored.';
 
     final json = <String, dynamic>{
+      'object': 'error',
       'code': code,
       'status': status,
       'warnings': warnings,

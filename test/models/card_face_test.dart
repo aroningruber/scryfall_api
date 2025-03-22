@@ -42,6 +42,7 @@ void main() {
     };
 
     final json = <String, dynamic>{
+      'object': 'card_face',
       'name': name,
       'flavor_name': flavorName,
       'printed_name': printedName,

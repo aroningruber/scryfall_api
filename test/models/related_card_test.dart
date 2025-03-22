@@ -11,6 +11,7 @@ void main() {
         'https://api.scryfall.com/cards/b91e2431-500e-441a-881d-094ebef62283';
 
     final json = <String, dynamic>{
+      'object': 'related_card',
       'id': id,
       'component': componentStr,
       'name': name,

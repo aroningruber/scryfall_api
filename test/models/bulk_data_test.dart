@@ -18,6 +18,7 @@ void main() {
     final contentEncoding = 'gzip';
 
     final json = <String, dynamic>{
+      'object': 'bulk_data',
       'id': id,
       'type': type,
       'updated_at': updatedAtStr,

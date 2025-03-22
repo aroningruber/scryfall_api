@@ -13,6 +13,7 @@ void main() {
     final String note = 'Actually a reversible card';
 
     final json = <String, dynamic>{
+      'object': 'migration',
       'id': id,
       'uri': uri,
       'performed_at': performedAtStr,

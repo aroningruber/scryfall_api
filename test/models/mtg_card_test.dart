@@ -138,6 +138,7 @@ void main() {
     };
     final allParts = [
       {
+        'object': 'related_card',
         'id': '1ce91e38-4601-4354-ad1b-2c5c1c70da17',
         'component': 'combo_piece',
         'name': 'Ruthless Knave',
@@ -146,6 +147,7 @@ void main() {
             'https://api.scryfall.com/cards/1ce91e38-4601-4354-ad1b-2c5c1c70da17'
       },
       {
+        'object': 'related_card',
         'id': '720f3e68-84c0-462e-a0d1-90236ccc494a',
         'component': 'token',
         'name': 'Treasure',
@@ -156,6 +158,7 @@ void main() {
     ];
     final cardFaces = [
       {
+        'object': 'card_face',
         'name': 'Professor of Zoomancy',
         'mana_cost': '',
         'type_line': 'Card',
@@ -194,6 +197,7 @@ void main() {
         }
       },
       {
+        'object': 'card_face',
         'name': 'Professor of Zoomancy',
         'flavor_name': '',
         'mana_cost': '',
@@ -236,6 +240,7 @@ void main() {
     final frameEffectsStr = ['legendary'];
 
     final json = <String, dynamic>{
+      'object': 'card',
       'id': id,
       'oracle_id': oracleId,
       'multiverse_ids': multiverseIds,

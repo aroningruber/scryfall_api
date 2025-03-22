@@ -10,6 +10,7 @@ void main() {
         'You can activate Derevi’s last ability only when it is in the command zone.';
 
     final json = <String, dynamic>{
+      'object': 'ruling',
       'oracle_id': oracleId,
       'source': sourceStr,
       'published_at': publishedAtStr,

@@ -21,6 +21,7 @@ void main() {
     ];
 
     final json = <String, dynamic>{
+      'object': 'catalog',
       'uri': uriStr,
       'data': data,
     };

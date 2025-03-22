@@ -11,6 +11,7 @@ void main() {
     final multicolored = true;
 
     final json = <String, dynamic>{
+      'object': 'mana_cost',
       'cost': cost,
       'colors': colorsStr,
       'cmc': cmc,

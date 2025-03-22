@@ -26,6 +26,7 @@ void main() {
     setUp(
       () => {
         json = <String, dynamic>{
+          'object': 'set',
           'id': id,
           'code': code,
           'tcgplayer_id': tcgplayerId,

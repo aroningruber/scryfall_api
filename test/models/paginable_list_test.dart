@@ -7,6 +7,7 @@ void main() {
     final data = [1, 2, 3];
 
     final json = <String, dynamic>{
+      'object': 'list',
       'data': data,
       'has_more': hasMore,
       'next_page': null,

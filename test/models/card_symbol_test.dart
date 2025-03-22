@@ -17,6 +17,7 @@ void main() {
     final gathererAlternates = ['oW', 'ooW'];
 
     final json = <String, dynamic>{
+      'object': 'card_symbol',
       'symbol': symbol,
       'svg_uri': svgUriStr,
       'loose_variant': looseVariant,
