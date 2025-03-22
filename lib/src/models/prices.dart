@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'prices.g.dart';
 
 /// The prices of a card in different currencies.
-@JsonSerializable()
+@JsonSerializable(includeIfNull: true)
 class Prices {
   /// The price of the non-foil card in dollar.
   final String? usd;
