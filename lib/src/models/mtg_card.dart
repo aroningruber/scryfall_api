@@ -79,7 +79,7 @@ class MtgCard {
 
   /// This card’s ID on [TCGplayer’s API](https://docs.tcgplayer.com/docs),
   /// for its etched version if that version is a separate product.
-  final int? tcgplyerEtchedId;
+  final int? tcgplayerEtchedId;
 
   /// This card’s ID on Cardmarket’s API, also known as the `idProduct`.
   final int? cardmarketId;
@@ -384,7 +384,7 @@ class MtgCard {
     this.mtgoFoilId,
     this.multiverseIds,
     this.tcgplayerId,
-    this.tcgplyerEtchedId,
+    this.tcgplayerEtchedId,
     this.cardmarketId,
     required this.oracleId,
     required this.printsSearchUri,
@@ -469,6 +469,13 @@ class MtgCard {
   /// Constant discriminator for object type.
   @JsonKey(includeFromJson: false, includeToJson: true)
   String get object => 'card';
+
+  // coverage:ignore-start
+  @Deprecated(
+    'Use `tcgplayerEtchedId` instead. Will be removed with version 3.0',
+  )
+  int? get tcgplyerEtchedId => tcgplayerEtchedId;
+  // coverage:ignore-end
 
   /// Converts a [MtgCard] to JSON.
   Map<String, dynamic> toJson() => _$MtgCardToJson(this);

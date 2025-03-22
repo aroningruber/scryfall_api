@@ -425,7 +425,7 @@ void main() {
               .having((c) => c.producedMana, 'producedMana', producedMana)
               .having((c) => c.frameEffects, 'frameEffects', frameEffects)
               .having(
-                (c) => c.tcgplyerEtchedId,
+                (c) => c.tcgplayerEtchedId,
                 'tgcplayerEtchedId',
                 tgcPlayerEtchedId,
               )

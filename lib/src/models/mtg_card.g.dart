@@ -27,7 +27,7 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
                   .toList()),
           tcgplayerId:
               $checkedConvert('tcgplayer_id', (v) => (v as num?)?.toInt()),
-          tcgplyerEtchedId: $checkedConvert(
+          tcgplayerEtchedId: $checkedConvert(
               'tcgplyer_etched_id', (v) => (v as num?)?.toInt()),
           cardmarketId:
               $checkedConvert('cardmarket_id', (v) => (v as num?)?.toInt()),
@@ -271,7 +271,7 @@ Map<String, dynamic> _$MtgCardToJson(MtgCard instance) => <String, dynamic>{
       if (instance.mtgoFoilId case final value?) 'mtgo_foil_id': value,
       if (instance.multiverseIds case final value?) 'multiverse_ids': value,
       if (instance.tcgplayerId case final value?) 'tcgplayer_id': value,
-      if (instance.tcgplyerEtchedId case final value?)
+      if (instance.tcgplayerEtchedId case final value?)
         'tcgplyer_etched_id': value,
       if (instance.cardmarketId case final value?) 'cardmarket_id': value,
       'oracle_id': instance.oracleId,
