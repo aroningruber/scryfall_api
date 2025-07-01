@@ -293,7 +293,7 @@ void main() {
       'printed_name': name,
       'printed_text': oracleText,
       'printed_type_line': typeLine,
-      'tcgplyer_etched_id': tgcPlayerEtchedId,
+      'tcgplayer_etched_id': tgcPlayerEtchedId,
       'attraction_lights': attractionLights,
     };
 
