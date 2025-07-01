@@ -1,3 +1,9 @@
+## 2.3.0
+
+### Changed
+
+- Added default values to all attributes of `Legalities`.
+
 ## 2.2.0
 
 ### Added
