@@ -1,3 +1,9 @@
+## 2.4.0
+
+### Changed
+
+- Added Quenya to `Language` enum.
+
 ## 2.3.0
 
 ### Changed
