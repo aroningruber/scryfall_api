@@ -39,6 +39,8 @@ enum Language {
   sanskrit,
   @JsonValue('ph')
   phyrexian,
+  @JsonValue('qya')
+  quenya,
   unknown,
 }
 
