@@ -70,6 +70,7 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
                   .toList()),
           edhrecRank:
               $checkedConvert('edhrec_rank', (v) => (v as num?)?.toInt()),
+          gameChanger: $checkedConvert('game_changer', (v) => v as bool?),
           handModifier: $checkedConvert('hand_modifier', (v) => v as String?),
           keywords: $checkedConvert('keywords',
               (v) => (v as List<dynamic>).map((e) => e as String).toList()),
@@ -224,6 +225,7 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
         'colorIdentity': 'color_identity',
         'colorIndicator': 'color_indicator',
         'edhrecRank': 'edhrec_rank',
+        'gameChanger': 'game_changer',
         'handModifier': 'hand_modifier',
         'lifeModifier': 'life_modifier',
         'manaCost': 'mana_cost',
@@ -293,6 +295,7 @@ Map<String, dynamic> _$MtgCardToJson(MtgCard instance) => <String, dynamic>{
           case final value?)
         'colors': value,
       if (instance.edhrecRank case final value?) 'edhrec_rank': value,
+      if (instance.gameChanger case final value?) 'game_changer': value,
       if (instance.handModifier case final value?) 'hand_modifier': value,
       'keywords': instance.keywords,
       'layout': _$LayoutEnumMap[instance.layout]!,
