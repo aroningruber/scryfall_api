@@ -84,6 +84,7 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
           manaCost: $checkedConvert('mana_cost', (v) => v as String?),
           name: $checkedConvert('name', (v) => v as String),
           oracleText: $checkedConvert('oracle_text', (v) => v as String?),
+          pennyRank: $checkedConvert('penny_rank', (v) => (v as num?)?.toInt()),
           oversized: $checkedConvert('oversized', (v) => v as bool),
           power: $checkedConvert('power', (v) => v as String?),
           producedMana: $checkedConvert(
@@ -228,6 +229,7 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
         'lifeModifier': 'life_modifier',
         'manaCost': 'mana_cost',
         'oracleText': 'oracle_text',
+        'pennyRank': 'penny_rank',
         'producedMana': 'produced_mana',
         'typeLine': 'type_line',
         'artistIds': 'artist_ids',
@@ -302,6 +304,7 @@ Map<String, dynamic> _$MtgCardToJson(MtgCard instance) => <String, dynamic>{
       if (instance.manaCost case final value?) 'mana_cost': value,
       'name': instance.name,
       if (instance.oracleText case final value?) 'oracle_text': value,
+      if (instance.pennyRank case final value?) 'penny_rank': value,
       'oversized': instance.oversized,
       if (instance.power case final value?) 'power': value,
       if (instance.producedMana?.map((e) => _$ColorEnumMap[e]!).toList()
