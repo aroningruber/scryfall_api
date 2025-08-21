@@ -24,5 +24,6 @@ const _$LanguageEnumMap = {
   Language.arabic: 'ar',
   Language.sanskrit: 'sa',
   Language.phyrexian: 'ph',
+  Language.quenya: 'qya',
   Language.unknown: 'unknown',
 };
