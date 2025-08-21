@@ -185,6 +185,11 @@ class MtgCard {
   /// The Oracle text for this card, if any.
   final String? oracleText;
 
+  /// This card’s rank/popularity on Penny Dreadful.
+  ///
+  /// Not all cards are ranked.
+  final int? pennyRank;
+
   /// True if this card is oversized.
   final bool oversized;
 
@@ -411,6 +416,7 @@ class MtgCard {
     this.manaCost,
     required this.name,
     this.oracleText,
+    this.pennyRank,
     required this.oversized,
     this.power,
     this.producedMana,
