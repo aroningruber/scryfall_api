@@ -308,7 +308,7 @@ class MtgCard {
 
   /// An array of strings describing what categories of
   /// promo cards this card falls into.
-  final List<String>? promoType;
+  final List<String>? promoTypes;
 
   /// An object providing URIs to this card’s listing on
   /// major marketplaces.
@@ -440,7 +440,7 @@ class MtgCard {
     this.printedText,
     this.printedTypeLine,
     required this.promo,
-    this.promoType,
+    this.promoTypes,
     required this.purchaseUris,
     required this.rarity,
     required this.relatedUris,

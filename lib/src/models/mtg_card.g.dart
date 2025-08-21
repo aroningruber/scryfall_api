@@ -159,7 +159,7 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
           printedTypeLine:
               $checkedConvert('printed_type_line', (v) => v as String?),
           promo: $checkedConvert('promo', (v) => v as bool),
-          promoType: $checkedConvert('promo_type',
+          promoTypes: $checkedConvert('promo_types',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
           purchaseUris: $checkedConvert(
               'purchase_uris',
@@ -247,7 +247,7 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
         'printedName': 'printed_name',
         'printedText': 'printed_text',
         'printedTypeLine': 'printed_type_line',
-        'promoType': 'promo_type',
+        'promoTypes': 'promo_types',
         'purchaseUris': 'purchase_uris',
         'relatedUris': 'related_uris',
         'releasedAt': 'released_at',
@@ -341,7 +341,7 @@ Map<String, dynamic> _$MtgCardToJson(MtgCard instance) => <String, dynamic>{
       if (instance.printedTypeLine case final value?)
         'printed_type_line': value,
       'promo': instance.promo,
-      if (instance.promoType case final value?) 'promo_type': value,
+      if (instance.promoTypes case final value?) 'promo_types': value,
       if (instance.purchaseUris?.map((k, e) => MapEntry(k, e.toString()))
           case final value?)
         'purchase_uris': value,
@@ -387,6 +387,7 @@ const _$LanguageEnumMap = {
   Language.arabic: 'ar',
   Language.sanskrit: 'sa',
   Language.phyrexian: 'ph',
+  Language.quenya: 'qya',
   Language.unknown: 'unknown',
 };
 
