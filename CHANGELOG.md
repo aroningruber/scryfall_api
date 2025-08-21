@@ -1,3 +1,14 @@
+## 2.5.0
+
+### Added
+
+- Added `gameChanger` attribute to `MtgCard`.
+- Added `pennyRank` attribute to `MtgCard`.
+
+### Changed
+
+- Fixed typo of `promoTypes` (previously `promoType`) of `MtgCard` class (thanks to [natebot13](https://github.com/natebot13)). *A deprecated getter with the name `promoType` is kept for backward compatibility.*
+
 ## 2.4.0
 
 ### Changed
@@ -14,25 +25,25 @@
 
 ### Added
 
-- Added `toJson` methods to all model classes for JSON serialization (thanks to [Ichicoro](https://github.com/Ichicoro))
+- Added `toJson` methods to all model classes for JSON serialization (thanks to [Ichicoro](https://github.com/Ichicoro)).
 
 ### Changed
 
-- Fixed typo of `tcgplayerEtchedId` (previously `tcgplyerEtchedId`) of `MtgCard` class. *A deprecated getter with the name `tcgplyerEtchedId` is kept for backward compatibility*.
+- Fixed typo of `tcgplayerEtchedId` (previously `tcgplyerEtchedId`) of `MtgCard` class. *A deprecated getter with the name `tcgplyerEtchedId` is kept for backward compatibility.*
 
 ## 2.1.0
 
 ### Added
 
-- Added `defense` attribute to `CardFace`(thanks to [zmuranaka](https://github.com/zmuranaka)).
+- Added `defense` attribute to `CardFace` (thanks to [zmuranaka](https://github.com/zmuranaka)).
 - Added `shatteredglass`, `convertdfc`,`fandfc`, `upsidedowndfc` and `spree` to `FrameEffect` (thanks to [zmuranaka](https://github.com/zmuranaka)).
 - Added `case`, `mutate`, `prototype`, `battle` to `Layout` (thanks to [zmuranaka](https://github.com/zmuranaka)).
 - Added `attractionLights` attribute to `MtgCard` (thanks to [zmuranaka](https://github.com/zmuranaka)).
 - Added `circle` and `heart` to `SecurityStamp` (thanks to [zmuranaka](https://github.com/zmuranaka)).
-- Get super types (**GET** `/catalog/supertypes`) (thanks to [zmuranaka](https://github.com/zmuranaka))
-- Get card types (**GET** `/catalog/card-types`) (thanks to [zmuranaka](https://github.com/zmuranaka))
-- Get battle types (**GET** `/catalog/battle-types`) (thanks to [zmuranaka](https://github.com/zmuranaka))
-- Get flavor words (**GET** `/catalog/flavor-words`) (thanks to [zmuranaka](https://github.com/zmuranaka))
+- Get super types (**GET** `/catalog/supertypes`) (thanks to [zmuranaka](https://github.com/zmuranaka)).
+- Get card types (**GET** `/catalog/card-types`) (thanks to [zmuranaka](https://github.com/zmuranaka)).
+- Get battle types (**GET** `/catalog/battle-types`) (thanks to [zmuranaka](https://github.com/zmuranaka)).
+- Get flavor words (**GET** `/catalog/flavor-words`) (thanks to [zmuranaka](https://github.com/zmuranaka)).
 
 ## 2.0.0
 
@@ -59,14 +70,14 @@
 
 ### Added
 
-- Get card migrations (**GET** `/migrations`) (thanks to [PatrickWulfe](https://github.com/PatrickWulfe))
-- Get card migration by id (**GET** `/migrations/:id`) (thanks to [PatrickWulfe](https://github.com/PatrickWulfe))
+- Get card migrations (**GET** `/migrations`) (thanks to [PatrickWulfe](https://github.com/PatrickWulfe)).
+- Get card migration by id (**GET** `/migrations/:id`) (thanks to [PatrickWulfe](https://github.com/PatrickWulfe)).
 
 ## 1.1.1
 
 ### Changed
 
-- Renamed `compressedSize` of `BulkData` to `size` (thanks to [PatrickWulfe](https://github.com/PatrickWulfe)). *A deprecated getter with the name `compressedSize` is kept for backward compatibility*.
+- Renamed `compressedSize` of `BulkData` to `size` (thanks to [PatrickWulfe](https://github.com/PatrickWulfe)). *A deprecated getter with the name `compressedSize` is kept for backward compatibility.*
 
 ## 1.1.0
 
