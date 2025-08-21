@@ -485,6 +485,11 @@ class MtgCard {
     'Use `tcgplayerEtchedId` instead. Will be removed with version 3.0',
   )
   int? get tcgplyerEtchedId => tcgplayerEtchedId;
+
+  @Deprecated(
+    'Use `promoTypes` instead. Will be removed with version 3.0',
+  )
+  List<String>? get promoType => promoTypes;
   // coverage:ignore-end
 
   /// Converts a [MtgCard] to JSON.
