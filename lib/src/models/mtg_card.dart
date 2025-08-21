@@ -138,6 +138,9 @@ class MtgCard {
   /// Not all cards are ranked.
   final int? edhrecRank;
 
+  /// True if this card is on the [Commander Game Changer list](https://mtg.wiki/page/Commander_(format)/Game_Changers).
+  final bool? gameChanger;
+
   /// This card’s hand modifier, if it is Vanguard card.
   ///
   /// This value will contain a delta, such as `-1`.
@@ -398,6 +401,7 @@ class MtgCard {
     this.colorIndicator,
     this.colors,
     this.edhrecRank,
+    this.gameChanger,
     this.handModifier,
     required this.keywords,
     required this.layout,
