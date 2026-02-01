@@ -89,6 +89,7 @@ class MtgCard {
   /// This value is consistent across reprinted card editions,
   /// and unique among different cards with the same name (tokens,
   /// Unstable variants, etc).
+  @JsonKey(readValue: _readValueFromCardFaceIfReversibleCard)
   final String oracleId;
 
   /// A link to where you can begin paginating all re/prints for
@@ -114,6 +115,7 @@ class MtgCard {
 
   /// The card’s converted mana cost. Note that some funny cards
   /// have fractional mana costs.
+  @JsonKey(readValue: _readValueFromCardFaceIfReversibleCard)
   final double cmc;
 
   /// This card’s color identity.
@@ -211,6 +213,7 @@ class MtgCard {
   final String? toughness;
 
   /// The type line of this card.
+  @JsonKey(readValue: _readValueFromCardFaceIfReversibleCard)
   final String typeLine;
 
   /// The name of the illustrator of this card.
@@ -494,4 +497,23 @@ class MtgCard {
 
   /// Converts a [MtgCard] to JSON.
   Map<String, dynamic> toJson() => _$MtgCardToJson(this);
+}
+
+Object? _readValueFromCardFaceIfReversibleCard(Map json, String name) {
+  if (json.containsKey(name) ||
+      json['layout'] != _$LayoutEnumMap[Layout.reversibleCard]) {
+    return json[name];
+  }
+
+  final cardFaces = json['card_faces'];
+
+  if (cardFaces is! List) {
+    return null;
+  }
+
+  return cardFaces
+      .cast<Map>()
+      .map((cardFace) => cardFace[name])
+      .toSet()
+      .singleOrNull;
 }

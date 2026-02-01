@@ -31,7 +31,11 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
               'tcgplayer_etched_id', (v) => (v as num?)?.toInt()),
           cardmarketId:
               $checkedConvert('cardmarket_id', (v) => (v as num?)?.toInt()),
-          oracleId: $checkedConvert('oracle_id', (v) => v as String),
+          oracleId: $checkedConvert(
+            'oracle_id',
+            (v) => v as String,
+            readValue: _readValueFromCardFaceIfReversibleCard,
+          ),
           printsSearchUri: $checkedConvert(
               'prints_search_uri', (v) => Uri.parse(v as String)),
           rulingsUri:
@@ -49,7 +53,11 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => (v as List<dynamic>?)
                   ?.map((e) => CardFace.fromJson(e as Map<String, dynamic>))
                   .toList()),
-          cmc: $checkedConvert('cmc', (v) => (v as num).toDouble()),
+          cmc: $checkedConvert(
+            'cmc',
+            (v) => (v as num).toDouble(),
+            readValue: _readValueFromCardFaceIfReversibleCard,
+          ),
           colorIdentity: $checkedConvert(
               'color_identity',
               (v) => (v as List<dynamic>)
@@ -96,7 +104,11 @@ MtgCard _$MtgCardFromJson(Map<String, dynamic> json) => $checkedCreate(
                   .toList()),
           reserved: $checkedConvert('reserved', (v) => v as bool),
           toughness: $checkedConvert('toughness', (v) => v as String?),
-          typeLine: $checkedConvert('type_line', (v) => v as String),
+          typeLine: $checkedConvert(
+            'type_line',
+            (v) => v as String,
+            readValue: _readValueFromCardFaceIfReversibleCard,
+          ),
           artist: $checkedConvert('artist', (v) => v as String?),
           artistIds: $checkedConvert('artist_ids',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
