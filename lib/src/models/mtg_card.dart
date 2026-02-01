@@ -89,6 +89,7 @@ class MtgCard {
   /// This value is consistent across reprinted card editions,
   /// and unique among different cards with the same name (tokens,
   /// Unstable variants, etc).
+  @JsonKey(readValue: _readValueFromCardFaceIfReversibleCard)
   final String oracleId;
 
   /// A link to where you can begin paginating all re/prints for
@@ -114,6 +115,7 @@ class MtgCard {
 
   /// The card’s converted mana cost. Note that some funny cards
   /// have fractional mana costs.
+  @JsonKey(readValue: _readValueFromCardFaceIfReversibleCard)
   final double cmc;
 
   /// This card’s color identity.
@@ -211,6 +213,7 @@ class MtgCard {
   final String? toughness;
 
   /// The type line of this card.
+  @JsonKey(readValue: _readValueFromCardFaceIfReversibleCard)
   final String typeLine;
 
   /// The name of the illustrator of this card.
@@ -494,4 +497,32 @@ class MtgCard {
 
   /// Converts a [MtgCard] to JSON.
   Map<String, dynamic> toJson() => _$MtgCardToJson(this);
+}
+
+/// Returns a JSON value, falling back to card faces for reversible cards.
+///
+/// For `reversible_card` layouts, some attributes may be missing at the
+/// top level and only present on each card face. When this happens, the
+/// unique value shared by all card faces is returned.
+///
+/// If the value exists at the top level or the card is not reversible,
+/// the top-level value is returned. Returns `null` if no unique value
+/// can be determined.
+Object? _readValueFromCardFaceIfReversibleCard(Map json, String name) {
+  if (json.containsKey(name) ||
+      json['layout'] != _$LayoutEnumMap[Layout.reversibleCard]) {
+    return json[name];
+  }
+
+  final cardFaces = json['card_faces'];
+
+  if (cardFaces is! List) {
+    return null;
+  }
+
+  return cardFaces
+      .cast<Map>()
+      .map((cardFace) => cardFace[name])
+      .toSet()
+      .singleOrNull;
 }

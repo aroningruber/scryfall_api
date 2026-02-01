@@ -1,0 +1,157 @@
+{
+    "object": "card",
+    "id": "eb96c335-9ed3-4f7d-b07a-185ff4044976",
+    "multiverse_ids": [],
+    "mtgo_id": 146997,
+    "tcgplayer_id": 656712,
+    "name": "Steam Vents // Steam Vents",
+    "lang": "en",
+    "released_at": "2026-01-23",
+    "uri": "https://api.scryfall.com/cards/eb96c335-9ed3-4f7d-b07a-185ff4044976",
+    "scryfall_uri": "https://scryfall.com/card/ecl/348/steam-vents-steam-vents?utm_source=api",
+    "layout": "reversible_card",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "color_identity": [
+        "R",
+        "U"
+    ],
+    "keywords": [],
+    "produced_mana": [
+        "R",
+        "U"
+    ],
+    "card_faces": [
+        {
+            "object": "card_face",
+            "oracle_id": "17039058-822d-409f-938c-b727a366ba63",
+            "layout": "normal",
+            "name": "Steam Vents",
+            "mana_cost": "",
+            "cmc": 0.0,
+            "type_line": "Land — Island Mountain",
+            "oracle_text": "({T}: Add {U} or {R}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+            "colors": [],
+            "flavor_text": "\"Consider water and fire. Enemies at first, but they join to make relaxing steam.\"\n—Ashling",
+            "artist": "Raoul Vitale",
+            "artist_id": "c7c15d49-f84b-4d98-9a34-e80e8347b756",
+            "illustration_id": "2ca38482-8ea9-4037-90ea-f884aa43d9c5",
+            "image_uris": {
+                "small": "https://cards.scryfall.io/small/front/e/b/eb96c335-9ed3-4f7d-b07a-185ff4044976.jpg?1763522814",
+                "normal": "https://cards.scryfall.io/normal/front/e/b/eb96c335-9ed3-4f7d-b07a-185ff4044976.jpg?1763522814",
+                "large": "https://cards.scryfall.io/large/front/e/b/eb96c335-9ed3-4f7d-b07a-185ff4044976.jpg?1763522814",
+                "png": "https://cards.scryfall.io/png/front/e/b/eb96c335-9ed3-4f7d-b07a-185ff4044976.png?1763522814",
+                "art_crop": "https://cards.scryfall.io/art_crop/front/e/b/eb96c335-9ed3-4f7d-b07a-185ff4044976.jpg?1763522814",
+                "border_crop": "https://cards.scryfall.io/border_crop/front/e/b/eb96c335-9ed3-4f7d-b07a-185ff4044976.jpg?1763522814"
+            }
+        },
+        {
+            "object": "card_face",
+            "oracle_id": "17039058-822d-409f-938c-b727a366ba63",
+            "layout": "normal",
+            "name": "Steam Vents",
+            "mana_cost": "",
+            "cmc": 0.0,
+            "type_line": "Land — Island Mountain",
+            "oracle_text": "({T}: Add {U} or {R}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+            "colors": [],
+            "flavor_text": "\"Without strict control, fire melts ice, and the resulting water douses the fire.\"\n—Ashling",
+            "artist": "Raoul Vitale",
+            "artist_id": "c7c15d49-f84b-4d98-9a34-e80e8347b756",
+            "illustration_id": "407fdcf3-3809-4a50-afe6-a0fd58c444ab",
+            "image_uris": {
+                "small": "https://cards.scryfall.io/small/back/e/b/eb96c335-9ed3-4f7d-b07a-185ff4044976.jpg?1763522814",
+                "normal": "https://cards.scryfall.io/normal/back/e/b/eb96c335-9ed3-4f7d-b07a-185ff4044976.jpg?1763522814",
+                "large": "https://cards.scryfall.io/large/back/e/b/eb96c335-9ed3-4f7d-b07a-185ff4044976.jpg?1763522814",
+                "png": "https://cards.scryfall.io/png/back/e/b/eb96c335-9ed3-4f7d-b07a-185ff4044976.png?1763522814",
+                "art_crop": "https://cards.scryfall.io/art_crop/back/e/b/eb96c335-9ed3-4f7d-b07a-185ff4044976.jpg?1763522814",
+                "border_crop": "https://cards.scryfall.io/border_crop/back/e/b/eb96c335-9ed3-4f7d-b07a-185ff4044976.jpg?1763522814"
+            }
+        }
+    ],
+    "legalities": {
+        "standard": "legal",
+        "future": "legal",
+        "historic": "legal",
+        "timeless": "legal",
+        "gladiator": "legal",
+        "pioneer": "legal",
+        "modern": "legal",
+        "legacy": "legal",
+        "pauper": "not_legal",
+        "vintage": "legal",
+        "penny": "not_legal",
+        "commander": "legal",
+        "oathbreaker": "legal",
+        "standardbrawl": "legal",
+        "brawl": "legal",
+        "alchemy": "not_legal",
+        "paupercommander": "not_legal",
+        "duel": "legal",
+        "oldschool": "not_legal",
+        "premodern": "not_legal",
+        "predh": "legal"
+    },
+    "games": [
+        "paper",
+        "arena",
+        "mtgo"
+    ],
+    "reserved": false,
+    "game_changer": false,
+    "foil": true,
+    "nonfoil": true,
+    "finishes": [
+        "nonfoil",
+        "foil"
+    ],
+    "oversized": false,
+    "promo": false,
+    "reprint": true,
+    "variation": false,
+    "set_id": "5d293ad8-a749-4725-bd5c-c4e1db828bd0",
+    "set": "ecl",
+    "set_name": "Lorwyn Eclipsed",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/5d293ad8-a749-4725-bd5c-c4e1db828bd0",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aecl&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/ecl?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/eb96c335-9ed3-4f7d-b07a-185ff4044976/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A17039058-822d-409f-938c-b727a366ba63&unique=prints",
+    "collector_number": "348",
+    "digital": false,
+    "rarity": "rare",
+    "artist": "Raoul Vitale",
+    "artist_ids": [
+        "c7c15d49-f84b-4d98-9a34-e80e8347b756"
+    ],
+    "border_color": "borderless",
+    "frame": "2015",
+    "frame_effects": [
+        "inverted"
+    ],
+    "security_stamp": "oval",
+    "full_art": true,
+    "textless": false,
+    "booster": true,
+    "story_spotlight": false,
+    "edhrec_rank": 71,
+    "prices": {
+        "usd": "15.01",
+        "usd_foil": "26.92",
+        "usd_etched": null,
+        "eur": null,
+        "eur_foil": null,
+        "tix": "0.20"
+    },
+    "related_uris": {
+        "tcgplayer_infinite_articles": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Farticles&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Farticles%3FproductLineName%3Dmagic%26q%3DSteam%2BVents%2B%252F%252F%2BSteam%2BVents",
+        "tcgplayer_infinite_decks": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Fdecks&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Fdecks%3FproductLineName%3Dmagic%26q%3DSteam%2BVents%2B%252F%252F%2BSteam%2BVents",
+        "edhrec": "https://edhrec.com/route/?cc=Steam+Vents+%2F%2F+Steam+Vents"
+    },
+    "purchase_uris": {
+        "tcgplayer": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&u=https%3A%2F%2Fwww.tcgplayer.com%2Fproduct%2F656712%3Fpage%3D1",
+        "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Steam+Vents+%2F%2F+Steam+Vents&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+        "cardhoarder": "https://www.cardhoarder.com/cards/146997?affiliate_id=scryfall&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    }
+}
