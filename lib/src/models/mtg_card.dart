@@ -499,6 +499,15 @@ class MtgCard {
   Map<String, dynamic> toJson() => _$MtgCardToJson(this);
 }
 
+/// Returns a JSON value, falling back to card faces for reversible cards.
+///
+/// For `reversible_card` layouts, some attributes may be missing at the
+/// top level and only present on each card face. When this happens, the
+/// unique value shared by all card faces is returned.
+///
+/// If the value exists at the top level or the card is not reversible,
+/// the top-level value is returned. Returns `null` if no unique value
+/// can be determined.
 Object? _readValueFromCardFaceIfReversibleCard(Map json, String name) {
   if (json.containsKey(name) ||
       json['layout'] != _$LayoutEnumMap[Layout.reversibleCard]) {
