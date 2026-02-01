@@ -1,5 +1,7 @@
 ## 2.5.1
 
+### Changed
+
 - Cards with `layout == 'reversible_card'` do not expose `oracleId`, `cmc`, or `typeLine` at the top level; these fields are defined only on individual card faces. As the values are consistent across all faces, the top-level fields are now automatically populated from the corresponding card face values to preserve backward compatibility.
 
 ## 2.5.0
