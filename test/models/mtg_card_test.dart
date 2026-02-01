@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:scryfall_api/scryfall_api.dart';
 import 'package:test/test.dart';
 
@@ -445,6 +448,20 @@ void main() {
           json,
         );
       });
+    });
+  });
+
+  group('MtgCard without oracleId', () {
+    test('can be parsed', () async {
+      final file = File('test/mock_data/mtg_card_ecl_348.json');
+      final json =
+          jsonDecode(await file.readAsString()) as Map<String, dynamic>;
+
+      final card = MtgCard.fromJson(json);
+
+      expect(card.oracleId, '17039058-822d-409f-938c-b727a366ba63');
+      expect(card.cmc, 0);
+      expect(card.typeLine, 'Land — Island Mountain');
     });
   });
 }
