@@ -1,5 +1,9 @@
 targets:
   $default:
+    sources:
+      - $package$
+      - lib/**
+      - pubspec.yaml
     builders:
       json_serializable:
         options:
@@ -8,3 +12,6 @@ targets:
           explicit_to_json: true
           field_rename: snake
           include_if_null: false
+      pubspec_generator:
+        options:
+          output: lib/src/pubspec.yaml.g.dart

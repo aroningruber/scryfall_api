@@ -1,3 +1,9 @@
+## 2.5.2
+
+### Changed
+
+- Added `User-Agent` and `Accept` headers to all HTTP requests. It is possible to override the `User-Agent` header when creating a `ScryfallApiClient`.
+
 ## 2.5.1
 
 ### Changed
