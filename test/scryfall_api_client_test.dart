@@ -63,19 +63,22 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getAllSets();
         } catch (_) {}
         final uri = Uri.https('api.scryfall.com', '/sets');
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getAllSets(),
           throwsA(isA<ScryfallException>()),
@@ -89,7 +92,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getAllSets();
         expect(actual, isA<PaginableList>());
       });
@@ -107,19 +111,22 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getSetByCode(code);
         } catch (_) {}
         final uri = Uri.https('api.scryfall.com', '/sets/$code');
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getSetByCode(code),
           throwsA(isA<ScryfallException>()),
@@ -133,7 +140,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getSetByCode(code);
         expect(actual, isA<MtgSet>());
       });
@@ -151,7 +159,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getSetByTcgplayerId(id);
         } catch (_) {}
@@ -159,14 +168,16 @@ void main() {
           'api.scryfall.com',
           '/sets/tcgplayer/$id',
         );
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getSetByTcgplayerId(id),
           throwsA(isA<ScryfallException>()),
@@ -180,7 +191,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getSetByTcgplayerId(id);
         expect(actual, isA<MtgSet>());
       });
@@ -198,19 +210,22 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getSetById(id);
         } catch (_) {}
         final uri = Uri.https('api.scryfall.com', '/sets/$id');
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getSetById(id),
           throwsA(isA<ScryfallException>()),
@@ -224,7 +239,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getSetById(id);
         expect(actual, isA<MtgSet>());
       });
@@ -250,7 +266,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.searchCards(
             searchQuery,
@@ -273,14 +290,16 @@ void main() {
           'include_variations': includeVariations.toString(),
           'page': page.toString(),
         });
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.searchCards(
             searchQuery,
@@ -297,7 +316,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.searchCards(
           searchQuery,
           sortingOrder: sortingOrder,
@@ -323,7 +343,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByName(nameExact, set: set);
         } catch (_) {}
@@ -331,14 +352,16 @@ void main() {
           'exact': nameExact,
           'set': set,
         });
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByName(nameExact),
           throwsA(isA<ScryfallException>()),
@@ -352,7 +375,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getCardByName(
           nameFuzzy,
           searchType: SearchType.fuzzy,
@@ -378,7 +402,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(Uint8List(0));
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByNameAsImage(
             nameExact,
@@ -393,14 +418,16 @@ void main() {
           'set': set,
           'version': 'border_crop',
         });
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 reponse', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByNameAsImage(nameExact),
           throwsA(isA<ScryfallException>()),
@@ -413,7 +440,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(bytes);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getCardByNameAsImage(
           nameFuzzy,
           searchType: SearchType.fuzzy,
@@ -430,8 +458,12 @@ void main() {
       });
 
       test('gets an image from actual server', () async {
-        when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.get(invocation.positionalArguments[0]);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((invocation) async {
+          final response = await http.get(
+            invocation.positionalArguments[0],
+            headers: invocation.namedArguments[Symbol('headers')],
+          );
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -449,7 +481,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.autocompleteCardName(
             query,
@@ -460,14 +493,16 @@ void main() {
           'q': query,
           'include_extras': 'true',
         });
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(400);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.autocompleteCardName(query),
           throwsA(isA<ScryfallException>()),
@@ -481,7 +516,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.autocompleteCardName(query);
         expect(actual, isA<Catalog>());
       });
@@ -499,21 +535,24 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getRandomCard(query: query);
         } catch (_) {}
         final uri = Uri.https('api.scryfall.com', '/cards/random', {
           'q': query,
         });
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getRandomCard(query: query),
           throwsA(isA<ScryfallException>()),
@@ -527,7 +566,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getRandomCard(query: query);
         expect(actual, isA<MtgCard>());
       });
@@ -545,7 +585,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(Uint8List(0));
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getRandomCardAsImage(
             query: query,
@@ -559,14 +600,16 @@ void main() {
           'face': 'back',
           'version': 'art_crop',
         });
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getRandomCardAsImage(),
           throwsA(isA<ScryfallException>()),
@@ -579,7 +622,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(bytes);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getRandomCardAsImage();
         expect(actual, isA<Uint8List>().having((l) => l.length, 'length', 5));
       });
@@ -590,8 +634,12 @@ void main() {
       });
 
       test('gets an image from actual server', () async {
-        when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.get(invocation.positionalArguments[0]);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((invocation) async {
+          final response = await http.get(
+            invocation.positionalArguments[0],
+            headers: invocation.namedArguments[Symbol('headers')],
+          );
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -614,8 +662,13 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.post(any(), body: any(named: 'body')))
-            .thenAnswer((_) async => response);
+        when(
+          () => httpClient.post(
+            any(),
+            body: any(named: 'body'),
+            headers: any(named: 'headers'),
+          ),
+        ).thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardsByIdentifiers(identifiers);
         } catch (_) {}
@@ -627,9 +680,21 @@ void main() {
             {'set': set, 'collector_number': collectorNumber},
           ],
         });
-        final headers = {'Content-Type': 'application/json'};
-        verify(() => httpClient.post(uri, body: body, headers: headers))
-            .called(1);
+        final contentType = 'application/json';
+        verify(
+          () => httpClient.post(
+            uri,
+            body: body,
+            headers: any(
+              named: 'headers',
+              that: isA<Map>().having(
+                (h) => h['Content-Type'],
+                'Content-Type',
+                contentType,
+              ),
+            ),
+          ),
+        ).called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
@@ -688,7 +753,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardBySetCodeAndCollectorNumber(
             setCode,
@@ -700,14 +766,16 @@ void main() {
           'api.scryfall.com',
           '/cards/$setCode/$collectorNumber/ja',
         );
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardBySetCodeAndCollectorNumber(
             setCode,
@@ -725,7 +793,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual =
             await scryfallApiClient.getCardBySetCodeAndCollectorNumber(
           setCode,
@@ -752,7 +821,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(Uint8List(0));
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardBySetCodeAndCollectorNumberAsImage(
             setCode,
@@ -768,14 +838,16 @@ void main() {
           'face': 'back',
           'version': 'small',
         });
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardBySetCodeAndCollectorNumberAsImage(
             setCode,
@@ -791,7 +863,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(bytes);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual =
             await scryfallApiClient.getCardBySetCodeAndCollectorNumberAsImage(
           setCode,
@@ -810,8 +883,12 @@ void main() {
       });
 
       test('gets an image from actual server', () async {
-        when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.get(invocation.positionalArguments[0]);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((invocation) async {
+          final response = await http.get(
+            invocation.positionalArguments[0],
+            headers: invocation.namedArguments[Symbol('headers')],
+          );
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -829,7 +906,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByMultiverseId(multiverseId);
         } catch (_) {}
@@ -837,14 +915,16 @@ void main() {
           'api.scryfall.com',
           '/cards/multiverse/$multiverseId',
         );
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByMultiverseId(multiverseId),
           throwsA(isA<ScryfallException>()),
@@ -858,7 +938,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual =
             await scryfallApiClient.getCardByMultiverseId(multiverseId);
         expect(actual, isA<MtgCard>());
@@ -878,7 +959,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(Uint8List(0));
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByMultiverseIdAsImage(
             multiverseId,
@@ -891,14 +973,16 @@ void main() {
           'format': 'image',
           'version': 'normal',
         });
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByMultiverseIdAsImage(multiverseId),
           throwsA(isA<ScryfallException>()),
@@ -911,7 +995,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(bytes);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual =
             await scryfallApiClient.getCardByMultiverseIdAsImage(multiverseId);
         expect(actual, isA<Uint8List>().having((l) => l.length, 'length', 5));
@@ -924,8 +1009,12 @@ void main() {
       });
 
       test('gets an image from actual server', () async {
-        when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.get(invocation.positionalArguments[0]);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((invocation) async {
+          final response = await http.get(
+            invocation.positionalArguments[0],
+            headers: invocation.namedArguments[Symbol('headers')],
+          );
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -940,19 +1029,22 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByMtgoId(mtgoId);
         } catch (_) {}
         final uri = Uri.https('api.scryfall.com', '/cards/mtgo/$mtgoId');
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByMtgoId(mtgoId),
           throwsA(isA<ScryfallException>()),
@@ -966,7 +1058,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getCardByMtgoId(mtgoId);
         expect(actual, isA<MtgCard>());
       });
@@ -984,7 +1077,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(Uint8List(0));
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByMtgoIdAsImage(
             mtgoId,
@@ -997,14 +1091,16 @@ void main() {
           'face': 'back',
           'version': 'large',
         });
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByMtgoIdAsImage(mtgoId),
           throwsA(isA<ScryfallException>()),
@@ -1017,7 +1113,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(bytes);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getCardByMtgoIdAsImage(mtgoId);
         expect(actual, isA<Uint8List>().having((l) => l.length, 'length', 5));
       });
@@ -1029,8 +1126,12 @@ void main() {
       });
 
       test('gets an image from actual server', () async {
-        when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.get(invocation.positionalArguments[0]);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((invocation) async {
+          final response = await http.get(
+            invocation.positionalArguments[0],
+            headers: invocation.namedArguments[Symbol('headers')],
+          );
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -1045,19 +1146,22 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByArenaId(arenaId);
         } catch (_) {}
         final uri = Uri.https('api.scryfall.com', '/cards/arena/$arenaId');
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByArenaId(arenaId),
           throwsA(isA<ScryfallException>()),
@@ -1071,7 +1175,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getCardByArenaId(arenaId);
         expect(actual, isA<MtgCard>());
       });
@@ -1089,7 +1194,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(Uint8List(0));
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByArenaIdAsImage(
             arenaId,
@@ -1102,14 +1208,16 @@ void main() {
           'face': 'back',
           'version': 'large',
         });
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByArenaIdAsImage(arenaId),
           throwsA(isA<ScryfallException>()),
@@ -1122,7 +1230,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(bytes);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getCardByArenaIdAsImage(arenaId);
         expect(actual, isA<Uint8List>().having((l) => l.length, 'length', 5));
       });
@@ -1134,8 +1243,12 @@ void main() {
       });
 
       test('gets an image from actual server', () async {
-        when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.get(invocation.positionalArguments[0]);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((invocation) async {
+          final response = await http.get(
+            invocation.positionalArguments[0],
+            headers: invocation.namedArguments[Symbol('headers')],
+          );
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -1150,20 +1263,23 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByTcgplayerId(tcgplayerId);
         } catch (_) {}
         final uri =
             Uri.https('api.scryfall.com', '/cards/tcgplayer/$tcgplayerId');
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByTcgplayerId(tcgplayerId),
           throwsA(isA<ScryfallException>()),
@@ -1177,7 +1293,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual =
             await scryfallApiClient.getCardByTcgplayerId(tcgplayerId);
         expect(actual, isA<MtgCard>());
@@ -1197,7 +1314,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(Uint8List(0));
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByTcgplayerIdAsImage(
             tcgplayerId,
@@ -1211,14 +1329,16 @@ void main() {
           'face': 'back',
           'version': 'large',
         });
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByTcgplayerIdAsImage(tcgplayerId),
           throwsA(isA<ScryfallException>()),
@@ -1231,7 +1351,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(bytes);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual =
             await scryfallApiClient.getCardByTcgplayerIdAsImage(tcgplayerId);
         expect(actual, isA<Uint8List>().having((l) => l.length, 'length', 5));
@@ -1244,8 +1365,12 @@ void main() {
       });
 
       test('gets an image from actual server', () async {
-        when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.get(invocation.positionalArguments[0]);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((invocation) async {
+          final response = await http.get(
+            invocation.positionalArguments[0],
+            headers: invocation.namedArguments[Symbol('headers')],
+          );
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -1260,20 +1385,23 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByCardmarketId(cardmarketId);
         } catch (_) {}
         final uri =
             Uri.https('api.scryfall.com', '/cards/cardmarket/$cardmarketId');
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByCardmarketId(cardmarketId),
           throwsA(isA<ScryfallException>()),
@@ -1287,7 +1415,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual =
             await scryfallApiClient.getCardByCardmarketId(cardmarketId);
         expect(actual, isA<MtgCard>());
@@ -1307,7 +1436,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(Uint8List(0));
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByCardmarketIdAsImage(
             cardmarketId,
@@ -1321,14 +1451,16 @@ void main() {
           'face': 'back',
           'version': 'large',
         });
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByCardmarketIdAsImage(cardmarketId),
           throwsA(isA<ScryfallException>()),
@@ -1341,7 +1473,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(bytes);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual =
             await scryfallApiClient.getCardByCardmarketIdAsImage(cardmarketId);
         expect(actual, isA<Uint8List>().having((l) => l.length, 'length', 5));
@@ -1354,8 +1487,12 @@ void main() {
       });
 
       test('gets an image from actual server', () async {
-        when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.get(invocation.positionalArguments[0]);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((invocation) async {
+          final response = await http.get(
+            invocation.positionalArguments[0],
+            headers: invocation.namedArguments[Symbol('headers')],
+          );
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -1370,19 +1507,22 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardById(id);
         } catch (_) {}
         final uri = Uri.https('api.scryfall.com', '/cards/$id');
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardById(id),
           throwsA(isA<ScryfallException>()),
@@ -1396,7 +1536,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getCardById(id);
         expect(actual, isA<MtgCard>());
       });
@@ -1414,7 +1555,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(Uint8List(0));
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByIdAsImage(
             id,
@@ -1427,14 +1569,16 @@ void main() {
           'face': 'back',
           'version': 'large',
         });
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCardByIdAsImage(id),
           throwsA(isA<ScryfallException>()),
@@ -1447,7 +1591,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(bytes);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getCardByIdAsImage(id);
         expect(actual, isA<Uint8List>().having((l) => l.length, 'length', 5));
       });
@@ -1458,8 +1603,12 @@ void main() {
       });
 
       test('gets an image from actual server', () async {
-        when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.get(invocation.positionalArguments[0]);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((invocation) async {
+          final response = await http.get(
+            invocation.positionalArguments[0],
+            headers: invocation.namedArguments[Symbol('headers')],
+          );
           expect(response.headers['content-type'], contains('image'));
           return response;
         });
@@ -1474,7 +1623,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getRulingsByMultiverseId(multiverseId);
         } catch (_) {}
@@ -1482,14 +1632,16 @@ void main() {
           'api.scryfall.com',
           '/cards/multiverse/$multiverseId/rulings',
         );
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getRulingsByMultiverseId(multiverseId),
           throwsA(isA<ScryfallException>()),
@@ -1503,7 +1655,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual =
             await scryfallApiClient.getRulingsByMultiverseId(multiverseId);
         expect(actual, isA<PaginableList<Ruling>>());
@@ -1523,7 +1676,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getRulingsByMtgoId(mtgoId);
         } catch (_) {}
@@ -1531,14 +1685,16 @@ void main() {
           'api.scryfall.com',
           '/cards/mtgo/$mtgoId/rulings',
         );
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getRulingsByMtgoId(mtgoId),
           throwsA(isA<ScryfallException>()),
@@ -1552,7 +1708,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getRulingsByMtgoId(mtgoId);
         expect(actual, isA<PaginableList<Ruling>>());
       });
@@ -1570,7 +1727,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getRulingsByArenaId(arenaId);
         } catch (_) {}
@@ -1578,14 +1736,16 @@ void main() {
           'api.scryfall.com',
           '/cards/arena/$arenaId/rulings',
         );
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getRulingsByArenaId(arenaId),
           throwsA(isA<ScryfallException>()),
@@ -1599,7 +1759,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getRulingsByArenaId(arenaId);
         expect(actual, isA<PaginableList<Ruling>>());
       });
@@ -1618,7 +1779,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getRulingsBySetCodeAndCollectorNumber(
             setCode,
@@ -1629,14 +1791,16 @@ void main() {
           'api.scryfall.com',
           '/cards/$setCode/$collectorNumber/rulings',
         );
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getRulingsBySetCodeAndCollectorNumber(
             setCode,
@@ -1654,7 +1818,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual =
             await scryfallApiClient.getRulingsBySetCodeAndCollectorNumber(
           setCode,
@@ -1680,19 +1845,22 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getRulingsById(id);
         } catch (_) {}
         final uri = Uri.https('api.scryfall.com', '/cards/$id/rulings');
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getRulingsById(id),
           throwsA(isA<ScryfallException>()),
@@ -1706,7 +1874,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getRulingsById(id);
         expect(actual, isA<PaginableList<Ruling>>());
       });
@@ -1722,19 +1891,22 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getAllCardSymbols();
         } catch (_) {}
         final uri = Uri.https('api.scryfall.com', '/symbology');
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getAllCardSymbols(),
           throwsA(isA<ScryfallException>()),
@@ -1748,7 +1920,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getAllCardSymbols();
         expect(actual, isA<PaginableList<CardSymbol>>());
       });
@@ -1766,7 +1939,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.parseMana(manaCost);
         } catch (_) {}
@@ -1775,14 +1949,16 @@ void main() {
           '/symbology/parse-mana',
           {'cost': manaCost},
         );
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.parseMana(manaCost),
           throwsA(isA<ScryfallException>()),
@@ -1796,7 +1972,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.parseMana(manaCost);
         expect(actual, isA<ManaCost>());
       });
@@ -1816,12 +1993,14 @@ void main() {
           final response = MockResponse();
           when(() => response.statusCode).thenReturn(200);
           when(() => response.body).thenReturn('{}');
-          when(() => httpClient.get(any())).thenAnswer((_) async => response);
+          when(() => httpClient.get(any(), headers: any(named: 'headers')))
+              .thenAnswer((_) async => response);
           try {
             await scryfallApiClient.getCatalog(catalogType);
           } catch (_) {}
           final uri = Uri.https('api.scryfall.com', '/catalog/$expected');
-          verify(() => httpClient.get(uri)).called(1);
+          verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+              .called(1);
         }
 
         await testCategoryType(CatalogType.cardNames, 'card-names');
@@ -1853,7 +2032,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getCatalog(CatalogType.cardNames),
           throwsA(isA<ScryfallException>()),
@@ -1867,7 +2047,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual =
             await scryfallApiClient.getCatalog(CatalogType.landTypes);
         expect(actual, isA<Catalog>());
@@ -1885,7 +2066,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
       });
 
       Future<void> testCatalogConvenienceMethod(
@@ -1896,7 +2078,8 @@ void main() {
           await method();
         } catch (_) {}
         final uri = Uri.https('api.scryfall.com', '/catalog/$expected');
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       }
 
       test('getCardNames called getCatalog with correct argument', () async {
@@ -2051,19 +2234,22 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getBulkData();
         } catch (_) {}
         final uri = Uri.https('api.scryfall.com', '/bulk-data');
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getBulkData(),
           throwsA(isA<ScryfallException>()),
@@ -2077,7 +2263,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getBulkData();
         expect(actual, isA<PaginableList<BulkData>>());
       });
@@ -2095,19 +2282,22 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getBulkDataById(id);
         } catch (_) {}
         final uri = Uri.https('api.scryfall.com', '/bulk-data/$id');
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getBulkDataById(id),
           throwsA(isA<ScryfallException>()),
@@ -2121,7 +2311,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getBulkDataById(id);
         expect(actual, isA<BulkData>());
       });
@@ -2139,7 +2330,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(Uint8List(0));
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getBulkDataByIdAsFile(id);
         } catch (_) {}
@@ -2148,14 +2340,16 @@ void main() {
           '/bulk-data/$id',
           {'format': 'file'},
         );
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getBulkDataByIdAsFile(id),
           throwsA(isA<ScryfallException>()),
@@ -2168,14 +2362,19 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(bytes);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getBulkDataByIdAsFile(id);
         expect(actual, isA<Uint8List>().having((l) => l.length, 'length', 5));
       });
 
       test('gets valid response from actual server', () async {
-        when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.head(invocation.positionalArguments[0]);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((invocation) async {
+          final response = await http.head(
+            invocation.positionalArguments[0],
+            headers: invocation.namedArguments[Symbol('headers')],
+          );
           expect(response.statusCode, 200);
           return response;
         });
@@ -2192,12 +2391,14 @@ void main() {
           final response = MockResponse();
           when(() => response.statusCode).thenReturn(200);
           when(() => response.body).thenReturn('{}');
-          when(() => httpClient.get(any())).thenAnswer((_) async => response);
+          when(() => httpClient.get(any(), headers: any(named: 'headers')))
+              .thenAnswer((_) async => response);
           try {
             await scryfallApiClient.getBulkDataByType(bulkDataType);
           } catch (_) {}
           final uri = Uri.https('api.scryfall.com', '/bulk-data/$expected');
-          verify(() => httpClient.get(uri)).called(1);
+          verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+              .called(1);
         }
 
         await testBulkDataType(BulkDataType.oracleCards, 'oracle-cards');
@@ -2211,7 +2412,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getBulkDataByType(BulkDataType.allCards),
           throwsA(isA<ScryfallException>()),
@@ -2225,7 +2427,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual =
             await scryfallApiClient.getBulkDataByType(BulkDataType.oracleCards);
         expect(actual, isA<BulkData>());
@@ -2243,7 +2446,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(Uint8List(0));
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient
               .getBulkDataByTypeAsFile(BulkDataType.allCards);
@@ -2253,14 +2457,16 @@ void main() {
           '/bulk-data/all-cards',
           {'format': 'file'},
         );
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getBulkDataByTypeAsFile(BulkDataType.oracleCards),
           throwsA(isA<ScryfallException>()),
@@ -2273,15 +2479,20 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes).thenReturn(bytes);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient
             .getBulkDataByTypeAsFile(BulkDataType.uniqueArtwork);
         expect(actual, isA<Uint8List>().having((l) => l.length, 'length', 5));
       });
 
       test('gets valid response from actual server', () async {
-        when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final response = await http.head(invocation.positionalArguments[0]);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((invocation) async {
+          final response = await http.head(
+            invocation.positionalArguments[0],
+            headers: invocation.namedArguments[Symbol('headers')],
+          );
           expect(response.statusCode, 200);
           return response;
         });
@@ -2295,9 +2506,12 @@ void main() {
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes)
             .thenReturn(Uint8List.fromList(utf8.encode('[]')));
-        when(() => httpClient.get(any())).thenAnswer((invocation) async {
-          final responseHead =
-              await http.head(invocation.positionalArguments[0]);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((invocation) async {
+          final responseHead = await http.head(
+            invocation.positionalArguments[0],
+            headers: invocation.namedArguments[Symbol('headers')],
+          );
           expect(responseHead.statusCode, 200);
           return response;
         });
@@ -2350,19 +2564,22 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getMigrations();
         } catch (_) {}
         final uri = Uri.https('api.scryfall.com', '/migrations');
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getMigrations(),
           throwsA(isA<ScryfallException>()),
@@ -2376,7 +2593,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getMigrations();
         expect(actual, isA<PaginableList<Migration>>());
       });
@@ -2394,19 +2612,22 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn('{}');
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getMigration(id);
         } catch (_) {}
         final uri = Uri.https('api.scryfall.com', '/migrations/$id');
-        verify(() => httpClient.get(uri)).called(1);
+        verify(() => httpClient.get(uri, headers: any(named: 'headers')))
+            .called(1);
       });
 
       test('throws ScryfallException on non-200 response', () async {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(404);
         when(() => response.body).thenReturn(jsonError);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         await expectLater(
           scryfallApiClient.getMigration(id),
           throwsA(isA<ScryfallException>()),
@@ -2420,7 +2641,8 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.body).thenReturn(json);
-        when(() => httpClient.get(any())).thenAnswer((_) async => response);
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((_) async => response);
         final actual = await scryfallApiClient.getMigration(id);
         expect(actual, isA<Migration>());
       });
