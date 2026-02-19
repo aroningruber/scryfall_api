@@ -164,7 +164,8 @@ sealed class Pubspec {
   /// Think of the description as the sales pitch for your package.
   /// Users see it when they [browse for packages](https://pub.dev/packages).
   /// The description is plain text: no markdown or HTML.
-  static const String description = r'A wrapper of the Scryfall API for the Dart programming language.';
+  static const String description =
+      r'A wrapper of the Scryfall API for the Dart programming language.';
 
   /// Homepage
   ///
@@ -176,7 +177,8 @@ sealed class Pubspec {
   /// While providing a homepage is optional,
   /// please provide it or repository (or both).
   /// It helps users understand where your package is coming from.
-  static const String homepage = r'https://github.com/aroningruber/scryfall_api';
+  static const String homepage =
+      r'https://github.com/aroningruber/scryfall_api';
 
   /// Repository
   ///
@@ -474,5 +476,4 @@ sealed class Pubspec {
     'dev_dependencies': devDependencies,
     'dependency_overrides': dependencyOverrides,
   };
-
 }
