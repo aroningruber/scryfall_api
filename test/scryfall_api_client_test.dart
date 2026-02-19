@@ -3,8 +3,10 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:http/http.dart' as http;
+import 'package:json_annotation/json_annotation.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:scryfall_api/scryfall_api.dart';
+import 'package:scryfall_api/src/pubspec.yaml.g.dart';
 import 'package:test/test.dart';
 
 class MockHttpClient extends Mock implements http.Client {}
@@ -44,6 +46,32 @@ void main() {
     group('constructor', () {
       test('does not require an httpClient', () {
         expect(ScryfallApiClient(), isNotNull);
+      });
+
+      test('sets correct User-Agent header', () async {
+        final code = 'mmq';
+        final userAgent = 'ScryfallApiClientTest/${Pubspec.version.canonical}';
+        final scryfallApiClient = ScryfallApiClient(
+          httpClient: httpClient,
+          userAgent: userAgent,
+        );
+
+        final response = MockResponse();
+        when(() => response.statusCode).thenReturn(200);
+        when(() => response.body).thenReturn('{}');
+        when(() => httpClient.get(any(), headers: any(named: 'headers')))
+            .thenAnswer((invocation) async {
+          final headers = invocation.namedArguments[Symbol('headers')];
+          expect(headers, contains('User-Agent'));
+          expect(headers['User-Agent'], userAgent);
+          return response;
+        });
+
+        try {
+          await scryfallApiClient.getSetByCode(code);
+        } on CheckedFromJsonException {
+          // ignore
+        }
       });
     });
 
