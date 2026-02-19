@@ -95,7 +95,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getAllSets();
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/sets');
         verify(() => httpClient.get(uri, headers: any(named: 'headers')))
             .called(1);
@@ -143,7 +145,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getSetByCode(code);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/sets/$code');
         verify(() => httpClient.get(uri, headers: any(named: 'headers')))
             .called(1);
@@ -191,7 +195,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getSetByTcgplayerId(id);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https(
           'api.scryfall.com',
           '/sets/tcgplayer/$id',
@@ -242,7 +248,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getSetById(id);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/sets/$id');
         verify(() => httpClient.get(uri, headers: any(named: 'headers')))
             .called(1);
@@ -307,7 +315,9 @@ void main() {
             includeVariations: includeVariations,
             page: page,
           );
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/cards/search', {
           'q': searchQuery,
           'unique': rollupMode.name,
@@ -375,7 +385,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByName(nameExact, set: set);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/cards/named', {
           'exact': nameExact,
           'set': set,
@@ -439,7 +451,9 @@ void main() {
             backFace: false,
             imageVersion: ImageVersion.borderCrop,
           );
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/cards/named', {
           'format': 'image',
           'exact': nameExact,
@@ -516,7 +530,9 @@ void main() {
             query,
             includeExtras: true,
           );
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/cards/autocomplete', {
           'q': query,
           'include_extras': 'true',
@@ -567,7 +583,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getRandomCard(query: query);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/cards/random', {
           'q': query,
         });
@@ -621,7 +639,9 @@ void main() {
             backFace: true,
             imageVersion: ImageVersion.artCrop,
           );
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/cards/random', {
           'format': 'image',
           'q': query,
@@ -699,7 +719,9 @@ void main() {
         ).thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardsByIdentifiers(identifiers);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/cards/collection');
         final body = jsonEncode({
           'identifiers': [
@@ -789,7 +811,9 @@ void main() {
             collectorNumber,
             language: Language.japanese,
           );
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https(
           'api.scryfall.com',
           '/cards/$setCode/$collectorNumber/ja',
@@ -859,7 +883,9 @@ void main() {
             backFace: true,
             imageVersion: ImageVersion.small,
           );
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https(
             'api.scryfall.com', '/cards/$setCode/$collectorNumber/ru', {
           'format': 'image',
@@ -938,7 +964,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByMultiverseId(multiverseId);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https(
           'api.scryfall.com',
           '/cards/multiverse/$multiverseId',
@@ -995,7 +1023,9 @@ void main() {
             backFace: false,
             imageVersion: ImageVersion.normal,
           );
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri =
             Uri.https('api.scryfall.com', '/cards/multiverse/$multiverseId', {
           'format': 'image',
@@ -1061,7 +1091,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByMtgoId(mtgoId);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/cards/mtgo/$mtgoId');
         verify(() => httpClient.get(uri, headers: any(named: 'headers')))
             .called(1);
@@ -1113,7 +1145,9 @@ void main() {
             backFace: true,
             imageVersion: ImageVersion.large,
           );
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/cards/mtgo/$mtgoId', {
           'format': 'image',
           'face': 'back',
@@ -1178,7 +1212,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByArenaId(arenaId);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/cards/arena/$arenaId');
         verify(() => httpClient.get(uri, headers: any(named: 'headers')))
             .called(1);
@@ -1230,7 +1266,9 @@ void main() {
             backFace: true,
             imageVersion: ImageVersion.large,
           );
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/cards/arena/$arenaId', {
           'format': 'image',
           'face': 'back',
@@ -1295,7 +1333,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByTcgplayerId(tcgplayerId);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri =
             Uri.https('api.scryfall.com', '/cards/tcgplayer/$tcgplayerId');
         verify(() => httpClient.get(uri, headers: any(named: 'headers')))
@@ -1350,7 +1390,9 @@ void main() {
             backFace: true,
             imageVersion: ImageVersion.large,
           );
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri =
             Uri.https('api.scryfall.com', '/cards/tcgplayer/$tcgplayerId', {
           'format': 'image',
@@ -1417,7 +1459,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardByCardmarketId(cardmarketId);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri =
             Uri.https('api.scryfall.com', '/cards/cardmarket/$cardmarketId');
         verify(() => httpClient.get(uri, headers: any(named: 'headers')))
@@ -1472,7 +1516,9 @@ void main() {
             backFace: true,
             imageVersion: ImageVersion.large,
           );
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri =
             Uri.https('api.scryfall.com', '/cards/cardmarket/$cardmarketId', {
           'format': 'image',
@@ -1539,7 +1585,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getCardById(id);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/cards/$id');
         verify(() => httpClient.get(uri, headers: any(named: 'headers')))
             .called(1);
@@ -1591,7 +1639,9 @@ void main() {
             backFace: true,
             imageVersion: ImageVersion.large,
           );
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/cards/$id', {
           'format': 'image',
           'face': 'back',
@@ -1655,7 +1705,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getRulingsByMultiverseId(multiverseId);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https(
           'api.scryfall.com',
           '/cards/multiverse/$multiverseId/rulings',
@@ -1708,7 +1760,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getRulingsByMtgoId(mtgoId);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https(
           'api.scryfall.com',
           '/cards/mtgo/$mtgoId/rulings',
@@ -1759,7 +1813,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getRulingsByArenaId(arenaId);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https(
           'api.scryfall.com',
           '/cards/arena/$arenaId/rulings',
@@ -1814,7 +1870,9 @@ void main() {
             setCode,
             collectorNumber,
           );
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https(
           'api.scryfall.com',
           '/cards/$setCode/$collectorNumber/rulings',
@@ -1877,7 +1935,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getRulingsById(id);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/cards/$id/rulings');
         verify(() => httpClient.get(uri, headers: any(named: 'headers')))
             .called(1);
@@ -1923,7 +1983,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getAllCardSymbols();
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/symbology');
         verify(() => httpClient.get(uri, headers: any(named: 'headers')))
             .called(1);
@@ -1971,7 +2033,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.parseMana(manaCost);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https(
           'api.scryfall.com',
           '/symbology/parse-mana',
@@ -2025,7 +2089,9 @@ void main() {
               .thenAnswer((_) async => response);
           try {
             await scryfallApiClient.getCatalog(catalogType);
-          } catch (_) {}
+          } on CheckedFromJsonException {
+            // ignore
+          }
           final uri = Uri.https('api.scryfall.com', '/catalog/$expected');
           verify(() => httpClient.get(uri, headers: any(named: 'headers')))
               .called(1);
@@ -2104,7 +2170,9 @@ void main() {
       ) async {
         try {
           await method();
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/catalog/$expected');
         verify(() => httpClient.get(uri, headers: any(named: 'headers')))
             .called(1);
@@ -2266,7 +2334,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getBulkData();
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/bulk-data');
         verify(() => httpClient.get(uri, headers: any(named: 'headers')))
             .called(1);
@@ -2314,7 +2384,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getBulkDataById(id);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/bulk-data/$id');
         verify(() => httpClient.get(uri, headers: any(named: 'headers')))
             .called(1);
@@ -2362,7 +2434,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getBulkDataByIdAsFile(id);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https(
           'api.scryfall.com',
           '/bulk-data/$id',
@@ -2423,7 +2497,9 @@ void main() {
               .thenAnswer((_) async => response);
           try {
             await scryfallApiClient.getBulkDataByType(bulkDataType);
-          } catch (_) {}
+          } on CheckedFromJsonException {
+            // ignore
+          }
           final uri = Uri.https('api.scryfall.com', '/bulk-data/$expected');
           verify(() => httpClient.get(uri, headers: any(named: 'headers')))
               .called(1);
@@ -2479,7 +2555,9 @@ void main() {
         try {
           await scryfallApiClient
               .getBulkDataByTypeAsFile(BulkDataType.allCards);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https(
           'api.scryfall.com',
           '/bulk-data/all-cards',
@@ -2596,7 +2674,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getMigrations();
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/migrations');
         verify(() => httpClient.get(uri, headers: any(named: 'headers')))
             .called(1);
@@ -2644,7 +2724,9 @@ void main() {
             .thenAnswer((_) async => response);
         try {
           await scryfallApiClient.getMigration(id);
-        } catch (_) {}
+        } on CheckedFromJsonException {
+          // ignore
+        }
         final uri = Uri.https('api.scryfall.com', '/migrations/$id');
         verify(() => httpClient.get(uri, headers: any(named: 'headers')))
             .called(1);
