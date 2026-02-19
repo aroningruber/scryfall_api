@@ -3,6 +3,7 @@ import 'dart:typed_data';
 
 import 'package:http/http.dart' as http;
 import 'package:scryfall_api/scryfall_api.dart';
+import 'package:scryfall_api/src/pubspec.yaml.g.dart';
 
 /// {@template scryfall_api_client}
 /// Dart API Client that wraps the [Scryfall API](https://scryfall.com/).
@@ -11,10 +12,16 @@ class ScryfallApiClient {
   static const _baseUrl = 'api.scryfall.com';
 
   final http.Client _httpClient;
+  final Map<String, String> _headers;
 
   /// {@macro scryfall_api_client}
-  ScryfallApiClient({http.Client? httpClient})
-      : _httpClient = httpClient ?? http.Client();
+  ScryfallApiClient({http.Client? httpClient, String? userAgent})
+      : _httpClient = httpClient ?? http.Client(),
+        _headers = {
+          'User-Agent':
+              userAgent ?? 'ScryfallApiClient/${Pubspec.version.canonical}',
+          'Accept': '*/*',
+        };
 
   /// Closes the connection to the Scryfall server.
   ///
@@ -38,7 +45,7 @@ class ScryfallApiClient {
   /// Returns a [PaginableList] of all [MtgSet]s on Scryfall.
   Future<PaginableList<MtgSet>> getAllSets() async {
     final url = Uri.https(_baseUrl, '/sets');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -59,7 +66,7 @@ class ScryfallApiClient {
   /// for the set.
   Future<MtgSet> getSetByCode(String code) async {
     final url = Uri.https(_baseUrl, '/sets/$code');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -77,7 +84,7 @@ class ScryfallApiClient {
   /// [TCGPlayer's API](https://docs.tcgplayer.com/docs).
   Future<MtgSet> getSetByTcgplayerId(int tcgplayerId) async {
     final url = Uri.https(_baseUrl, '/sets/tcgplayer/$tcgplayerId');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -93,7 +100,7 @@ class ScryfallApiClient {
   /// Returns a [MtgSet] with the given [id].
   Future<MtgSet> getSetById(String id) async {
     final url = Uri.https(_baseUrl, '/sets/$id');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -170,7 +177,7 @@ class ScryfallApiClient {
         'page': page?.toString(),
       }..removeWhere((_, value) => value == null),
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -213,7 +220,7 @@ class ScryfallApiClient {
         'set': set,
       }..removeWhere((_, value) => value == null),
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -270,7 +277,7 @@ class ScryfallApiClient {
         'version': imageVersion?.json,
       }..removeWhere((_, value) => value == null),
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     if (response.statusCode != 200) {
       final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -315,7 +322,7 @@ class ScryfallApiClient {
         'include_extras': includeExtras?.toString(),
       }..removeWhere((_, value) => value == null),
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -343,7 +350,7 @@ class ScryfallApiClient {
         'q': query,
       }..removeWhere((_, value) => value == null),
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -382,7 +389,7 @@ class ScryfallApiClient {
         'version': imageVersion?.json,
       }..removeWhere((_, value) => value == null),
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     if (response.statusCode != 200) {
       final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -407,7 +414,7 @@ class ScryfallApiClient {
     final body = jsonEncode({
       'identifiers': identifiers.map((i) => i.toJson()).toList(),
     });
-    final response = await _httpClient.post(
+    final response = await _post(
       url,
       body: body,
       headers: {'Content-Type': 'application/json'},
@@ -448,7 +455,7 @@ class ScryfallApiClient {
       _baseUrl,
       '/cards/$setCode/$collectorNumber${language != null ? '/${language.json}' : ''}',
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -489,7 +496,7 @@ class ScryfallApiClient {
         'version': imageVersion?.json,
       }..removeWhere((_, value) => value == null),
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     if (response.statusCode != 200) {
       final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -507,7 +514,7 @@ class ScryfallApiClient {
   /// find either of them.
   Future<MtgCard> getCardByMultiverseId(int multiverseId) async {
     final url = Uri.https(_baseUrl, '/cards/multiverse/$multiverseId');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -542,7 +549,7 @@ class ScryfallApiClient {
         'version': imageVersion?.json,
       }..removeWhere((_, value) => value == null),
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     if (response.statusCode != 200) {
       final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -560,7 +567,7 @@ class ScryfallApiClient {
   /// The ID can either be the card’s `mtgo_id` or its `mtgo_foil_id`.
   Future<MtgCard> getCardByMtgoId(int mtgoId) async {
     final url = Uri.https(_baseUrl, '/cards/mtgo/$mtgoId');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -595,7 +602,7 @@ class ScryfallApiClient {
         'version': imageVersion?.json,
       },
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     if (response.statusCode != 200) {
       final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -611,7 +618,7 @@ class ScryfallApiClient {
   /// (Magic: The Gathering Arena ID).
   Future<MtgCard> getCardByArenaId(int arenaId) async {
     final url = Uri.https(_baseUrl, '/cards/arena/$arenaId');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -644,7 +651,7 @@ class ScryfallApiClient {
         'version': imageVersion?.json,
       },
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     if (response.statusCode != 200) {
       final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -661,7 +668,7 @@ class ScryfallApiClient {
   /// on [TCGplayer’s API](https://docs.tcgplayer.com/docs).
   Future<MtgCard> getCardByTcgplayerId(int tcgplayerId) async {
     final url = Uri.https(_baseUrl, '/cards/tcgplayer/$tcgplayerId');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -695,7 +702,7 @@ class ScryfallApiClient {
         'version': imageVersion?.json,
       },
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     if (response.statusCode != 200) {
       final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -712,7 +719,7 @@ class ScryfallApiClient {
   /// Cardmarket’s APIs.
   Future<MtgCard> getCardByCardmarketId(int cardmarketId) async {
     final url = Uri.https(_baseUrl, '/cards/cardmarket/$cardmarketId');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -746,7 +753,7 @@ class ScryfallApiClient {
         'version': imageVersion?.json,
       },
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     if (response.statusCode != 200) {
       final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -761,7 +768,7 @@ class ScryfallApiClient {
   /// Returns a single card with the given [id] on Scryfall.
   Future<MtgCard> getCardById(String id) async {
     final url = Uri.https(_baseUrl, '/cards/$id');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -793,7 +800,7 @@ class ScryfallApiClient {
         'version': imageVersion?.json,
       },
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     if (response.statusCode != 200) {
       final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -814,7 +821,7 @@ class ScryfallApiClient {
     int multiverseId,
   ) async {
     final url = Uri.https(_baseUrl, '/cards/multiverse/$multiverseId/rulings');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -836,7 +843,7 @@ class ScryfallApiClient {
   /// The [mtgoId] can either be the card’s `mtgo_id` or its `mtgo_foil_id`.
   Future<PaginableList<Ruling>> getRulingsByMtgoId(int mtgoId) async {
     final url = Uri.https(_baseUrl, '/cards/mtgo/$mtgoId/rulings');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -856,7 +863,7 @@ class ScryfallApiClient {
   /// fiven [arenaId] (Magic: The Gathering Arena ID).
   Future<PaginableList<Ruling>> getRulingsByArenaId(int arenaId) async {
     final url = Uri.https(_baseUrl, '/cards/arena/$arenaId/rulings');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -882,7 +889,7 @@ class ScryfallApiClient {
       _baseUrl,
       '/cards/$setCode/$collectorNumber/rulings',
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -902,7 +909,7 @@ class ScryfallApiClient {
   /// given [id] on Scryfall.
   Future<PaginableList<Ruling>> getRulingsById(String id) async {
     final url = Uri.https(_baseUrl, '/cards/$id/rulings');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -921,7 +928,7 @@ class ScryfallApiClient {
   /// Returns a [PaginableList] of all [CardSymbol]s.
   Future<PaginableList<CardSymbol>> getAllCardSymbols() async {
     final url = Uri.https(_baseUrl, '/symbology');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -950,7 +957,7 @@ class ScryfallApiClient {
       '/symbology/parse-mana',
       <String, String>{'cost': manaCost},
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -968,7 +975,7 @@ class ScryfallApiClient {
   /// [catalogType]\: The type of catalog that shall be returned.
   Future<Catalog> getCatalog(CatalogType catalogType) async {
     final url = Uri.https(_baseUrl, '/catalog/${catalogType.urlEncoding}');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -1107,7 +1114,7 @@ class ScryfallApiClient {
   /// Returns a [PaginableList] of all [BulkData] on Scryfall.
   Future<PaginableList<BulkData>> getBulkData() async {
     final url = Uri.https(_baseUrl, '/bulk-data');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -1126,7 +1133,7 @@ class ScryfallApiClient {
   /// Returns a single [BulkData] object with the given [id].
   Future<BulkData> getBulkDataById(String id) async {
     final url = Uri.https(_baseUrl, '/bulk-data/$id');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -1143,7 +1150,7 @@ class ScryfallApiClient {
   /// as a [Uint8List].
   Future<Uint8List> getBulkDataByIdAsFile(String id) async {
     final url = Uri.https(_baseUrl, '/bulk-data/$id', {'format': 'file'});
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     if (response.statusCode != 200) {
       final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -1158,7 +1165,7 @@ class ScryfallApiClient {
   /// Returns a single [BulkData] object with the given [type].
   Future<BulkData> getBulkDataByType(BulkDataType type) async {
     final url = Uri.https(_baseUrl, '/bulk-data/${type.urlEncoding}');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -1179,7 +1186,7 @@ class ScryfallApiClient {
       '/bulk-data/${type.urlEncoding}',
       {'format': 'file'},
     );
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     if (response.statusCode != 200) {
       final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -1264,7 +1271,7 @@ class ScryfallApiClient {
   /// Returns a [PaginableList] of all [Migration]s on Scryfall.
   Future<PaginableList<Migration>> getMigrations() async {
     final url = Uri.https(_baseUrl, '/migrations');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -1283,7 +1290,7 @@ class ScryfallApiClient {
   /// Returns a [Migration] with the given id.
   Future<Migration> getMigration(String id) async {
     final url = Uri.https(_baseUrl, '/migrations/$id');
-    final response = await _httpClient.get(url);
+    final response = await _get(url);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -1293,6 +1300,25 @@ class ScryfallApiClient {
 
     return Migration.fromJson(json);
   }
+
+  Future<http.Response> _get(Uri url) =>
+      _httpClient.get(url, headers: _headers);
+
+  Future<http.Response> _post(
+    Uri url, {
+    Map<String, String>? headers,
+    Object? body,
+    Encoding? encoding,
+  }) =>
+      _httpClient.post(
+        url,
+        headers: {
+          ..._headers,
+          if (headers != null) ...headers,
+        },
+        body: body,
+        encoding: encoding,
+      );
 }
 
 /// The types of [BulkData] which be retrieved.
