@@ -1,3 +1,14 @@
+## 2.6.0
+
+### Added
+
+- Added `astral` and `sega` values to `Game`.
+- Added `fullart` value to `FrameEffect`.
+
+### Changed
+
+- Renamed `nyxtouched` of `FrameEffect` to `enchantment`. *A deprecated constant with the name `nyxtouched` is kept for backward compatibility.*
+
 ## 2.5.2
 
 ### Changed
