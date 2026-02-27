@@ -467,7 +467,7 @@ const _$FinishEnumMap = {
 const _$FrameEffectEnumMap = {
   FrameEffect.legendary: 'legendary',
   FrameEffect.miracle: 'miracle',
-  FrameEffect.nyxtouched: 'nyxtouched',
+  FrameEffect.enchantment: 'enchantment',
   FrameEffect.draft: 'draft',
   FrameEffect.devoid: 'devoid',
   FrameEffect.tombstone: 'tombstone',
