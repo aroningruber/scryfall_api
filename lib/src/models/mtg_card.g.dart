@@ -505,6 +505,8 @@ const _$GameEnumMap = {
   Game.paper: 'paper',
   Game.arena: 'arena',
   Game.mtgo: 'mtgo',
+  Game.astral: 'astral',
+  Game.sega: 'sega',
   Game.unknown: 'unknown',
 };
 
