@@ -489,6 +489,7 @@ const _$FrameEffectEnumMap = {
   FrameEffect.fandfc: 'fandfc',
   FrameEffect.upsidedowndfc: 'upsidedowndfc',
   FrameEffect.spree: 'spree',
+  FrameEffect.fullart: 'fullart',
   FrameEffect.unknown: 'unknown',
 };
 

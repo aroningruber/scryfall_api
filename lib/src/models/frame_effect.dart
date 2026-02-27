@@ -78,6 +78,9 @@ enum FrameEffect {
   /// The cards have Spree asterisks.
   spree,
 
+  /// A full art frame.
+  fullart,
+
   /// Unknown frame effect.
   unknown;
 
