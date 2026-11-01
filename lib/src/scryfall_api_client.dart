@@ -1149,6 +1149,11 @@ class ScryfallApiClient {
   ///
   /// Returns the actual bulk data file with the given [id]
   /// as a [Uint8List].
+  ///
+  /// {@template highMemoryWarning}
+  /// **CAUTION**: Loads and processes the whole data in-memory. May require
+  /// significant memory.
+  /// {@endtemplate}
   Future<Uint8List> getBulkDataByIdAsFile(String id) async {
     final url = Uri.https(_baseUrl, '/bulk-data/$id', {'format': 'file'});
     final response = await _get(url);
@@ -1181,6 +1186,8 @@ class ScryfallApiClient {
   ///
   /// Returns the actual bulk data file with the given [type]
   /// as a [Uint8List].
+  ///
+  /// {@macro highMemoryWarning}
   Future<Uint8List> getBulkDataByTypeAsFile(BulkDataType type) async {
     final url = Uri.https(
       _baseUrl,
@@ -1201,6 +1208,8 @@ class ScryfallApiClient {
   ///
   /// Convenience method for calling [getBulkDataByTypeAsFile]
   /// with [BulkDataType.oracleCards] and parsing to correct type.
+  ///
+  /// {@macro highMemoryWarning}
   Future<List<MtgCard>> getBulkDataOracleCards() async {
     final bytes = await getBulkDataByTypeAsFile(BulkDataType.oracleCards);
 
@@ -1219,6 +1228,8 @@ class ScryfallApiClient {
   ///
   /// Convenience method for calling [getBulkDataByTypeAsFile]
   /// with [BulkDataType.uniqueArtwork] and parsing to correct type.
+  ///
+  /// {@macro highMemoryWarning}
   Future<List<MtgCard>> getBulkDataUniqueArtwork() async {
     final bytes = await getBulkDataByTypeAsFile(BulkDataType.uniqueArtwork);
 
@@ -1237,6 +1248,8 @@ class ScryfallApiClient {
   ///
   /// Convenience method for calling [getBulkDataByTypeAsFile]
   /// with [BulkDataType.defaultCards] and parsing to correct type.
+  ///
+  /// {@macro highMemoryWarning}
   Future<List<MtgCard>> getBulkDataDefaultCards() async {
     final bytes = await getBulkDataByTypeAsFile(BulkDataType.defaultCards);
 
@@ -1255,6 +1268,8 @@ class ScryfallApiClient {
   ///
   /// Convenience method for calling [getBulkDataByTypeAsFile]
   /// with [BulkDataType.allCards] and parsing to correct type.
+  ///
+  /// {@macro highMemoryWarning}
   Future<List<MtgCard>> getBulkDataAllCards() async {
     final bytes = await getBulkDataByTypeAsFile(BulkDataType.allCards);
 
@@ -1273,6 +1288,8 @@ class ScryfallApiClient {
   ///
   /// Convenience method for calling [getBulkDataByTypeAsFile]
   /// with [BulkDataType.rulings] and parsing to correct type.
+  ///
+  /// {@macro highMemoryWarning}
   Future<List<Ruling>> getBulkDataRulings() async {
     final bytes = await getBulkDataByTypeAsFile(BulkDataType.rulings);
 
