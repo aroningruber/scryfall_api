@@ -502,12 +502,15 @@ class MtgCard {
 /// Returns a JSON value, falling back to card faces for reversible cards.
 ///
 /// For `reversible_card` layouts, some attributes may be missing at the
-/// top level and only present on each card face. When this happens, the
-/// unique value shared by all card faces is returned.
+/// top level and only present on the card faces. When this happens, the
+/// unique value across all card faces is returned.
 ///
+/// If all values are distinct strings, they are joined with `' // '`.
 /// If the value exists at the top level or the card is not reversible,
-/// the top-level value is returned. Returns `null` if no unique value
-/// can be determined.
+/// the top-level value is returned.
+///
+/// Returns `null` if the card faces are missing, contain no values,
+/// or contain distinct values that cannot be combined.
 Object? _readValueFromCardFaceIfReversibleCard(Map json, String name) {
   if (json.containsKey(name) ||
       json['layout'] != _$LayoutEnumMap[Layout.reversibleCard]) {
@@ -520,9 +523,16 @@ Object? _readValueFromCardFaceIfReversibleCard(Map json, String name) {
     return null;
   }
 
-  return cardFaces
-      .cast<Map>()
-      .map((cardFace) => cardFace[name])
-      .toSet()
-      .singleOrNull;
+  final values =
+      cardFaces.cast<Map>().map((cardFace) => cardFace[name]).toSet();
+
+  if (values.length == 1) {
+    return values.single;
+  }
+
+  if (values.isNotEmpty && values.every((x) => x is String)) {
+    return values.join(' // ');
+  }
+
+  return null;
 }
