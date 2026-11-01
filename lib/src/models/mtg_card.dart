@@ -483,18 +483,6 @@ class MtgCard {
   @JsonKey(includeFromJson: false, includeToJson: true)
   String get object => 'card';
 
-  // coverage:ignore-start
-  @Deprecated(
-    'Use `tcgplayerEtchedId` instead. Will be removed with version 3.0',
-  )
-  int? get tcgplyerEtchedId => tcgplayerEtchedId;
-
-  @Deprecated(
-    'Use `promoTypes` instead. Will be removed with version 3.0',
-  )
-  List<String>? get promoType => promoTypes;
-  // coverage:ignore-end
-
   /// Converts a [MtgCard] to JSON.
   Map<String, dynamic> toJson() => _$MtgCardToJson(this);
 }

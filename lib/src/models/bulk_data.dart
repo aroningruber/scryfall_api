@@ -52,20 +52,4 @@ class BulkData {
 
   /// Converts this [BulkData] object to JSON.
   Map<String, dynamic> toJson() => _$BulkDataToJson(this);
-
-  // coverage:ignore-start
-  @Deprecated(
-    'Use `jsonlDownloadUri` instead. Will be removed with version 3.0',
-  )
-  Uri get downloadUri => jsonlDownloadUri;
-
-  @Deprecated('Use `compressedSize` instead. Will be removed with version 3.0')
-  int get size => compressedSize;
-
-  @Deprecated('Will be removed with version 3.0')
-  String get contentType => 'application/jsonl';
-
-  @Deprecated('Will be removed with version 3.0')
-  String get contentEncoding => 'gzip';
-  // coverage:ignore-end
 }

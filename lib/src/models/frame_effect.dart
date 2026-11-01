@@ -82,10 +82,5 @@ enum FrameEffect {
   fullart,
 
   /// Unknown frame effect.
-  unknown;
-
-  // coverage:ignore-start
-  @Deprecated('Use `enchantment` instead. Will be removed with version 3.0')
-  static const nyxtouched = FrameEffect.enchantment;
-  // coverage:ignore-end
+  unknown,
 }
