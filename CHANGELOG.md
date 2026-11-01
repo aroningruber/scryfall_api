@@ -1,3 +1,24 @@
+## 3.0.0
+
+### Changed
+
+- Updated `BulkData` to support the new gzipped JSONL bulk data format, replacing `downloadUri`, `size`, `contentType`, and `contentEncoding` with `jsonlDownloadUri` and `compressedSize`.
+- Updated bulk data methods to decompress gzip files and parse JSONL content into lists of `MtgCard` and `Ruling` objects.
+- Added memory usage warnings to bulk data file download and parsing methods.
+- Reversible cards now support combining distinct string values from individual card faces using `' // '`, while preserving existing behavior for identical values.
+
+### Removed
+
+- Removed deprecated `nyxtouched` from `FrameEffect`.
+- Removed deprected `tcgplyerEtchedId` and `promoType` getters from `MtgCard`.
+
+### Migration from 2.x
+
+- The `BulkData` model changed in a backwards-incompatible way
+  - `downloadUri`, `size`, `contentType`, and `contentEncoding` have been removed.
+  - `jsonlDownloadUri` and `compressedSize` have been added.
+
+
 ## 2.6.0
 
 ### Added
