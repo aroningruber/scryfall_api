@@ -21,21 +21,14 @@ class BulkData {
   /// A human-readable description for this file.
   final String description;
 
-  /// The URI that hosts this bulk file for fetching.
-  final Uri downloadUri;
-
   /// The time when this file was last updated.
   final DateTime updatedAt;
 
-  /// The size of this file in integer bytes.
-  final int size;
+  /// The URI that hosts this bulk as jsonl.gz for fetching.
+  final Uri jsonlDownloadUri;
 
-  /// The MIME type of this file.
-  final String contentType;
-
-  /// The Content-Encoding encoding that will be used to
-  /// transmit this file when you download it.
-  final String contentEncoding;
+  /// The size of the compressed jsonl.gz file in integer bytes.
+  final int compressedSize;
 
   /// Constructs a [BulkData] object by setting its properties.
   const BulkData({
@@ -44,11 +37,9 @@ class BulkData {
     required this.type,
     required this.name,
     required this.description,
-    required this.downloadUri,
     required this.updatedAt,
-    required this.size,
-    required this.contentType,
-    required this.contentEncoding,
+    required this.jsonlDownloadUri,
+    required this.compressedSize,
   });
 
   /// Constructs a [BulkData] object from JSON.
@@ -61,4 +52,20 @@ class BulkData {
 
   /// Converts this [BulkData] object to JSON.
   Map<String, dynamic> toJson() => _$BulkDataToJson(this);
+
+  // coverage:ignore-start
+  @Deprecated(
+    'Use `jsonlDownloadUri` instead. Will be removed with version 3.0',
+  )
+  Uri get downloadUri => jsonlDownloadUri;
+
+  @Deprecated('Use `compressedSize` instead. Will be removed with version 3.0')
+  int get size => compressedSize;
+
+  @Deprecated('Will be removed with version 3.0')
+  String get contentType => 'application/jsonl';
+
+  @Deprecated('Will be removed with version 3.0')
+  String get contentEncoding => 'gzip';
+  // coverage:ignore-end
 }

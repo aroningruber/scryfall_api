@@ -16,22 +16,19 @@ BulkData _$BulkDataFromJson(Map<String, dynamic> json) => $checkedCreate(
           type: $checkedConvert('type', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
           description: $checkedConvert('description', (v) => v as String),
-          downloadUri:
-              $checkedConvert('download_uri', (v) => Uri.parse(v as String)),
           updatedAt:
               $checkedConvert('updated_at', (v) => DateTime.parse(v as String)),
-          size: $checkedConvert('size', (v) => (v as num).toInt()),
-          contentType: $checkedConvert('content_type', (v) => v as String),
-          contentEncoding:
-              $checkedConvert('content_encoding', (v) => v as String),
+          jsonlDownloadUri: $checkedConvert(
+              'jsonl_download_uri', (v) => Uri.parse(v as String)),
+          compressedSize:
+              $checkedConvert('compressed_size', (v) => (v as num).toInt()),
         );
         return val;
       },
       fieldKeyMap: const {
-        'downloadUri': 'download_uri',
         'updatedAt': 'updated_at',
-        'contentType': 'content_type',
-        'contentEncoding': 'content_encoding'
+        'jsonlDownloadUri': 'jsonl_download_uri',
+        'compressedSize': 'compressed_size'
       },
     );
 
@@ -41,10 +38,8 @@ Map<String, dynamic> _$BulkDataToJson(BulkData instance) => <String, dynamic>{
       'type': instance.type,
       'name': instance.name,
       'description': instance.description,
-      'download_uri': instance.downloadUri.toString(),
       'updated_at': instance.updatedAt.toIso8601String(),
-      'size': instance.size,
-      'content_type': instance.contentType,
-      'content_encoding': instance.contentEncoding,
+      'jsonl_download_uri': instance.jsonlDownloadUri.toString(),
+      'compressed_size': instance.compressedSize,
       'object': instance.object,
     };

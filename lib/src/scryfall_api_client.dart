@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:http/http.dart' as http;
@@ -1148,6 +1149,11 @@ class ScryfallApiClient {
   ///
   /// Returns the actual bulk data file with the given [id]
   /// as a [Uint8List].
+  ///
+  /// {@template highMemoryWarning}
+  /// **CAUTION**: Loads and processes the whole data in-memory. May require
+  /// significant memory.
+  /// {@endtemplate}
   Future<Uint8List> getBulkDataByIdAsFile(String id) async {
     final url = Uri.https(_baseUrl, '/bulk-data/$id', {'format': 'file'});
     final response = await _get(url);
@@ -1180,6 +1186,8 @@ class ScryfallApiClient {
   ///
   /// Returns the actual bulk data file with the given [type]
   /// as a [Uint8List].
+  ///
+  /// {@macro highMemoryWarning}
   Future<Uint8List> getBulkDataByTypeAsFile(BulkDataType type) async {
     final url = Uri.https(
       _baseUrl,
@@ -1199,13 +1207,19 @@ class ScryfallApiClient {
   /// **GET** /bulk-data/oracle-cards?format=file
   ///
   /// Convenience method for calling [getBulkDataByTypeAsFile]
-  /// with [BulkDataType.oracleCards] and casting to correct type.
+  /// with [BulkDataType.oracleCards] and parsing to correct type.
+  ///
+  /// {@macro highMemoryWarning}
   Future<List<MtgCard>> getBulkDataOracleCards() async {
     final bytes = await getBulkDataByTypeAsFile(BulkDataType.oracleCards);
 
-    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+    final decompressed = gzip.decode(bytes);
+    final content = utf8.decode(decompressed);
 
-    return json
+    return content
+        .split('\n')
+        .where((line) => line.trim().isNotEmpty)
+        .map(jsonDecode)
         .map((card) => MtgCard.fromJson(card as Map<String, dynamic>))
         .toList();
   }
@@ -1213,13 +1227,19 @@ class ScryfallApiClient {
   /// **GET** /bulk-data/unique-artwork?format=file
   ///
   /// Convenience method for calling [getBulkDataByTypeAsFile]
-  /// with [BulkDataType.uniqueArtwork] and casting to correct type.
+  /// with [BulkDataType.uniqueArtwork] and parsing to correct type.
+  ///
+  /// {@macro highMemoryWarning}
   Future<List<MtgCard>> getBulkDataUniqueArtwork() async {
     final bytes = await getBulkDataByTypeAsFile(BulkDataType.uniqueArtwork);
 
-    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+    final decompressed = gzip.decode(bytes);
+    final content = utf8.decode(decompressed);
 
-    return json
+    return content
+        .split('\n')
+        .where((line) => line.trim().isNotEmpty)
+        .map(jsonDecode)
         .map((card) => MtgCard.fromJson(card as Map<String, dynamic>))
         .toList();
   }
@@ -1227,13 +1247,19 @@ class ScryfallApiClient {
   /// **GET** /bulk-data/default-cards?format=file
   ///
   /// Convenience method for calling [getBulkDataByTypeAsFile]
-  /// with [BulkDataType.defaultCards] and casting to correct type.
+  /// with [BulkDataType.defaultCards] and parsing to correct type.
+  ///
+  /// {@macro highMemoryWarning}
   Future<List<MtgCard>> getBulkDataDefaultCards() async {
     final bytes = await getBulkDataByTypeAsFile(BulkDataType.defaultCards);
 
-    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+    final decompressed = gzip.decode(bytes);
+    final content = utf8.decode(decompressed);
 
-    return json
+    return content
+        .split('\n')
+        .where((line) => line.trim().isNotEmpty)
+        .map(jsonDecode)
         .map((card) => MtgCard.fromJson(card as Map<String, dynamic>))
         .toList();
   }
@@ -1241,13 +1267,19 @@ class ScryfallApiClient {
   /// **GET** /bulk-data/all-cards?format=file
   ///
   /// Convenience method for calling [getBulkDataByTypeAsFile]
-  /// with [BulkDataType.allCards] and casting to correct type.
+  /// with [BulkDataType.allCards] and parsing to correct type.
+  ///
+  /// {@macro highMemoryWarning}
   Future<List<MtgCard>> getBulkDataAllCards() async {
     final bytes = await getBulkDataByTypeAsFile(BulkDataType.allCards);
 
-    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+    final decompressed = gzip.decode(bytes);
+    final content = utf8.decode(decompressed);
 
-    return json
+    return content
+        .split('\n')
+        .where((line) => line.trim().isNotEmpty)
+        .map(jsonDecode)
         .map((card) => MtgCard.fromJson(card as Map<String, dynamic>))
         .toList();
   }
@@ -1255,13 +1287,19 @@ class ScryfallApiClient {
   /// **GET** /bulk-data/rulings?format=file
   ///
   /// Convenience method for calling [getBulkDataByTypeAsFile]
-  /// with [BulkDataType.rulings] and casting to correct type.
+  /// with [BulkDataType.rulings] and parsing to correct type.
+  ///
+  /// {@macro highMemoryWarning}
   Future<List<Ruling>> getBulkDataRulings() async {
     final bytes = await getBulkDataByTypeAsFile(BulkDataType.rulings);
 
-    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+    final decompressed = gzip.decode(bytes);
+    final content = utf8.decode(decompressed);
 
-    return json
+    return content
+        .split('\n')
+        .where((line) => line.trim().isNotEmpty)
+        .map(jsonDecode)
         .map((ruling) => Ruling.fromJson(ruling as Map<String, dynamic>))
         .toList();
   }
