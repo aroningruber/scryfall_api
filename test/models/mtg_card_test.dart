@@ -464,4 +464,16 @@ void main() {
       expect(card.typeLine, 'Land — Island Mountain');
     });
   });
+
+  group('MtgCard reversible adventure card', () {
+    test('can be parsed', () async {
+      final file = File('test/mock_data/mtg_card_tdm_381.json');
+      final json =
+          jsonDecode(await file.readAsString()) as Map<String, dynamic>;
+
+      final card = MtgCard.fromJson(json);
+
+      expect(card.typeLine, 'Creature — Dragon // Sorcery — Omen');
+    });
+  });
 }
