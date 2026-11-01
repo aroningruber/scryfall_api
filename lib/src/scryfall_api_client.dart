@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:http/http.dart' as http;
@@ -1199,13 +1200,17 @@ class ScryfallApiClient {
   /// **GET** /bulk-data/oracle-cards?format=file
   ///
   /// Convenience method for calling [getBulkDataByTypeAsFile]
-  /// with [BulkDataType.oracleCards] and casting to correct type.
+  /// with [BulkDataType.oracleCards] and parsing to correct type.
   Future<List<MtgCard>> getBulkDataOracleCards() async {
     final bytes = await getBulkDataByTypeAsFile(BulkDataType.oracleCards);
 
-    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+    final decompressed = gzip.decode(bytes);
+    final content = utf8.decode(decompressed);
 
-    return json
+    return content
+        .split('\n')
+        .where((line) => line.trim().isNotEmpty)
+        .map(jsonDecode)
         .map((card) => MtgCard.fromJson(card as Map<String, dynamic>))
         .toList();
   }
@@ -1213,13 +1218,17 @@ class ScryfallApiClient {
   /// **GET** /bulk-data/unique-artwork?format=file
   ///
   /// Convenience method for calling [getBulkDataByTypeAsFile]
-  /// with [BulkDataType.uniqueArtwork] and casting to correct type.
+  /// with [BulkDataType.uniqueArtwork] and parsing to correct type.
   Future<List<MtgCard>> getBulkDataUniqueArtwork() async {
     final bytes = await getBulkDataByTypeAsFile(BulkDataType.uniqueArtwork);
 
-    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+    final decompressed = gzip.decode(bytes);
+    final content = utf8.decode(decompressed);
 
-    return json
+    return content
+        .split('\n')
+        .where((line) => line.trim().isNotEmpty)
+        .map(jsonDecode)
         .map((card) => MtgCard.fromJson(card as Map<String, dynamic>))
         .toList();
   }
@@ -1227,13 +1236,17 @@ class ScryfallApiClient {
   /// **GET** /bulk-data/default-cards?format=file
   ///
   /// Convenience method for calling [getBulkDataByTypeAsFile]
-  /// with [BulkDataType.defaultCards] and casting to correct type.
+  /// with [BulkDataType.defaultCards] and parsing to correct type.
   Future<List<MtgCard>> getBulkDataDefaultCards() async {
     final bytes = await getBulkDataByTypeAsFile(BulkDataType.defaultCards);
 
-    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+    final decompressed = gzip.decode(bytes);
+    final content = utf8.decode(decompressed);
 
-    return json
+    return content
+        .split('\n')
+        .where((line) => line.trim().isNotEmpty)
+        .map(jsonDecode)
         .map((card) => MtgCard.fromJson(card as Map<String, dynamic>))
         .toList();
   }
@@ -1241,13 +1254,17 @@ class ScryfallApiClient {
   /// **GET** /bulk-data/all-cards?format=file
   ///
   /// Convenience method for calling [getBulkDataByTypeAsFile]
-  /// with [BulkDataType.allCards] and casting to correct type.
+  /// with [BulkDataType.allCards] and parsing to correct type.
   Future<List<MtgCard>> getBulkDataAllCards() async {
     final bytes = await getBulkDataByTypeAsFile(BulkDataType.allCards);
 
-    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+    final decompressed = gzip.decode(bytes);
+    final content = utf8.decode(decompressed);
 
-    return json
+    return content
+        .split('\n')
+        .where((line) => line.trim().isNotEmpty)
+        .map(jsonDecode)
         .map((card) => MtgCard.fromJson(card as Map<String, dynamic>))
         .toList();
   }
@@ -1255,13 +1272,17 @@ class ScryfallApiClient {
   /// **GET** /bulk-data/rulings?format=file
   ///
   /// Convenience method for calling [getBulkDataByTypeAsFile]
-  /// with [BulkDataType.rulings] and casting to correct type.
+  /// with [BulkDataType.rulings] and parsing to correct type.
   Future<List<Ruling>> getBulkDataRulings() async {
     final bytes = await getBulkDataByTypeAsFile(BulkDataType.rulings);
 
-    final json = jsonDecode(utf8.decode(bytes)) as List<dynamic>;
+    final decompressed = gzip.decode(bytes);
+    final content = utf8.decode(decompressed);
 
-    return json
+    return content
+        .split('\n')
+        .where((line) => line.trim().isNotEmpty)
+        .map(jsonDecode)
         .map((ruling) => Ruling.fromJson(ruling as Map<String, dynamic>))
         .toList();
   }
