@@ -2611,7 +2611,7 @@ void main() {
         final response = MockResponse();
         when(() => response.statusCode).thenReturn(200);
         when(() => response.bodyBytes)
-            .thenReturn(Uint8List.fromList(utf8.encode('[]')));
+            .thenReturn(Uint8List.fromList(gzip.encode(utf8.encode(''))));
         when(() => httpClient.get(any(), headers: any(named: 'headers')))
             .thenAnswer((invocation) async {
           final responseHead = await http.head(
